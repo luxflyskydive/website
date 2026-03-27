@@ -579,7 +579,8 @@ body.light .pull-quote { color: #111; }
   .statement { grid-template-columns: 1fr; padding: 64px 16px; }
   .statement-right { border-left: none; border-top: 1px solid rgba(255,255,255,0.08); padding-left: 0; padding-top: 32px; margin-top: 24px; }
 
-  .editorial { grid-template-columns: 1fr; }
+  .editorial,
+  .editorial.reverse { grid-template-columns: 1fr; }
   .editorial.reverse .editorial-image { order: -1; }
   .editorial-image { min-height: 280px; }
   .editorial-body { padding: 40px 16px; }
