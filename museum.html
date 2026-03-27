@@ -104,7 +104,7 @@
 </nav>
 
 <!-- HERO -->
-<section style="background: linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)), url('img/museum-2.jpg') center/cover; height: 65vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
+<section style="background: linear-gradient(rgba(0,0,0,0.48), rgba(0,0,0,0.48)), url('img/museum-4.jpg') center/cover; height: 65vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
   <div>
     <p style="color: #f02cb8; font-size: 14px; font-weight: 700; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 2px;">The Art of Skydiving</p>
     <h1 style="font-size: clamp(32px, 8vw, 72px); font-weight: 900; margin: 0 auto 24px; max-width: 900px; line-height: 1.2;">A museum unlike any other.</h1>
@@ -122,34 +122,41 @@
       <p style="color: rgba(0,0,0,0.6); line-height: 1.85;">Whether you're a skydiving enthusiast or simply curious, the museum offers a full immersion into the world of flight — celebrating its beauty, art, and history.</p>
     </div>
     <div style="overflow: hidden; border-radius: 4px; aspect-ratio: 4/3;">
-      <img src="img/museum-1.jpg" alt="Historical parachute artifacts at The Art of Skydiving museum" style="width:100%;height:100%;object-fit:cover;display:block;">
+      <img src="img/museum-2.jpg" alt="The Art of Skydiving museum exhibit hall" style="width:100%;height:100%;object-fit:cover;display:block;">
     </div>
   </div>
 </section>
 
-<!-- WHAT'S INSIDE -->
+<!-- PHOTO GALLERY — all 4 museum photos -->
+<section style="background: #f7f7f7; padding: 0; overflow: hidden;">
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3px;">
+    <div style="overflow: hidden; aspect-ratio: 4/3;">
+      <img src="img/museum-1.jpg" alt="Historical parachute artifacts" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow: hidden; aspect-ratio: 4/3;">
+      <img src="img/museum-3.jpg" alt="Patrick de Gayardon tribute and framed exhibits" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE — 3 boxes, 1 clean row -->
 <section style="background: #f7f7f7; padding: 80px 48px;">
   <div style="max-width: 1200px; margin: 0 auto;">
     <h2 style="color: #111; font-size: 36px; font-weight: 900; margin-bottom: 16px; text-align: center;">What's inside</h2>
-    <p style="color: rgba(0,0,0,0.5); text-align: center; margin-bottom: 60px; max-width: 560px; margin-left: auto; margin-right: auto; line-height: 1.7;">Four permanent collections trace the full arc of freefall — from the first experiments to today's world champions.</p>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;">
+    <p style="color: rgba(0,0,0,0.5); text-align: center; margin-bottom: 60px; max-width: 560px; margin-left: auto; margin-right: auto; line-height: 1.7;">Three permanent collections trace the full arc of freefall — from the first experiments to today's world champions.</p>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
 
       <div class="reveal" style="background: #ffffff; padding: 36px; border-left: 3px solid #f02cb8;">
         <h3 style="color: #111; font-size: 17px; font-weight: 900; margin-bottom: 14px;">Historical freefall exhibitions</h3>
-        <p style="color: rgba(0,0,0,0.55); line-height: 1.8; font-size: 14px;">Relive key moments in the history of skydiving — from the very first jumps to recent innovations in wind tunnel flying.</p>
+        <p style="color: rgba(0,0,0,0.55); line-height: 1.8; font-size: 14px;">Relive key moments in the history of skydiving — from the very first jumps to recent innovations in wind tunnel flying. Artefacts, documents, and immersive installations.</p>
       </div>
 
       <div class="reveal reveal-delay-1" style="background: #ffffff; padding: 36px; border-left: 3px solid #f02cb8;">
-        <h3 style="color: #111; font-size: 17px; font-weight: 900; margin-bottom: 14px;">Interactive simulators</h3>
-        <p style="color: rgba(0,0,0,0.55); line-height: 1.8; font-size: 14px;">Immersive installations let you experience the unique sensations of skydiving before you even step into the tunnel.</p>
+        <h3 style="color: #111; font-size: 17px; font-weight: 900; margin-bottom: 14px;">Art &amp; photography</h3>
+        <p style="color: rgba(0,0,0,0.55); line-height: 1.8; font-size: 14px;">Artworks, sculptures, and photography inspired by the freedom of flight — where visual art meets the sport of skydiving.</p>
       </div>
 
       <div class="reveal reveal-delay-2" style="background: #ffffff; padding: 36px; border-left: 3px solid #f02cb8;">
-        <h3 style="color: #111; font-size: 17px; font-weight: 900; margin-bottom: 14px;">Art &amp; photography</h3>
-        <p style="color: rgba(0,0,0,0.55); line-height: 1.8; font-size: 14px;">Artworks and photography inspired by the freedom of flight — where visual art meets the sport of skydiving.</p>
-      </div>
-
-      <div class="reveal reveal-delay-3" style="background: #ffffff; padding: 36px; border-left: 3px solid #f02cb8;">
         <h3 style="color: #111; font-size: 17px; font-weight: 900; margin-bottom: 14px;">Portraits of legends</h3>
         <p style="color: rgba(0,0,0,0.55); line-height: 1.8; font-size: 14px;">Discover the stories and achievements of the world's greatest skydivers and flyers — including tributes to icons like Patrick de Gayardon.</p>
       </div>
@@ -158,7 +165,7 @@
   </div>
 </section>
 
-<!-- MUSEUM PHOTO + TICKET INFO -->
+<!-- TICKET INFO + PHOTO -->
 <section style="background: #ffffff; padding: 80px 48px;">
   <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
     <div style="overflow: hidden; border-radius: 4px; aspect-ratio: 4/3;">
