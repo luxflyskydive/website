@@ -583,8 +583,9 @@ body.light .pull-quote { color: #111; }
   .editorial.reverse .editorial-image { order: -1; }
   .editorial-image { min-height: 280px; }
   .editorial-body { padding: 40px 16px; }
-  /* adult-flyer: portrait image — pull crop up on mobile so arm + flying pose are visible */
-  .adult-flyer-img { object-position: center 15% !important; }
+  /* adult-flyer: taller container + crop pulled up so flying arm is visible on mobile */
+  .editorial-image--tall { min-height: 420px; }
+  .adult-flyer-img { object-position: center 12% !important; }
 
   .exp-strip { padding: 72px 0; }
   .exp-strip-header { padding: 0 16px; flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 32px; }
