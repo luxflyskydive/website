@@ -109,6 +109,16 @@
     '<svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>' +
     'My Account</a>';
   mobileMenu.appendChild(mFooter);
+
+  // Add language links from the nav-lang dropdown
+  const langDropdown = nav.querySelector('.nav-lang .nav-dropdown');
+  if (langDropdown) {
+    const langLinks = document.createElement('div');
+    langLinks.className = 'mobile-lang-links';
+    langDropdown.querySelectorAll('a').forEach(a => langLinks.appendChild(a.cloneNode(true)));
+    mobileMenu.appendChild(langLinks);
+  }
+
   document.body.appendChild(mobileMenu);
 
   function openMenu() {
