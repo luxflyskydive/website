@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photos — Luxfly in Action</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    .photo-grid img { width: 100%; height: auto; display: block; border-radius: 8px; object-fit: cover; }
+    .grid-tall { grid-row: span 2; }
+    .grid-wide { grid-column: span 2; }
+    @media (max-width: 720px) {
+      .photo-gallery-grid { grid-template-columns: 1fr !important; }
+      .photo-gallery-grid > div { grid-column: span 1 !important; aspect-ratio: 4/3 !important; }
+      section[style*="padding: 80px 48px"] { padding: 48px 20px !important; }
+      section[style*="padding: 80px 48px"] .reveal { padding: 0; }
+    }
+    @media (max-width: 900px) {
+      section[style*="padding: 80px 48px"] { padding: 60px 20px !important; }
+    }
+  </style>
+</head>
+<body class="light">
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 28" width="82" height="28">
+  <defs>
+    <linearGradient id="lsg" gradientUnits="userSpaceOnUse" x1="52" y1="1" x2="34" y2="27">
+      <stop offset="0%" class="lux-stop"/>
+      <stop offset="100%" stop-color="#f02cb8"/>
+    </linearGradient>
+    <clipPath id="lcl" clipPathUnits="userSpaceOnUse">
+      <polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"/>
+    </clipPath>
+    <clipPath id="lcf" clipPathUnits="userSpaceOnUse">
+      <polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"/>
+    </clipPath>
+  </defs>
+  <text x="0" y="20" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-weight="900" font-size="21" letter-spacing="-0.42" class="lux-text">LUX</text>
+  <text x="40" y="24" clip-path="url(#lcf)" font-family="Montserrat,sans-serif" font-weight="900" font-size="21" letter-spacing="-0.42" fill="#f02cb8">FLY</text>
+  <line x1="52" y1="1" x2="34" y2="27" stroke="url(#lsg)" stroke-width="2" stroke-linecap="round"/>
+</svg></a>
+  <div class="nav-right">
+    <div class="nav-menu">
+      <div class="nav-item"><a class="nav-link" href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="bachelor.html">Bachelor &amp; Bachelorette</a>
+          <a href="promotions.html">Events &amp; Promotions</a>
+          <a href="how-it-works.html">Activity Flow</a>
+          <a href="https://shop.indoorskydive.lu/store_10">Book Now</a>
+          <a href="gift-voucher.html">Buy a Gift Voucher</a>
+          <a href="photos.html">Photos &amp; Vid&eacute;os</a>
+          <a href="hot-air-balloon.html">Hot Air Balloon</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="prices.html">Indoor Skydiving</a>
+        <div class="nav-dropdown">
+          <a href="loyalty.html">Loyalty Program</a>
+          <a href="birthdays.html">Birthdays</a>
+          <a href="prices.html">Prices</a>
+          <a href="use-voucher.html">Use a Gift Voucher</a>
+          <a href="conditions.html">Conditions</a>
+          <a href="activity.html">The Activity</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="events.html">Corporate</a>
+        <div class="nav-dropdown">
+          <a href="events.html">Organize an Event</a>
+          <a href="team-building.html">Team Building</a>
+          <a href="events-pricing.html">Pricing</a>
+          <a href="quote.html">Request for Quote</a>
+          <a href="references.html">References</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="pro.html">Pro Flyers</a>
+        <div class="nav-dropdown">
+          <a href="pro-prices.html">Prices</a>
+          <a href="coaches.html">Coaches</a>
+          <a href="shared-sessions.html">Shared Session</a>
+          <a href="infrastructure.html">Infrastructure</a>
+          <a href="become-proflyer.html">Becoming Proflyer</a>
+          <a href="pro-events.html">Events and Camps</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="pilates.html">Pilates</a>
+          <a href="indoor-activities.html">Indoor Activities</a>
+          <a href="blog.html">Blog</a>
+          <a href="museum.html">Museum</a>
+          <a href="flyology.html">FLYOLOGY</a>
+          <a href="faq.html">F.A.Q.</a>
+          <a href="partners.html">Our Partners</a>
+          <a href="jobs.html">Job Vacancies</a>
+          <a href="region.html">The R&eacute;gion</a>
+          <a href="photos.html">Your Photos and Videos</a>
+          <a href="opening-hours.html">Opening Hours</a>
+          <a href="bar.html">Bar</a>
+          <a href="about.html">Who We Are</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="contact.html">Contact</a></div>
+    </div>
+    <div class="nav-item nav-lang">
+      <span class="lang-btn">EN <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none" style="opacity:0.55"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div class="nav-dropdown">
+        <a href="https://indoorskydive.lu/fr">FR</a>
+        <a href="https://indoorskydive.lu/de">DE</a>
+        <a href="https://indoorskydive.lu/lb">LB</a>
+        <a href="https://indoorskydive.lu/nl">NL</a>
+      </div>
+    </div>
+    <a href="account.html" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>My Account</a><a class="nav-book" href="https://shop.indoorskydive.lu/store_10">Book now</a>
+  </div>
+</nav>
+
+<section style="background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('img/gallery-air-7.jpg') center/cover; height: 65vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
+  <div>
+    <p style="color: #f02cb8; font-size: 14px; font-weight: 700; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 2px;">Gallery</p>
+    <h1 style="font-size: clamp(32px, 8vw, 72px); font-weight: 900; margin: 0 auto 24px; max-width: 900px; line-height: 1.2;">In the air.</h1>
+    <p style="font-size: 18px; color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto; line-height: 1.6;">Every flight looks different. Here's what yours might look like.</p>
+  </div>
+</section>
+
+<section style="background: #ffffff; padding: 80px 48px;">
+  <div style="max-width: 1400px; margin: 0 auto;">
+    <div class="photo-gallery-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+
+      <!-- Row 1: wide + portrait -->
+      <div style="grid-column: span 2; overflow: hidden; aspect-ratio: 16/9;">
+        <img src="img/gallery-air-8.jpg" alt="Two flyers in the Luxfly wind tunnel" style="width:100%;height:100%;object-fit:cover;display:block;object-position:center 40%;">
+      </div>
+      <div style="overflow: hidden; aspect-ratio: 4/5;">
+        <img src="img/gallery-air-9.jpg" alt="Young flyer soaring in the tunnel" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+
+      <!-- Row 2: three squares -->
+      <div style="overflow: hidden; aspect-ratio: 1;">
+        <img src="img/gallery-air-6.jpg" alt="Flyer smiling mid-air at Luxfly" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+      <div style="overflow: hidden; aspect-ratio: 1;">
+        <img src="img/gallery-air-1.jpg" alt="Flying with a Luxfly coach" style="width:100%;height:100%;object-fit:cover;display:block;object-position:center 30%;">
+      </div>
+      <div style="overflow: hidden; aspect-ratio: 1;">
+        <img src="img/gallery-air-10.jpg" alt="Adult flyer in the wind tunnel" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+
+      <!-- Row 3: portrait + wide -->
+      <div style="overflow: hidden; aspect-ratio: 4/5;">
+        <img src="img/gallery-air-2.jpg" alt="Arms spread wide in freefall" style="width:100%;height:100%;object-fit:cover;display:block;object-position:center 20%;">
+      </div>
+      <div style="grid-column: span 2; overflow: hidden; aspect-ratio: 16/9;">
+        <img src="img/gallery-air-7.jpg" alt="Coach and flyer in the Luxfly tunnel" style="width:100%;height:100%;object-fit:cover;display:block;object-position:center 35%;">
+      </div>
+
+      <!-- Row 4: three more -->
+      <div style="overflow: hidden; aspect-ratio: 1;">
+        <img src="img/gallery-air-3.jpg" alt="Flying at full speed at Luxfly" style="width:100%;height:100%;object-fit:cover;display:block;object-position:center 25%;">
+      </div>
+      <div style="overflow: hidden; aspect-ratio: 1;">
+        <img src="img/gallery-air-4.jpg" alt="Arms out, flying free" style="width:100%;height:100%;object-fit:cover;display:block;object-position:center 30%;">
+      </div>
+      <div style="overflow: hidden; aspect-ratio: 1;">
+        <img src="img/gallery-air-5.jpg" alt="Coached flight at Luxfly" style="width:100%;height:100%;object-fit:cover;display:block;object-position:center 30%;">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section style="background: #f7f7f7; padding: 80px 48px;">
+  <div style="max-width: 900px; margin: 0 auto;">
+    <h2 style="color: #111; font-size: 42px; font-weight: 900; margin-bottom: 32px;">Your photos, too.</h2>
+    <p style="color: rgba(0,0,0,0.7); line-height: 1.8; margin-bottom: 32px;">Every Luxfly session can include professional in-tunnel photography. Our photographer captures your flight from the viewing window — helmet camera footage and full hi-res still photos available. Ask at reception or add on at time of booking.</p>
+    <div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-top: 40px;">
+      <div style="padding: 24px; background: rgba(240, 44, 184, 0.08); border-left: 3px solid #f02cb8; border-radius: 6px;">
+        <p style="color: #111; font-weight: 700; margin: 0 0 8px 0;">Still photos</p>
+        <p style="color: rgba(0,0,0,0.7); margin: 0; font-size: 14px;">from €25 per session</p>
+      </div>
+      <div style="padding: 24px; background: rgba(240, 44, 184, 0.08); border-left: 3px solid #f02cb8; border-radius: 6px;">
+        <p style="color: #111; font-weight: 700; margin: 0 0 8px 0;">Video highlight</p>
+        <p style="color: rgba(0,0,0,0.7); margin: 0; font-size: 14px;">1-minute edit · €45</p>
+      </div>
+      <div style="padding: 24px; background: rgba(240, 44, 184, 0.08); border-left: 3px solid #f02cb8; border-radius: 6px;">
+        <p style="color: #111; font-weight: 700; margin: 0 0 8px 0;">Full raw footage</p>
+        <p style="color: rgba(0,0,0,0.7); margin: 0; font-size: 14px;">unedited, all takes · €65</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background: #ffffff; padding: 80px 48px; text-align: center;">
+  <h2 style="color: #111; font-size: 42px; font-weight: 900; margin-bottom: 32px;">Tag us.</h2>
+  <p style="color: rgba(0,0,0,0.7); line-height: 1.8; margin-bottom: 32px; max-width: 700px; margin-left: auto; margin-right: auto;">Share your flight on Instagram and tag @luxflylu for a chance to be featured on our page. We share the best ones every week.</p>
+  <p style="color: rgba(0,0,0,0.5); font-size: 16px; margin: 0;">Follow us <span style="color: #f02cb8; font-weight: 700;">@luxflylu</span></p>
+</section>
+
+<section style="background: #fff5fb; padding: 80px 48px; text-align: center;">
+  <h2 style="font-size: 42px; font-weight: 900; margin-bottom: 32px; color: #111;">Book your session — and your photos.</h2>
+  <a href="https://shop.indoorskydive.lu/store_10" style="display: inline-block; padding: 16px 48px; background: #f02cb8; color: black; font-weight: 700; text-decoration: none; border-radius: 6px; font-size: 16px;">Book now</a>
+</section>
+
+<footer style="background: #0d0d0d; padding: 60px 48px; border-top: 1px solid rgba(255,255,255,0.08);">
+  <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 40px;">
+    <div class="footer-brand">
+      <img src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg" alt="Luxfly" style="height: 40px; margin-bottom: 16px;">
+      <p style="color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.6; margin: 0;">Europe's tallest indoor skydiving wind tunnel. Safe from age 4 to 104.</p>
+    </div>
+    <div class="footer-col">
+      <h5 style="color: white; font-weight: 700; margin-bottom: 16px; font-size: 14px; text-transform: uppercase;">Fly</h5>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="margin-bottom: 8px;"><a href="prices.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Adults</a></li>
+        <li style="margin-bottom: 8px;"><a href="kids.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Kids &amp; Families</a></li>
+        <li style="margin-bottom: 8px;"><a href="pro.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Pro Flyers</a></li>
+        <li><a href="birthdays.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Birthdays</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5 style="color: white; font-weight: 700; margin-bottom: 16px; font-size: 14px; text-transform: uppercase;">Info</h5>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="margin-bottom: 8px;"><a href="about.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">About us</a></li>
+        <li style="margin-bottom: 8px;"><a href="faq.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">FAQ</a></li>
+        <li style="margin-bottom: 8px;"><a href="contact.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Contact</a></li>
+        <li><a href="conditions.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Conditions</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,0.6); font-size: 14px;">
+    <span>© 2026 Luxfly Indoor Skydiving</span>
+    <div style="display:flex;gap:24px;"><a href="conditions.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Terms</a><a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none;">Privacy</a></div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY>60)},{passive:true});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+
+<script src="js/nav.js"></script>
+</body>
+</html>

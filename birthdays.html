@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Parties — Luxfly Indoor Skydiving</title>
+<meta name="description" content="Birthday parties at Luxfly. From kids to adults. The birthday they'll never forget.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.hero {
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(240,44,184,0.08) 100%), url('https://indoorskydive.lu/img/kids.jpg') center/cover;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 80px 48px;
+}
+
+.hero h1 {
+  font-family: Montserrat;
+  font-size: 72px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  max-width: 800px;
+  font-style: italic;
+}
+
+.hero-sub {
+  font-size: 22px;
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.intro-section {
+  background: #ffffff;
+  padding: 100px 48px;
+}
+
+.intro-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.intro-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.intro-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.intro-text {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.intro-text p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.intro-text .note {
+  color: #666;
+  font-size: 14px;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.pull-quote {
+  background: #f7f7f7;
+  padding: 60px 48px;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 32px;
+  font-weight: 800;
+  color: #111;
+  font-style: italic;
+  line-height: 1.4;
+  margin: 80px auto;
+  max-width: 900px;
+}
+
+.pull-quote.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.pull-quote.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.packages-section {
+  background: #fff5fb;
+  padding: 80px 48px;
+}
+
+.packages-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.packages-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.packages-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.packages-section h3 {
+  font-size: 13px;
+  color: #666;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.packages-list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.package-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+  padding: 32px 0;
+  border-bottom: 1px solid #fbe5f0;
+  transition: all 0.3s ease;
+}
+
+.package-item:hover {
+  padding-left: 8px;
+}
+
+.package-item:last-child {
+  border-bottom: none;
+}
+
+.package-name {
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 5px;
+}
+
+.package-meta {
+  color: #f02cb8;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.package-desc {
+  color: #999;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.package-price {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 900;
+  color: #f02cb8;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.included-section {
+  background: #f7f7f7;
+  padding: 80px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.included-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.included-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.included-col h2 {
+  font-family: Montserrat;
+  font-size: 32px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 25px;
+}
+
+.included-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.included-col li {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.included-col li:before {
+  content: "✓ ";
+  color: #f02cb8;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.ages-section {
+  background: #ffffff;
+  padding: 100px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.ages-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.ages-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ages-section img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  order: -1;
+}
+
+.ages-text .label {
+  color: #f02cb8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.ages-text h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 30px;
+}
+
+.ages-text p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.booking-section {
+  background: #fff5fb;
+  padding: 80px 48px;
+}
+
+.booking-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.step {
+  text-align: center;
+}
+
+.step.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.step.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.step-num {
+  font-family: Montserrat;
+  font-size: 80px;
+  font-weight: 900;
+  color: #f02cb8;
+  margin-bottom: 15px;
+  line-height: 0.9;
+}
+
+.step h3 {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 12px;
+}
+
+.step p {
+  color: #666;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.cta-final {
+  background: #ffffff;
+  padding: 80px 48px;
+  text-align: center;
+}
+
+.cta-final h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 40px;
+}
+
+.button-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.btn {
+  background: #f02cb8;
+  color: white;
+  padding: 16px 40px;
+  border: none;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #d9219f;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #f02cb8;
+  color: #f02cb8;
+}
+
+.btn-secondary:hover {
+  background: rgba(240, 44, 184, 0.1);
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 44px;
+  }
+  
+  .included-section, .ages-section, .steps-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ages-section img {
+    order: 0;
+  }
+  
+  .package-price {
+    text-align: left;
+  }
+  
+  .button-group {
+    flex-direction: column;
+  }
+
+  .step-num {
+    font-size: 48px;
+  }
+
+  .pull-quote {
+    font-size: 24px;
+  }
+}
+</style>
+</head>
+<body class="light">
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 28" width="82" height="28">
+  <defs>
+    <linearGradient id="lsg" gradientUnits="userSpaceOnUse" x1="52" y1="1" x2="34" y2="27">
+      <stop offset="0%" class="lux-stop"/>
+      <stop offset="100%" stop-color="#f02cb8"/>
+    </linearGradient>
+    <clipPath id="lcl" clipPathUnits="userSpaceOnUse">
+      <polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"/>
+    </clipPath>
+    <clipPath id="lcf" clipPathUnits="userSpaceOnUse">
+      <polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"/>
+    </clipPath>
+  </defs>
+  <text x="0" y="20" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-weight="900" font-size="21" letter-spacing="-0.42" class="lux-text">LUX</text>
+  <text x="40" y="24" clip-path="url(#lcf)" font-family="Montserrat,sans-serif" font-weight="900" font-size="21" letter-spacing="-0.42" fill="#f02cb8">FLY</text>
+  <line x1="52" y1="1" x2="34" y2="27" stroke="url(#lsg)" stroke-width="2" stroke-linecap="round"/>
+</svg></a>
+  <div class="nav-right">
+    <div class="nav-menu">
+      <div class="nav-item"><a class="nav-link" href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="bachelor.html">Bachelor &amp; Bachelorette</a>
+          <a href="promotions.html">Events &amp; Promotions</a>
+          <a href="how-it-works.html">Activity Flow</a>
+          <a href="https://shop.indoorskydive.lu/store_10">Book Now</a>
+          <a href="gift-voucher.html">Buy a Gift Voucher</a>
+          <a href="photos.html">Photos &amp; Vid&eacute;os</a>
+          <a href="hot-air-balloon.html">Hot Air Balloon</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="prices.html">Indoor Skydiving</a>
+        <div class="nav-dropdown">
+          <a href="loyalty.html">Loyalty Program</a>
+          <a href="birthdays.html">Birthdays</a>
+          <a href="prices.html">Prices</a>
+          <a href="use-voucher.html">Use a Gift Voucher</a>
+          <a href="conditions.html">Conditions</a>
+          <a href="activity.html">The Activity</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="events.html">Corporate</a>
+        <div class="nav-dropdown">
+          <a href="events.html">Organize an Event</a>
+          <a href="team-building.html">Team Building</a>
+          <a href="events-pricing.html">Pricing</a>
+          <a href="quote.html">Request for Quote</a>
+          <a href="references.html">References</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="pro.html">Pro Flyers</a>
+        <div class="nav-dropdown">
+          <a href="pro-prices.html">Prices</a>
+          <a href="coaches.html">Coaches</a>
+          <a href="shared-sessions.html">Shared Session</a>
+          <a href="infrastructure.html">Infrastructure</a>
+          <a href="become-proflyer.html">Becoming Proflyer</a>
+          <a href="pro-events.html">Events and Camps</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="pilates.html">Pilates</a>
+          <a href="indoor-activities.html">Indoor Activities</a>
+          <a href="blog.html">Blog</a>
+          <a href="museum.html">Museum</a>
+          <a href="flyology.html">FLYOLOGY</a>
+          <a href="faq.html">F.A.Q.</a>
+          <a href="partners.html">Our Partners</a>
+          <a href="jobs.html">Job Vacancies</a>
+          <a href="region.html">The R&eacute;gion</a>
+          <a href="photos.html">Your Photos and Videos</a>
+          <a href="opening-hours.html">Opening Hours</a>
+          <a href="bar.html">Bar</a>
+          <a href="about.html">Who We Are</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="contact.html">Contact</a></div>
+    </div>
+    <div class="nav-item nav-lang">
+      <span class="lang-btn">EN <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none" style="opacity:0.55"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div class="nav-dropdown">
+        <a href="https://indoorskydive.lu/fr">FR</a>
+        <a href="https://indoorskydive.lu/de">DE</a>
+        <a href="https://indoorskydive.lu/lb">LB</a>
+        <a href="https://indoorskydive.lu/nl">NL</a>
+      </div>
+    </div>
+    <a href="account.html" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>My Account</a><a class="nav-book" href="https://shop.indoorskydive.lu/store_10">Book now</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div>
+    <h1>The birthday they won't stop talking about.</h1>
+    <p class="hero-sub">We handle the excitement. You handle the cake.</p>
+  </div>
+</section>
+
+<section class="intro-section reveal">
+  <h2>Why have a normal birthday?</h2>
+  <div class="intro-text">
+    <p>There's cake, there's a party room, and then there's flying. Luxfly hosts private birthday sessions for kids and adults. Your group has a dedicated instructor, a private briefing room, and flight time that goes at your pace. Whether you're eight or eighty — flying is the most memorable birthday gift there is.</p>
+    <p>Every birthday package includes full use of our briefing room, a qualified birthday instructor, and flight time tailored to your group's age and experience level. Non-flying guests are welcome to watch from our viewing area. We can handle everything from intimate celebrations to large group parties.</p>
+    <p class="note">Minimum group: 5 people. Available 7 days a week, subject to availability. Contact us at least one week in advance to book your celebration.</p>
+  </div>
+</section>
+
+<blockquote class="pull-quote reveal">"They're still talking about it. Three months later."</blockquote>
+
+<section class="packages-section reveal">
+  <h2>Birthday flight packages</h2>
+  <h3>Price per person — minimum 5 guests</h3>
+  
+  <div class="packages-list">
+    <div class="package-item">
+      <div>
+        <div class="package-name">Birthday Classic</div>
+        <div class="package-meta">1 min per person</div>
+        <div class="package-desc">Gear + briefing + flight</div>
+      </div>
+      <div class="package-price">€28</div>
+    </div>
+    
+    <div class="package-item">
+      <div>
+        <div class="package-name">Birthday Plus</div>
+        <div class="package-meta">2 min per person</div>
+        <div class="package-desc">Gear + briefing + flight + digital photos</div>
+      </div>
+      <div class="package-price">€52</div>
+    </div>
+    
+    <div class="package-item">
+      <div>
+        <div class="package-name">Birthday VIP</div>
+        <div class="package-meta">4 min per person</div>
+        <div class="package-desc">Full experience + photos + video highlight reel</div>
+      </div>
+      <div class="package-price">€105</div>
+    </div>
+    
+    <div class="package-item">
+      <div>
+        <div class="package-name">Birthday Exclusive</div>
+        <div class="package-meta">Custom time allocation</div>
+        <div class="package-desc">Full private session tailored to your group</div>
+      </div>
+      <div class="package-price">from €450</div>
+    </div>
+  </div>
+</section>
+
+<section class="included-section reveal">
+  <div class="included-col">
+    <h2>Included in all packages</h2>
+    <ul>
+      <li>Private use of the briefing room</li>
+      <li>Dedicated birthday instructor</li>
+      <li>Full flight gear for every guest</li>
+      <li>Viewing balcony for non-flying guests</li>
+      <li>Locker access for valuables</li>
+      <li>Safety briefing and equipment fitting</li>
+      <li>Post-flight debriefing</li>
+    </ul>
+  </div>
+  <div class="included-col">
+    <h2>Available add-ons</h2>
+    <ul>
+      <li>Catering: snacks & soft drinks (€5/person)</li>
+      <li>Birthday cake service (€2/slice)</li>
+      <li>Professional photos: €25 per set</li>
+      <li>Video highlight reel: €45</li>
+      <li>Meeting room for pre/post party: €60/hour</li>
+      <li>Themed briefing room setup</li>
+      <li>Custom certificates of completion</li>
+    </ul>
+  </div>
+</section>
+
+<section class="ages-section reveal">
+  <img src="https://indoorskydive.lu/img/adults.jpg" alt="Kids having birthday party">
+  <div class="ages-text">
+    <span class="label">Kids & Adults</span>
+    <h2>Works for every age.</h2>
+    <p>Kids from age 4 (minimum 120cm height) through adults up to 104. We've hosted birthday parties for five-year-olds and sixty-year-olds and the smiles are exactly the same. Each session is calibrated to the group's age and experience level.</p>
+    <p>Children's parties are supervised by parents as well as instructors. Adult parties can be as competitive or as relaxed as you'd like. We've done celebrations for brides, grooms, milestone birthdays, and milestone ages. Every birthday is special here.</p>
+  </div>
+</section>
+
+<section class="booking-section">
+  <h2>How to book a birthday</h2>
+  <div class="steps-grid">
+    <div class="step reveal">
+      <div class="step-num">01</div>
+      <h3>Get in touch</h3>
+      <p>Call us or fill in the quote form at least 7 days in advance. Tell us the birthday person's age and group size.</p>
+    </div>
+    <div class="step reveal reveal-delay-1">
+      <div class="step-num">02</div>
+      <h3>Choose your package</h3>
+      <p>Select your flight package and any add-ons you'd like. Confirm your preferred date and time.</p>
+    </div>
+    <div class="step reveal reveal-delay-2">
+      <div class="step-num">03</div>
+      <h3>Pay the deposit</h3>
+      <p>Secure your date with a 50% deposit. Balance is due 7 days before the party.</p>
+    </div>
+    <div class="step reveal reveal-delay-3">
+      <div class="step-num">04</div>
+      <h3>Show up and fly</h3>
+      <p>Arrive 15 minutes early, gear up, brief, and celebrate in the air. Unforgettable memories guaranteed.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <h2>Reserve the date.</h2>
+  <div class="button-group">
+    <a href="events.html" class="btn">Request a quote</a>
+    <a href="tel:+35227777777" class="btn btn-secondary">Call us</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">
+    <img src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg" alt="Luxfly">
+    <p>Europe's tallest indoor skydiving wind tunnel. Open 7 days a week, safe for all ages from 4 to 104.</p>
+  </div>
+  <div class="footer-col">
+    <h5>Fly</h5>
+    <ul>
+      <li><a href="prices.html">Adults</a></li>
+      <li><a href="kids.html">Kids &amp; Families</a></li>
+      <li><a href="pro.html">Pro Flyers</a></li>
+      <li><a href="birthdays.html">Birthdays</a></li>
+      <li><a href="gift-voucher.html">Gift Vouchers</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h5>Info</h5>
+    <ul>
+      <li><a href="about.html">About us</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="opening-hours.html">Opening Hours</a></li>
+      <li><a href="conditions.html">Conditions</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span>© 2026 Luxfly Indoor Skydiving</span>
+  <div style="display:flex;gap:24px;">
+    <a href="conditions.html">Terms &amp; Conditions</a>
+    <a href="#">Privacy Policy</a>
+  </div>
+</div>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY>60)},{passive:true});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<script src="js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ — Luxfly Indoor Skydiving</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .accordion-section { margin-bottom: 40px; }
+    .accordion-section h3 { color: #f02cb8; font-size: 16px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid rgba(240,44,184,0.2); }
+    .accordion-item { border-bottom: 1px solid rgba(0,0,0,0.08); }
+    .accordion-question { padding: 20px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: color 0.2s; color: #111; font-weight: 700; font-size: 16px; user-select: none; }
+    .accordion-question:hover { color: #f02cb8; }
+    .accordion-toggle { font-size: 20px; color: rgba(0,0,0,0.3); transition: color 0.2s; }
+    .accordion-item.active .accordion-toggle { color: #f02cb8; }
+    .accordion-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; color: rgba(0,0,0,0.6); line-height: 1.85; padding: 0 0; }
+    .accordion-item.active .accordion-answer { max-height: 500px; padding: 20px 0; }
+  </style>
+</head>
+<body class="light">
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 28" width="82" height="28">
+  <defs>
+    <linearGradient id="lsg" gradientUnits="userSpaceOnUse" x1="52" y1="1" x2="34" y2="27">
+      <stop offset="0%" class="lux-stop"/>
+      <stop offset="100%" stop-color="#f02cb8"/>
+    </linearGradient>
+    <clipPath id="lcl" clipPathUnits="userSpaceOnUse">
+      <polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"/>
+    </clipPath>
+    <clipPath id="lcf" clipPathUnits="userSpaceOnUse">
+      <polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"/>
+    </clipPath>
+  </defs>
+  <text x="0" y="20" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-weight="900" font-size="21" letter-spacing="-0.42" class="lux-text">LUX</text>
+  <text x="40" y="24" clip-path="url(#lcf)" font-family="Montserrat,sans-serif" font-weight="900" font-size="21" letter-spacing="-0.42" fill="#f02cb8">FLY</text>
+  <line x1="52" y1="1" x2="34" y2="27" stroke="url(#lsg)" stroke-width="2" stroke-linecap="round"/>
+</svg></a>
+  <div class="nav-right">
+    <div class="nav-menu">
+      <div class="nav-item"><a class="nav-link" href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="bachelor.html">Bachelor &amp; Bachelorette</a>
+          <a href="promotions.html">Events &amp; Promotions</a>
+          <a href="how-it-works.html">Activity Flow</a>
+          <a href="https://shop.indoorskydive.lu/store_10">Book Now</a>
+          <a href="gift-voucher.html">Buy a Gift Voucher</a>
+          <a href="photos.html">Photos &amp; Vid&eacute;os</a>
+          <a href="hot-air-balloon.html">Hot Air Balloon</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="prices.html">Indoor Skydiving</a>
+        <div class="nav-dropdown">
+          <a href="loyalty.html">Loyalty Program</a>
+          <a href="birthdays.html">Birthdays</a>
+          <a href="prices.html">Prices</a>
+          <a href="use-voucher.html">Use a Gift Voucher</a>
+          <a href="conditions.html">Conditions</a>
+          <a href="activity.html">The Activity</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="events.html">Corporate</a>
+        <div class="nav-dropdown">
+          <a href="events.html">Organize an Event</a>
+          <a href="team-building.html">Team Building</a>
+          <a href="events-pricing.html">Pricing</a>
+          <a href="quote.html">Request for Quote</a>
+          <a href="references.html">References</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="pro.html">Pro Flyers</a>
+        <div class="nav-dropdown">
+          <a href="pro-prices.html">Prices</a>
+          <a href="coaches.html">Coaches</a>
+          <a href="shared-sessions.html">Shared Session</a>
+          <a href="infrastructure.html">Infrastructure</a>
+          <a href="become-proflyer.html">Becoming Proflyer</a>
+          <a href="pro-events.html">Events and Camps</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="pilates.html">Pilates</a>
+          <a href="indoor-activities.html">Indoor Activities</a>
+          <a href="blog.html">Blog</a>
+          <a href="museum.html">Museum</a>
+          <a href="flyology.html">FLYOLOGY</a>
+          <a href="faq.html">F.A.Q.</a>
+          <a href="partners.html">Our Partners</a>
+          <a href="jobs.html">Job Vacancies</a>
+          <a href="region.html">The R&eacute;gion</a>
+          <a href="photos.html">Your Photos and Videos</a>
+          <a href="opening-hours.html">Opening Hours</a>
+          <a href="bar.html">Bar</a>
+          <a href="about.html">Who We Are</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="contact.html">Contact</a></div>
+    </div>
+    <div class="nav-item nav-lang">
+      <span class="lang-btn">EN <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none" style="opacity:0.55"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div class="nav-dropdown">
+        <a href="https://indoorskydive.lu/fr">FR</a>
+        <a href="https://indoorskydive.lu/de">DE</a>
+        <a href="https://indoorskydive.lu/lb">LB</a>
+        <a href="https://indoorskydive.lu/nl">NL</a>
+      </div>
+    </div>
+    <a href="account.html" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>My Account</a><a class="nav-book" href="https://shop.indoorskydive.lu/store_10">Book now</a>
+  </div>
+</nav>
+
+<section class="reveal" style="background: #f0f4ff; padding: 180px 48px 100px; text-align: center;">
+  <p style="color: #f02cb8; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px;">FAQ</p>
+  <h1 style="font-size: clamp(40px, 8vw, 72px); font-weight: 900; margin: 0 auto 24px; max-width: 900px; line-height: 1.2; color: #111;">Questions, answered.</h1>
+  <p style="font-size: 18px; color: rgba(0,0,0,0.55); margin: 0; max-width: 700px; margin: 0 auto; line-height: 1.6;">Everything you need to know before you book. If your question isn't here, contact us.</p>
+</section>
+
+<section class="reveal" style="background: #ffffff; padding: 80px 48px;">
+  <div style="max-width: 900px; margin: 0 auto;">
+    
+    <div class="accordion-section">
+      <h3>General</h3>
+      <div class="accordion-item">
+        <div class="accordion-question"><span>What is indoor skydiving?</span><span class="accordion-toggle">+</span></div>
+        <div class="accordion-answer">It's the experience of freefall in a vertical wind tunnel. The air column moves at up to 350 km/h and supports your body weight. No parachute, no aircraft — just you and the air.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-question"><span>How is it different from real skydiving?</span><span class="accordion-toggle">+</span></div>
+        <div class="accordion-answer">Outdoor skydiving is a one-time 60-second freefall from altitude. Indoor flying is repeatable, controlled, and teachable. Most outdoor skydivers use tunnel time to practice because the feedback is immediate and you get more air time per session.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-question"><span>Is it actually fun?</span><span class="accordion-toggle">+</span></div>
+        <div class="accordion-answer">Yes. Most people laugh for the entire first session. Some cry. All of them come back.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-question"><span>Can I watch someone else fly?</span><span class="accordion-toggle">+</span></div>
+        <div class="accordion-answer">Yes. There's a viewing gallery with floor-to-ceiling windows right next to the tunnel. Best seat in the house.</div>
+      </div>
+    </div>
+
+    <div class="accordion-section">
+      <h3>Safety</h3>
+      <div class="accordion-item">
+        <div class="accordion-question"><span>Is it safe?</span><span class="accordion-toggle">+</span></div>
+        <div class="accordion-answer">Indoor skydiving is one of the safest adventure activities available. Our instructors are certified and accompany you throughout your flight. The tunnel is inspected and maintained to European safety standards.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-question"><span>What health conditions prevent me from flying?</span><span class="accordion-toggle">+</span></div>
+        <div class="accordion-answer">Pregnancy, severe heart conditions, recent surgery (within 3 months), uncontrolled epilepsy, and severe spinal conditions are the main contraindications. If unsure, consult your GP and let us know at booking.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-question"><span>What's the minimum age?</span><span class="accordion-toggle">+</span></div>
+        <div class="accordion-answer">4 years old, and a minimum height of 120 cm. There is no upper age limit — our oldest flyer was 82.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-question"><span>Do I need to know how to swim?</span><span class="accordion-toggle">+</span></div>
+        <div class="accordion-answer">No. This has been asked. The answer is no.</div>
+      </div>
+    </div>
+
+    <div class="accordion-section">
+      <h3>Booking</h3>
+      <div class="accordion-item">
+        <div class="accordion-question"><span>How do I book?</span><span class="accordion-toggle">+</span></div>
+        <div class="accordion-answer">Online at shop.indoorskydive.lu or by phone. Walk-in bookings are accepted subject to availability.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-question"><span>Can I cancel or reschedule?</span><span class="accordion-toggle">+</span></div>
+        <div class="accordion-answer">Yes — free of charge with more than 48 hours notice. See full conditions at conditions.html.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-question"><span>How early should I arrive?</span><span class="accordion-toggle">+</span></div>
+        <div class="accordion-answer">15 minutes before your session for check-in and gear fitting.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-question"><span>Can I book for a group?</span><span class="accordion-toggle">+</span></div>
+        <div class="accordion-answer">Yes. Groups of 10+ receive discounted rates. Contact events@luxfly.lu for group bookings.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-question"><span>Do I need to book in advance?</span><span class="accordion-toggle">+</span></div>
+        <div class="accordion-answer">We recommend it, especially for weekends. Walk-ins are welcome but we can't always guarantee a slot on the day.</div>
+      </div>
+    </div>
+
+    <div class="accordion-section">
+      <h3>What to expect</h3>
+      <div class="accordion-item">
+        <div class="accordion-question"><span>What do I wear?</span><span class="accordion-toggle">+</span></div>
+        <div class="accordion-answer">Comfortable, close-fitting clothes. Trainers or lace-up shoes. No scarves, loose jewellery, or items that can catch wind.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-question"><span>Can I bring my phone in?</span><span class="accordion-toggle">+</span></div>
+        <div class="accordion-answer">No. Lockers are provided. There's a viewing area and we offer professional photography.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-question"><span>How long is a session?</span><span class="accordion-toggle">+</span></div>
+        <div class="accordion-answer">Sessions are typically 1-2 minutes of air time. Your total visit including check-in, briefing, and gear-up is usually 45-90 minutes.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-question"><span>What if I'm scared?</span><span class="accordion-toggle">+</span></div>
+        <div class="accordion-answer">Tell your instructor. They're trained to get nervous first-timers flying every single day. Going slowly is completely normal and respected.</div>
+      </div>
+    </div>
+
+    <div class="accordion-section">
+      <h3>Pricing &amp; vouchers</h3>
+      <div class="accordion-item">
+        <div class="accordion-question"><span>How much does it cost?</span><span class="accordion-toggle">+</span></div>
+        <div class="accordion-answer">Packages start from €35 for a 1-minute Discovery flight. See prices.html for full details.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-question"><span>Do gift vouchers expire?</span><span class="accordion-toggle">+</span></div>
+        <div class="accordion-answer">No. Luxfly gift vouchers never expire.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-question"><span>Can I get a refund on a voucher?</span><span class="accordion-toggle">+</span></div>
+        <div class="accordion-answer">Vouchers are non-refundable but never expire.</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-question"><span>Are there student or group discounts?</span><span class="accordion-toggle">+</span></div>
+        <div class="accordion-answer">Group discounts from 10 people. Ask about student rates at reception.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background: #0d0d0d; padding: 60px 48px; border-top: 1px solid rgba(255,255,255,0.08);">
+  <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 40px;">
+    <div class="footer-brand">
+      <img src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg" alt="Luxfly" style="height: 40px; margin-bottom: 16px;">
+      <p style="color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.6; margin: 0;">Europe's tallest indoor skydiving wind tunnel. Safe from age 4 to 104.</p>
+    </div>
+    <div class="footer-col">
+      <h5 style="color: white; font-weight: 700; margin-bottom: 16px; font-size: 14px; text-transform: uppercase;">Fly</h5>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="margin-bottom: 8px;"><a href="prices.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Adults</a></li>
+        <li style="margin-bottom: 8px;"><a href="kids.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Kids &amp; Families</a></li>
+        <li style="margin-bottom: 8px;"><a href="pro.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Pro Flyers</a></li>
+        <li><a href="birthdays.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Birthdays</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5 style="color: white; font-weight: 700; margin-bottom: 16px; font-size: 14px; text-transform: uppercase;">Info</h5>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="margin-bottom: 8px;"><a href="about.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">About us</a></li>
+        <li style="margin-bottom: 8px;"><a href="faq.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">FAQ</a></li>
+        <li style="margin-bottom: 8px;"><a href="contact.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Contact</a></li>
+        <li><a href="conditions.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Conditions</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,0.6); font-size: 14px;">
+    <span>© 2026 Luxfly Indoor Skydiving</span>
+    <div style="display:flex;gap:24px;"><a href="conditions.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Terms</a><a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none;">Privacy</a></div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY>60)},{passive:true});
+
+const accordionItems = document.querySelectorAll('.accordion-item');
+accordionItems.forEach(item => {
+  item.querySelector('.accordion-question').addEventListener('click', () => {
+    const isActive = item.classList.contains('active');
+    accordionItems.forEach(el => el.classList.remove('active'));
+    if (!isActive) item.classList.add('active');
+  });
+});
+
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+
+<script src="js/nav.js"></script>
+</body>
+</html>

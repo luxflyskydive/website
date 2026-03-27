@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get a Quote — Luxfly Indoor Skydiving</title>
+<meta name="description" content="Request a personalized quote for your event, team building, or bachelor party at Luxfly.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+body { background: #ffffff; }
+
+.hero-section {
+  background: #ffffff;
+  padding: 180px 48px 80px;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  color: #f02cb8;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+
+.hero-section h1 {
+  font-family: Montserrat;
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1.1;
+  color: #111;
+  margin: 0 0 20px 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-section p {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(0,0,0,0.55);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-intro {
+  background: #f7f7f7;
+  padding: 32px;
+  text-align: center;
+  border-radius: 4px;
+  margin-bottom: 40px;
+  font-family: Inter;
+  font-size: 15px;
+  color: rgba(0,0,0,0.55);
+}
+
+.form-section {
+  background: #ffffff;
+  padding: 80px 48px;
+}
+
+.form-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #f02cb8;
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: Inter;
+  font-size: 15px;
+  color: #111;
+  background: rgba(0,0,0,0.03);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+  background: rgba(0,0,0,0.05);
+  border-color: #f02cb8;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: Inter;
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  cursor: pointer;
+  accent-color: #f02cb8;
+  flex-shrink: 0;
+}
+
+.checkbox-item label {
+  margin: 0;
+  text-transform: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(0,0,0,0.55);
+  cursor: pointer;
+}
+
+.flex-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.flex-2 .form-group {
+  margin-bottom: 24px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: #f02cb8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  height: 56px;
+}
+
+.submit-btn:hover {
+  background: #e00a9f;
+  transform: translateY(-2px);
+}
+
+.next-steps {
+  background: #f7f7f7;
+  padding: 80px 48px;
+}
+
+.next-steps h2 {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 60px 0;
+  text-align: center;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.step {
+  text-align: center;
+}
+
+.step-number {
+  font-family: Montserrat;
+  font-size: 64px;
+  font-weight: 900;
+  color: #f02cb8;
+  margin-bottom: 16px;
+}
+
+.step h3 {
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 16px 0;
+}
+
+.step p {
+  font-family: Inter;
+  font-size: 14px;
+  color: rgba(0,0,0,0.55);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.contact-section {
+  background: #ffffff;
+  padding: 60px 48px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-section h2 {
+  font-family: Montserrat;
+  font-size: 40px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 32px 0;
+}
+
+.contact-item {
+  margin-bottom: 24px;
+}
+
+.contact-item p {
+  font-family: Inter;
+  font-size: 15px;
+  color: rgba(0,0,0,0.55);
+  margin: 0 0 8px 0;
+}
+
+.contact-link {
+  color: #f02cb8;
+  text-decoration: none;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 { font-size: 40px; }
+  .flex-2 { grid-template-columns: 1fr; gap: 24px; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .checkbox-group { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body class="light">
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 28" width="82" height="28">
+  <defs>
+    <linearGradient id="lsg" gradientUnits="userSpaceOnUse" x1="52" y1="1" x2="34" y2="27">
+      <stop offset="0%" class="lux-stop"/>
+      <stop offset="100%" stop-color="#f02cb8"/>
+    </linearGradient>
+    <clipPath id="lcl" clipPathUnits="userSpaceOnUse">
+      <polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"/>
+    </clipPath>
+    <clipPath id="lcf" clipPathUnits="userSpaceOnUse">
+      <polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"/>
+    </clipPath>
+  </defs>
+  <text x="0" y="20" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-weight="900" font-size="21" letter-spacing="-0.42" class="lux-text">LUX</text>
+  <text x="40" y="24" clip-path="url(#lcf)" font-family="Montserrat,sans-serif" font-weight="900" font-size="21" letter-spacing="-0.42" fill="#f02cb8">FLY</text>
+  <line x1="52" y1="1" x2="34" y2="27" stroke="url(#lsg)" stroke-width="2" stroke-linecap="round"/>
+</svg></a>
+  <div class="nav-right">
+    <div class="nav-menu">
+      <div class="nav-item"><a class="nav-link" href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="bachelor.html">Bachelor &amp; Bachelorette</a>
+          <a href="promotions.html">Events &amp; Promotions</a>
+          <a href="how-it-works.html">Activity Flow</a>
+          <a href="https://shop.indoorskydive.lu/store_10">Book Now</a>
+          <a href="gift-voucher.html">Buy a Gift Voucher</a>
+          <a href="photos.html">Photos &amp; Vid&eacute;os</a>
+          <a href="hot-air-balloon.html">Hot Air Balloon</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="prices.html">Indoor Skydiving</a>
+        <div class="nav-dropdown">
+          <a href="loyalty.html">Loyalty Program</a>
+          <a href="birthdays.html">Birthdays</a>
+          <a href="prices.html">Prices</a>
+          <a href="use-voucher.html">Use a Gift Voucher</a>
+          <a href="conditions.html">Conditions</a>
+          <a href="activity.html">The Activity</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="events.html">Corporate</a>
+        <div class="nav-dropdown">
+          <a href="events.html">Organize an Event</a>
+          <a href="team-building.html">Team Building</a>
+          <a href="events-pricing.html">Pricing</a>
+          <a href="quote.html">Request for Quote</a>
+          <a href="references.html">References</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="pro.html">Pro Flyers</a>
+        <div class="nav-dropdown">
+          <a href="pro-prices.html">Prices</a>
+          <a href="coaches.html">Coaches</a>
+          <a href="shared-sessions.html">Shared Session</a>
+          <a href="infrastructure.html">Infrastructure</a>
+          <a href="become-proflyer.html">Becoming Proflyer</a>
+          <a href="pro-events.html">Events and Camps</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="pilates.html">Pilates</a>
+          <a href="indoor-activities.html">Indoor Activities</a>
+          <a href="blog.html">Blog</a>
+          <a href="museum.html">Museum</a>
+          <a href="flyology.html">FLYOLOGY</a>
+          <a href="faq.html">F.A.Q.</a>
+          <a href="partners.html">Our Partners</a>
+          <a href="jobs.html">Job Vacancies</a>
+          <a href="region.html">The R&eacute;gion</a>
+          <a href="photos.html">Your Photos and Videos</a>
+          <a href="opening-hours.html">Opening Hours</a>
+          <a href="bar.html">Bar</a>
+          <a href="about.html">Who We Are</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="contact.html">Contact</a></div>
+    </div>
+    <div class="nav-item nav-lang">
+      <span class="lang-btn">EN <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none" style="opacity:0.55"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div class="nav-dropdown">
+        <a href="https://indoorskydive.lu/fr">FR</a>
+        <a href="https://indoorskydive.lu/de">DE</a>
+        <a href="https://indoorskydive.lu/lb">LB</a>
+        <a href="https://indoorskydive.lu/nl">NL</a>
+      </div>
+    </div>
+    <a href="account.html" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>My Account</a><a class="nav-book" href="https://shop.indoorskydive.lu/store_10">Book now</a>
+  </div>
+</nav>
+
+<section class="hero-section">
+  <div class="hero-eyebrow">Events</div>
+  <h1>Tell us about your event.</h1>
+  <p>Fill in the form below and we'll come back to you with availability and a personalised proposal within 24 hours.</p>
+</section>
+
+<section class="form-section">
+  <form class="form-wrapper" method="POST" action="/form-submit">
+    <div class="form-intro">
+      We'll come back to you within 24 hours with availability and a personalised proposal.
+    </div>
+
+    <div class="flex-2">
+      <div class="form-group">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+    </div>
+
+    <div class="flex-2">
+      <div class="form-group">
+        <label for="company">Company / Organisation</label>
+        <input type="text" id="company" name="company" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone number</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+    </div>
+
+    <div class="flex-2">
+      <div class="form-group">
+        <label for="date">Preferred date</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+      <div class="form-group">
+        <label for="guests">Number of guests</label>
+        <input type="number" id="guests" name="guests" min="2" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="event-type">Type of event</label>
+      <select id="event-type" name="event-type" required>
+        <option value="">— Select an option —</option>
+        <option value="team-building">Team Building</option>
+        <option value="birthday">Birthday Party</option>
+        <option value="bachelor">Bachelor or Hen Party</option>
+        <option value="school">School Group</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>What are you interested in?</label>
+      <div class="checkbox-group">
+        <div class="checkbox-item">
+          <input type="checkbox" id="flight" name="interests" value="flight">
+          <label for="flight">Flight time</label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="meeting" name="interests" value="meeting">
+          <label for="meeting">Meeting room</label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="catering" name="interests" value="catering">
+          <label for="catering">Catering</label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="photography" name="interests" value="photography">
+          <label for="photography">Photography</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="requirements">Tell us more about your event</label>
+      <textarea id="requirements" name="requirements" placeholder="Any other details, requirements, or special requests..."></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">Send your request</button>
+  </form>
+</section>
+
+<section class="next-steps reveal">
+  <h2>What happens next</h2>
+  <div class="steps-grid">
+    <div class="step reveal reveal-delay-1">
+      <div class="step-number">1</div>
+      <h3>We review your request</h3>
+      <p>Same day or first thing next morning. Our team reads through and prepares a personalised response.</p>
+    </div>
+    <div class="step reveal reveal-delay-2">
+      <div class="step-number">2</div>
+      <h3>Personalised proposal</h3>
+      <p>We send availability, pricing, a suggested programme, and answer any questions you have about the experience.</p>
+    </div>
+    <div class="step reveal reveal-delay-3">
+      <div class="step-number">3</div>
+      <h3>Secure your date</h3>
+      <p>Confirm and pay a deposit to hold your date. The rest is handled by our event coordinators.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section reveal">
+  <h2>Or just call us.</h2>
+  <div class="contact-item">
+    <p>If your event is within 7 days or you'd prefer to talk it through, calling is faster.</p>
+  </div>
+  <div class="contact-item">
+    <p><strong>Phone:</strong></p>
+    <a href="tel:+352621000000" class="contact-link">+352 621 000 000</a>
+  </div>
+  <div class="contact-item">
+    <p><strong>Email:</strong></p>
+    <a href="mailto:events@luxfly.lu" class="contact-link">events@luxfly.lu</a>
+  </div>
+</section>
+
+<footer style="background: #0d0d0d; padding: 60px 48px; border-top: 1px solid rgba(255,255,255,0.08);">
+  <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 40px;">
+    <div class="footer-brand">
+      <img src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg" alt="Luxfly" style="height: 40px; margin-bottom: 16px;">
+      <p style="color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.6; margin: 0;">Europe's tallest indoor skydiving wind tunnel. Safe from age 4 to 104.</p>
+    </div>
+    <div class="footer-col">
+      <h5 style="color: white; font-weight: 700; margin-bottom: 16px; font-size: 14px; text-transform: uppercase;">Fly</h5>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="margin-bottom: 8px;"><a href="prices.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Adults</a></li>
+        <li style="margin-bottom: 8px;"><a href="kids.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Kids &amp; Families</a></li>
+        <li style="margin-bottom: 8px;"><a href="pro.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Pro Flyers</a></li>
+        <li><a href="birthdays.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Birthdays</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5 style="color: white; font-weight: 700; margin-bottom: 16px; font-size: 14px; text-transform: uppercase;">Info</h5>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="margin-bottom: 8px;"><a href="about.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">About us</a></li>
+        <li style="margin-bottom: 8px;"><a href="faq.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">FAQ</a></li>
+        <li style="margin-bottom: 8px;"><a href="contact.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Contact</a></li>
+        <li><a href="conditions.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Conditions</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,0.6); font-size: 14px;">
+    <span>© 2026 Luxfly Indoor Skydiving</span>
+    <div style="display:flex;gap:24px;"><a href="conditions.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Terms</a><a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none;">Privacy</a></div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY>60)},{passive:true});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+
+<script src="js/nav.js"></script>
+</body>
+</html>

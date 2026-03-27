@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking Conditions & Safety Rules — Luxfly</title>
+<meta name="description" content="Booking conditions, health requirements, and safety rules for Luxfly Indoor Skydiving.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.hero-type {
+  background: #ffffff;
+  padding: 160px 48px 80px;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-type h1 {
+  font-family: Montserrat;
+  font-size: 56px;
+  font-weight: 900;
+  color: #111;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  max-width: 800px;
+}
+
+.hero-type .sub {
+  font-size: 16px;
+  color: #666;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.content-section {
+  padding: 80px 48px;
+}
+
+.content-section h2 {
+  font-family: Montserrat;
+  font-size: 36px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.content-section p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 20px;
+  max-width: 1000px;
+}
+
+.content-section ul, .content-section ol {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 20px;
+  max-width: 1000px;
+  padding-left: 25px;
+}
+
+.content-section li {
+  margin-bottom: 12px;
+}
+
+.health-section {
+  background: #ffffff;
+  padding: 80px 48px;
+}
+
+.health-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.health-col h3 {
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f02cb8;
+}
+
+.health-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.health-col li {
+  color: #555;
+  font-size: 14px;
+  line-height: 2;
+  margin-bottom: 0;
+}
+
+.health-col li:before {
+  content: "• ";
+  color: #f02cb8;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.age-section {
+  background: #f7f7f7;
+  padding: 80px 48px;
+}
+
+.age-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.age-section h2 {
+  font-family: Montserrat;
+  font-size: 36px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.age-section p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.age-section strong {
+  color: #f02cb8;
+}
+
+.cancellation-section {
+  background: #ffffff;
+  padding: 80px 48px;
+}
+
+.cancellation-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.cancellation-section h2 {
+  font-family: Montserrat;
+  font-size: 36px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.policy-item {
+  background: #f7f7f7;
+  padding: 25px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border-left: 4px solid #f02cb8;
+}
+
+.policy-item strong {
+  color: #f02cb8;
+}
+
+.policy-item p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.what-to-wear-section {
+  background: #ffffff;
+  padding: 80px 48px;
+}
+
+.what-to-wear-section h2 {
+  font-family: Montserrat;
+  font-size: 36px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.wear-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.wear-col h3 {
+  font-family: Montserrat;
+  font-size: 22px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.wear-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.wear-col li {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.9;
+  margin-bottom: 10px;
+}
+
+.wear-col li:before {
+  content: "✓ ";
+  color: #f02cb8;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.rules-section {
+  background: #f7f7f7;
+  padding: 80px 48px;
+}
+
+.rules-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.rules-section h2 {
+  font-family: Montserrat;
+  font-size: 36px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.rules-list {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.rules-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.rules-list li {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.9;
+  margin-bottom: 15px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.rules-list li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #f02cb8;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .health-grid, .wear-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-type h1 {
+    font-size: 36px;
+  }
+}
+</style>
+</head>
+<body class="light">
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 28" width="82" height="28">
+  <defs>
+    <linearGradient id="lsg" gradientUnits="userSpaceOnUse" x1="52" y1="1" x2="34" y2="27">
+      <stop offset="0%" class="lux-stop"/>
+      <stop offset="100%" stop-color="#f02cb8"/>
+    </linearGradient>
+    <clipPath id="lcl" clipPathUnits="userSpaceOnUse">
+      <polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"/>
+    </clipPath>
+    <clipPath id="lcf" clipPathUnits="userSpaceOnUse">
+      <polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"/>
+    </clipPath>
+  </defs>
+  <text x="0" y="20" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-weight="900" font-size="21" letter-spacing="-0.42" class="lux-text">LUX</text>
+  <text x="40" y="24" clip-path="url(#lcf)" font-family="Montserrat,sans-serif" font-weight="900" font-size="21" letter-spacing="-0.42" fill="#f02cb8">FLY</text>
+  <line x1="52" y1="1" x2="34" y2="27" stroke="url(#lsg)" stroke-width="2" stroke-linecap="round"/>
+</svg></a>
+  <div class="nav-right">
+    <div class="nav-menu">
+      <div class="nav-item"><a class="nav-link" href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="bachelor.html">Bachelor &amp; Bachelorette</a>
+          <a href="promotions.html">Events &amp; Promotions</a>
+          <a href="how-it-works.html">Activity Flow</a>
+          <a href="https://shop.indoorskydive.lu/store_10">Book Now</a>
+          <a href="gift-voucher.html">Buy a Gift Voucher</a>
+          <a href="photos.html">Photos &amp; Vid&eacute;os</a>
+          <a href="hot-air-balloon.html">Hot Air Balloon</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="prices.html">Indoor Skydiving</a>
+        <div class="nav-dropdown">
+          <a href="loyalty.html">Loyalty Program</a>
+          <a href="birthdays.html">Birthdays</a>
+          <a href="prices.html">Prices</a>
+          <a href="use-voucher.html">Use a Gift Voucher</a>
+          <a href="conditions.html">Conditions</a>
+          <a href="activity.html">The Activity</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="events.html">Corporate</a>
+        <div class="nav-dropdown">
+          <a href="events.html">Organize an Event</a>
+          <a href="team-building.html">Team Building</a>
+          <a href="events-pricing.html">Pricing</a>
+          <a href="quote.html">Request for Quote</a>
+          <a href="references.html">References</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="pro.html">Pro Flyers</a>
+        <div class="nav-dropdown">
+          <a href="pro-prices.html">Prices</a>
+          <a href="coaches.html">Coaches</a>
+          <a href="shared-sessions.html">Shared Session</a>
+          <a href="infrastructure.html">Infrastructure</a>
+          <a href="become-proflyer.html">Becoming Proflyer</a>
+          <a href="pro-events.html">Events and Camps</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="pilates.html">Pilates</a>
+          <a href="indoor-activities.html">Indoor Activities</a>
+          <a href="blog.html">Blog</a>
+          <a href="museum.html">Museum</a>
+          <a href="flyology.html">FLYOLOGY</a>
+          <a href="faq.html">F.A.Q.</a>
+          <a href="partners.html">Our Partners</a>
+          <a href="jobs.html">Job Vacancies</a>
+          <a href="region.html">The R&eacute;gion</a>
+          <a href="photos.html">Your Photos and Videos</a>
+          <a href="opening-hours.html">Opening Hours</a>
+          <a href="bar.html">Bar</a>
+          <a href="about.html">Who We Are</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="contact.html">Contact</a></div>
+    </div>
+    <div class="nav-item nav-lang">
+      <span class="lang-btn">EN <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none" style="opacity:0.55"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div class="nav-dropdown">
+        <a href="https://indoorskydive.lu/fr">FR</a>
+        <a href="https://indoorskydive.lu/de">DE</a>
+        <a href="https://indoorskydive.lu/lb">LB</a>
+        <a href="https://indoorskydive.lu/nl">NL</a>
+      </div>
+    </div>
+    <a href="account.html" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>My Account</a><a class="nav-book" href="https://shop.indoorskydive.lu/store_10">Book now</a>
+  </div>
+</nav>
+
+<section class="hero-type">
+  <h1>Conditions of participation.</h1>
+  <p class="sub">Please read before booking. These conditions ensure a safe and enjoyable experience for everyone.</p>
+</section>
+
+<section class="health-section">
+  <h2 style="text-align: center; margin-bottom: 60px; color: #111;">Health & fitness requirements</h2>
+  <div class="health-grid">
+    <div class="health-col">
+      <h3>Who can fly</h3>
+      <ul>
+        <li>In general good health</li>
+        <li>No acute illness or infection</li>
+        <li>No severe vertigo or balance disorders</li>
+        <li>No uncontrolled fear of heights</li>
+        <li>Able to follow verbal and visual instructions</li>
+        <li>Can move limbs independently</li>
+      </ul>
+    </div>
+    <div class="health-col">
+      <h3>Must consult a doctor first</h3>
+      <ul>
+        <li>Back or neck injuries in last 12 months</li>
+        <li>Heart condition or cardiac disease</li>
+        <li>Epilepsy or seizure disorder</li>
+        <li>Recent shoulder dislocation</li>
+        <li>Pregnancy (any trimester)</li>
+        <li>Severe asthma or respiratory condition</li>
+        <li>High blood pressure (uncontrolled)</li>
+      </ul>
+    </div>
+  </div>
+  <p style="text-align: center; margin-top: 40px; color: #666; font-size: 14px;">If in doubt, consult your GP. Reception staff can advise on a case-by-case basis.</p>
+</section>
+
+<section class="age-section">
+  <div class="age-content">
+    <h2>Age & height requirements</h2>
+    <p><strong>Minimum age:</strong> 4 years old. We have successfully flown children as young as 4 and participants as old as 104.</p>
+    <p><strong>Minimum height:</strong> 120 centimeters. There is no maximum height or weight limit, though those over 130kg may need individual assessment.</p>
+    <p><strong>Under 18 requirements:</strong> Children and teenagers must be accompanied by a parent or legal guardian. A signed waiver is required from a guardian before participation. Guardians are responsible for ensuring health clearance.</p>
+    <p><strong>Waiver required:</strong> All participants regardless of age must sign a liability waiver before flying. For minors, a parent or legal guardian must sign on their behalf.</p>
+  </div>
+</section>
+
+<section class="cancellation-section">
+  <div class="cancellation-content">
+    <h2>Cancellations & changes</h2>
+    
+    <div class="policy-item">
+      <p><strong>Full refund:</strong> More than 48 hours before your session. No questions asked.</p>
+    </div>
+    
+    <div class="policy-item">
+      <p><strong>50% refund:</strong> Between 24-48 hours before your session. You'll receive 50% of the booking amount.</p>
+    </div>
+    
+    <div class="policy-item">
+      <p><strong>No refund:</strong> Less than 24 hours before your session. If you need to cancel with short notice, you forfeit the full amount.</p>
+    </div>
+    
+    <div class="policy-item">
+      <p><strong>Rescheduling:</strong> Free of charge with 48 hours' notice. Move your booking to any available date at no cost.</p>
+    </div>
+    
+    <div class="policy-item">
+      <p><strong>No-shows:</strong> If you don't arrive for your booked session without cancelling, you will be charged the full amount.</p>
+    </div>
+    
+    <div class="policy-item">
+      <p><strong>Force majeure:</strong> Illness, injury, or documented emergency with medical evidence may be handled case-by-case. Contact us immediately if circumstances prevent attendance.</p>
+    </div>
+  </div>
+</section>
+
+<section class="what-to-wear-section">
+  <h2>What to wear & bring</h2>
+  <div class="wear-grid">
+    <div class="wear-col">
+      <h3>What to wear</h3>
+      <ul>
+        <li>Comfortable, close-fitting clothes</li>
+        <li>Jeans, leggings, or tracksuit bottoms</li>
+        <li>Lace-up shoes or trainers (mandatory)</li>
+        <li>Hair tied back if shoulder-length or longer</li>
+        <li>Clothes that let you move freely</li>
+      </ul>
+    </div>
+    <div class="wear-col">
+      <h3>Don't wear into the tunnel</h3>
+      <ul>
+        <li>Scarves or loose neckwear</li>
+        <li>Loose jewellery or hair clips</li>
+        <li>Watches or bulky rings</li>
+        <li>Glasses (contact lenses are fine)</li>
+        <li>Anything that can catch the wind</li>
+        <li>Hats or hoods (not secured)</li>
+      </ul>
+    </div>
+  </div>
+  <p style="text-align: center; margin-top: 40px; color: #666; font-size: 14px; max-width: 900px; margin-left: auto; margin-right: auto;">Secure lockers are provided for all valuables. Anything not secured will be removed from the tunnel before entry.</p>
+</section>
+
+<section class="rules-section">
+  <div class="rules-content">
+    <h2>House rules & facility guidelines</h2>
+    <div class="rules-list">
+      <ul>
+        <li>Follow all instructor instructions at all times without exception</li>
+        <li>No food or drink inside the tunnel or gear room (water bottle in waiting area is fine)</li>
+        <li>No alcohol or recreational substances before flying</li>
+        <li>No personal photography inside the tunnel (professional photos available)</li>
+        <li>Be respectful of other flyers' time and space</li>
+        <li>Children under 4 are welcome to watch from the viewing area but cannot enter the tunnel</li>
+        <li>Report any physical discomfort or concern immediately to your instructor</li>
+        <li>Do not attempt tricks or moves not approved by your instructor</li>
+        <li>Smoking is prohibited throughout the facility</li>
+        <li>Lost or damaged personal items are not the responsibility of Luxfly</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="content-section" style="background: #f7f7f7;">
+  <h2>Liability & waivers</h2>
+  <p>By participating in indoor skydiving, you acknowledge the inherent risks of the activity. While our facility operates to the highest safety standards and all instructors are fully certified, accidents can occur. All participants must sign a comprehensive liability waiver accepting these risks. For minors, the parent or legal guardian assumes full responsibility.</p>
+  <p>Luxfly is insured for recreational flight activities. Participants are encouraged to check their own travel or sports insurance coverage before booking.</p>
+</section>
+
+<section class="content-section">
+  <h2>Questions or concerns?</h2>
+  <p>If you have any questions about these conditions, please contact us directly. Our team can provide clarification on any policy or discuss individual circumstances that may require special consideration. Phone number and email are available on our contact page.</p>
+  <p style="color: #666; font-size: 14px; margin-top: 30px;">Last updated: March 2026</p>
+</section>
+
+<footer>
+  <div class="footer-brand">
+    <img src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg" alt="Luxfly">
+    <p>Europe's tallest indoor skydiving wind tunnel. Open 7 days a week, safe for all ages from 4 to 104.</p>
+  </div>
+  <div class="footer-col">
+    <h5>Fly</h5>
+    <ul>
+      <li><a href="prices.html">Adults</a></li>
+      <li><a href="kids.html">Kids &amp; Families</a></li>
+      <li><a href="pro.html">Pro Flyers</a></li>
+      <li><a href="birthdays.html">Birthdays</a></li>
+      <li><a href="gift-voucher.html">Gift Vouchers</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h5>Info</h5>
+    <ul>
+      <li><a href="about.html">About us</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="opening-hours.html">Opening Hours</a></li>
+      <li><a href="conditions.html">Conditions</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span>© 2026 Luxfly Indoor Skydiving</span>
+  <div style="display:flex;gap:24px;">
+    <a href="conditions.html">Terms &amp; Conditions</a>
+    <a href="#">Privacy Policy</a>
+  </div>
+</div>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY>60)},{passive:true});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<script src="js/nav.js"></script>
+</body>
+</html>

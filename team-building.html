@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Building — Luxfly Indoor Skydiving</title>
+<meta name="description" content="Strengthen your team with an unforgettable team building experience at Luxfly. Indoor skydiving for 2-250 people.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+body { background: #f0f4ff; }
+
+.hero-section {
+  background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.25) 60%, rgba(0,0,0,0.08) 100%), url('https://indoorskydive.lu/img/groups.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.hero-content {
+  color: white;
+  padding-left: 48px;
+  max-width: 700px;
+}
+
+.hero-eyebrow {
+  color: #f02cb8;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+
+.hero-section h1 {
+  font-family: Montserrat;
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 20px 0;
+}
+
+.hero-section p {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.pull-quote {
+  font-family: Montserrat;
+  font-size: 28px;
+  font-weight: 800;
+  font-style: italic;
+  color: #111;
+  padding: 48px;
+  text-align: center;
+  margin: 80px auto;
+  max-width: 700px;
+  line-height: 1.4;
+  background: #f0f4ff;
+}
+
+.benefits-section {
+  background: #f0f4ff;
+  padding: 100px 48px;
+}
+
+.benefits-section h2 {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 60px 0;
+  text-align: center;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.benefit-card {
+  padding: 0;
+}
+
+.benefit-card h3 {
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 16px 0;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #f02cb8;
+}
+
+.benefit-card p {
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(0,0,0,0.55);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.included-section {
+  background: #f7f7f7;
+  padding: 80px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.included-left h2 {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 40px 0;
+  line-height: 1.2;
+}
+
+.included-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.included-list li {
+  font-family: Inter;
+  font-size: 15px;
+  color: rgba(0,0,0,0.55);
+  margin: 0 0 16px 0;
+  padding-left: 24px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.included-list li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #f02cb8;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.included-right h3 {
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 32px 0;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #f02cb8;
+}
+
+.addons-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.addons-list li {
+  font-family: Inter;
+  font-size: 15px;
+  color: rgba(0,0,0,0.55);
+  margin: 0 0 12px 0;
+  line-height: 1.6;
+}
+
+.timeline-section {
+  background: #ffffff;
+  padding: 80px 48px;
+}
+
+.timeline-section h2 {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 60px 0;
+}
+
+.timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 40px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #f02cb8;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 40px;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.timeline-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.timeline-time {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 700;
+  color: #f02cb8;
+  min-width: 80px;
+  flex-shrink: 0;
+}
+
+.timeline-content {
+  flex: 1;
+}
+
+.timeline-content p {
+  font-family: Inter;
+  font-size: 15px;
+  color: rgba(0,0,0,0.55);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.capacity-section {
+  background: #f0f4ff;
+  padding: 80px 48px;
+}
+
+.capacity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.capacity-stat {
+  background: #f7f7f7;
+  padding: 40px 32px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.capacity-stat .stat-number {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 900;
+  color: #f02cb8;
+  margin-bottom: 12px;
+}
+
+.capacity-stat .stat-label {
+  font-family: Inter;
+  font-size: 14px;
+  color: rgba(0,0,0,0.55);
+}
+
+.references-section {
+  background: #f7f7f7;
+  padding: 80px 48px;
+}
+
+.references-section h2 {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 60px 0;
+  text-align: center;
+}
+
+.sector-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sector-tag {
+  background: rgba(0,0,0,0.04);
+  border: 1px solid #f02cb8;
+  color: rgba(0,0,0,0.9);
+  padding: 12px 24px;
+  border-radius: 32px;
+  font-family: Inter;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.repeat-section {
+  background: #fff5fb;
+  padding: 80px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.repeat-image {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  background-image: url('https://indoorskydive.lu/img/pro.jpg');
+}
+
+.repeat-content h3 {
+  font-family: Montserrat;
+  font-size: 13px;
+  font-weight: 700;
+  color: #f02cb8;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0 0 20px 0;
+}
+
+.repeat-content h2 {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 32px 0;
+  line-height: 1.2;
+}
+
+.repeat-content p {
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(0,0,0,0.55);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.cta-section {
+  background: #f0f4ff;
+  padding: 100px 48px;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 20px 0;
+}
+
+.cta-section p {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(0,0,0,0.55);
+  margin: 0 0 40px 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-primary {
+  display: inline-block;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 16px 48px;
+  background: #f02cb8;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #e00a9f;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 { font-size: 40px; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .included-section { grid-template-columns: 1fr; gap: 40px; }
+  .repeat-section { grid-template-columns: 1fr; gap: 40px; }
+  .timeline { padding-left: 30px; }
+  .timeline-item { flex-direction: column; gap: 16px; }
+}
+</style>
+</head>
+<body class="light">
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 28" width="82" height="28">
+  <defs>
+    <linearGradient id="lsg" gradientUnits="userSpaceOnUse" x1="52" y1="1" x2="34" y2="27">
+      <stop offset="0%" class="lux-stop"/>
+      <stop offset="100%" stop-color="#f02cb8"/>
+    </linearGradient>
+    <clipPath id="lcl" clipPathUnits="userSpaceOnUse">
+      <polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"/>
+    </clipPath>
+    <clipPath id="lcf" clipPathUnits="userSpaceOnUse">
+      <polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"/>
+    </clipPath>
+  </defs>
+  <text x="0" y="20" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-weight="900" font-size="21" letter-spacing="-0.42" class="lux-text">LUX</text>
+  <text x="40" y="24" clip-path="url(#lcf)" font-family="Montserrat,sans-serif" font-weight="900" font-size="21" letter-spacing="-0.42" fill="#f02cb8">FLY</text>
+  <line x1="52" y1="1" x2="34" y2="27" stroke="url(#lsg)" stroke-width="2" stroke-linecap="round"/>
+</svg></a>
+  <div class="nav-right">
+    <div class="nav-menu">
+      <div class="nav-item"><a class="nav-link" href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="bachelor.html">Bachelor &amp; Bachelorette</a>
+          <a href="promotions.html">Events &amp; Promotions</a>
+          <a href="how-it-works.html">Activity Flow</a>
+          <a href="https://shop.indoorskydive.lu/store_10">Book Now</a>
+          <a href="gift-voucher.html">Buy a Gift Voucher</a>
+          <a href="photos.html">Photos &amp; Vid&eacute;os</a>
+          <a href="hot-air-balloon.html">Hot Air Balloon</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="prices.html">Indoor Skydiving</a>
+        <div class="nav-dropdown">
+          <a href="loyalty.html">Loyalty Program</a>
+          <a href="birthdays.html">Birthdays</a>
+          <a href="prices.html">Prices</a>
+          <a href="use-voucher.html">Use a Gift Voucher</a>
+          <a href="conditions.html">Conditions</a>
+          <a href="activity.html">The Activity</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="events.html">Corporate</a>
+        <div class="nav-dropdown">
+          <a href="events.html">Organize an Event</a>
+          <a href="team-building.html">Team Building</a>
+          <a href="events-pricing.html">Pricing</a>
+          <a href="quote.html">Request for Quote</a>
+          <a href="references.html">References</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="pro.html">Pro Flyers</a>
+        <div class="nav-dropdown">
+          <a href="pro-prices.html">Prices</a>
+          <a href="coaches.html">Coaches</a>
+          <a href="shared-sessions.html">Shared Session</a>
+          <a href="infrastructure.html">Infrastructure</a>
+          <a href="become-proflyer.html">Becoming Proflyer</a>
+          <a href="pro-events.html">Events and Camps</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="pilates.html">Pilates</a>
+          <a href="indoor-activities.html">Indoor Activities</a>
+          <a href="blog.html">Blog</a>
+          <a href="museum.html">Museum</a>
+          <a href="flyology.html">FLYOLOGY</a>
+          <a href="faq.html">F.A.Q.</a>
+          <a href="partners.html">Our Partners</a>
+          <a href="jobs.html">Job Vacancies</a>
+          <a href="region.html">The R&eacute;gion</a>
+          <a href="photos.html">Your Photos and Videos</a>
+          <a href="opening-hours.html">Opening Hours</a>
+          <a href="bar.html">Bar</a>
+          <a href="about.html">Who We Are</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="contact.html">Contact</a></div>
+    </div>
+    <div class="nav-item nav-lang">
+      <span class="lang-btn">EN <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none" style="opacity:0.55"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div class="nav-dropdown">
+        <a href="https://indoorskydive.lu/fr">FR</a>
+        <a href="https://indoorskydive.lu/de">DE</a>
+        <a href="https://indoorskydive.lu/lb">LB</a>
+        <a href="https://indoorskydive.lu/nl">NL</a>
+      </div>
+    </div>
+    <a href="account.html" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>My Account</a><a class="nav-book" href="https://shop.indoorskydive.lu/store_10">Book now</a>
+  </div>
+</nav>
+
+<div class="hero-section">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Corporate</div>
+    <h1>Strengthen your team. Together in freefall.</h1>
+    <p>There's nothing like an experience that gets everyone out of their comfort zone at the same time.</p>
+  </div>
+</div>
+
+<section class="benefits-section reveal">
+  <h2>Why teams love Luxfly</h2>
+  <div class="benefits-grid">
+    <div class="benefit-card reveal reveal-delay-1">
+      <h3>Real cohesion, not trust falls</h3>
+      <p>Flying puts everyone on the same level. The CEO and the intern are both beginners in the tunnel. There's no hiding, no hierarchy, just team.</p>
+    </div>
+    <div class="benefit-card reveal reveal-delay-2">
+      <h3>A challenge everyone can do</h3>
+      <p>Unlike many extreme activities, indoor skydiving is genuinely accessible to everyone. Our instructors make sure every single person flies.</p>
+    </div>
+    <div class="benefit-card reveal reveal-delay-3">
+      <h3>Adaptable to your group</h3>
+      <p>Whether it's 8 people for an afternoon or 200 people for a full-day corporate retreat, we can structure the day around your needs.</p>
+    </div>
+    <div class="benefit-card reveal reveal-delay-1">
+      <h3>More than flying</h3>
+      <p>Use our meeting rooms before or after. Run a workshop. Have a debrief over food. Luxfly can be the venue for your whole day, not just the activity.</p>
+    </div>
+  </div>
+</section>
+
+<blockquote class="pull-quote reveal">"The CEO and the intern are both beginners in the tunnel. There's no hierarchy. Just team."</blockquote>
+
+<section class="included-section reveal">
+  <div class="included-left">
+    <h2>What's always included</h2>
+    <ul class="included-list">
+      <li>Dedicated event coordinator from first contact</li>
+      <li>Pre-event briefing packs for participants</li>
+      <li>Full flight gear for all participants</li>
+      <li>Exclusive tunnel time during your session</li>
+      <li>Private briefing room</li>
+      <li>Instructor allocation (typically 1 per 6 flyers)</li>
+      <li>Viewing gallery access</li>
+      <li>Post-flight debrief space</li>
+    </ul>
+  </div>
+  <div class="included-right">
+    <h3>Add-ons available</h3>
+    <ul class="addons-list">
+      <li><strong>Meeting room:</strong> €80/hour</li>
+      <li><strong>Catering (snacks):</strong> from €18/person</li>
+      <li><strong>Catering (full meal):</strong> from €45/person</li>
+      <li><strong>Professional photography:</strong> €150 flat</li>
+      <li><strong>Video production:</strong> €250 for highlight reel</li>
+      <li><strong>Branded merchandise:</strong> on request</li>
+    </ul>
+  </div>
+</section>
+
+<section class="timeline-section reveal">
+  <h2>What a corporate day looks like</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-time">09:30</div>
+      <div class="timeline-content">
+        <p><strong>Arrival, coffee, welcome brief</strong> in the meeting room. We set the tone and answer any questions about the activity.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">10:00</div>
+      <div class="timeline-content">
+        <p><strong>Safety briefing and gear-up.</strong> Everyone gets suited up and ready. Our instructors go through safety and technique.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">10:30</div>
+      <div class="timeline-content">
+        <p><strong>First group begins flying</strong> (rotating groups). While some fly, others watch or relax. Everyone gets their time.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">12:30</div>
+      <div class="timeline-content">
+        <p><strong>Lunch on site.</strong> We can provide catering or you can bring your own. There's plenty of time to debrief and recharge.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">13:30</div>
+      <div class="timeline-content">
+        <p><strong>Second activity block or informal workshop.</strong> More flying time or a structured debrief session in the meeting room.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">15:00</div>
+      <div class="timeline-content">
+        <p><strong>Debrief and open tunnel time.</strong> Anyone who wants to fly again gets another go. A chance to wind down together.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">16:00</div>
+      <div class="timeline-content">
+        <p><strong>End of programme.</strong> Plenty of time for showers and changing. Everyone heads home with memories and sore cheeks from smiling.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="capacity-section reveal">
+  <div class="capacity-grid">
+    <div class="capacity-stat">
+      <div class="stat-number">2–250</div>
+      <div class="stat-label">Participants</div>
+    </div>
+    <div class="capacity-stat">
+      <div class="stat-number">7 days</div>
+      <div class="stat-label">A week</div>
+    </div>
+    <div class="capacity-stat">
+      <div class="stat-number">2–8 hrs</div>
+      <div class="stat-label">Programme length</div>
+    </div>
+    <div class="capacity-stat">
+      <div class="stat-number">60</div>
+      <div class="stat-label">Person meeting room</div>
+    </div>
+  </div>
+</section>
+
+<section class="references-section reveal">
+  <h2>Companies that have flown with us</h2>
+  <div class="sector-tags">
+    <div class="sector-tag">Finance</div>
+    <div class="sector-tag">Legal</div>
+    <div class="sector-tag">Tech</div>
+    <div class="sector-tag">FMCG</div>
+    <div class="sector-tag">Consulting</div>
+    <div class="sector-tag">Energy</div>
+    <div class="sector-tag">Automotive</div>
+    <div class="sector-tag">Public Sector</div>
+    <div class="sector-tag">Hospitality</div>
+    <div class="sector-tag">Healthcare</div>
+  </div>
+</section>
+
+<section class="repeat-section reveal">
+  <div class="repeat-image"></div>
+  <div class="repeat-content">
+    <h3>Why they return</h3>
+    <h2>Because it works.</h2>
+    <p>Most corporate clients return once a year. Some come twice. The activity scales with experience. A team that flew together last year can advance to more complex manoeuvres this year. The experience grows with your team, making every visit feel fresh and new.</p>
+  </div>
+</section>
+
+<section class="cta-section reveal">
+  <h2>Let's plan your team day.</h2>
+  <p>Tell us how many people, what date, and what you're hoping for. We'll handle the rest.</p>
+  <a href="quote.html" class="btn-primary">Request a team building quote</a>
+</section>
+
+<footer style="background: #0d0d0d; padding: 60px 48px; border-top: 1px solid rgba(255,255,255,0.08);">
+  <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 40px;">
+    <div class="footer-brand">
+      <img src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg" alt="Luxfly" style="height: 40px; margin-bottom: 16px;">
+      <p style="color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.6; margin: 0;">Europe's tallest indoor skydiving wind tunnel. Safe from age 4 to 104.</p>
+    </div>
+    <div class="footer-col">
+      <h5 style="color: white; font-weight: 700; margin-bottom: 16px; font-size: 14px; text-transform: uppercase;">Fly</h5>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="margin-bottom: 8px;"><a href="prices.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Adults</a></li>
+        <li style="margin-bottom: 8px;"><a href="kids.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Kids &amp; Families</a></li>
+        <li style="margin-bottom: 8px;"><a href="pro.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Pro Flyers</a></li>
+        <li><a href="birthdays.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Birthdays</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5 style="color: white; font-weight: 700; margin-bottom: 16px; font-size: 14px; text-transform: uppercase;">Info</h5>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="margin-bottom: 8px;"><a href="about.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">About us</a></li>
+        <li style="margin-bottom: 8px;"><a href="faq.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">FAQ</a></li>
+        <li style="margin-bottom: 8px;"><a href="contact.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Contact</a></li>
+        <li><a href="conditions.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Conditions</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,0.6); font-size: 14px;">
+    <span>© 2026 Luxfly Indoor Skydiving</span>
+    <div style="display:flex;gap:24px;"><a href="conditions.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Terms</a><a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none;">Privacy</a></div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY>60)},{passive:true});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+
+<script src="js/nav.js"></script>
+</body>
+</html>

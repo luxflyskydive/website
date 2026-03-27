@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxfly — Indoor Skydiving Luxembourg</title>
+<meta name="description" content="Europe's tallest indoor skydiving wind tunnel. 35 metres. 350 km/h. At the Luxembourg border.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --pink: #f02cb8;
+  --black: #000;
+  --off-black: #0a0a0a;
+  --white: #fff;
+  --grey: #888;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--black); color: var(--white); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 28px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  mix-blend-mode: normal;
+  transition: padding 0.4s ease, background 0.4s ease;
+}
+nav.dark { background: rgba(0,0,0,0.92); backdrop-filter: blur(16px); padding: 18px 48px; }
+
+.nav-right { display: flex; align-items: center; gap: 40px; }
+.nav-link { font-size: 12px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+.nav-link:hover { color: #fff; }
+.nav-book {
+  font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 800;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  background: var(--pink); color: #fff;
+  padding: 10px 24px; border-radius: 2px;
+  transition: opacity 0.2s;
+}
+.nav-book:hover { opacity: 0.85; }
+
+/* Language switcher */
+.nav-lang .lang-btn { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.6); transition: color 0.2s; display: flex; align-items: center; gap: 5px; cursor: default; }
+.nav-lang:hover .lang-btn { color: #fff; }
+.nav-lang .nav-dropdown { min-width: 72px; }
+.nav-lang .nav-dropdown a { text-align: center; padding: 9px 16px; }
+
+/* ── SECTION DIVIDERS (dark page) ── */
+.statement        { background: #0e0e0e; border-top: 1px solid rgba(255,255,255,0.07); border-bottom: 1px solid rgba(255,255,255,0.07); }
+.editorial        { background: #000;    border-top: 1px solid rgba(255,255,255,0.07); }
+.editorial.reverse{ background: #0e0e0e; border-top: 1px solid rgba(255,255,255,0.07); }
+.exp-strip        { background: #141414; border-top: 1px solid rgba(255,255,255,0.07); border-bottom: 1px solid rgba(255,255,255,0.07); }
+.pricing          { background: #0e0e0e; border-top: 1px solid rgba(255,255,255,0.07); }
+.location         { background: #141414; border-top: 1px solid rgba(255,255,255,0.07); }
+
+/* ── HERO ── */
+.hero {
+  position: relative; height: 100vh; min-height: 600px;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  overflow: hidden;
+}
+.hero-video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  z-index: 0;
+}
+.hero-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%);
+}
+.hero-content {
+  position: relative; z-index: 2;
+  padding: 0 48px 64px;
+}
+.hero-eyebrow {
+  font-size: 11px; font-weight: 400; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--pink);
+  margin-bottom: 20px;
+}
+.hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(52px, 8.5vw, 130px);
+  font-weight: 900; line-height: 0.92;
+  letter-spacing: -0.03em;
+  max-width: 900px;
+  margin-bottom: 40px;
+}
+.hero-title em { font-style: italic; color: var(--pink); }
+.hero-actions { display: flex; align-items: center; gap: 32px; }
+.btn-primary {
+  font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 800;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  background: var(--pink); color: #fff;
+  padding: 16px 40px; border-radius: 2px;
+  transition: opacity 0.2s;
+}
+.btn-primary:hover { opacity: 0.85; }
+.hero-scroll-hint {
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  display: flex; align-items: center; gap: 12px;
+}
+.hero-scroll-hint::before {
+  content: ''; display: block;
+  width: 40px; height: 1px; background: rgba(255,255,255,0.3);
+}
+</style>
+
+<style>
+/* ── STATEMENT ── */
+.statement {
+  padding: 0;
+  display: grid; grid-template-columns: 45% 55%; gap: 0; align-items: stretch;
+  min-height: 70vh;
+}
+.statement-left { padding-right: 0; overflow: hidden; }
+.statement-left img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.statement-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(100px, 18vw, 280px);
+  font-weight: 900; line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.08);
+  letter-spacing: -0.04em;
+  user-select: none;
+}
+.statement-right { padding: 80px 64px; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid rgba(255,255,255,0.08); order: -1; }
+.statement-label {
+  font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--pink); margin-bottom: 20px;
+}
+.statement-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(22px, 2.8vw, 38px);
+  font-weight: 800; line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.statement-body {
+  margin-top: 24px; font-size: 15px; line-height: 1.8;
+  color: rgba(255,255,255,0.5); max-width: 420px;
+}
+
+/* ── EDITORIAL SPLIT ── */
+.editorial {
+  display: grid; grid-template-columns: 55% 45%; min-height: 80vh;
+  overflow: hidden;
+}
+.editorial.reverse { grid-template-columns: 45% 55%; }
+.editorial-image { position: relative; overflow: hidden; }
+.editorial-image img { width: 100%; height: 100%; object-fit: cover; }
+.editorial-body {
+  background: var(--off-black);
+  padding: 80px 64px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.editorial-tag {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--pink); margin-bottom: 28px;
+  display: flex; align-items: center; gap: 12px;
+}
+.editorial-tag::before { content: ''; width: 32px; height: 1px; background: var(--pink); }
+.editorial-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(30px, 3.5vw, 52px);
+  font-weight: 900; line-height: 1.1; letter-spacing: -0.025em;
+  margin-bottom: 24px;
+}
+.editorial-title span { color: var(--pink); }
+.editorial-desc {
+  font-size: 15px; line-height: 1.85; color: rgba(255,255,255,0.55);
+  max-width: 400px; margin-bottom: 36px;
+}
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 4px;
+  transition: border-color 0.2s, color 0.2s; width: fit-content;
+}
+.btn-ghost:hover { border-color: var(--pink); color: var(--pink); }
+.btn-ghost svg { transition: transform 0.2s; }
+.btn-ghost:hover svg { transform: translateX(4px); }
+</style>
+
+<style>
+/* ── EXPERIENCES STRIP ── */
+.exp-strip { padding: 120px 0; overflow: hidden; }
+.exp-strip-header { padding: 0 48px; margin-bottom: 60px; display: flex; align-items: flex-end; justify-content: space-between; }
+.exp-strip-header h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 900; letter-spacing: -0.025em; line-height: 1.1;
+}
+.exp-scroll {
+  display: flex; gap: 3px; padding: 0 48px;
+  overflow-x: auto; scrollbar-width: none; cursor: grab;
+}
+.exp-scroll::-webkit-scrollbar { display: none; }
+.exp-card {
+  flex: 0 0 340px; height: 480px; position: relative; overflow: hidden;
+  border-radius: 0;
+}
+.exp-card img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.exp-card:hover img { transform: scale(1.05); }
+.exp-card-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, transparent 55%);
+  transition: opacity 0.3s;
+}
+.exp-card-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 28px 24px; }
+.exp-card-cat {
+  font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--pink); margin-bottom: 6px;
+}
+.exp-card-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px; font-weight: 800; line-height: 1.2;
+}
+.exp-card-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: rgba(255,255,255,0.5);
+  margin-top: 10px; opacity: 0; transform: translateY(6px);
+  transition: all 0.3s;
+}
+.exp-card:hover .exp-card-link { opacity: 1; transform: translateY(0); }
+
+/* ── PRICING ── */
+.pricing { padding: 120px 48px; border-top: 1px solid rgba(255,255,255,0.06); }
+.pricing-header { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-bottom: 72px; align-items: end; }
+.pricing-header h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(36px, 5vw, 72px);
+  font-weight: 900; letter-spacing: -0.03em; line-height: 1;
+}
+.pricing-header p { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.8; }
+.pricing-list { display: flex; flex-direction: column; }
+.pricing-item {
+  display: grid; grid-template-columns: 1fr auto;
+  align-items: center; gap: 24px;
+  padding: 36px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  transition: padding 0.3s;
+  cursor: default;
+}
+.pricing-item:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
+.pricing-item:hover { padding-left: 12px; }
+.pricing-left { display: flex; align-items: baseline; gap: 24px; }
+.pricing-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(18px, 2.2vw, 28px); font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.pricing-desc { font-size: 14px; color: rgba(255,255,255,0.4); }
+.pricing-price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(20px, 2.5vw, 32px); font-weight: 900;
+  color: var(--pink); white-space: nowrap;
+}
+.pricing-from { font-size: 11px; color: rgba(255,255,255,0.3); display: block; text-align: right; margin-bottom: 2px; letter-spacing: 0.05em; }
+</style>
+
+<style>
+/* ── FULL BLEED CTA ── */
+.fullbleed {
+  position: relative; height: 80vh; min-height: 500px;
+  display: flex; align-items: flex-end;
+  overflow: hidden;
+}
+.fullbleed img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; z-index: 0;
+}
+.fullbleed-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 60%);
+}
+.fullbleed-content {
+  position: relative; z-index: 2;
+  padding: 0 48px 72px;
+  display: grid; grid-template-columns: 1fr auto;
+  align-items: flex-end; gap: 40px; width: 100%;
+}
+.fullbleed-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(36px, 6vw, 96px);
+  font-weight: 900; line-height: 1; letter-spacing: -0.03em;
+}
+.fullbleed-title span { color: var(--pink); }
+.fullbleed-right { text-align: right; flex-shrink: 0; }
+.fullbleed-sub { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 20px; line-height: 1.6; }
+
+/* ── LOCATION ── */
+.location {
+  padding: 120px 48px; display: grid;
+  grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+}
+.location-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 900; letter-spacing: -0.025em;
+  line-height: 1.1; margin-bottom: 40px;
+}
+.loc-details { display: flex; flex-direction: column; gap: 28px; }
+.loc-detail h4 { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pink); margin-bottom: 6px; }
+.loc-detail p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+.loc-detail a { color: rgba(255,255,255,0.7); transition: color 0.2s; }
+.loc-detail a:hover { color: var(--pink); }
+.location-map { border-radius: 0; overflow: hidden; height: 380px; filter: grayscale(30%) brightness(0.7); }
+.location-map iframe { width: 100%; height: 100%; border: none; }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding: 64px 48px;
+  display: grid; grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+}
+.footer-brand img { height: 30px; margin-bottom: 16px; }
+.footer-brand p { font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.7; max-width: 260px; }
+.footer-col h5 { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 16px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a { font-size: 13px; color: rgba(255,255,255,0.5); transition: color 0.2s; }
+.footer-col a:hover { color: #fff; }
+.footer-bottom {
+  padding: 24px 48px; border-top: 1px solid rgba(255,255,255,0.05);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 12px; color: rgba(255,255,255,0.25);
+}
+.footer-bottom a { color: rgba(255,255,255,0.25); transition: color 0.2s; }
+.footer-bottom a:hover { color: rgba(255,255,255,0.6); }
+
+/* ── REVEAL ANIMATIONS ── */
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.in { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ── MOBILE ── */
+@media (max-width: 900px) {
+  nav { padding: 20px 24px; }
+  nav.dark { padding: 14px 24px; }
+  .nav-right .nav-link { display: none; }
+  .hero-content, .statement, .location { padding-left: 24px; padding-right: 24px; }
+  .statement { grid-template-columns: 1fr; }
+  .statement-right { border-left: none; border-top: 1px solid rgba(255,255,255,0.08); padding-left: 0; padding-top: 32px; margin-top: 24px; }
+  .editorial { grid-template-columns: 1fr; }
+  .editorial.reverse .editorial-image { order: -1; }
+  .editorial-image { min-height: 300px; }
+  .editorial-body { padding: 48px 24px; }
+  .exp-card { flex: 0 0 280px; height: 380px; }
+  .pricing, .location { grid-template-columns: 1fr; }
+  .pricing-header { grid-template-columns: 1fr; gap: 16px; }
+  .fullbleed-content { grid-template-columns: 1fr; }
+  .fullbleed-right { text-align: left; }
+  footer { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 28" width="82" height="28">
+  <defs>
+    <linearGradient id="lsg" gradientUnits="userSpaceOnUse" x1="52" y1="1" x2="34" y2="27">
+      <stop offset="0%" class="lux-stop"/>
+      <stop offset="100%" stop-color="#f02cb8"/>
+    </linearGradient>
+    <clipPath id="lcl" clipPathUnits="userSpaceOnUse">
+      <polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"/>
+    </clipPath>
+    <clipPath id="lcf" clipPathUnits="userSpaceOnUse">
+      <polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"/>
+    </clipPath>
+  </defs>
+  <text x="0" y="20" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-weight="900" font-size="21" letter-spacing="-0.42" class="lux-text">LUX</text>
+  <text x="40" y="24" clip-path="url(#lcf)" font-family="Montserrat,sans-serif" font-weight="900" font-size="21" letter-spacing="-0.42" fill="#f02cb8">FLY</text>
+  <line x1="52" y1="1" x2="34" y2="27" stroke="url(#lsg)" stroke-width="2" stroke-linecap="round"/>
+</svg></a>
+  <div class="nav-right">
+    <div class="nav-menu">
+      <div class="nav-item"><a class="nav-link" href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="bachelor.html">Bachelor &amp; Bachelorette</a>
+          <a href="promotions.html">Events &amp; Promotions</a>
+          <a href="how-it-works.html">Activity Flow</a>
+          <a href="https://shop.indoorskydive.lu/store_10">Book Now</a>
+          <a href="gift-voucher.html">Buy a Gift Voucher</a>
+          <a href="photos.html">Photos &amp; Vid&eacute;os</a>
+          <a href="hot-air-balloon.html">Hot Air Balloon</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="prices.html">Indoor Skydiving</a>
+        <div class="nav-dropdown">
+          <a href="loyalty.html">Loyalty Program</a>
+          <a href="birthdays.html">Birthdays</a>
+          <a href="prices.html">Prices</a>
+          <a href="use-voucher.html">Use a Gift Voucher</a>
+          <a href="conditions.html">Conditions</a>
+          <a href="activity.html">The Activity</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="events.html">Corporate</a>
+        <div class="nav-dropdown">
+          <a href="events.html">Organize an Event</a>
+          <a href="team-building.html">Team Building</a>
+          <a href="events-pricing.html">Pricing</a>
+          <a href="quote.html">Request for Quote</a>
+          <a href="references.html">References</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="pro.html">Pro Flyers</a>
+        <div class="nav-dropdown">
+          <a href="pro-prices.html">Prices</a>
+          <a href="coaches.html">Coaches</a>
+          <a href="shared-sessions.html">Shared Session</a>
+          <a href="infrastructure.html">Infrastructure</a>
+          <a href="become-proflyer.html">Becoming Proflyer</a>
+          <a href="pro-events.html">Events and Camps</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="pilates.html">Pilates</a>
+          <a href="indoor-activities.html">Indoor Activities</a>
+          <a href="blog.html">Blog</a>
+          <a href="museum.html">Museum</a>
+          <a href="flyology.html">FLYOLOGY</a>
+          <a href="faq.html">F.A.Q.</a>
+          <a href="partners.html">Our Partners</a>
+          <a href="jobs.html">Job Vacancies</a>
+          <a href="region.html">The R&eacute;gion</a>
+          <a href="photos.html">Your Photos and Videos</a>
+          <a href="opening-hours.html">Opening Hours</a>
+          <a href="bar.html">Bar</a>
+          <a href="about.html">Who We Are</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="contact.html">Contact</a></div>
+    </div>
+    <div class="nav-item nav-lang">
+      <span class="lang-btn">EN <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none" style="opacity:0.55"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <div class="nav-dropdown">
+        <a href="https://indoorskydive.lu/fr">FR</a>
+        <a href="https://indoorskydive.lu/de">DE</a>
+        <a href="https://indoorskydive.lu/lb">LB</a>
+        <a href="https://indoorskydive.lu/nl">NL</a>
+      </div>
+    </div>
+    <a href="account.html" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.6)'"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>My Account</a><a class="nav-book" href="https://shop.indoorskydive.lu/store_10">Book Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline poster="https://indoorskydive.lu/storage/images/banners/01KJ2BSVYNYATPHZWJ8JXXS51C.jpg">
+    <source src="video/luxfly.webm" type="video/webm">
+    <source src="video/luxfly.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Indoor Skydiving · Luxembourg Border</p>
+    <h1 class="hero-title">Feel what<br>it's like to<br><em>fly.</em></h1>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://shop.indoorskydive.lu/store_10">Book your flight</a>
+      <span class="hero-scroll-hint">Scroll to explore</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<section class="statement" id="experience">
+  <div class="statement-left reveal reveal-delay-1">
+    <img src="img/tunnel-flyer.jpg" alt="Indoor skydiving at Luxfly" style="object-position: center 25%;">
+  </div>
+  <div class="statement-right reveal reveal-delay-1">
+    <p class="statement-label">The tunnel</p>
+    <h2 class="statement-text">35 metres straight up. Four motors. 350 km/h of pure air.</h2>
+    <p class="statement-body">No plane. No parachute. No altitude. Just you, the airflow, and an instructor who's done this a thousand times. Luxfly runs one of the tallest and most powerful wind tunnels in the world — open to anyone from age 4.</p>
+  </div>
+</section>
+
+<!-- EDITORIAL: KIDS / FAMILIES -->
+<div class="editorial">
+  <div class="editorial-image reveal">
+    <img src="img/families.jpg" alt="Kid flying at Luxfly with instructor" style="object-position: center 30%;">
+  </div>
+  <div class="editorial-body reveal reveal-delay-1">
+    <p class="editorial-tag">For families</p>
+    <h2 class="editorial-title">They'll talk about<br>this one <span>forever.</span></h2>
+    <p class="editorial-desc">From age 4. Every flight is instructor-guided from start to finish. No experience needed, no fear of heights required. Just the biggest grins you've ever seen.</p>
+    <a class="btn-ghost" href="kids.html">
+      See kids pricing
+      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- EDITORIAL: PRO / ADULTS (reversed) -->
+<div class="editorial reverse">
+  <div class="editorial-body reveal">
+    <p class="editorial-tag">For adults & pros</p>
+    <h2 class="editorial-title">Go further<br>every <span>visit.</span></h2>
+    <p class="editorial-desc">Whether it's your first two minutes or your hundredth training session, the tunnel rewards progression. Our coaches have backgrounds in skydiving, BASE jumping, and paragliding.</p>
+    <a class="btn-ghost" href="pro.html">
+      Pro flyer sessions
+      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </a>
+  </div>
+  <div class="editorial-image reveal reveal-delay-1">
+    <img src="img/adult-flyer.jpg" alt="Adult flying at Luxfly" style="object-position: center 15%;">
+  </div>
+</div>
+
+<!-- EXPERIENCES STRIP -->
+<section class="exp-strip">
+  <div class="exp-strip-header">
+    <h2 class="reveal">Every reason<br>to come back.</h2>
+    <a class="btn-ghost reveal" href="https://indoorskydive.lu/en">
+      All experiences
+      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </a>
+  </div>
+  <div class="exp-scroll" id="expScroll">
+    <div class="exp-card">
+      <img src="https://indoorskydive.lu/img/adults.jpg" alt="Adults flying">
+      <div class="exp-card-overlay"></div>
+      <div class="exp-card-info">
+        <p class="exp-card-cat">Individual</p>
+        <h3 class="exp-card-name">Adults</h3>
+        <a class="exp-card-link" href="prices.html">Book →</a>
+      </div>
+    </div>
+    <div class="exp-card">
+      <img src="https://indoorskydive.lu/img/kids.jpg" alt="Kids flying">
+      <div class="exp-card-overlay"></div>
+      <div class="exp-card-info">
+        <p class="exp-card-cat">Ages 4+</p>
+        <h3 class="exp-card-name">Kids & Families</h3>
+        <a class="exp-card-link" href="kids.html">Book →</a>
+      </div>
+    </div>
+    <div class="exp-card">
+      <img src="https://indoorskydive.lu/img/groups.jpg" alt="Groups and corporate">
+      <div class="exp-card-overlay"></div>
+      <div class="exp-card-info">
+        <p class="exp-card-cat">Groups</p>
+        <h3 class="exp-card-name">Corporate & Events</h3>
+        <a class="exp-card-link" href="https://indoorskydive.lu/en/events">Book →</a>
+      </div>
+    </div>
+    <div class="exp-card">
+      <img src="https://indoorskydive.lu/img/pro.jpg" alt="Pro flyers">
+      <div class="exp-card-overlay"></div>
+      <div class="exp-card-info">
+        <p class="exp-card-cat">Training</p>
+        <h3 class="exp-card-name">Pro Flyers</h3>
+        <a class="exp-card-link" href="pro.html">Book →</a>
+      </div>
+    </div>
+    <div class="exp-card">
+      <img src="img/occasion-card.jpg" alt="Birthdays and events at Luxfly">
+      <div class="exp-card-overlay"></div>
+      <div class="exp-card-info">
+        <p class="exp-card-cat">Birthdays · Teambuilding</p>
+        <h3 class="exp-card-name">Something for<br>every occasion.</h3>
+        <a class="exp-card-link" href="events.html">Plan an event →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="pricing-header">
+    <h2 class="reveal">Simple,<br>honest pricing.</h2>
+    <p class="reveal reveal-delay-1">Every package includes gear, safety briefing, and a certified instructor. Gift vouchers available for all packages — they never expire.</p>
+  </div>
+  <div class="pricing-list">
+    <div class="pricing-item reveal">
+      <div class="pricing-left">
+        <span class="pricing-name">Discovery</span>
+        <span class="pricing-desc">First flight · 2 min · gear included · instructor guided</span>
+      </div>
+      <div>
+        <span class="pricing-from">from</span>
+        <span class="pricing-price">€64.90</span>
+      </div>
+    </div>
+    <div class="pricing-item reveal reveal-delay-1">
+      <div class="pricing-left">
+        <span class="pricing-name">Thrill</span>
+        <span class="pricing-desc">Extended session · 4 min · personal coaching</span>
+      </div>
+      <div>
+        <span class="pricing-from">from</span>
+        <span class="pricing-price">€99</span>
+      </div>
+    </div>
+    <div class="pricing-item reveal reveal-delay-2">
+      <div class="pricing-left">
+        <span class="pricing-name">Pro Session</span>
+        <span class="pricing-desc">8 min · full coaching · video recording</span>
+      </div>
+      <div>
+        <span class="pricing-from">from</span>
+        <span class="pricing-price">€149</span>
+      </div>
+    </div>
+    <div class="pricing-item reveal reveal-delay-3">
+      <div class="pricing-left">
+        <span class="pricing-name">Gift Voucher</span>
+        <span class="pricing-desc">Any package · never expires · digital or post</span>
+      </div>
+      <div>
+        <a class="btn-ghost" href="https://indoorskydive.lu/en/gift-voucher" style="padding-bottom:2px">
+          Buy one →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FULL BLEED CTA -->
+<div class="fullbleed">
+  <img src="https://indoorskydive.lu/storage/images/banners/01KJ2BSVYNYATPHZWJ8JXXS51C.jpg" alt="Luxfly wind tunnel">
+  <div class="fullbleed-overlay"></div>
+  <div class="fullbleed-content">
+    <h2 class="fullbleed-title reveal">Give the<br>gift of <span>flight.</span></h2>
+    <div class="fullbleed-right reveal reveal-delay-1">
+      <p class="fullbleed-sub">Delivered digitally or by post.<br>Valid for any package. Never expires.</p>
+      <a class="btn-primary" href="https://indoorskydive.lu/en/gift-voucher">Buy a gift voucher</a>
+    </div>
+  </div>
+</div>
+
+<!-- LOCATION -->
+<section class="location" id="location">
+  <div class="reveal">
+    <h2 class="location-title">Find us at<br>the Luxembourg<br>border.</h2>
+    <div class="loc-details">
+      <div class="loc-detail">
+        <h4>Address</h4>
+        <p>Next to IKEA & Décathlon<br>Visible from the E411 motorway, exit 33<br>Belgium–Luxembourg border<br><strong style="color:rgba(255,255,255,0.6)">Free parking</strong></p>
+      </div>
+      <div class="loc-detail">
+        <h4>Hours</h4>
+        <p>Monday – Friday: 10:00 – 21:00<br>Saturday – Sunday: 09:00 – 21:00<br>Open 365 days a year</p>
+      </div>
+      <div class="loc-detail">
+        <h4>Contact</h4>
+        <p>
+          <a href="tel:+35222601020">+352 22 60 10 20</a><br>
+          <a href="mailto:sales@luxfly.eu">sales@luxfly.eu</a><br>
+          <a href="https://wa.me/3223205509">WhatsApp</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="location-map reveal reveal-delay-1">
+    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=6.023%2C49.627%2C6.083%2C49.667&amp;layer=mapnik&amp;marker=49.647%2C6.053" allowfullscreen loading="lazy" style="width:100%;height:100%;border:none;"></iframe>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <img src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg" alt="Luxfly">
+    <p>Europe's tallest indoor skydiving wind tunnel. Safe, open to all ages, and genuinely unlike anything else.</p>
+  </div>
+  <div class="footer-col">
+    <h5>Fly</h5>
+    <ul>
+      <li><a href="prices.html">Adults</a></li>
+      <li><a href="kids.html">Kids</a></li>
+      <li><a href="pro.html">Pro Flyers</a></li>
+      <li><a href="team-building.html">Team Building</a></li>
+      <li><a href="birthdays.html">Birthdays</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h5>Info</h5>
+    <ul>
+      <li><a href="about.html">About us</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="opening-hours.html">Opening hours</a></li>
+      <li><a href="jobs.html">Jobs</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span>© 2026 Luxfly Indoor Skydiving</span>
+  <div style="display:flex;gap:24px">
+    <a href="conditions.html">Terms</a>
+    <a href="https://indoorskydive.lu/en">Privacy</a>
+  </div>
+</div>
+
+<script>
+// Nav on scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('dark', window.scrollY > 80);
+}, { passive: true });
+
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+reveals.forEach(el => revealObserver.observe(el));
+
+// Drag to scroll experience strip
+const scroll = document.getElementById('expScroll');
+let isDown = false, startX, left;
+scroll.addEventListener('mousedown', e => { isDown = true; startX = e.pageX - scroll.offsetLeft; left = scroll.scrollLeft; scroll.style.cursor = 'grabbing'; });
+scroll.addEventListener('mouseleave', () => { isDown = false; scroll.style.cursor = 'grab'; });
+scroll.addEventListener('mouseup', () => { isDown = false; scroll.style.cursor = 'grab'; });
+scroll.addEventListener('mousemove', e => { if (!isDown) return; e.preventDefault(); const x = e.pageX - scroll.offsetLeft; scroll.scrollLeft = left - (x - startX) * 1.4; });
+
+// Smooth anchor
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+</script>
+<script src="js/nav.js"></script>
+</body>
+</html>
