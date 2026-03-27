@@ -632,6 +632,15 @@ body.light .pull-quote { color: #111; }
     gap: 20px !important;
   }
 
+  /* Collapse 4-column grids to 2 columns (coaches, pro stats, etc.) */
+  [style*="grid-template-columns: repeat(4, 1fr)"] {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+  }
+  /* Named-class 4-column grids in individual pages */
+  .stats-grid  { grid-template-columns: 1fr 1fr !important; gap: 20px !important; }
+  .steps-grid  { grid-template-columns: 1fr 1fr !important; gap: 20px !important; }
+
   /* Shrink large gaps that become vertical spacing after grid collapses */
   [style*="gap: 80px"] { gap: 32px !important; }
 }
