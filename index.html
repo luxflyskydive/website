@@ -351,12 +351,14 @@ footer {
   nav { padding: 20px 24px; }
   nav.dark { padding: 14px 24px; }
   .nav-right .nav-link { display: none; }
-  .hero-content, .statement, .location { padding-left: 24px; padding-right: 24px; }
-  .statement { grid-template-columns: 1fr; }
-  .statement-right { border-left: none; border-top: 1px solid rgba(255,255,255,0.08); padding-left: 0; padding-top: 32px; margin-top: 24px; }
-  .editorial { grid-template-columns: 1fr; }
+  .hero-content, .location { padding-left: 24px; padding-right: 24px; }
+  .statement { grid-template-columns: 1fr; padding: 0 0 64px; }
+  .statement-left { order: -1; min-height: 280px; }
+  .statement-right { order: 0; border-left: none; border-top: 1px solid rgba(255,255,255,0.08); padding: 40px 24px 0; margin-top: 0; border-right: none; }
+  .editorial,
+  .editorial.reverse { grid-template-columns: 1fr; min-height: auto; }
   .editorial.reverse .editorial-image { order: -1; }
-  .editorial-image { min-height: 300px; }
+  .editorial-image { min-height: 280px; }
   .editorial-body { padding: 48px 24px; }
   .exp-card { flex: 0 0 280px; height: 380px; }
   .pricing, .location { grid-template-columns: 1fr; }
