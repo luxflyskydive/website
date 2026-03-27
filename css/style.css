@@ -576,11 +576,13 @@ body.light .pull-quote { color: #111; }
   .hero-title { font-size: clamp(40px, 11vw, 80px); margin-bottom: 28px; }
   .hero-actions { gap: 20px; flex-wrap: wrap; }
 
-  .statement { grid-template-columns: 1fr; padding: 64px 16px; }
-  .statement-right { border-left: none; border-top: 1px solid rgba(255,255,255,0.08); padding-left: 0; padding-top: 32px; margin-top: 24px; }
+  .statement { grid-template-columns: 1fr; padding: 0 0 64px; }
+  /* Mobile: put image on TOP, text below — avoids two photos stacking with no text between */
+  .statement-left { order: -1 !important; min-height: 280px; }
+  .statement-right { order: 0 !important; border-left: none; border-top: 1px solid rgba(255,255,255,0.08); padding: 40px 16px 0; margin-top: 0; border-right: none; }
 
   .editorial,
-  .editorial.reverse { grid-template-columns: 1fr; }
+  .editorial.reverse { grid-template-columns: 1fr !important; min-height: auto; }
   .editorial.reverse .editorial-image { order: -1; }
   .editorial-image { min-height: 280px; }
   .editorial-body { padding: 40px 16px; }
