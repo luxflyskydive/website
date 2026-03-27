@@ -562,10 +562,15 @@ body.light .pull-quote { color: #111; }
   nav.dark { padding: 14px 16px; }
   .nav-hamburger { display: flex; }
   .nav-menu { display: none; }
-  /* Hide EN language button — it's in the mobile menu. Use !important to beat any inline style. */
-  .nav-lang { display: none !important; }
-  .nav-right > a { display: none !important; }
-  .nav-right { gap: 0; }
+  /* Language stays in the nav bar on mobile — tap to open */
+  .nav-lang { display: flex !important; align-items: center; cursor: pointer; }
+  .nav-lang.mobile-open .nav-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+  /* Hide Book Now button (too wide for mobile nav bar) */
+  .nav-book { display: none !important; }
+  /* My Account: show icon only, hide text label to save space */
+  .nav-right > a:not(.nav-book) { font-size: 0 !important; gap: 0 !important; }
+  .nav-right > a:not(.nav-book) svg { width: 18px; height: 18px; }
+  .nav-right { gap: 8px; }
 
   .hero-content { padding-left: 16px; padding-right: 16px; padding-bottom: 48px; }
   .hero-title { font-size: clamp(40px, 11vw, 80px); margin-bottom: 28px; }
