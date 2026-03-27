@@ -557,52 +557,53 @@ body.light .pull-quote { color: #111; }
 
 /* ── MOBILE ── */
 @media (max-width: 900px) {
-  nav { padding: 18px 20px; }
-  nav.dark { padding: 14px 20px; }
+  /* Keep nav above the mobile menu overlay so hamburger stays clickable */
+  nav { padding: 18px 16px; z-index: 260; }
+  nav.dark { padding: 14px 16px; }
   .nav-hamburger { display: flex; }
   .nav-menu { display: none; }
-  /* Hide EN language button and Book Now / My Account from top nav — all are in the mobile menu */
-  .nav-lang { display: none; }
+  /* Hide EN language button — it's in the mobile menu. Use !important to beat any inline style. */
+  .nav-lang { display: none !important; }
   .nav-right > a { display: none !important; }
   .nav-right { gap: 0; }
 
-  .hero-content { padding-left: 20px; padding-right: 20px; padding-bottom: 48px; }
+  .hero-content { padding-left: 16px; padding-right: 16px; padding-bottom: 48px; }
   .hero-title { font-size: clamp(40px, 11vw, 80px); margin-bottom: 28px; }
   .hero-actions { gap: 20px; flex-wrap: wrap; }
 
-  .statement { grid-template-columns: 1fr; padding: 64px 20px; }
+  .statement { grid-template-columns: 1fr; padding: 64px 16px; }
   .statement-right { border-left: none; border-top: 1px solid rgba(255,255,255,0.08); padding-left: 0; padding-top: 32px; margin-top: 24px; }
 
   .editorial { grid-template-columns: 1fr; }
   .editorial.reverse .editorial-image { order: -1; }
   .editorial-image { min-height: 280px; }
-  .editorial-body { padding: 40px 20px; }
+  .editorial-body { padding: 40px 16px; }
 
   .exp-strip { padding: 72px 0; }
-  .exp-strip-header { padding: 0 20px; flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 32px; }
+  .exp-strip-header { padding: 0 16px; flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 32px; }
   .exp-card { flex: 0 0 260px; height: 340px; }
-  .exp-scroll { padding: 0 20px; }
+  .exp-scroll { padding: 0 16px; }
 
-  .pricing { padding: 64px 20px; }
+  .pricing { padding: 64px 16px; }
   .pricing-header { grid-template-columns: 1fr; gap: 16px; margin-bottom: 40px; }
 
-  .location { grid-template-columns: 1fr; padding: 64px 20px; gap: 40px; }
+  .location { grid-template-columns: 1fr; padding: 64px 16px; gap: 40px; }
 
-  .fullbleed-content { grid-template-columns: 1fr; padding: 0 20px 48px; }
+  .fullbleed-content { grid-template-columns: 1fr; padding: 0 16px 48px; }
   .fullbleed-right { text-align: left; }
 
-  footer { grid-template-columns: 1fr; padding: 48px 20px; gap: 32px; }
-  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; padding: 16px 20px; }
+  footer { grid-template-columns: 1fr; padding: 48px 16px; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; padding: 16px 16px; }
 
-  .pull-quote { padding: 48px 20px; font-size: clamp(18px, 5vw, 26px); }
-  .section-rule { margin: 0 20px; }
+  .pull-quote { padding: 48px 16px; font-size: clamp(18px, 5vw, 26px); }
+  .section-rule { margin: 0 16px; }
 
   /* ── UNIVERSAL INLINE STYLE OVERRIDES ─────────────────────────────── */
-  /* These fix inline styles across all 40+ pages without editing each file */
+  /* These override inline styles across all 40+ pages without editing each file */
 
-  /* Section padding: replace 48px side padding with 20px on mobile */
-  [style*="padding: 80px 48px"] { padding: 48px 20px !important; }
-  [style*="padding: 60px 48px"] { padding: 40px 20px !important; }
+  /* Section padding: tighter sides on mobile for more content width */
+  [style*="padding: 80px 48px"] { padding: 48px 16px !important; }
+  [style*="padding: 60px 48px"] { padding: 40px 16px !important; }
 
   /* Collapse 2-column grids to single column */
   [style*="grid-template-columns: 1fr 1fr"] {
