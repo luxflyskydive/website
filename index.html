@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Luxfly — Indoor Skydiving Luxembourg</title>
 <meta name="description" content="Europe's tallest indoor skydiving wind tunnel. 35 metres. 350 km/h. At the Luxembourg border.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -234,39 +234,55 @@ nav.dark { background: rgba(0,0,0,0.92); backdrop-filter: blur(16px); padding: 1
 }
 .exp-card:hover .exp-card-link { opacity: 1; transform: translateY(0); }
 
-/* ── PRICING ── */
-.pricing { padding: 120px 48px; border-top: 1px solid rgba(255,255,255,0.06); }
-.pricing-header { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-bottom: 72px; align-items: end; }
-.pricing-header h2 {
+/* ── BIRTHDAY CTA ── */
+.birthday-cta {
+  display: grid; grid-template-columns: 55% 45%; min-height: 80vh;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  overflow: hidden;
+}
+.birthday-cta-image { position: relative; overflow: hidden; }
+.birthday-cta-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.4,0,0.2,1); }
+.birthday-cta:hover .birthday-cta-image img { transform: scale(1.03); }
+.birthday-cta-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, transparent 60%, rgba(0,0,0,0.6) 100%);
+}
+.birthday-cta-body {
+  background: #0e0e0e;
+  padding: 80px 64px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.birthday-tag {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--pink); margin-bottom: 28px;
+  display: flex; align-items: center; gap: 12px;
+}
+.birthday-tag::before { content: ''; width: 32px; height: 1px; background: var(--pink); }
+.birthday-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(36px, 5vw, 72px);
-  font-weight: 900; letter-spacing: -0.03em; line-height: 1;
+  font-size: clamp(28px, 3.2vw, 48px);
+  font-weight: 900; line-height: 1.1; letter-spacing: -0.025em;
+  margin-bottom: 24px;
 }
-.pricing-header p { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.8; }
-.pricing-list { display: flex; flex-direction: column; }
-.pricing-item {
-  display: grid; grid-template-columns: 1fr auto;
-  align-items: center; gap: 24px;
-  padding: 36px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  transition: padding 0.3s;
-  cursor: default;
+.birthday-title span { color: var(--pink); }
+.birthday-desc {
+  font-size: 15px; line-height: 1.85; color: rgba(255,255,255,0.55);
+  max-width: 400px; margin-bottom: 20px;
 }
-.pricing-item:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
-.pricing-item:hover { padding-left: 12px; }
-.pricing-left { display: flex; align-items: baseline; gap: 24px; }
-.pricing-name {
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(18px, 2.2vw, 28px); font-weight: 800;
-  letter-spacing: -0.01em;
+.birthday-perks {
+  display: flex; flex-direction: column; gap: 10px;
+  margin-bottom: 40px;
 }
-.pricing-desc { font-size: 14px; color: rgba(255,255,255,0.4); }
-.pricing-price {
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(20px, 2.5vw, 32px); font-weight: 900;
-  color: var(--pink); white-space: nowrap;
+.birthday-perk {
+  font-size: 13px; color: rgba(255,255,255,0.45);
+  display: flex; align-items: center; gap: 10px;
 }
-.pricing-from { font-size: 11px; color: rgba(255,255,255,0.3); display: block; text-align: right; margin-bottom: 2px; letter-spacing: 0.05em; }
+.birthday-perk::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--pink); flex-shrink: 0; }
+@media (max-width: 900px) {
+  .birthday-cta { grid-template-columns: 1fr; min-height: auto; }
+  .birthday-cta-image { min-height: 300px; }
+  .birthday-cta-body { padding: 48px 24px; }
+}
 </style>
 
 <style>
@@ -585,56 +601,30 @@ footer {
   </div>
 </section>
 
-<!-- PRICING -->
-<section class="pricing" id="pricing">
-  <div class="pricing-header">
-    <h2 class="reveal">Simple,<br>honest pricing.</h2>
-    <p class="reveal reveal-delay-1">Every package includes gear, safety briefing, and a certified instructor. Gift vouchers available for all packages — they never expire.</p>
+<!-- BIRTHDAY CTA -->
+<section class="birthday-cta" id="birthdays">
+  <div class="birthday-cta-image reveal">
+    <img src="img/gallery-bday-1.jpg" alt="Birthday party at Luxfly">
+    <div class="birthday-cta-overlay"></div>
   </div>
-  <div class="pricing-list">
-    <div class="pricing-item reveal">
-      <div class="pricing-left">
-        <span class="pricing-name">Discovery</span>
-        <span class="pricing-desc">First flight · 2 min · gear included · instructor guided</span>
-      </div>
-      <div>
-        <span class="pricing-from">from</span>
-        <span class="pricing-price">€64.90</span>
-      </div>
+  <div class="birthday-cta-body">
+    <p class="birthday-tag reveal">Birthdays</p>
+    <h2 class="birthday-title reveal">The birthday they'll never stop <span>talking about.</span></h2>
+    <p class="birthday-desc reveal reveal-delay-1">Private sessions, a dedicated instructor, and flight time for the whole group. From age 4 to 95 — we handle the excitement. You handle the cake.</p>
+    <div class="birthday-perks reveal reveal-delay-1">
+      <span class="birthday-perk">Private briefing room for your group</span>
+      <span class="birthday-perk">Dedicated birthday instructor</span>
+      <span class="birthday-perk">From 5 guests — kids and adults welcome</span>
+      <span class="birthday-perk">Photos, video highlights & add-ons available</span>
     </div>
-    <div class="pricing-item reveal reveal-delay-1">
-      <div class="pricing-left">
-        <span class="pricing-name">Thrill</span>
-        <span class="pricing-desc">Extended session · 4 min · personal coaching</span>
-      </div>
-      <div>
-        <span class="pricing-from">from</span>
-        <span class="pricing-price">€99</span>
-      </div>
-    </div>
-    <div class="pricing-item reveal reveal-delay-2">
-      <div class="pricing-left">
-        <span class="pricing-name">Pro Session</span>
-        <span class="pricing-desc">8 min · full coaching · video recording</span>
-      </div>
-      <div>
-        <span class="pricing-from">from</span>
-        <span class="pricing-price">€149</span>
-      </div>
-    </div>
-    <div class="pricing-item reveal reveal-delay-3">
-      <div class="pricing-left">
-        <span class="pricing-name">Gift Voucher</span>
-        <span class="pricing-desc">Any package · never expires · digital or post</span>
-      </div>
-      <div>
-        <a class="btn-ghost" href="https://indoorskydive.lu/en/gift-voucher" style="padding-bottom:2px">
-          Buy one →
-        </a>
-      </div>
-    </div>
+    <a class="btn-primary reveal reveal-delay-2" href="birthdays.html">Plan a birthday →</a>
   </div>
 </section>
+
+<!-- GIFT SPACER -->
+<div style="background:#0a0a0a; padding: 48px 64px; border-top: 1px solid rgba(255,255,255,0.07); border-bottom: 1px solid rgba(255,255,255,0.07);">
+  <h2 style="font-family:'Montserrat',sans-serif; font-size:clamp(24px,3vw,46px); font-weight:900; line-height:1.1; letter-spacing:-0.025em; margin:0; color:#fff;">Give them something <span style="color:#f02cb8;">they'll never forget.</span></h2>
+</div>
 
 <!-- FULL BLEED CTA -->
 <div class="fullbleed">
@@ -660,14 +650,14 @@ footer {
       </div>
       <div class="loc-detail">
         <h4>Hours</h4>
-        <p>Monday – Friday: 10:00 – 21:00<br>Saturday – Sunday: 09:00 – 21:00<br>Open 365 days a year</p>
+        <p>Mon &amp; Tue: Closed<br>Wed – Fri: 12:00 – 20:00<br>Sat &amp; Sun: 10:00 – 19:00<br>Also open first Monday of each month</p>
       </div>
       <div class="loc-detail">
         <h4>Contact</h4>
         <p>
-          <a href="tel:+35222601020">+352 22 60 10 20</a><br>
-          <a href="mailto:sales@luxfly.eu">sales@luxfly.eu</a><br>
-          <a href="https://wa.me/3223205509">WhatsApp</a>
+          <a href="tel:+3263391163">+32 63 39 11 63</a><br>
+          <a href="mailto:hello@luxfly.eu">hello@luxfly.eu</a><br>
+          <a href="https://wa.me/32477528566">WhatsApp: +32 477 528 566</a>
         </p>
       </div>
     </div>
