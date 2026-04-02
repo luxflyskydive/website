@@ -54,7 +54,11 @@
         'price for my daughter', 'price for my son', 'price for my child',
         '7 year old', '8 year old', '9 year old', '10 year old', '11 year old', '12 year old',
         '7 year', '8 year', '9 year', '10 year', '11 year', '12 year',
-        'year old child', 'year old kid', 'is there a kids package', 'do you have kids packages'
+        'year old child', 'year old kid', 'is there a kids package', 'do you have kids packages',
+        'age limit for kids', 'kids age limit', 'is there an age limit for kids',
+        'child price', 'children price', 'price for children',
+        'family package', 'family packages',
+        'toddlers', 'can toddlers fly'
       ],
       response: () => `**Kids are absolutely welcome at Luxfly!** 🧒✈️\n\n**Minimum age: 4 years old.** Maximum weight: 120 kg.\n\n**Kids Packages (ages 4–12):**\n✈️ **2 flights:** **€89.70** (includes HighFly, souvenir photos & museum)\n✈️ **4 flights:** **€139.80**\n💡 Basic option available from **€45.90** (limited slots, no extras)\n\nKids actually adapt to the air faster than adults! A parent or legal guardian must be present at all times, and a signed consent form is required for under-18s.\n\nAll instructors hold child-flight certification and adjust wind speeds for smaller flyers. 💙`
     },
@@ -88,7 +92,7 @@
         'where are you located', 'where is luxfly', 'find luxfly',
         'are you easy to find', 'how far', 'how far from luxembourg',
         'near luxembourg', 'border', 'from luxembourg city', 'from brussels',
-        'from arlon', 'from liege', 'free parking', 'is there parking',
+        'from arlon', 'from liege', 'close to', 'how close', 'free parking', 'is there parking',
         'can i park', 'parking available', 'is parking free'
       ],
       response: () => `**Luxfly is in Sterpenich, Belgium** 📍\n\n🏠 **Address:** Route de l'Europe 1, 6700 Sterpenich, Belgium\n\n🚗 **By Car:** E411 motorway, exit 33 (Sterpenich/Arlon). We're right next to **IKEA** and **Decathlon** — very easy to find! **80+ free parking spaces** on site.\n\n🚌 **By Bus:** TEC bus line 222 stops right outside.\n\n📍 Just minutes from the Luxembourg border — easily accessible from Luxembourg City, Arlon, and the wider Greater Region.`
@@ -112,7 +116,9 @@
         'money back', 'can i get a refund', 'change my booking',
         'change the date', 'change the time', 'move my booking',
         'i need to cancel', 'cancellation policy', 'refund policy',
-        'is it fully booked', 'when can i come', 'first come first served'
+        'is it fully booked', 'when can i come', 'first come first served',
+        'pay cash', 'pay in cash', 'credit cards', 'debit cards',
+        'do you accept cash', 'do you accept cards', 'payment methods'
       ],
       response: () => `**Booking at Luxfly:**\n\n🎟️ Book online at **shop.indoorskydive.lu** or call **+32 63 39 11 63**.\n\n💳 Full payment required at time of booking. All major payment methods accepted.\n\n🚶 **Walk-ins welcome** subject to availability — but booking ahead is strongly recommended, especially for weekends. Groups of 5+ should book at least **48 hours in advance**.\n\n**Cancellation Policy:**\n✅ **More than 48 hours before:** Full refund or free rescheduling\n⚠️ **24–48 hours before:** 50% refund\n❌ **Less than 24 hours before:** No refund\n🚫 **No-show:** Full amount charged\n\nGift vouchers accepted online and in-person.`
     },
@@ -126,7 +132,9 @@
         'special day', 'birthday discount', 'birthday deal', 'birthday offer',
         'for my birthday', 'it\'s my birthday', 'birthday treat', 'treat myself',
         'birthday experience', 'unique gift', 'gift idea', 'present idea',
-        'something special', 'celebrate birthday'
+        'something special', 'celebrate birthday',
+        'birthday package', 'birthday packages', 'do you have birthday packages',
+        'birthday add-ons', 'birthday options'
       ],
       response: () => `**🎂 Celebrate your birthday at Luxfly!**\n\n🎉 **Birthday Month Discount:** Fly during your birthday month and get **10% off** your package — just mention it when booking!\n\n🎁 **Birthday Add-ons:**\n- Private viewing gallery for friends & family\n- Photography & video package\n- Balloon & decoration package\n- Dedicated flight instructor for your group\n\n🎊 **Group birthday packages** available with custom quotes.\n\n📞 +32 63 39 11 63 | 📧 info@luxfly.lu`
     },
@@ -147,14 +155,16 @@
         'we are a group of', 'there are', 'people coming', 'how much for a group',
         'group of friends', 'group of colleagues', 'group deal',
         'evg', 'evjf', 'junggesellenabschied', 'enterrement de vie de garcon',
-        'hen do', 'hen night', 'bachelor night', 'going to be', 'party of',
+        'hen do', 'hen dos', 'hen night', 'bachelor night', 'going to be', 'party of',
+        'group rates', 'group rate price', 'how much are group rates',
         'how much for a hen party', 'hen party price', 'price for hen party',
         'how much for hen', 'how much for 20 people', 'how much for 10 people',
         'how much for 15 people', 'how much for 30 people', 'how much for 50 people',
         'how much for a group', 'price for a group', 'cost for a group',
         'book for our company', 'book for the company', 'book for my company',
         'company outing', 'whole company', 'entire company', 'all my colleagues',
-        'book for our team', 'book for the whole team', 'group booking price',
+        'book for our team', 'book for the whole team', 'group booking price', 'group package', 'group packages',
+        'people', 'a party of', 'we are a party of',
         'discount for groups', 'is there a discount for groups', 'group discount'
       ],
       response: () => `**Group & Event Packages at Luxfly** 👥\n\n**Group Flight Rates (per minute of flight time):**\n👥 2–9 guests: **€35/min** (base rate)\n👥 10–19 guests: **€31.50/min** (10% off)\n👥 20–49 guests: **€29.75/min** (15% off)\n👥 50–99 guests: **€28/min** (20% off)\n👥 100+ guests: **Custom quote**\n\n📌 Group discounts apply from **10 people**. Booking required **7 days in advance** minimum. A **30% deposit** secures your date.\n\n**🎊 Bachelor / Hen Party Packages** (min. 6 guests):\n🥂 **Classic:** €28/person (1 min tunnel time each)\n🎉 **Party Plus:** €52/person (2 min + group photo)\n👑 **VIP Send-Off:** from **€550 for 10 people** (private hire, photos, video & catering)\n\n**🏢 Team Building:** Scales from 8 to 250+ people. Meeting rooms, catering & AV available.\n\n📧 info@luxfly.lu | 📞 +32 63 39 11 63`
@@ -183,7 +193,9 @@
         'how safe is it', 'is it dangerous', 'danger', 'risk', 'safe activity',
         'what are the risks', 'accident', 'injury risk', 'protection',
         'is it safe', 'is it completely safe', 'how safe is it', 'is luxfly safe',
-        'is it a safe activity', 'safe to do'
+        'is it a safe activity', 'safe to do',
+        'beginners', 'suitable for beginners', 'good for beginners',
+        'how does the wind tunnel work', 'how does indoor skydiving work'
       ],
       response: () => `**Indoor skydiving — no experience needed!** 🌬️✈️\n\nIndoor skydiving (bodyflight) recreates the feeling of skydiving freefall inside a vertical wind tunnel. You float on a powerful column of air at up to **160 km/h** — safe, controlled, and completely addictive!\n\n🏠 **It's fully indoors** — weather never affects your flight.\n\n😰 **Scared? Don't worry!** Almost all our guests are first-timers. Your instructor is inside the tunnel with you the whole time and won't let go until you're ready.\n\n💪 **No fitness required** — it's floating, not fighting! All ages and fitness levels are welcome.\n\n🎓 **Full safety briefing** included with every package. All gear provided.\n\n🧒 Suitable for ages **4 and up** (min 30 kg, max 120 kg). It's one of the safest adventure activities available! ✅`
     },
@@ -266,6 +278,7 @@
         'grandparent', 'grandparents', 'granny', 'grandma', 'grandpa',
         'grandfather', 'grandmother', 'older person', 'older people',
         'can an old person fly', 'can old people fly', 'can seniors fly',
+        'elderly people', 'can elderly people fly', 'elderly person',
         'is there an age limit', 'upper age', 'what is the age limit',
         'how old is too old', '60 year old', '70 year old', '80 year old',
         '90 year old', 'over 60', 'over 70', 'over 80', 'over 50',
@@ -274,8 +287,7 @@
         'how heavy', 'how much can i weigh', 'weight requirement',
         'bmi', 'obese', 'obesity', 'too fat', 'too thin',
         // Fitness / physical
-        'do i need to be fit', 'how fit', 'fitness required', 'physically demanding',
-        'is it physical', 'do you need strength', 'heart rate', 'blood pressure',
+        'heart rate', 'blood pressure',
         'can i fly if i have', 'allowed to fly', 'unfit to fly', 'fit to fly',
         // Alcohol / drugs
         'been drinking', 'had a drink', 'drunk', 'alcohol', 'hungover', 'hangover',
@@ -318,7 +330,11 @@
         'any offers', 'any promotions', 'what promotions', 'current promotions',
         'student card', 'student id', 'military discount', 'how can i save',
         'is there a cheaper way', 'loyalty discount', 'any codes',
-        'do you have any promotions', 'are there any deals', 'do you have any deals'
+        'do you have any promotions', 'are there any deals', 'do you have any deals',
+        'deals', 'current deals', 'any current deals',
+        'savings', 'any savings', 'are there any savings',
+        'cheaper rate', 'cheaper option', 'cheaper price',
+        'special offers', 'any special offers', 'current special offers'
       ],
       response: () => `**Current Promotions at Luxfly** 🎉\n\n🌸 **SPRING26** — **15% off** all packages! Valid until **30 April 2026**. Use code **SPRING26** at checkout.\n\n👥 **GROUP15** — Extra **5% off** on top of group rates for 10+ people. Code: **GROUP15**.\n\n🎂 **Birthday Month** — Fly in your birthday month for **10% off**. Just mention it when booking!\n\n🎓 **Student Discount** — Show a valid student ID for **10% off**.\n\n👫 **Bring a Friend** — Refer a first-time visitor and both of you get a reward! Ask our team for details.\n\n⚠️ Discounts cannot be combined. Terms apply.`
     },
@@ -339,7 +355,9 @@
         'how do i use my voucher', 'redeem voucher', 'voucher code',
         'use a voucher', 'use my voucher online', 'voucher online', 'voucher at checkout',
         'apply voucher', 'enter voucher', 'enter my voucher', 'use the voucher',
-        'can i use a voucher', 'use a gift voucher', 'redeem a voucher', 'redeem gift voucher'
+        'can i use a voucher', 'use a gift voucher', 'redeem a voucher', 'redeem gift voucher',
+        'how long does a voucher last', 'how long is a voucher', 'voucher last',
+        'how long does a gift voucher last'
       ],
       response: () => `**Luxfly Gift Vouchers — the perfect gift!** 🎁\n\n🛒 Buy online at **luxfly.lu** or in-person at reception.\n\n**Voucher Details:**\n📅 Valid for **12 months** from purchase date\n🔄 Renewable for an additional **3 months** (one renewal per voucher)\n👤 **Not nominative** — usable by anyone, not just the named recipient\n💸 Non-refundable once purchased\n✅ Redeemable against any flight package or add-on\n\nThe perfect birthday, Christmas, or anniversary gift — who wouldn't want to fly? 💝\n\n📞 +32 63 39 11 63 | 📧 info@luxfly.lu`
     },
@@ -362,7 +380,12 @@
         'offer coaching', 'do you offer coaching', 'do you have coaching',
         'coaching sessions', 'coaching available', 'get coaching', 'book coaching',
         'personal coaching', 'one to one coaching', 'one-to-one coaching',
-        'get a coach', 'hire a coach', 'wind tunnel coaching sessions'
+        'get a coach', 'hire a coach', 'wind tunnel coaching sessions',
+        'how much for block time', 'block time price', 'block time cost',
+        'head-down flying', 'headdown flying', 'head down flying',
+        'train in the tunnel', 'train in tunnel', 'training in the tunnel',
+        'advanced flying', 'advanced sessions', 'advanced flying sessions',
+        'formation flying', 'flying practice', 'formation flying practice'
       ],
       response: () => `**Pro & Advanced Flying at Luxfly** 🏆\n\n**Block Time Packages (dedicated tunnel):**\n⏱️ **Starter** — 1 hr: **€180**\n⏱️ **Regular** — 5 hrs: **€840** (€168/hr)\n⏱️ **Dedicated** — 10 hrs: **€1,560** (€156/hr)\n⏱️ **Elite** — 20 hrs: **€2,880** (€144/hr)\n\n**Shared Pro Sessions:**\n📅 Mon, Wed, Fri, Sat (×2 daily slots), Sun\n💶 Single session: **€55** | 5 sessions: **€240** | 10 sessions: **€420**\n\n**Disciplines:** Belly (130–160 km/h) · Sit fly (180–220 km/h) · Head-down (250–320 km/h) · Freestyle · Formation\n\nOur coaches have **12,000+ combined tunnel hours**.\n📧 info@luxfly.lu for coaching enquiries`
     },
@@ -377,7 +400,9 @@
         'museum only', 'museum without flying', 'museum cost', 'museum free',
         'is the museum included', 'do i get museum access', 'what is in the museum',
         'what does the museum have', 'can i just visit the museum',
-        'museum entry fee', 'museum admission', 'is there a museum', 'aviation history'
+        'museum entry fee', 'museum admission', 'is there a museum', 'aviation history',
+        'visit the museum', 'can i visit the museum', 'museum on its own',
+        'museum standalone', 'museum by itself', 'museum without a flight'
       ],
       response: () => `**The Luxfly Aviation Museum** ✈️🏛️\n\nEvery Luxfly visit includes our **Aviation Museum** — a fantastic collection celebrating the history of flight!\n\n🎫 **Included FREE** in all flight packages — no extra cost!\n🎟️ **Standalone museum entry (no flight):** **€15** per person\n\nInside you'll find:\n- Historic aircraft and interactive displays\n- Aviation history timeline\n- Great for all ages — especially families!\n\nPerfect for before or after your flight, or for non-flying visitors accompanying the group. 🛩️`
     },
@@ -392,6 +417,7 @@
         'cocktail', 'juice', 'soft drink', 'food menu', 'what food', 'nachos',
         'fries', 'lager', 'draft beer', 'can i eat', 'is there food',
         'do you have food', 'do you serve food', 'do you have a bar',
+        'alcohol', 'serve alcohol', 'alcoholic drinks', 'alcoholic beverages',
         'is there a restaurant', 'is there a café', 'is there a cafe',
         'can i get a drink', 'can i get something to eat', 'do you have a café',
         'catering', 'refreshments', 'something to eat after', 'grab a bite'
@@ -409,7 +435,7 @@
         'fitness at luxfly', 'aerobics', 'pilates booking', 'join a class',
         'offer pilates', 'do you offer pilates', 'do you have pilates',
         'when are pilates', 'pilates times', 'pilates timetable', 'pilates cost',
-        'pilates available', 'pilates on offer', 'sky pilates class'
+        'pilates available', 'pilates on offer', 'sky pilates class', 'pilates sessions'
       ],
       response: () => `**Sky Pilates at Luxfly** 🧘✈️\n\nUnique **Sky Pilates** — pilates in the wind tunnel for an extraordinary core and body workout!\n\n**📅 Schedule:**\n🗓️ Tuesday & Thursday: **7:30 AM**\n🗓️ Saturday: **9:00 AM**\n\n**💶 Pricing:**\n- Drop-in (single class): **€45**\n- 4-class pass: **€160** (€40/class)\n- 8-class pass: **€280** (€35/class)\n\nNo flying experience required — just a love of movement! Classes led by certified instructors.\n\n📞 +32 63 39 11 63 | 📧 info@luxfly.lu`
     },
@@ -425,7 +451,11 @@
         'i fly regularly', 'i come often', 'i visit often', 'i come back often',
         'reward for coming back', 'repeat visits', 'frequent visits',
         'fidelity card', 'loyalty points', 'earn rewards', 'do you have loyalty',
-        'is there a loyalty programme', 'membership card', 'reward card'
+        'is there a loyalty programme', 'membership card', 'reward card',
+        'reward scheme', 'rewards scheme', 'is there a reward scheme',
+        'points scheme', 'points system', 'earn points scheme',
+        'get points', 'points for every visit', 'earn points on every visit',
+        'points every time', 'points when i fly'
       ],
       response: () => `**Luxfly FidelityBox — Our Loyalty Programme** 🌟\n\nFly more, earn more!\n\n📱 Your **phone number is your loyalty card** — no physical card needed!\n⭐ Earn points every time you fly or spend at Luxfly\n🎁 Redeem points for free flights, discounts & exclusive rewards\n\n**Member perks:**\n- Priority booking access\n- Exclusive member promotions\n- Birthday surprises\n- Early access to new packages\n\nJust give your phone number at check-in — you're automatically enrolled!\n\n📞 +32 63 39 11 63 for more details.`
     },
@@ -443,7 +473,9 @@
         'is there someone with me', 'will i be alone', 'alone in the tunnel',
         'supervised', 'am i supervised', 'do you speak english',
         'do you speak french', 'do you speak german', 'do you speak luxembourgish',
-        'what languages', 'english speaking', 'french speaking', 'german speaking'
+        'what languages', 'english speaking', 'french speaking', 'german speaking',
+        'teach in german', 'teach in french', 'teach in english',
+        'in german', 'in french', 'in english', 'in luxembourgish'
       ],
       response: () => `**Our World-Class Coaching Team** 🏆\n\n✅ **8 certified coaches** on our team\n✅ **12,000+ combined tunnel hours** of experience\n✅ All hold internationally recognised tunnel instructor certifications\n\n**Languages spoken:**\n🇬🇧 English | 🇫🇷 French | 🇩🇪 German | 🇱🇺 Luxembourgish | 🇮🇹 Italian\n\nFor beginner packages, your instructor is **inside the tunnel with you** from the first second — you're never alone! Our coaches adapt to every level, from nervous first-timers to competitive athletes. 💪`
     },
@@ -488,7 +520,9 @@
         'do you have any jobs', 'do you need staff', 'work for luxfly',
         'work with luxfly', 'i want to work for you', 'i want to work with you',
         'is there a job', 'open role', 'job opening', 'cv', 'send my cv',
-        'send my resume', 'apply for a job', 'jobs@'
+        'send my resume', 'apply for a job', 'jobs@',
+        'do you need tunnel instructors', 'tunnel instructor vacancy',
+        'tunnel instructor position', 'looking for instructors'
       ],
       response: () => `**Careers at Luxfly** 💼✈️\n\nWe're always looking for passionate people to join the team!\n\n**Open Positions:**\n🌬️ **Tunnel Instructor** — Lead beginner and advanced sessions\n🛡️ **Safety Officer** — Maintain the highest safety standards\n🎉 **Events Coordinator** — Plan group, corporate & special events\n😊 **Customer Experience** — Front-of-house & guest services\n\nNot seeing your role? Get in touch anyway — we're a growing company!\n\n📧 **Send your CV to:** jobs@luxfly.lu\n📞 +32 63 39 11 63\n\nCome help others discover the joy of flight! 🚀`
     },
@@ -500,7 +534,8 @@
         'balloon ride', 'balloon experience', 'balloon flight', 'balloon partner',
         'other activities', 'what else', 'anything else to do', 'other experiences',
         'other things to do', 'what else do you offer', 'other adventures',
-        'outdoor experience', 'scenic flight', 'ballooning'
+        'outdoor experience', 'scenic flight', 'ballooning',
+        'ballooning experience', 'balloon ride experience'
       ],
       response: () => `**Hot Air Balloon Experiences** 🎈\n\nLuxfly has partnered with a premier hot air balloon operator!\n\n💶 **€180–€250 per person**\n📅 Season: **April – October**\n📍 Departing from the Luxembourg/Belgium region\n\nA magical complement to indoor skydiving, or a beautiful standalone gift for someone special! 🌄\n\nFor details and bookings:\n📞 +32 63 39 11 63 | 📧 info@luxfly.lu`
     }
