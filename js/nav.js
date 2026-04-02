@@ -59,7 +59,7 @@
     const langBtn = navLang.querySelector('.lang-btn');
     if (langBtn) {
       langBtn.addEventListener('click', (e) => {
-        if (window.innerWidth <= 900) {
+        if (window.innerWidth <= 1024) {
           e.stopPropagation();
           navLang.classList.toggle('mobile-open');
         }
@@ -141,6 +141,6 @@
     mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
   });
   mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-  window.addEventListener('resize', () => { if (window.innerWidth > 900) closeMenu(); });
+  window.addEventListener('resize', () => { if (window.innerWidth > 1024) closeMenu(); });
 
 })();

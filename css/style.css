@@ -17,7 +17,7 @@ nav {
   padding: 28px 48px;
   display: flex; align-items: center; justify-content: space-between;
   mix-blend-mode: normal;
-  transition: padding 0.4s ease, background 0.4s ease;
+  transition: background 0.4s ease;
 }
 nav.dark { background: rgba(0,0,0,0.92); backdrop-filter: blur(16px); padding: 18px 48px; }
 /* ── LOGO ── */
@@ -556,30 +556,22 @@ body.light .pull-quote { color: #111; }
 }
 .mobile-lang-links a:hover { color: #fff; }
 
-/* ── MID DESKTOP (nav tightening) ── */
-@media (max-width: 1200px) and (min-width: 901px) {
-  nav { padding: 18px 24px; }
-  nav.dark { padding: 14px 24px; }
-  .nav-menu { gap: 20px; }
-  .nav-right { gap: 20px; }
-}
-
-/* ── MOBILE ── */
-@media (max-width: 900px) {
-  /* Keep nav above the mobile menu overlay so hamburger stays clickable */
+/* ── NAV HAMBURGER (≤1024px) ── */
+@media (max-width: 1024px) {
   nav { padding: 18px 16px; z-index: 260; }
   nav.dark { padding: 14px 16px; }
   .nav-hamburger { display: flex; }
   .nav-menu { display: none; }
-  /* Language stays in the nav bar on mobile — tap to open */
   .nav-lang { display: flex !important; align-items: center; cursor: pointer; }
   .nav-lang.mobile-open .nav-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
-  /* Hide Book Now button (too wide for mobile nav bar) */
   .nav-book { display: none !important; }
-  /* My Account: show icon only, hide text label to save space */
   .nav-right > a:not(.nav-book) { font-size: 0 !important; gap: 0 !important; }
   .nav-right > a:not(.nav-book) svg { width: 18px; height: 18px; }
   .nav-right { gap: 8px; }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 900px) {
 
   .hero-content { padding-left: 16px; padding-right: 16px; padding-bottom: 48px; }
   .hero-title { font-size: clamp(40px, 11vw, 80px); margin-bottom: 28px; }
