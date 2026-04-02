@@ -1,80 +1,130 @@
 (function () {
   'use strict';
 
-  /* ── CONFIG ── */
-  const GEMINI_KEY = 'AIzaSyA3YtBApuqogAFp6wPpQqmPV4hBeRkm9aY';
-  const GEMINI_URL =
-    'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' +
-    GEMINI_KEY;
+  /* ── KNOWLEDGE BASE ── */
+  const KB = {
+    prices: {
+      keywords: ['price', 'prices', 'cost', 'how much', 'package', 'packages', 'tarif', 'tariff', 'preis', 'kosten', 'combien', 'prix', 'luxcovery', 'luxensation', 'luxemotion', 'cheap', 'expensive', 'afford', 'rate', 'rates', 'fee', 'fees'],
+      response: () => `Here are our adult packages:\n\n✈️ **LUXCOVERY** — 2 flights, 2 min total: €104.70\n✈️ **LUXENSATION** — 2 flights, 4 min total: €174.70\n✈️ **LUXEMOTION** — 3 flights, 6 min total: €236.70\n\nAll packages include full gear, safety briefing & instructor. 👉 Book at shop.indoorskydive.lu — use code **ZOOM** for a discount!`
+    },
+    kids: {
+      keywords: ['kid', 'kids', 'child', 'children', 'baby', 'babies', 'age', 'years old', 'young', 'son', 'daughter', 'boy', 'girl', 'enfant', 'kind', 'famille', 'family', 'junior', 'teen', 'teenager', 'minimum age', 'how old', '4 year', '5 year', '6 year', '7 year', '8 year', '9 year', '10 year'],
+      response: () => `Absolutely — kids love it! 🧒\n\nKids packages (ages **4–12**):\n• 2 flights: **€89.70**\n• 4 flights: **€139.80**\n\nA qualified instructor flies with them the whole time. Parents/guardians must accompany children and sign a consent form. The youngest we've had is 4 years old! 😊`
+    },
+    hours: {
+      keywords: ['hour', 'hours', 'open', 'opening', 'close', 'closing', 'when', 'schedule', 'timetable', 'today', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'weekend', 'horaire', 'öffnungszeit', 'tijd', 'ouvert', 'closed', 'available'],
+      response: () => `Our opening hours:\n\n📅 **Mon & Tue:** Closed (except the 1st Monday of each month!)\n📅 **Wed – Fri:** 12:00 – 20:00\n📅 **Sat & Sun:** 10:00 – 19:00\n\nWalk-ins are welcome when slots are free, but booking in advance is strongly recommended. Last session starts 90 min before closing.`
+    },
+    location: {
+      keywords: ['where', 'location', 'address', 'find', 'directions', 'map', 'parking', 'how to get', 'sterpenich', 'luxembourg', 'belgium', 'border', 'adresse', 'wo', 'waar', 'situated', 'located', 'nearest', 'near', 'close to'],
+      response: () => `We're right on the Luxembourg–Belgium border! 📍\n\n**Rue De Grass 103, 6700 Sterpenich**\n\nEasy to reach from Luxembourg City, Arlon, and surroundings. Parking is available on site. Pop the address into Google Maps and you'll find us! 🗺️`
+    },
+    booking: {
+      keywords: ['book', 'booking', 'reserve', 'reservation', 'buy', 'purchase', 'ticket', 'sign up', 'réserver', 'buchen', 'online', 'website', 'shop', 'payment', 'pay', 'how to', 'order', 'cancel', 'cancellation', 'refund', 'reschedule'],
+      response: () => `Booking is quick and easy! 🎟️\n\n👉 **shop.indoorskydive.lu**\n\nFull payment is required at the time of booking. Free cancellation if you cancel **more than 48 hours** before your session. Use promo code **ZOOM** for a special discount! Groups of 5+ should book at least 48 hours in advance.`
+    },
+    birthday: {
+      keywords: ['birthday', 'anniversaire', 'geburtstag', 'party', 'celebrate', 'celebration', 'fête', 'feier', 'special occasion', 'bday', 'birth day', 'gift', 'present', 'surprise', 'voucher', 'cadeau'],
+      response: () => `Birthday parties at Luxfly are unforgettable! 🎂🎉\n\nKids birthday packages start from **€192 for 6 kids** — perfect for ages 4 and up. We also do adult birthday packages!\n\nFor group birthday arrangements, reach out to us at **hello@luxfly.eu** and we'll put together something special. Gift vouchers are also available at shop.indoorskydive.lu 🎁`
+    },
+    groups: {
+      keywords: ['group', 'groups', 'corporate', 'team', 'team building', 'company', 'business', 'event', 'events', 'bachelor', 'bachelorette', 'hen', 'stag', 'incentive', 'seminar', 'conference', 'colleague', 'colleagues', 'work', 'employees', 'organisation'],
+      response: () => `We love hosting groups! 👥\n\nWe cater for groups of **2 to 250 people** — from team building days to corporate events to bachelor/hen parties. Groups of 10+ get preferential rates.\n\nFor a custom quote, contact **events@luxfly.lu** — we also offer **private after-hours hire** (Mon–Thu from 07:00). Groups of 5+ should book at least 48 hours ahead.`
+    },
+    experience: {
+      keywords: ['experience', 'what is', 'what does', 'like', 'feel', 'feeling', 'sensation', 'wind', 'tunnel', 'indoor', 'skydiving', 'fly', 'flying', 'float', 'floating', 'safe', 'safety', 'scary', 'afraid', 'fear', 'nervous', 'first time', 'beginner', 'never', 'experience needed', 'instructions'],
+      response: () => `Indoor skydiving is pure magic — imagine floating on a column of air! 🌬️✨\n\nOur tunnel is **35 metres tall** (Europe's tallest!) with wind speeds up to **350 km/h**. It's safe for ages **4 to 95**, and absolutely **no experience is needed**. Your qualified instructor will be with you every second.\n\nBefore you fly, you'll get a full safety briefing and all the gear you need. Most people are grinning from ear to ear within seconds! 😄`
+    },
+    gear: {
+      keywords: ['gear', 'equipment', 'suit', 'helmet', 'wear', 'bring', 'what to', 'prepare', 'preparation', 'dress', 'clothes', 'outfit', 'shoes', 'included', 'include'],
+      response: () => `You don't need to bring anything special! 😊\n\nAll **gear is included** in every package: flight suit, helmet, goggles, and earplugs. Just wear comfortable clothes and lace-up shoes (no sandals or flip-flops). We'll take care of the rest!`
+    },
+    contact: {
+      keywords: ['contact', 'email', 'call', 'phone', 'reach', 'speak', 'talk', 'message', 'hello', 'support', 'help me', 'question', 'enquiry', 'inquiry', 'info', 'information'],
+      response: () => `Happy to help! Here's how to reach us:\n\n📧 **General:** hello@luxfly.eu\n📧 **Bookings:** booking@luxfly.lu\n📧 **Events/Groups:** events@luxfly.lu\n📧 **Pro flyers:** pro@luxfly.lu\n\nOr just ask me anything here and I'll do my best! 😊`
+    },
+    promo: {
+      keywords: ['promo', 'promotion', 'discount', 'code', 'coupon', 'offer', 'deal', 'reduction', 'cheaper', 'save', 'saving', 'zoom', 'special'],
+      response: () => `Great news — there's a promo code! 🎉\n\nUse code **ZOOM** at checkout on **shop.indoorskydive.lu** for a special discount on your booking. Don't forget to apply it before you pay!`
+    },
+    voucher: {
+      keywords: ['voucher', 'gift card', 'gift voucher', 'present', 'give', 'surprise someone', 'buy for', 'someone else'],
+      response: () => `Gift vouchers are the perfect present! 🎁\n\nYou can buy gift vouchers for any package at **shop.indoorskydive.lu**. They're ideal for birthdays, anniversaries, or just because — who wouldn't want to fly? 😄`
+    },
+    health: {
+      keywords: ['health', 'medical', 'pregnant', 'pregnancy', 'disability', 'disabled', 'wheelchair', 'heart', 'back', 'neck', 'condition', 'epilepsy', 'asthma', 'weight', 'height', 'restriction', 'allowed', 'can i', 'am i able'],
+      response: () => `Most people can fly with us! ✅\n\nFor specific medical conditions or health concerns, we recommend contacting us directly at **hello@luxfly.eu** before booking so we can advise you properly. Our team is happy to help figure out the best option for you.`
+    }
+  };
 
-  const SYSTEM_PROMPT = `You are the friendly virtual assistant for Luxfly Indoor Skydiving — Europe's tallest indoor skydiving wind tunnel, located at the Luxembourg/Belgium border.
+  /* ── CLASSIFY INPUT ── */
+  function classify(text) {
+    const lower = text.toLowerCase();
+    let bestCategory = null;
+    let bestScore = 0;
 
-ABOUT LUXFLY:
-- Europe's tallest indoor skydiving wind tunnel: 35 metres tall, wind speeds up to 350 km/h
-- Address: Rue De Grass 103, 6700 Sterpenich (Luxembourg/Belgium border)
-- Safe for ages 4 to 95. No experience needed whatsoever.
-- All packages include: full gear rental, safety briefing, and a qualified instructor throughout the entire session.
+    for (const [cat, data] of Object.entries(KB)) {
+      let score = 0;
+      for (const kw of data.keywords) {
+        if (lower.includes(kw)) score += kw.split(' ').length; // longer phrases score higher
+      }
+      if (score > bestScore) {
+        bestScore = score;
+        bestCategory = cat;
+      }
+    }
 
-OPENING HOURS:
-- Monday & Tuesday: CLOSED
-- Wednesday – Friday: 12:00 – 20:00
-- Saturday & Sunday: 10:00 – 19:00
-- Also open on the first Monday of each month
-- Last sessions admitted 90 minutes before closing time
-- Walk-ins are welcome when slots are available, but booking in advance is strongly recommended
+    return bestScore > 0 ? bestCategory : null;
+  }
 
-ADULT PACKAGES (individual, per person):
-- LUXCOVERY: 2 minutes total, 2 flights — €104.70
-- LUXENSATION: 4 minutes total, 2 flights — €174.70
-- LUXEMOTION: 6 minutes total, 3 flights — €236.70
-All packages include full gear, safety briefing, and instructor supervision.
+  /* ── GREETING DETECTION ── */
+  function isGreeting(text) {
+    return /^(hi|hello|hey|bonjour|hallo|salut|guten tag|good morning|good afternoon|good evening|howdy|yo|sup|hiya|greetings?|coucou|hoi|dag|moien)[\s!.?,]*$/i.test(text.trim());
+  }
 
-KIDS PACKAGES (ages 4–12, with instructor):
-- Kids — 2 flights: €89.70
-- Kids — 4 flights: €139.80
-Children must be accompanied by a parent or legal guardian. Parental consent required for under 18s.
+  /* ── THANKS DETECTION ── */
+  function isThanks(text) {
+    return /\b(thanks?|thank you|merci|danke|dank|cheers|perfect|great|awesome|brilliant|amazing|nice|cool|wonderful)\b/i.test(text);
+  }
 
-BIRTHDAY PARTIES:
-- Birthday packages available for kids and adults
-- Kids birthday from €192 for 6 kids
-- Perfect for ages 4 and up
+  /* ── FORMAT RESPONSE (markdown-lite) ── */
+  function formatResponse(text) {
+    return text
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\n\n/g, '</p><p>')
+      .replace(/\n/g, '<br>');
+  }
 
-GROUPS & CORPORATE:
-- Groups of 10 or more receive preferential rates and dedicated attention
-- Team building and corporate events for groups of 2 to 250 people
-- Custom quotes available — contact events@luxfly.lu
-- After-hours private hire available Monday–Thursday from 07:00 — contact us to arrange
-- Groups of 5+ should book at least 48 hours in advance
+  /* ── GENERATE RESPONSE ── */
+  function getResponse(userText) {
+    const text = userText.trim();
 
-BOOKING & PAYMENT:
-- Book online at shop.indoorskydive.lu
-- Full payment required at time of booking
-- Free cancellation if cancelled more than 48 hours before your session
-- Cancellations within 48 hours: see full conditions on the website
+    if (isGreeting(text)) {
+      const greetings = [
+        "Hey there! 👋 How can I help? Ask me about prices, opening hours, booking, or anything else about Luxfly!",
+        "Hi! 😊 Welcome to Luxfly — what can I help you with today?",
+        "Hello! Ready to talk indoor skydiving? 🌬️ Ask me anything!"
+      ];
+      return greetings[Math.floor(Math.random() * greetings.length)];
+    }
 
-GIFT VOUCHERS:
-- Gift vouchers available for any package — perfect gift idea
-- Can be purchased and used online
+    if (isThanks(text) && text.split(' ').length < 6) {
+      const replies = [
+        "You're welcome! 😊 Anything else you'd like to know?",
+        "Happy to help! 🙌 Let me know if you have more questions.",
+        "Of course! Feel free to ask anything else. 😄"
+      ];
+      return replies[Math.floor(Math.random() * replies.length)];
+    }
 
-PROMO CODE:
-- Use code ZOOM at checkout for a special discount on your booking
+    const category = classify(text);
+    if (category && KB[category]) {
+      return KB[category].response();
+    }
 
-CONTACT:
-- General enquiries: hello@luxfly.eu
-- Bookings: booking@luxfly.lu
-- Corporate/events: events@luxfly.lu
-- Pro flyers: pro@luxfly.lu
-
-RESPONSE GUIDELINES:
-- Be warm, enthusiastic, and concise — this is an exciting experience!
-- Respond in the same language the visitor uses (English, French, German, or Luxembourgish)
-- Keep responses short and to the point — 2 to 4 sentences max unless more detail is needed
-- If asked something you don't know, direct them to hello@luxfly.eu or booking@luxfly.lu
-- Encourage booking when it feels natural — the experience is amazing and worth it
-- Never make up prices, hours, or facts not listed above`;
-
-  /* ── CONVERSATION HISTORY ── */
-  let history = [];
+    // Default fallback
+    return `Good question! For that one, the best thing is to reach out directly to our team — they'll have the answer for you.\n\n📧 **hello@luxfly.eu** or **booking@luxfly.lu**\n\nAlternatively, try asking me about prices, hours, booking, kids, location, or our packages! 😊`;
+  }
 
   /* ── STYLES ── */
   const css = `
@@ -116,7 +166,6 @@ RESPONSE GUIDELINES:
       font-size: 11px;
       font-weight: 700;
       color: #f02cb8;
-      display: none;
     }
 
     #lf-chat-window {
@@ -223,6 +272,8 @@ RESPONSE GUIDELINES:
       align-self: flex-start;
       border: 1px solid rgba(255,255,255,0.07);
     }
+    .lf-msg-bot p { margin: 0 0 6px; }
+    .lf-msg-bot p:last-child { margin-bottom: 0; }
     .lf-msg-user {
       background: #f02cb8;
       color: #fff;
@@ -309,7 +360,6 @@ RESPONSE GUIDELINES:
       transition: opacity 0.2s, transform 0.15s;
     }
     #lf-chat-send:hover { opacity: 0.85; transform: scale(1.05); }
-    #lf-chat-send:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
 
     @media (max-width: 480px) {
       #lf-chat-window { right: 12px; bottom: 90px; width: calc(100vw - 24px); }
@@ -325,7 +375,7 @@ RESPONSE GUIDELINES:
   /* ── BUILD DOM ── */
   document.body.insertAdjacentHTML('beforeend', `
     <button id="lf-chat-btn" aria-label="Chat with Luxfly">
-      <span id="lf-chat-badge"></span>
+      <span id="lf-chat-badge" style="display:none">1</span>
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 2C6.48 2 2 6.06 2 11c0 2.64 1.18 5.02 3.07 6.72L4 22l4.54-2.04A10.7 10.7 0 0012 20c5.52 0 10-4.06 10-9S17.52 2 12 2z" fill="white"/>
       </svg>
@@ -336,7 +386,7 @@ RESPONSE GUIDELINES:
         <div id="lf-chat-header-avatar">✈</div>
         <div id="lf-chat-header-info">
           <div id="lf-chat-header-name">Luxfly Assistant</div>
-          <div id="lf-chat-header-status">Online · Powered by AI</div>
+          <div id="lf-chat-header-status">Online · Always here to help</div>
         </div>
         <button id="lf-chat-close" aria-label="Close chat">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
@@ -348,11 +398,11 @@ RESPONSE GUIDELINES:
       <div id="lf-chat-messages"></div>
 
       <div id="lf-chat-quick">
-        <button class="lf-quick-btn" data-q="What are your prices?">Prices</button>
-        <button class="lf-quick-btn" data-q="What are your opening hours?">Hours</button>
-        <button class="lf-quick-btn" data-q="Is it safe for kids?">Kids</button>
-        <button class="lf-quick-btn" data-q="How do I book?">Booking</button>
-        <button class="lf-quick-btn" data-q="Where are you located?">Location</button>
+        <button class="lf-quick-btn" data-q="What are your prices?">💰 Prices</button>
+        <button class="lf-quick-btn" data-q="What are your opening hours?">🕐 Hours</button>
+        <button class="lf-quick-btn" data-q="Is it safe for kids?">👦 Kids</button>
+        <button class="lf-quick-btn" data-q="How do I book?">🎟️ Book</button>
+        <button class="lf-quick-btn" data-q="Where are you located?">📍 Location</button>
       </div>
 
       <form id="lf-chat-form" autocomplete="off">
@@ -381,10 +431,14 @@ RESPONSE GUIDELINES:
   let greeted = false;
 
   /* ── HELPERS ── */
-  function addMsg(text, role) {
+  function addMsg(html, role) {
     const el = document.createElement('div');
     el.className = 'lf-msg ' + (role === 'user' ? 'lf-msg-user' : 'lf-msg-bot');
-    el.textContent = text;
+    if (role === 'user') {
+      el.textContent = html;
+    } else {
+      el.innerHTML = '<p>' + formatResponse(html) + '</p>';
+    }
     messages.appendChild(el);
     messages.scrollTop = messages.scrollHeight;
     return el;
@@ -408,37 +462,8 @@ RESPONSE GUIDELINES:
     document.getElementById('lf-chat-quick').style.display = show ? 'flex' : 'none';
   }
 
-  /* ── GEMINI API ── */
-  async function askGemini(userText) {
-    history.push({ role: 'user', parts: [{ text: userText }] });
-
-    const body = {
-      system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
-      contents: history
-    };
-
-    try {
-      const res = await fetch(GEMINI_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body)
-      });
-      const data = await res.json();
-
-      if (data.candidates && data.candidates[0]) {
-        const reply = data.candidates[0].content.parts[0].text.trim();
-        history.push({ role: 'model', parts: [{ text: reply }] });
-        return reply;
-      } else {
-        return "I'm having a moment — please try again or email us at hello@luxfly.eu 🙂";
-      }
-    } catch (e) {
-      return "Something went wrong on my end. You can reach us at hello@luxfly.eu for help!";
-    }
-  }
-
   /* ── SEND MESSAGE ── */
-  async function sendMessage(text) {
+  function sendMessage(text) {
     text = text.trim();
     if (!text) return;
 
@@ -449,11 +474,15 @@ RESPONSE GUIDELINES:
     sendBtn.disabled = true;
     showTyping();
 
-    const reply = await askGemini(text);
-    removeTyping();
-    addMsg(reply, 'bot');
-    sendBtn.disabled = false;
-    input.focus();
+    // Simulate realistic typing delay (400–900ms)
+    const delay = 400 + Math.random() * 500;
+    setTimeout(() => {
+      removeTyping();
+      const reply = getResponse(text);
+      addMsg(reply, 'bot');
+      sendBtn.disabled = false;
+      input.focus();
+    }, delay);
   }
 
   /* ── OPEN / CLOSE ── */
@@ -468,7 +497,7 @@ RESPONSE GUIDELINES:
     if (!greeted) {
       greeted = true;
       setTimeout(() => {
-        addMsg("Hey! 👋 I'm the Luxfly assistant. Ask me anything about our indoor skydiving experience — prices, hours, booking, or anything else!", 'bot');
+        addMsg("Hey! 👋 I'm the Luxfly assistant. Ask me anything about our indoor skydiving experience — prices, hours, booking, kids, location, and more!", 'bot');
       }, 300);
     }
     input.focus();
@@ -477,7 +506,7 @@ RESPONSE GUIDELINES:
   function closeChat() {
     isOpen = false;
     win.classList.remove('open');
-    btn.innerHTML = `<span id="lf-chat-badge" style="display:none"></span>
+    btn.innerHTML = `<span id="lf-chat-badge" style="display:none">1</span>
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
         <path d="M12 2C6.48 2 2 6.06 2 11c0 2.64 1.18 5.02 3.07 6.72L4 22l4.54-2.04A10.7 10.7 0 0012 20c5.52 0 10-4.06 10-9S17.52 2 12 2z" fill="white"/>
       </svg>`;
@@ -512,7 +541,7 @@ RESPONSE GUIDELINES:
   setTimeout(() => {
     if (!isOpen && !greeted) {
       const b = document.getElementById('lf-chat-badge');
-      if (b) { b.style.display = 'flex'; b.textContent = '1'; }
+      if (b) b.style.display = 'flex';
     }
   }, 8000);
 
