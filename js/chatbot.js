@@ -22,7 +22,7 @@
     // ── RECOMMENDATION ───────────────────────────────────────────────────────
     recommend: {
       keywords: [
-        'recommend', 'recommendation', 'suggest', 'suggestion', 'best package',
+        'recommendation', 'suggest', 'suggestion', 'best package',
         'which package', 'what package', 'what should i book', 'what should i get',
         'which one should i', 'what do you suggest', 'what is best', 'most popular',
         'best for me', 'best for a beginner', 'best for first time', 'starter package',
@@ -69,8 +69,8 @@
       keywords: [
         'hour', 'hours', 'open', 'opening', 'close', 'closing', 'closed',
         'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday',
-        'weekend', 'weekday', 'time', 'times', 'when', 'geöffnet', 'öffnungszeiten',
-        'ouvert', 'horaire', 'horaires', 'what time', 'today', 'tomorrow', 'available',
+        'weekend', 'weekday', 'geöffnet', 'öffnungszeiten',
+        'ouvert', 'horaire', 'horaires', 'available',
         'opening time', 'closing time', 'are you open', 'when do you open',
         'when do you close', 'what time do you open', 'what time do you close',
         'open on weekends', 'open on sundays', 'open today', 'what days',
@@ -83,13 +83,13 @@
     // ── LOCATION ─────────────────────────────────────────────────────────────
     location: {
       keywords: [
-        'where', 'address', 'location', 'find you', 'get there', 'directions',
+        'address', 'location', 'find you', 'get there', 'directions',
         'navigate', 'sterpenich', 'arlon', 'ikea', 'decathlon', 'parking', 'park',
         'bus', 'tec', 'transport', 'e411', 'motorway', 'highway', 'exit',
         'luxembourg', 'belgium', 'belgique', 'où', 'adresse', 'comment venir',
         'wie komme ich', 'map', 'situated', 'near', 'close to', 'next to',
         'by car', 'by bus', 'public transport', 'route de l\'europe',
-        'how do i get', 'how do i get to you', 'how do i get there', 'where are you',
+        'how do i get to you', 'how do i get there', 'where are you',
         'where are you located', 'where is luxfly', 'find luxfly',
         'are you easy to find', 'how far', 'how far from luxembourg',
         'near luxembourg', 'border', 'from luxembourg city', 'from brussels',
@@ -647,8 +647,8 @@
     "No problem at all! Is there anything else you'd like to know? ✈️"
   ];
   const fallbacks = [
-    "Hmm, I don't have a specific answer for that! For the most accurate info, our team is just a message away:\n\n📞 **+32 63 39 11 63**\n💬 **WhatsApp:** +32 477 528 566\n📧 **info@luxfly.lu**\n\nOr try asking me about prices, booking, hours, health, or what to wear! 😊",
-    "That one's a bit outside my knowledge! 😅 Our friendly team will have the answer:\n📞 **+32 63 39 11 63** | 📧 **info@luxfly.lu**",
+    "I'm Luxfly's chatbot, so I can only help with questions about indoor skydiving! 🪂\n\nTry asking about:\n💰 **Prices** · ⏰ **Hours** · 📍 **Location** · 📅 **Booking** · 🎂 **Birthday Parties**\n👨‍👩‍👧 **Groups** · 🏅 **Experience** · 👕 **What to Wear** · 🎟️ **Vouchers** · 💼 **Jobs**\n\nOr reach our team: 📞 **+32 63 39 11 63** | 💬 **WhatsApp: +32 477 528 566** 😊",
+    "That's outside my area! I'm only set up to answer Luxfly questions. 🪂\n\nFor anything else, our team can help:\n📞 **+32 63 39 11 63** | 📧 **info@luxfly.lu**\n\nOr ask me about prices, booking, hours, birthday parties, or gear!",
     "I want to make sure you get the right answer for that — please reach out to our team directly:\n📞 **+32 63 39 11 63** | 💬 **WhatsApp: +32 477 528 566**\n\nI can answer questions about prices, packages, booking, health, hours, location, and more! 😊"
   ];
 
