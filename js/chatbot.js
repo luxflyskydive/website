@@ -976,7 +976,7 @@
 
   const bubble = document.createElement('div');
   bubble.id = 'lf-chat-bubble';
-  bubble.textContent = '✈️ Have a question? Ask here!';
+  bubble.textContent = 'Have a question? Ask here!';
   bubble.setAttribute('role', 'button');
   bubble.setAttribute('aria-label', 'Open chat assistant');
   document.body.appendChild(bubble);
