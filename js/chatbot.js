@@ -771,6 +771,37 @@
       #lf-chat-window { right: 12px; bottom: 90px; width: calc(100vw - 24px); }
       #lf-chat-btn { bottom: 20px; right: 16px; }
     }
+
+    /* ── Attention bubble ──────────────────────────────────────────── */
+    #lf-chat-bubble {
+      position: fixed; bottom: 96px; right: 16px; z-index: 9998;
+      background: #f02cb8; color: #fff;
+      padding: 9px 15px; border-radius: 18px 18px 4px 18px;
+      font-size: 13px; font-weight: 600; line-height: 1.3;
+      font-family: 'Montserrat','Inter',sans-serif;
+      box-shadow: 0 4px 20px rgba(240,44,184,0.45);
+      white-space: nowrap; cursor: pointer;
+      animation: lf-bubble-in 0.45s cubic-bezier(0.34,1.56,0.64,1) forwards;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    #lf-chat-bubble::after {
+      content: ''; position: absolute; bottom: -7px; right: 20px;
+      width: 0; height: 0;
+      border-left: 7px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 8px solid #f02cb8;
+    }
+    @keyframes lf-bubble-in {
+      from { opacity: 0; transform: translateY(14px) scale(0.9); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .lf-bubble-out {
+      animation: lf-bubble-out 0.25s ease forwards !important;
+    }
+    @keyframes lf-bubble-out {
+      to { opacity: 0; transform: translateY(8px) scale(0.92); }
+    }
   `;
   const styleEl = document.createElement('style');
   styleEl.textContent = css;
@@ -892,6 +923,7 @@
 
   function openChat() {
     isOpen = true;
+    dismissBubble();
     win.classList.add('open');
     const badge = document.getElementById('lf-chat-badge');
     if (badge) badge.style.display = 'none';
@@ -934,12 +966,24 @@
   });
   quickBtns.forEach(b => { b.addEventListener('click', () => sendMessage(b.dataset.q)); });
 
-  // Show notification badge after 8s if chat not yet opened
-  setTimeout(() => {
-    if (!isOpen && !greeted) {
-      const b = document.getElementById('lf-chat-badge');
-      if (b) b.style.display = 'flex';
-    }
-  }, 8000);
+  // ── Attention bubble ───────────────────────────────────────────────────────
+  function dismissBubble() {
+    const b = document.getElementById('lf-chat-bubble');
+    if (!b) return;
+    b.classList.add('lf-bubble-out');
+    setTimeout(() => b && b.parentNode && b.parentNode.removeChild(b), 260);
+  }
+
+  const bubble = document.createElement('div');
+  bubble.id = 'lf-chat-bubble';
+  bubble.textContent = '✈️ Have a question? Ask here!';
+  bubble.setAttribute('role', 'button');
+  bubble.setAttribute('aria-label', 'Open chat assistant');
+  document.body.appendChild(bubble);
+  bubble.addEventListener('click', () => { dismissBubble(); openChat(); });
+
+  // Auto-dismiss after 9 seconds
+  const bubbleTimeout = setTimeout(() => dismissBubble(), 9000);
+  bubble.addEventListener('click', () => clearTimeout(bubbleTimeout));
 
 })();
