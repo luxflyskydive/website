@@ -55,6 +55,7 @@
         '7 year old', '8 year old', '9 year old', '10 year old', '11 year old', '12 year old',
         '7 year', '8 year', '9 year', '10 year', '11 year', '12 year',
         'year old child', 'year old kid', 'is there a kids package', 'do you have kids packages',
+        'my kid wants to fly', 'kid wants to fly', 'my kid wants', 'kid wants',
         'age limit for kids', 'kids age limit', 'is there an age limit for kids',
         'child price', 'children price', 'price for children',
         'family package', 'family packages',
@@ -88,7 +89,7 @@
         'luxembourg', 'belgium', 'belgique', 'où', 'adresse', 'comment venir',
         'wie komme ich', 'map', 'situated', 'near', 'close to', 'next to',
         'by car', 'by bus', 'public transport', 'route de l\'europe',
-        'how do i get to you', 'how do i get there', 'where are you',
+        'how do i get', 'how do i get to you', 'how do i get there', 'where are you',
         'where are you located', 'where is luxfly', 'find luxfly',
         'are you easy to find', 'how far', 'how far from luxembourg',
         'near luxembourg', 'border', 'from luxembourg city', 'from brussels',
@@ -304,7 +305,7 @@
         'contact', 'email', 'phone', 'call', 'speak to', 'get in touch', 'reach',
         'whatsapp', 'message', 'chat', 'talk to', 'customer service', 'support',
         'help', 'enquiry', 'inquiry', 'kontakt', 'telefon', 'contactez', 'téléphone',
-        'joindre', 'reach out', 'press', 'media', 'instagram', 'facebook',
+        'joindre', 'reach out', 'how do i get in touch', 'press', 'media', 'instagram', 'facebook',
         'number', 'telephone', 'social media', 'how to contact', 'speak with someone',
         'can i call you', 'do you have a phone number', 'what is your email',
         'what is your phone number', 'how do i reach you', 'is there a number',
@@ -547,9 +548,58 @@
     return new RegExp('(?:^|[\\s,.!?\'"-])' + escaped + '(?:[\\s,.!?\'"-]|$)', 'i');
   }
 
+  // ─── Damerau-Levenshtein distance (handles transpositions like yaer→year) ───
+  function lev(a, b) {
+    const m = a.length, n = b.length;
+    if (m === 0) return n;
+    if (n === 0) return m;
+    const dp = Array.from({length: m + 1}, (_, i) => Array.from({length: n + 1}, (_, j) => j === 0 ? i : 0));
+    for (let j = 0; j <= n; j++) dp[0][j] = j;
+    for (let i = 1; i <= m; i++) {
+      for (let j = 1; j <= n; j++) {
+        const cost = a[i-1] === b[j-1] ? 0 : 1;
+        dp[i][j] = Math.min(dp[i-1][j] + 1, dp[i][j-1] + 1, dp[i-1][j-1] + cost);
+        // Transposition (adjacent swap counts as 1 edit, not 2)
+        if (i > 1 && j > 1 && a[i-1] === b[j-2] && a[i-2] === b[j-1])
+          dp[i][j] = Math.min(dp[i][j], dp[i-2][j-2] + cost);
+      }
+    }
+    return dp[m][n];
+  }
+
+  // Build a vocabulary from all KB keyword words (3+ chars, so 'old','age' etc. are reachable targets)
+  const kbVocab = (() => {
+    const seen = new Set();
+    for (const d of Object.values(KB))
+      for (const kw of d.keywords)
+        kw.split(/\s+/).forEach(w => { if (w.length >= 3) seen.add(w.toLowerCase()); });
+    return [...seen];
+  })();
+
+  // Replace each 4+ char word in user input with the closest KB vocab word if within threshold.
+  // Tiebreaker: prefer the longer correction (more specific keyword wins over short common words).
+  function fuzzyCorrect(text) {
+    return text.replace(/[a-zA-Z]{4,}/g, word => {
+      const w = word.toLowerCase();
+      if (kbVocab.includes(w)) return word; // exact match — no change needed
+      // Tolerance: 1 edit for 4-5 char words, 2 edits for 6+ char words
+      const maxDist = w.length <= 5 ? 1 : 2;
+      let best = null, bestDist = maxDist + 1;
+      for (const v of kbVocab) {
+        if (Math.abs(v.length - w.length) > maxDist) continue;
+        const d = lev(w, v);
+        // Accept if better distance, or same distance but longer (more specific) match
+        if (d < bestDist || (d === bestDist && best !== null && v.length > best.length)) {
+          bestDist = d; best = v;
+        }
+      }
+      return best !== null ? best : word;
+    });
+  }
+
   // ─── Classifier ─────────────────────────────────────────────────────────────
   function classify(text) {
-    const lower = text.toLowerCase();
+    const lower = fuzzyCorrect(text).toLowerCase();
     let bestCategory = null, bestScore = 0;
     for (const [cat, data] of Object.entries(KB)) {
       let score = 0;
