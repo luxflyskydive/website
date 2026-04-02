@@ -14,7 +14,7 @@
         'cheap', 'expensive', 'budget', 'adult price', 'adult package',
         'what does it cost', 'what is the price', 'how much do you charge',
         'pricing', 'cost per', 'how much per', 'what are the prices',
-        'tell me the prices', 'show me prices', 'list of packages'
+        'tell me the prices', 'show me prices', 'list of packages', 'luxcovery', 'luxensation', 'luxemotion'
       ],
       response: () => `Here are our flight packages:\n\n**👤 ADULTS**\n✈️ **LUXCOVERY** — 2 flights (2 min): **€104.70**\n✈️ **LUXENSATION** — 2 flights (4 min): **€174.70**\n✈️ **LUXEMOTION** — 3 flights (6 min): **€236.70**\n💡 Basic option (no extras) from **€65.90**\n\n**🧒 KIDS (ages 4–12)**\n✈️ **Kids 2 flights:** **€89.70**\n✈️ **Kids 4 flights:** **€139.80**\n💡 Basic option from **€45.90**\n\nAll main packages include: full gear, safety briefing, qualified instructor, HighFly experience, professional souvenir photos, and **Art of Skydiving Museum** access. 🎫\n\nNot sure which to pick? Ask me for a recommendation! 😊`
     },
@@ -59,7 +59,7 @@
         'age limit for kids', 'kids age limit', 'is there an age limit for kids',
         'child price', 'children price', 'price for children',
         'family package', 'family packages',
-        'toddlers', 'can toddlers fly'
+        'toddlers', 'can toddlers fly', 'consent form', 'sign a form', 'parental consent', 'do i need to sign'
       ],
       response: () => `**Kids are absolutely welcome at Luxfly!** 🧒✈️\n\n**Minimum age: 4 years old.** Maximum weight: 120 kg.\n\n**Kids Packages (ages 4–12):**\n✈️ **2 flights:** **€89.70** (includes HighFly, souvenir photos & museum)\n✈️ **4 flights:** **€139.80**\n💡 Basic option available from **€45.90** (limited slots, no extras)\n\nKids actually adapt to the air faster than adults! A parent or legal guardian must be present at all times, and a signed consent form is required for under-18s.\n\nAll instructors hold child-flight certification and adjust wind speeds for smaller flyers. 💙`
     },
@@ -75,7 +75,7 @@
         'when do you close', 'what time do you open', 'what time do you close',
         'open on weekends', 'open on sundays', 'open today', 'what days',
         'which days', 'when are you open', 'do you open on', 'bank holiday',
-        'public holiday', 'christmas', 'new year'
+        'public holiday', 'christmas', 'new year', 'last entry', 'last admission', 'last session'
       ],
       response: () => `**Luxfly Opening Hours:**\n\n📅 **Monday:** Closed *(open on the 1st Monday of each month)*\n📅 **Tuesday:** Closed\n📅 **Wednesday – Friday:** 12:00 – 20:00\n📅 **Saturday & Sunday:** 10:00 – 19:00\n\n⏰ Last sessions admitted **90 minutes before closing**.\n\nAfter-hours private hire is available Mon–Thu from 07:00 — contact us for details.\n\nWe recommend booking ahead, especially for weekends. Walk-ins welcome subject to availability! 🎟️`
     },
@@ -83,18 +83,18 @@
     // ── LOCATION ─────────────────────────────────────────────────────────────
     location: {
       keywords: [
-        'address', 'location', 'find you', 'get there', 'directions',
+        'location', 'find you', 'get there', 'directions',
         'navigate', 'sterpenich', 'arlon', 'ikea', 'decathlon', 'parking', 'park',
         'bus', 'tec', 'transport', 'e411', 'motorway', 'highway', 'exit',
         'luxembourg', 'belgium', 'belgique', 'où', 'adresse', 'comment venir',
-        'wie komme ich', 'map', 'situated', 'near', 'close to', 'next to',
+        'wie komme ich', 'map', 'situated', 'close to', 'next to',
         'by car', 'by bus', 'public transport', 'route de l\'europe',
         'how do i get to you', 'how do i get there', 'where are you',
         'where are you located', 'where is luxfly', 'find luxfly',
         'are you easy to find', 'how far', 'how far from luxembourg',
-        'near luxembourg', 'border', 'from luxembourg city', 'from brussels',
+        'near luxembourg', 'near the border', 'from luxembourg city', 'from brussels',
         'from arlon', 'from liege', 'close to', 'how close', 'free parking', 'is there parking',
-        'can i park', 'parking available', 'is parking free'
+        'can i park', 'parking available', 'is parking free', 'where is your address', 'your address', 'full address'
       ],
       response: () => `**Luxfly is in Sterpenich, Belgium** 📍\n\n🏠 **Address:** Route de l'Europe 1, 6700 Sterpenich, Belgium\n\n🚗 **By Car:** E411 motorway, exit 33 (Sterpenich/Arlon). We're right next to **IKEA** and **Decathlon** — very easy to find! **80+ free parking spaces** on site.\n\n🚌 **By Bus:** TEC bus line 222 stops right outside.\n\n📍 Just minutes from the Luxembourg border — easily accessible from Luxembourg City, Arlon, and the wider Greater Region.`
     },
@@ -307,7 +307,7 @@
         'help', 'enquiry', 'inquiry', 'kontakt', 'telefon', 'contactez', 'téléphone',
         'joindre', 'reach out', 'how do i get in touch', 'press', 'media', 'instagram', 'facebook',
         'number', 'telephone', 'social media', 'how to contact', 'speak with someone',
-        'can i call you', 'do you have a phone number', 'what is your email',
+        'can i call you', 'do you have a phone number', 'what is your email', 'email address', 'what is your email address', 'contact by email',
         'what is your phone number', 'how do i reach you', 'is there a number',
         'customer care', 'complaints', 'feedback', 'get back to me',
         'reply to me', 'when will you reply', 'response time',
@@ -412,7 +412,7 @@
     bar: {
       keywords: [
         'bar', 'food', 'eat', 'drink', 'drinks', 'menu', 'restaurant', 'café',
-        'coffee', 'beer', 'burger', 'snack', 'hungry', 'thirsty', 'lunch',
+        'coffee', 'beer', 'burger', 'snack', 'burger price', 'how much is the burger', 'food prices', 'hungry', 'thirsty', 'lunch',
         'dinner', 'meal', 'sandwich', 'bar menu', 'what can i eat', 'canteen',
         'essen', 'trinken', 'boire', 'manger', 'nourriture', 'boisson',
         'cocktail', 'juice', 'soft drink', 'food menu', 'what food', 'nachos',
@@ -469,7 +469,7 @@
         'flight instructor', 'tunnel instructor', 'languages', 'speak french',
         'speak german', 'speak english', 'multilingual', 'how experienced',
         'team of coaches', 'professional coaches', 'who will teach me',
-        'will someone help me', 'will there be an instructor', 'is there an instructor',
+        'will someone help me', 'will an instructor help me', 'will there be an instructor', 'is there an instructor',
         'will i have a coach', 'who will be with me', 'do i get a coach',
         'is there someone with me', 'will i be alone', 'alone in the tunnel',
         'supervised', 'am i supervised', 'do you speak english',
@@ -758,6 +758,15 @@
       flex-shrink: 0; align-self: flex-end; transition: opacity 0.2s, transform 0.15s;
     }
     #lf-chat-send:hover { opacity: 0.85; transform: scale(1.05); }
+    /* Touch devices: no-scale animation prevents Safari zoom */
+    @media (hover: none) and (pointer: coarse) {
+      #lf-chat-window {
+        transform: translateY(24px);
+        transition: transform 0.28s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.22s;
+      }
+      #lf-chat-window.open { transform: translateY(0); }
+      #lf-chat-window, #lf-chat-btn { touch-action: pan-x pan-y; }
+    }
     @media (max-width: 480px) {
       #lf-chat-window { right: 12px; bottom: 90px; width: calc(100vw - 24px); }
       #lf-chat-btn { bottom: 20px; right: 16px; }
@@ -866,6 +875,21 @@
   }
 
   // ─── Open / Close ────────────────────────────────────────────────────────────
+  // Touch detection + scroll lock helpers
+  const isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+  let _lockedScrollY = 0;
+  function lockBodyScroll() {
+    _lockedScrollY = window.scrollY;
+    document.body.style.cssText += ';position:fixed;top:-' + _lockedScrollY + 'px;width:100%;overflow-y:scroll';
+  }
+  function unlockBodyScroll() {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    document.body.style.overflowY = '';
+    window.scrollTo(0, _lockedScrollY);
+  }
+
   function openChat() {
     isOpen = true;
     win.classList.add('open');
@@ -880,7 +904,11 @@
         addMsg("Hey! 👋 I'm Zoom, the Luxfly assistant. Ask me anything about our indoor skydiving experience — prices, booking, health, kids, location, and more!", 'bot');
       }, 300);
     }
-    input.focus();
+    if (isTouch) {
+      lockBodyScroll(); // no input.focus() — prevents Safari zoom
+    } else {
+      input.focus();
+    }
   }
 
   function closeChat() {
@@ -890,6 +918,7 @@
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
         <path d="M12 2C6.48 2 2 6.06 2 11c0 2.64 1.18 5.02 3.07 6.72L4 22l4.54-2.04A10.7 10.7 0 0012 20c5.52 0 10-4.06 10-9S17.52 2 12 2z" fill="white"/>
       </svg>`;
+    if (isTouch) unlockBodyScroll();
   }
 
   // ─── Events ──────────────────────────────────────────────────────────────────
