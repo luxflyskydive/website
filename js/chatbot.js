@@ -3,37 +3,72 @@
 
   // ─── Knowledge Base ────────────────────────────────────────────────────────
   const KB = {
+
+    // ── PRICES ──────────────────────────────────────────────────────────────
     prices: {
       keywords: [
-        'price', 'prices', 'cost', 'costs', 'how much', 'package', 'packages',
-        'kostet', 'kosten', 'tarif', 'tarifs', 'prix', 'rate', 'rates', 'fee',
-        'fees', 'charge', 'pay', 'ticket', 'tickets', 'option', 'options',
-        'affordable', 'cheap', 'expensive', 'budget', 'adult price', 'adult package'
+        'price', 'prices', 'cost', 'costs', 'how much', 'how much is it',
+        'how much does it cost', 'package', 'packages', 'kostet', 'kosten',
+        'tarif', 'tarifs', 'prix', 'combien', 'rate', 'rates', 'fee', 'fees',
+        'charge', 'pay', 'ticket', 'tickets', 'option', 'options', 'affordable',
+        'cheap', 'expensive', 'budget', 'adult price', 'adult package',
+        'what does it cost', 'what is the price', 'how much do you charge',
+        'pricing', 'cost per', 'how much per', 'what are the prices',
+        'tell me the prices', 'show me prices', 'list of packages'
       ],
-      response: () => `Here are our flight packages:\n\n**🧒 KIDS (under 18)**\n✈️ **JUNIOR DISCOVERY** — 2 flights (2 min): **€45.90**\n✈️ **JUNIOR EXPLORER** — 4 flights (4 min): **€79.90**\n✈️ **JUNIOR ADVENTURE** — 6 flights (6 min): **€109.90**\n\n**👤 ADULTS**\n✈️ **LUXCOVERY** — 2 flights (2 min): **€65.90**\n✈️ **LUXPLORER** — 4 flights (4 min): **€114.90**\n✈️ **LUXPERIENCE** — 6 flights (6 min): **€159.90**\n✈️ **LUXMASTER** — 8 flights (8 min): **€199.90**\n\nAll packages include gear, safety briefing, and **Aviation Museum** access. 🎫\n\nNeed group rates, shared sessions, or pro training? Just ask!`
+      response: () => `Here are our flight packages:\n\n**🧒 KIDS (under 18)**\n✈️ **JUNIOR DISCOVERY** — 2 flights (2 min): **€45.90**\n✈️ **JUNIOR EXPLORER** — 4 flights (4 min): **€79.90**\n✈️ **JUNIOR ADVENTURE** — 6 flights (6 min): **€109.90**\n\n**👤 ADULTS**\n✈️ **LUXCOVERY** — 2 flights (2 min): **€65.90**\n✈️ **LUXPLORER** — 4 flights (4 min): **€114.90**\n✈️ **LUXPERIENCE** — 6 flights (6 min): **€159.90**\n✈️ **LUXMASTER** — 8 flights (8 min): **€199.90**\n\nAll packages include gear, safety briefing, and **Aviation Museum** access. 🎫\n\nNot sure which to pick? Ask me for a recommendation! 😊`
     },
 
+    // ── RECOMMENDATION ───────────────────────────────────────────────────────
+    recommend: {
+      keywords: [
+        'recommend', 'recommendation', 'suggest', 'suggestion', 'best package',
+        'which package', 'what package', 'what should i book', 'what should i get',
+        'which one should i', 'what do you suggest', 'what is best', 'most popular',
+        'best for me', 'best for a beginner', 'best for first time', 'starter package',
+        'beginner package', 'not sure what to book', 'what to get', 'what to choose',
+        'which to choose', 'which to book', 'help me choose', 'what would you recommend',
+        'advice', 'advise', 'what do most people get', 'best value', 'good value',
+        'worth it', 'is it worth', 'what should i start with', 'ideal package',
+        'perfect package', 'suitable package', 'i don\'t know what to book'
+      ],
+      response: () => `**Here's what we recommend for first-timers:** ✈️\n\n🌟 **LUXCOVERY (2 flights, €65.90)** is perfect to start — your first flight is all about getting the feel of it, and your second is where you really start to fly!\n\n💪 If you want more time in the tunnel, go for **LUXPLORER (4 flights, €114.90)** — great value and enough time to genuinely improve.\n\n🏆 The **LUXPERIENCE or LUXMASTER** packages are ideal if you want to push it further or treat yourself.\n\n🧒 **For kids:** **JUNIOR DISCOVERY (2 flights, €45.90)** is the perfect introduction!\n\nAll packages include full gear, a safety briefing, and **Aviation Museum** access. You can always upgrade on the day. 😊`
+    },
+
+    // ── KIDS ─────────────────────────────────────────────────────────────────
     kids: {
       keywords: [
         'kid', 'kids', 'child', 'children', 'baby', 'junior', 'young',
         'minimum age', 'how old', 'can my kid', 'can children', 'for children',
         'for kids', 'how much for kid', 'price for child', 'price for kids',
         'family', 'how young', 'kind', 'enfant', 'enfants', 'age limit',
-        'age restriction', 'my son', 'my daughter', 'my child', 'old enough'
+        'age restriction', 'my son', 'my daughter', 'my child', 'old enough',
+        'toddler', 'four year', '4 year', '5 year', '6 year', 'can a child',
+        'is it suitable for children', 'can babies', 'youngest', 'youngest age',
+        'too young', 'safe for kids', 'safe for children', 'kids safe',
+        'is it safe for my child', 'children allowed', 'kids allowed',
+        'minimum age for kids', 'what age can children'
       ],
-      response: () => `**Kids are absolutely welcome at Luxfly!** 🧒✈️\n\nThe **minimum age is 4 years old**.\n\n**Kids Packages:**\n✈️ **JUNIOR DISCOVERY** — 2 flights: **€45.90**\n✈️ **JUNIOR EXPLORER** — 4 flights: **€79.90**\n✈️ **JUNIOR ADVENTURE** — 6 flights: **€109.90**\n\n⚖️ Weight: minimum **30 kg**, maximum **120 kg** for all flyers.\n\nKids must be accompanied by a parent or guardian. Our certified instructors are specially trained to work with children — safe, fun, and unforgettable!\n\nAll packages include equipment, briefing, and **Aviation Museum** access. 🎫`
+      response: () => `**Kids are absolutely welcome at Luxfly!** 🧒✈️\n\nThe **minimum age is 4 years old**.\n\n**Kids Packages:**\n✈️ **JUNIOR DISCOVERY** — 2 flights: **€45.90**\n✈️ **JUNIOR EXPLORER** — 4 flights: **€79.90**\n✈️ **JUNIOR ADVENTURE** — 6 flights: **€109.90**\n\n⚖️ Weight: minimum **30 kg**, maximum **120 kg** for all flyers.\n\nKids must be accompanied by a parent or guardian. Our instructors are specially trained to work with children — it's safe, fun, and unforgettable!\n\nAll packages include equipment, briefing, and **Aviation Museum** access. 🎫`
     },
 
+    // ── OPENING HOURS ────────────────────────────────────────────────────────
     hours: {
       keywords: [
         'hour', 'hours', 'open', 'opening', 'close', 'closing', 'closed',
         'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday',
         'weekend', 'weekday', 'time', 'times', 'when', 'geöffnet', 'öffnungszeiten',
-        'ouvert', 'horaire', 'horaires', 'what time', 'today', 'tomorrow', 'available'
+        'ouvert', 'horaire', 'horaires', 'what time', 'today', 'tomorrow', 'available',
+        'opening time', 'closing time', 'are you open', 'when do you open',
+        'when do you close', 'what time do you open', 'what time do you close',
+        'open on weekends', 'open on sundays', 'open today', 'what days',
+        'which days', 'when are you open', 'do you open on', 'bank holiday',
+        'public holiday', 'christmas', 'new year'
       ],
-      response: () => `**Luxfly Opening Hours:**\n\n📅 **Monday:** 12:00 – 20:00\n📅 **Tuesday:** 12:00 – 20:00\n📅 **Wednesday:** 12:00 – 20:00\n📅 **Thursday:** 12:00 – 20:00\n📅 **Friday:** 12:00 – 22:00\n📅 **Saturday:** 10:00 – 22:00\n📅 **Sunday:** 10:00 – 20:00\n\nWe recommend booking in advance — especially for weekends. Walk-ins are welcome subject to availability! 🎟️`
+      response: () => `**Luxfly Opening Hours:**\n\n📅 **Monday:** 12:00 – 20:00\n📅 **Tuesday:** 12:00 – 20:00\n📅 **Wednesday:** 12:00 – 20:00\n📅 **Thursday:** 12:00 – 20:00\n📅 **Friday:** 12:00 – 22:00\n📅 **Saturday:** 10:00 – 22:00\n📅 **Sunday:** 10:00 – 20:00\n\nWe recommend booking in advance — especially for weekends! Walk-ins are welcome subject to availability. 🎟️\n\nFor public holiday opening hours, please check our website or contact us at 📞 +32 63 39 11 63.`
     },
 
+    // ── LOCATION ─────────────────────────────────────────────────────────────
     location: {
       keywords: [
         'where', 'address', 'location', 'find you', 'get there', 'directions',
@@ -41,67 +76,122 @@
         'bus', 'tec', 'transport', 'e411', 'motorway', 'highway', 'exit',
         'luxembourg', 'belgium', 'belgique', 'où', 'adresse', 'comment venir',
         'wie komme ich', 'map', 'situated', 'near', 'close to', 'next to',
-        'by car', 'by bus', 'public transport', 'route de l\'europe'
+        'by car', 'by bus', 'public transport', 'route de l\'europe',
+        'how do i get to you', 'how do i get there', 'where are you',
+        'where are you located', 'where is luxfly', 'find luxfly',
+        'are you easy to find', 'how far', 'how far from luxembourg',
+        'near luxembourg', 'border', 'from luxembourg city', 'from brussels',
+        'from arlon', 'from liege', 'free parking', 'is there parking',
+        'can i park', 'parking available', 'is parking free'
       ],
       response: () => `**Luxfly is in Sterpenich, Belgium** 📍\n\n🏠 **Address:** Route de l'Europe 1, 6700 Sterpenich, Belgium\n\n🚗 **By Car:** E411 motorway, exit 33 (Sterpenich/Arlon). We're right next to **IKEA** and **Decathlon** — very easy to find! **80+ free parking spaces** on site.\n\n🚌 **By Bus:** TEC bus line 222 stops right outside.\n\n📍 Just minutes from the Luxembourg border — easily accessible from Luxembourg City, Arlon, and the wider Greater Region.`
     },
 
+    // ── BOOKING / CANCELLATION ───────────────────────────────────────────────
     booking: {
       keywords: [
         'book', 'booking', 'reserve', 'reservation', 'cancel', 'cancellation',
         'refund', 'walk-in', 'walk-ins', 'without booking', 'online', 'appointment',
         'slot', 'availability', 'rebook', 'reschedule', 'postpone', 'deposit',
         'payment', 'pay online', 'buchen', 'réserver', 'annuler', 'rembours',
-        'prepay', 'last minute', 'same day', 'policy', 'terms', 'conditions'
+        'prepay', 'last minute', 'same day', 'policy', 'terms', 'conditions',
+        'do i need to book', 'must i book', 'can i just turn up', 'can i walk in',
+        'can i just show up', 'just show up', 'can i come without booking',
+        'do i need a reservation', 'pay in advance', 'pay on the day',
+        'payment method', 'pay by card', 'pay by cash', 'credit card',
+        'debit card', 'cash', 'how do i pay', 'how to pay', 'how to book',
+        'can i book online', 'book over the phone', 'book by phone',
+        'is there availability', 'how do i cancel', 'what if i cancel',
+        'money back', 'can i get a refund', 'change my booking',
+        'change the date', 'change the time', 'move my booking',
+        'i need to cancel', 'cancellation policy', 'refund policy',
+        'is it fully booked', 'when can i come', 'first come first served'
       ],
-      response: () => `**Booking at Luxfly:**\n\n🎟️ Book online at [luxfly.lu](https://luxfly.lu) or call **+32 63 39 11 63**.\n\n🚶 **Walk-ins welcome** — but we strongly recommend booking in advance for weekends and peak periods.\n\n**Cancellation Policy:**\n❌ **Less than 24 hours before:** No refund\n⚠️ **24–48 hours before:** 50% refund\n✅ **More than 48 hours before:** Full refund or free rescheduling\n\nGift vouchers can be used online or in-person for any package.`
+      response: () => `**Booking at Luxfly:**\n\n🎟️ Book online at **luxfly.lu** or call us at **+32 63 39 11 63**.\n\n💳 **Payment:** We accept card and cash payments. Full payment at time of booking when booking online.\n\n🚶 **Walk-ins welcome** — but we strongly recommend booking ahead for weekends and peak times.\n\n**Cancellation Policy:**\n✅ **More than 48 hours before:** Full refund or free rescheduling\n⚠️ **24–48 hours before:** 50% refund\n❌ **Less than 24 hours before:** No refund\n\nGift vouchers can be used online or in-person for any package.`
     },
 
+    // ── BIRTHDAY ─────────────────────────────────────────────────────────────
     birthday: {
       keywords: [
         'birthday', 'anniversaire', 'geburtstag', 'birthday party', 'celebrate',
         'celebration', 'special occasion', 'surprise', 'birthday month', 'bday',
         'happy birthday', 'birthday idea', 'birthday gift', 'party idea',
-        'special day', 'birthday discount', 'birthday deal', 'birthday offer'
+        'special day', 'birthday discount', 'birthday deal', 'birthday offer',
+        'for my birthday', 'it\'s my birthday', 'birthday treat', 'treat myself',
+        'birthday experience', 'unique gift', 'gift idea', 'present idea',
+        'something special', 'celebrate birthday'
       ],
-      response: () => `**🎂 Celebrate your birthday at Luxfly!**\n\n🎉 **Birthday Month Discount:** Fly during your birthday month and get **10% off** your package! Just mention it when booking.\n\n🎁 **Birthday Add-ons:**\n- Private viewing gallery for friends & family\n- Photography & video package\n- Balloon & decoration package\n- Dedicated flight instructor for your group\n\n🎊 **Group birthday packages** available — contact us for a custom quote!\n\n📞 +32 63 39 11 63 | 📧 info@luxfly.lu`
+      response: () => `**🎂 Celebrate your birthday at Luxfly!**\n\n🎉 **Birthday Month Discount:** Fly during your birthday month and get **10% off** your package — just mention it when booking!\n\n🎁 **Birthday Add-ons:**\n- Private viewing gallery for friends & family\n- Photography & video package\n- Balloon & decoration package\n- Dedicated flight instructor for your group\n\n🎊 **Group birthday packages** available with custom quotes.\n\n📞 +32 63 39 11 63 | 📧 info@luxfly.lu`
     },
 
+    // ── GROUPS / BACHELOR / CORPORATE ────────────────────────────────────────
     groups: {
       keywords: [
         'group', 'groups', 'team', 'team building', 'corporate', 'company',
         'colleagues', 'bachelor', 'bachelor party', 'hen party', 'bachelorette',
-        'stag', 'stag do', 'office', 'friends', 'people', 'large group',
-        'big group', 'association', 'school', 'class trip', 'incentive',
-        'groupe', 'entreprise', 'evjf', 'enterrement de vie', 'mannschaft',
-        'firmen', 'per person', 'group rate', 'group price', 'group discount'
+        'stag', 'stag do', 'office', 'friends', 'large group', 'big group',
+        'association', 'school', 'class trip', 'incentive', 'groupe', 'entreprise',
+        'evjf', 'enterrement de vie', 'mannschaft', 'firmen', 'per person',
+        'group rate', 'group price', 'group discount', 'group booking',
+        'private event', 'private hire', 'exclusive hire', 'private session',
+        'rent the tunnel', 'hire the tunnel', 'book for a group',
+        'book for my team', 'work event', 'work outing', 'office outing',
+        'corporate event', 'how many people', 'big group discount',
+        'we are a group of', 'there are', 'people coming', 'how much for a group',
+        'group of friends', 'group of colleagues', 'group deal',
+        'evg', 'evjf', 'junggesellenabschied', 'enterrement de vie de garcon',
+        'hen do', 'hen night', 'bachelor night', 'going to be', 'party of'
       ],
-      response: () => `**Group & Event Packages at Luxfly** 👥\n\n**Group Flight Rates (per minute of flight time):**\n👥 2–9 people: **€35/min**\n👥 10–19 people: **€31.50/min**\n👥 20–49 people: **€29.75/min**\n👥 50–99 people: **€28/min**\n\n**🎊 Bachelor / Hen Party Packages:**\n🥂 Classic: **€28/person**\n🎉 Party Plus: **€52/person** (includes extras)\n👑 VIP Experience: from **€550** (full private experience)\n\n**🏢 Team Building:** Custom corporate events with dedicated staff, private sessions & catering.\n\nFor groups of 10+, contact us for a personalised quote:\n📧 info@luxfly.lu | 📞 +32 63 39 11 63`
+      response: () => `**Group & Event Packages at Luxfly** 👥\n\n**Group Flight Rates (per minute of flight time):**\n👥 2–9 people: **€35/min**\n👥 10–19 people: **€31.50/min**\n👥 20–49 people: **€29.75/min**\n👥 50–99 people: **€28/min**\n\n**🎊 Bachelor / Hen Party Packages:**\n🥂 Classic: **€28/person**\n🎉 Party Plus: **€52/person** (includes extras)\n👑 VIP Experience: from **€550** (full private experience)\n\n**🏢 Team Building:** Custom corporate events with dedicated staff, private sessions & catering.\n\nFor personalised group quotes:\n📧 info@luxfly.lu | 📞 +32 63 39 11 63`
     },
 
+    // ── EXPERIENCE / WHAT IS IT ──────────────────────────────────────────────
     experience: {
       keywords: [
         'experience', 'need experience', 'first time', 'beginner', 'never done',
         'indoor skydiving', 'wind tunnel', 'what is it like', 'what is indoor skydiving',
-        'how does it work', 'feel like', 'scary', 'difficult', 'hard', 'easy',
+        'how does it work', 'feel like', 'does it feel', 'what does it feel',
+        'what does it feel like', 'scary', 'difficult', 'hard', 'easy',
         'skydiving', 'skydive', 'erfahrung', 'première fois', 'débutant', 'novice',
         'nervous', 'afraid', 'intimidating', 'never flown', 'bodyflight', 'freefall',
-        'floating', 'i want to fly', 'want to fly', 'flying', 'try it'
+        'floating', 'i want to fly', 'want to fly', 'flying', 'try it',
+        'sensation', 'adrenaline', 'exhilarating', 'thrilling', 'fun',
+        'will i be scared', 'is it terrifying', 'am i going to be scared',
+        'what if i am scared', 'will i get dizzy', 'dizzy', 'nauseous', 'sick',
+        'will i feel sick', 'motion sickness', 'is it like real skydiving',
+        'compared to real skydiving', 'similar to skydiving', 'difference from skydiving',
+        'is it indoors', 'is it outdoors', 'indoor', 'outdoor', 'outside', 'inside',
+        'what happens', 'how does it feel to fly', 'describe the feeling',
+        'tell me about the experience', 'what is bodyflight', 'what is a wind tunnel',
+        'do i need to be fit', 'how fit', 'fitness required', 'physically demanding',
+        'do i need strength', 'can unfit people fly', 'is it tiring',
+        'how safe is it', 'is it dangerous', 'danger', 'risk', 'safe activity',
+        'what are the risks', 'accident', 'injury risk', 'protection'
       ],
-      response: () => `**Indoor skydiving — no experience needed!** 🌬️✈️\n\nIndoor skydiving (bodyflight) recreates the feeling of skydiving freefall inside a vertical wind tunnel. You float on a powerful air column at up to **160 km/h** — fully controlled and totally safe!\n\n🎓 **Full safety briefing included** with every package — our certified instructors guide you from step one.\n\n🌟 **No experience required** — the vast majority of our guests are first-timers! Your instructor is in the tunnel with you the whole time.\n\n🧒 Suitable for ages **4 and up** (min 30 kg, max 120 kg).`
+      response: () => `**Indoor skydiving — no experience needed!** 🌬️✈️\n\nIndoor skydiving (bodyflight) recreates the feeling of skydiving freefall inside a vertical wind tunnel. You float on a powerful column of air at up to **160 km/h** — safe, controlled, and completely addictive!\n\n🏠 **It's fully indoors** — weather never affects your flight.\n\n😰 **Scared? Don't worry!** Almost all our guests are first-timers. Your instructor is inside the tunnel with you the whole time and won't let go until you're ready.\n\n💪 **No fitness required** — it's floating, not fighting! All ages and fitness levels are welcome.\n\n🎓 **Full safety briefing** included with every package. All gear provided.\n\n🧒 Suitable for ages **4 and up** (min 30 kg, max 120 kg). It's one of the safest adventure activities available! ✅`
     },
 
+    // ── GEAR / WHAT TO WEAR ──────────────────────────────────────────────────
     gear: {
       keywords: [
         'wear', 'bring', 'equipment', 'gear', 'included', 'helmet', 'jumpsuit',
         'suit', 'shoes', 'clothing', 'clothes', 'what do i wear', 'what should i wear',
         'outfit', 'dress', 'jewellery', 'jewelry', 'glasses', 'contacts',
         'contact lenses', 'accessories', 'provided', 'ausrüstung', 'vêtements',
-        'tenue', 'équipement', 'goggles', 'earplugs', 'flying suit', 'what to wear'
+        'tenue', 'équipement', 'goggles', 'earplugs', 'flying suit', 'what to wear',
+        'what do i need to bring', 'what should i bring', 'do i need to bring anything',
+        'is equipment provided', 'is gear included', 'what is provided',
+        'what is included', 'what do i need', 'do i need to bring', 'what to prepare',
+        'prepare for my visit', 'how should i prepare', 'what to wear underneath',
+        'can i wear glasses', 'can i wear jewellery', 'can i wear jewelry',
+        'can i wear a ring', 'long hair', 'hair', 'hairband', 'piercings', 'piercing',
+        'can i wear contacts', 'barefoot', 'lace up', 'sneakers', 'trainers',
+        'what shoes', 'flip flops', 'sandals', 'heels', 'boots', 'lockers', 'locker'
       ],
-      response: () => `**Everything is provided — just show up!** 🎽\n\n**Included in your package:**\n✅ Flying suit (jumpsuit)\n✅ Helmet\n✅ Goggles\n✅ Earplugs\n\n**Wear underneath:**\n👟 Comfortable, sporty clothing (no skirts/dresses)\n👟 Lace-up trainers or sports shoes (no sandals, heels, or slip-ons)\n\n**Please remove/leave behind:**\n❌ Jewellery, watches, rings, earrings\n❌ Scarves, belts, or loose accessories\n❌ Glasses (contact lenses are fine)\n\nLockers are available for your belongings. See you in the tunnel! 🌬️`
+      response: () => `**Everything is provided — just show up!** 🎽\n\n**Included in your package:**\n✅ Flying suit (jumpsuit)\n✅ Helmet\n✅ Goggles\n✅ Earplugs\n\n**Wear underneath:**\n👟 Comfortable, sporty clothing (no skirts/dresses)\n👟 Lace-up trainers or sports shoes — no sandals, heels, or slip-ons!\n\n**Please remove/leave behind:**\n❌ Jewellery, watches, rings, earrings, piercings if possible\n❌ Scarves, belts, or loose accessories\n❌ Glasses (contact lenses are perfectly fine)\n\n💇 Long hair? Tie it back — we'll have it sorted under your helmet.\n\n🗝️ Lockers are available on-site for your belongings. See you in the tunnel! 🌬️`
     },
 
+    // ── SPECTATORS ───────────────────────────────────────────────────────────
     spectators: {
       keywords: [
         'watch', 'watching', 'spectator', 'spectators', 'viewing', 'viewing area',
@@ -109,46 +199,93 @@
         'photo', 'video', 'camera', 'photos', 'footage', 'observe', 'cheer',
         'audience', 'support', 'famille', 'amis', 'regarder', 'zuschauer',
         'friends come', 'come along', 'come watch', 'bring friends', 'non-flyer',
-        'not flying', 'just watching', 'gallery', 'photography package'
+        'not flying', 'just watching', 'gallery', 'photography package',
+        'can someone come with me', 'can my partner watch', 'can my parents watch',
+        'can my husband watch', 'can my wife watch', 'can my partner come',
+        'free for spectators', 'entry for spectators', 'is it free to watch',
+        'can non-flyers come in', 'can non flyers', 'just come and watch',
+        'is there a viewing area', 'see through', 'glass',
+        'how do i get photos', 'can i film', 'can i take photos', 'can i record',
+        'professional photos', 'photos of my flight', 'video of my flight',
+        'record my flight', 'film my flight', 'how to get footage'
       ],
-      response: () => `**Friends & family are welcome to watch and cheer!** 📸👀\n\n🏟️ **Dedicated viewing gallery** with clear glass panels — spectators get a perfect view of everything inside the tunnel.\n\n📷 **Photography & Video:**\n- Spectators can take photos & videos freely from the gallery\n- Professional **photography/video packages** also available — ask at reception!\n- In-tunnel cameras capture incredible footage from inside\n\n🎟️ **Entry for spectators is FREE** — no ticket needed to come along.\n\n🏛️ All packages include **Aviation Museum** access, so non-flyers have plenty to enjoy! ✈️`
+      response: () => `**Friends & family are very welcome to come along!** 📸👀\n\n🏟️ **Dedicated viewing gallery** with clear glass panels — spectators get a perfect view of everything inside the tunnel.\n\n📷 **Photos & Video:**\n- Spectators can photograph and film freely from the gallery\n- Professional **photography/video packages** available — ask at reception!\n- In-tunnel cameras capture incredible footage\n\n🎟️ **Entry for spectators is FREE** — no ticket needed.\n\n🏛️ All packages include **Aviation Museum** access, so non-flyers have plenty to enjoy while waiting! ✈️`
     },
 
+    // ── DURATION / TIMING ────────────────────────────────────────────────────
     duration: {
       keywords: [
         'how long', 'duration', 'arrive', 'arrival', 'check in', 'check-in',
         'total time', 'visit', 'long is the visit', 'how much time', 'minutes',
         'seconds', 'flight time', 'when to arrive', 'how early', 'long does it take',
         'flight duration', 'wie lange', 'combien de temps', 'durée', 'long is a flight',
-        'each flight', 'per flight', 'how many minutes', 'plan my visit'
+        'each flight', 'per flight', 'how many minutes', 'plan my visit',
+        'how long will i be there', 'how long does a visit take', 'how long is it',
+        'what time should i arrive', 'what time should i get there',
+        'how early should i arrive', 'do i need to arrive early',
+        'how much time should i set aside', 'how long for the whole thing',
+        'am i late', 'what if i\'m late', 'if i am late', 'running late',
+        'long is each flight', 'how long is 1 flight', 'how long is one flight',
+        'how long in total', 'how long is the session', 'how long is a session',
+        '60 seconds', '1 minute', 'flight length'
       ],
-      response: () => `**Planning your Luxfly visit:**\n\n⏰ **Arrive 60 minutes before** your flight time — for check-in, kit-up, and safety briefing.\n\n✈️ **Each flight = 60 seconds** of pure tunnel exhilaration.\n\n⏱️ **Total visit:** approximately **2 hours** (briefing, flights + museum).\n\n**Typical breakdown:**\n📋 Arrival & registration: 10–15 min\n🎓 Safety briefing: 15–20 min\n🎽 Getting kitted up: 10 min\n🌬️ Your flights: 60 sec each (with breaks)\n🏛️ Museum: as long as you like!`
+      response: () => `**Planning your Luxfly visit:**\n\n⏰ **Arrive 60 minutes before** your flight time — for check-in, kit-up, and safety briefing.\n\n✈️ **Each flight = 60 seconds** of pure tunnel exhilaration. (It feels MUCH longer when you're in there!)\n\n⏱️ **Total visit:** approximately **2 hours** including briefing, flights, and museum.\n\n**Typical breakdown:**\n📋 Arrival & registration: 10–15 min\n🎓 Safety briefing: 15–20 min\n🎽 Getting kitted up: 10 min\n🌬️ Your flights: 60 sec each with instructor\n🏛️ Museum: explore at your own pace!\n\nRunning late? Call us on **+32 63 39 11 63** as soon as possible.`
     },
 
+    // ── HEALTH / AGE / RESTRICTIONS ──────────────────────────────────────────
     health: {
       keywords: [
-        'pregnant', 'pregnancy', 'heart condition', 'epilepsy', 'medical',
-        'health', 'disability', 'back problem', 'neck', 'injury', 'injured',
-        'operation', 'surgery', 'asthma', 'pacemaker', 'weight limit',
-        'maximum weight', 'minimum weight', 'kg', 'kilos', 'restrictions',
-        'safe', 'is it safe', 'can i fly', 'health condition', 'santé',
-        'gesundheit', 'enceinte', 'schwanger', 'high blood pressure',
-        'hypertension', 'medication', 'disabled', 'wheelchair', 'contraindication'
+        'pregnant', 'pregnancy', 'heart condition', 'heart problem', 'epilepsy',
+        'medical', 'health', 'disability', 'disabled', 'back problem', 'back pain',
+        'neck problem', 'neck pain', 'injury', 'injured', 'operation', 'surgery',
+        'asthma', 'pacemaker', 'weight limit', 'maximum weight', 'minimum weight',
+        'kg', 'kilos', 'restrictions', 'safe', 'can i fly', 'health condition',
+        'santé', 'gesundheit', 'enceinte', 'schwanger', 'high blood pressure',
+        'hypertension', 'medication', 'wheelchair', 'contraindication',
+        // Age questions
+        'oldest', 'oldest person', 'maximum age', 'upper age limit', 'age restriction',
+        'age limit for adults', 'how old can you be', 'too old', 'am i too old',
+        'senior', 'seniors', 'elderly', 'pensioner', 'pensioners', 'retired',
+        'grandparent', 'grandparents', 'granny', 'grandma', 'grandpa',
+        'grandfather', 'grandmother', 'older person', 'older people',
+        'can an old person fly', 'can old people fly', 'can seniors fly',
+        'is there an age limit', 'upper age', 'what is the age limit',
+        'how old is too old', '60 year old', '70 year old', '80 year old',
+        '90 year old', 'over 60', 'over 70', 'over 80', 'over 50',
+        // Weight questions
+        'overweight', 'too heavy', 'too light', 'weight restriction',
+        'how heavy', 'how much can i weigh', 'weight requirement',
+        'bmi', 'obese', 'obesity', 'too fat', 'too thin',
+        // Fitness / physical
+        'do i need to be fit', 'how fit', 'fitness required', 'physically demanding',
+        'is it physical', 'do you need strength', 'heart rate', 'blood pressure',
+        'can i fly if i have', 'allowed to fly', 'unfit to fly', 'fit to fly',
+        // Alcohol / drugs
+        'been drinking', 'had a drink', 'drunk', 'alcohol', 'hungover', 'hangover'
       ],
-      response: () => `**Health & Safety at Luxfly** 🏥\n\n**Weight restrictions:**\n⚖️ Minimum: **30 kg** | Maximum: **120 kg**\n\n**Do NOT fly if you:**\n❌ Are pregnant\n❌ Have a serious heart condition or pacemaker\n❌ Have epilepsy\n❌ Have a recent injury, surgery, or serious back/neck problem\n❌ Have uncontrolled high blood pressure\n❌ Are under the influence of alcohol or drugs\n\n**If in doubt**, consult your doctor and let us know at booking — our team will do their best to accommodate you. 💙`
+      response: () => `**Health & Age at Luxfly** 🏥\n\n**Age:** There is **no upper age limit** — as long as you are in reasonable health, you can fly! We've welcomed flyers well into their 80s and beyond. 🎉\n\n**Minimum age:** 4 years old.\n\n**Weight:** Min **30 kg** | Max **120 kg**\n\n**Do NOT fly if you:**\n❌ Are pregnant\n❌ Have a serious heart condition or pacemaker\n❌ Have epilepsy (uncontrolled)\n❌ Have a recent injury, surgery, or serious back/neck problem\n❌ Have uncontrolled high blood pressure\n❌ Have been drinking alcohol or taking drugs\n\n**Unsure?** Consult your doctor before visiting, and always let us know at booking so we can help. Our team will always find the best solution for you. 💙\n\n📞 +32 63 39 11 63 | 📧 info@luxfly.lu`
     },
 
+    // ── CONTACT ──────────────────────────────────────────────────────────────
     contact: {
       keywords: [
         'contact', 'email', 'phone', 'call', 'speak to', 'get in touch', 'reach',
         'whatsapp', 'message', 'chat', 'talk to', 'customer service', 'support',
         'help', 'enquiry', 'inquiry', 'kontakt', 'telefon', 'contactez', 'téléphone',
         'joindre', 'reach out', 'press', 'media', 'instagram', 'facebook',
-        'number', 'telephone', 'social media', 'how to contact', 'speak with someone'
+        'number', 'telephone', 'social media', 'how to contact', 'speak with someone',
+        'can i call you', 'do you have a phone number', 'what is your email',
+        'what is your phone number', 'how do i reach you', 'is there a number',
+        'customer care', 'complaints', 'feedback', 'get back to me',
+        'reply to me', 'when will you reply', 'response time',
+        'talk to a person', 'talk to a human', 'speak to a person',
+        'speak to a human', 'speak to someone real', 'live chat',
+        'what is your whatsapp', 'do you have whatsapp'
       ],
-      response: () => `**Get in touch with Luxfly:** 📞\n\n📞 **Phone:** +32 63 39 11 63\n💬 **WhatsApp:** +32 477 528 566\n📧 **General:** info@luxfly.lu\n📧 **Press/Media:** press@luxfly.lu\n📧 **Partnerships:** partners@luxfly.lu\n\n🌐 **Website:** luxfly.lu\n📱 **Instagram:** @luxflyskydive\n\n🏠 **Address:** Route de l'Europe 1, 6700 Sterpenich, Belgium\n\nOur team is happy to help with bookings, group events, or anything else! ✈️`
+      response: () => `**Get in touch with Luxfly:** 📞\n\n📞 **Phone:** +32 63 39 11 63\n💬 **WhatsApp:** +32 477 528 566\n📧 **General:** info@luxfly.lu\n📧 **Press/Media:** press@luxfly.lu\n📧 **Partnerships:** partners@luxfly.lu\n\n🌐 **Website:** luxfly.lu\n📱 **Instagram:** @luxflyskydive\n\n🏠 **Address:** Route de l'Europe 1, 6700 Sterpenich, Belgium\n\nOur team loves hearing from you — don't hesitate to reach out! ✈️`
     },
 
+    // ── PROMOTIONS / DISCOUNTS ───────────────────────────────────────────────
     promo: {
       keywords: [
         'promo', 'promotion', 'discount', 'coupon', 'code', 'voucher code',
@@ -156,11 +293,17 @@
         'reduction', 'save', 'cheaper', 'saving', 'spring', 'spring26',
         'group15', 'bring a friend', 'birthday month', 'rabatt', 'réduction',
         'offre', 'bon de réduction', 'current offers', 'any deals', 'sale',
-        'promotional code', 'promo code', 'discount code', 'student discount'
+        'promotional code', 'promo code', 'discount code', 'student discount',
+        'do you have a discount', 'is there a discount', 'any discounts',
+        'any offers', 'any promotions', 'student card', 'student id',
+        'military discount', 'do you offer discounts', 'how can i save',
+        'is there a cheaper way', 'loyalty discount', 'any codes',
+        'discount for groups', 'group discount'
       ],
-      response: () => `**Current Promotions at Luxfly** 🎉\n\n🌸 **SPRING26** — **15% off** all packages! Valid until **30 April 2026**. Code: **SPRING26**\n\n👥 **GROUP15** — Extra **5% off** on top of group rates for 10+ people. Code: **GROUP15**\n\n🎂 **Birthday Month** — Fly in your birthday month for **10% off**. Just mention it when booking!\n\n🎓 **Student Discount** — Show a valid student ID for **10% off**.\n\n👫 **Bring a Friend** — Refer a first-time visitor and both get a reward! Ask our team for details.\n\n⚠️ Discounts cannot be combined. Terms apply.`
+      response: () => `**Current Promotions at Luxfly** 🎉\n\n🌸 **SPRING26** — **15% off** all packages! Valid until **30 April 2026**. Use code **SPRING26** at checkout.\n\n👥 **GROUP15** — Extra **5% off** on top of group rates for 10+ people. Code: **GROUP15**.\n\n🎂 **Birthday Month** — Fly in your birthday month for **10% off**. Just mention it when booking!\n\n🎓 **Student Discount** — Show a valid student ID for **10% off**.\n\n👫 **Bring a Friend** — Refer a first-time visitor and both of you get a reward! Ask our team for details.\n\n⚠️ Discounts cannot be combined. Terms apply.`
     },
 
+    // ── GIFT VOUCHERS ────────────────────────────────────────────────────────
     voucher: {
       keywords: [
         'voucher', 'gift card', 'gift voucher', 'buy for someone', 'gift',
@@ -168,11 +311,17 @@
         'give as a gift', 'someone else', 'surprise', 'purchase voucher',
         'buy a voucher', 'voucher valid', 'validity', 'expire', 'renew',
         'renewal', 'transfer', 'transferable', 'nominative', 'refund voucher',
-        'can i buy', 'for a friend', 'christmas gift', 'birthday gift'
+        'for a friend', 'christmas gift', 'birthday gift', 'anniversary gift',
+        'can i buy a gift', 'buy as a gift', 'gifting', 'treat someone',
+        'treat a friend', 'treat my partner', 'buy for my partner',
+        'buy for my friend', 'buy for my family', 'how long is a voucher valid',
+        'does the voucher expire', 'how long do i have', 'use my voucher',
+        'how do i use my voucher', 'redeem voucher', 'voucher code'
       ],
-      response: () => `**Luxfly Gift Vouchers — the perfect gift!** 🎁\n\n🛒 Buy online at luxfly.lu or in-person at reception.\n\n**Voucher Details:**\n📅 Valid for **12 months** from purchase date\n🔄 Renewable for an additional **3 months** (one renewal per voucher)\n👤 **Not nominative** — usable by anyone, not just the recipient\n💸 Non-refundable once purchased\n✅ Redeemable for any flight package or add-on\n\nThe perfect birthday, Christmas, or anniversary gift! 💝\n\n📞 +32 63 39 11 63 | 📧 info@luxfly.lu`
+      response: () => `**Luxfly Gift Vouchers — the perfect gift!** 🎁\n\n🛒 Buy online at **luxfly.lu** or in-person at reception.\n\n**Voucher Details:**\n📅 Valid for **12 months** from purchase date\n🔄 Renewable for an additional **3 months** (one renewal per voucher)\n👤 **Not nominative** — usable by anyone, not just the named recipient\n💸 Non-refundable once purchased\n✅ Redeemable against any flight package or add-on\n\nThe perfect birthday, Christmas, or anniversary gift — who wouldn't want to fly? 💝\n\n📞 +32 63 39 11 63 | 📧 info@luxfly.lu`
     },
 
+    // ── PRO FLYING / COACHING ────────────────────────────────────────────────
     pro: {
       keywords: [
         'pro', 'professional', 'pro flying', 'competition', 'coaching',
@@ -180,22 +329,33 @@
         'dedicated session', 'freestyle', 'formation', 'freefly', 'dynamic',
         'competitive', 'tunnel rat', 'entraînement', 'professionnel',
         'compétition', 'coached session', 'skills', 'progression', 'coach time',
-        'shared session', 'shared pro', 'pro session', 'block hours'
+        'shared session', 'shared pro', 'pro session', 'block hours',
+        'i already know how to fly', 'i am an experienced flyer', 'experienced flyer',
+        'i fly already', 'can i book tunnel time', 'book tunnel time',
+        'buy tunnel time', 'rent tunnel time', 'solo session', 'coaching session',
+        'wind tunnel coaching', 'improve my skills', 'improve my flying',
+        'take my flying further', 'advanced training', 'competitive training',
+        'head down', 'sit fly', 'belly fly', 'vfs', 'dynamic flying'
       ],
-      response: () => `**Pro & Advanced Flying at Luxfly** 🏆\n\n**Block Time Packages (dedicated tunnel):**\n⏱️ **Starter** — 1 hr: **€180**\n⏱️ **Regular** — 5 hrs: **€840** (€168/hr)\n⏱️ **Dedicated** — 10 hrs: **€1,560** (€156/hr)\n⏱️ **Elite** — 20 hrs: **€2,880** (€144/hr)\n\n**Shared Pro Sessions:**\n📅 Mon, Wed, Fri, Sat (×2), Sun\n💶 Single: **€55** | 5 sessions: **€240** | 10 sessions: **€420**\n\nOur coaches have **12,000+ combined tunnel hours** and train belly, sit, head-down, freestyle & formation.\n\n📧 info@luxfly.lu for coaching enquiries`
+      response: () => `**Pro & Advanced Flying at Luxfly** 🏆\n\n**Block Time Packages (dedicated tunnel):**\n⏱️ **Starter** — 1 hr: **€180**\n⏱️ **Regular** — 5 hrs: **€840** (€168/hr)\n⏱️ **Dedicated** — 10 hrs: **€1,560** (€156/hr)\n⏱️ **Elite** — 20 hrs: **€2,880** (€144/hr)\n\n**Shared Pro Sessions:**\n📅 Mon, Wed, Fri, Sat (×2 daily slots), Sun\n💶 Single session: **€55** | 5 sessions: **€240** | 10 sessions: **€420**\n\n**Disciplines:** Belly (130–160 km/h) · Sit fly (180–220 km/h) · Head-down (250–320 km/h) · Freestyle · Formation\n\nOur coaches have **12,000+ combined tunnel hours**.\n📧 info@luxfly.lu for coaching enquiries`
     },
 
+    // ── MUSEUM ───────────────────────────────────────────────────────────────
     museum: {
       keywords: [
         'museum', 'aviation museum', 'exhibit', 'exhibition', 'aviation',
         'history', 'planes', 'aircraft', 'displays', 'musée', 'musée aviation',
         'luftfahrt', 'museum entry', 'museum ticket', 'museum included',
         'museum price', 'standalone museum', 'just the museum', 'visit museum',
-        'museum only', 'museum without flying', 'museum cost'
+        'museum only', 'museum without flying', 'museum cost', 'museum free',
+        'is the museum included', 'do i get museum access', 'what is in the museum',
+        'what does the museum have', 'can i just visit the museum',
+        'museum entry fee', 'museum admission', 'is there a museum', 'aviation history'
       ],
-      response: () => `**The Luxfly Aviation Museum** ✈️🏛️\n\nEvery Luxfly visit includes our **Aviation Museum** — a stunning collection celebrating the history of flight!\n\n🎫 **Included FREE** with all flight packages.\n🎟️ **Standalone entry (no flight):** **€15** per person\n\nFeatures historic aircraft, interactive displays, and an aviation history timeline. Great for all ages — especially families! Perfect for before or after your flight, or for non-flying visitors. 🛩️`
+      response: () => `**The Luxfly Aviation Museum** ✈️🏛️\n\nEvery Luxfly visit includes our **Aviation Museum** — a fantastic collection celebrating the history of flight!\n\n🎫 **Included FREE** in all flight packages — no extra cost!\n🎟️ **Standalone museum entry (no flight):** **€15** per person\n\nInside you'll find:\n- Historic aircraft and interactive displays\n- Aviation history timeline\n- Great for all ages — especially families!\n\nPerfect for before or after your flight, or for non-flying visitors accompanying the group. 🛩️`
     },
 
+    // ── BAR & FOOD ───────────────────────────────────────────────────────────
     bar: {
       keywords: [
         'bar', 'food', 'eat', 'drink', 'drinks', 'menu', 'restaurant', 'café',
@@ -203,83 +363,116 @@
         'dinner', 'meal', 'sandwich', 'bar menu', 'what can i eat', 'canteen',
         'essen', 'trinken', 'boire', 'manger', 'nourriture', 'boisson',
         'cocktail', 'juice', 'soft drink', 'food menu', 'what food', 'nachos',
-        'fries', 'lager', 'draft beer', 'can i eat', 'is there food'
+        'fries', 'lager', 'draft beer', 'can i eat', 'is there food',
+        'do you have food', 'do you serve food', 'do you have a bar',
+        'is there a restaurant', 'is there a café', 'is there a cafe',
+        'can i get a drink', 'can i get something to eat', 'do you have a café',
+        'catering', 'refreshments', 'something to eat after', 'grab a bite'
       ],
-      response: () => `**The Luxfly Bar & Restaurant** 🍔🍺\n\nRefuel after your flight at our on-site bar!\n\n**🍔 Food:**\n- Cheeseburger: **€14**\n- Vegetarian burger: **€12**\n- Club sandwich: **€11**\n- Fries: **€4**\n- Nachos: **€8**\n\n**🍺 Drinks:**\n- Draft lager (33cl): **€3.50**\n- Draft lager (50cl): **€5.50**\n- Soft drinks: **€3**\n- Coffee/espresso: **€2.50**\n- Fresh juice: **€4**\n\nOpen during all operating hours with great views of the tunnel! 🌬️`
+      response: () => `**The Luxfly Bar & Restaurant** 🍔🍺\n\nRefuel after your flight at our on-site bar — open during all operating hours!\n\n**🍔 Food:**\n- Cheeseburger: **€14**\n- Vegetarian burger: **€12**\n- Club sandwich: **€11**\n- Fries: **€4**\n- Nachos: **€8**\n\n**🍺 Drinks:**\n- Draft lager (33cl): **€3.50** | (50cl): **€5.50**\n- Soft drinks: **€3**\n- Coffee/espresso: **€2.50**\n- Fresh juice: **€4**\n\nGreat views of the tunnel from the bar area! 🌬️`
     },
 
+    // ── SKY PILATES ──────────────────────────────────────────────────────────
     pilates: {
       keywords: [
         'pilates', 'sky pilates', 'pilates class', 'fitness', 'yoga', 'workout',
         'exercise', 'wellness', 'core', 'flexibility', 'wind tunnel pilates',
         'pilates schedule', 'pilates price', 'drop in', 'class pass',
-        'pilates session', 'body workout', 'fitness class', 'tunnel fitness'
+        'pilates session', 'body workout', 'fitness class', 'tunnel fitness',
+        'fitness at luxfly', 'aerobics', 'pilates booking', 'join a class'
       ],
-      response: () => `**Sky Pilates at Luxfly** 🧘✈️\n\nUnique **Sky Pilates** sessions — pilates in the wind tunnel for an extraordinary core workout!\n\n**📅 Schedule:**\n🗓️ Tuesday & Thursday: **7:30 AM**\n🗓️ Saturday: **9:00 AM**\n\n**💶 Pricing:**\n- Drop-in (single class): **€45**\n- 4-class pass: **€160** (€40/class)\n- 8-class pass: **€280** (€35/class)\n\nNo flying experience required! Classes led by certified instructors.\n\n📞 +32 63 39 11 63 | 📧 info@luxfly.lu`
+      response: () => `**Sky Pilates at Luxfly** 🧘✈️\n\nUnique **Sky Pilates** — pilates in the wind tunnel for an extraordinary core and body workout!\n\n**📅 Schedule:**\n🗓️ Tuesday & Thursday: **7:30 AM**\n🗓️ Saturday: **9:00 AM**\n\n**💶 Pricing:**\n- Drop-in (single class): **€45**\n- 4-class pass: **€160** (€40/class)\n- 8-class pass: **€280** (€35/class)\n\nNo flying experience required — just a love of movement! Classes led by certified instructors.\n\n📞 +32 63 39 11 63 | 📧 info@luxfly.lu`
     },
 
+    // ── LOYALTY PROGRAMME ────────────────────────────────────────────────────
     loyalty: {
       keywords: [
         'loyalty', 'loyalty programme', 'fidelity', 'fidelitybox', 'points',
         'rewards', 'loyalty card', 'member', 'membership', 'frequent flyer',
         'reward points', 'earn points', 'redeem', 'loyalty program',
         'fidélité', 'treueprogramm', 'bonus', 'perks', 'benefits',
-        'stamp card', 'repeat customer', 'regular customer', 'loyalty scheme'
+        'stamp card', 'repeat customer', 'regular customer', 'loyalty scheme',
+        'i fly regularly', 'i come often', 'i visit often', 'i come back often',
+        'reward for coming back', 'repeat visits', 'frequent visits',
+        'fidelity card', 'loyalty points', 'earn rewards', 'do you have loyalty',
+        'is there a loyalty programme', 'membership card', 'reward card'
       ],
-      response: () => `**Luxfly FidelityBox — Our Loyalty Programme** 🌟\n\nFly more, earn more with **FidelityBox**!\n\n📱 Your **phone number is your loyalty card** — no physical card needed!\n⭐ Earn points every time you fly or purchase at Luxfly\n🎁 Redeem points for free flights, discounts & exclusive rewards\n\n**Member perks:** priority booking, exclusive promotions, birthday surprises, and early access to new packages.\n\nJust give your phone number at check-in — you're automatically enrolled!\n\n📞 +32 63 39 11 63 for details.`
+      response: () => `**Luxfly FidelityBox — Our Loyalty Programme** 🌟\n\nFly more, earn more!\n\n📱 Your **phone number is your loyalty card** — no physical card needed!\n⭐ Earn points every time you fly or spend at Luxfly\n🎁 Redeem points for free flights, discounts & exclusive rewards\n\n**Member perks:**\n- Priority booking access\n- Exclusive member promotions\n- Birthday surprises\n- Early access to new packages\n\nJust give your phone number at check-in — you're automatically enrolled!\n\n📞 +32 63 39 11 63 for more details.`
     },
 
+    // ── COACHES / TEAM ───────────────────────────────────────────────────────
     coaches: {
       keywords: [
         'coach', 'coaches', 'instructor', 'instructors', 'staff', 'trainer',
         'trainers', 'certified', 'qualified', 'who teaches', 'your team',
         'flight instructor', 'tunnel instructor', 'languages', 'speak french',
         'speak german', 'speak english', 'multilingual', 'how experienced',
-        'team of coaches', 'professional coaches', 'who will teach me'
+        'team of coaches', 'professional coaches', 'who will teach me',
+        'will someone help me', 'will there be an instructor', 'is there an instructor',
+        'will i have a coach', 'who will be with me', 'do i get a coach',
+        'is there someone with me', 'will i be alone', 'alone in the tunnel',
+        'supervised', 'am i supervised', 'do you speak english',
+        'do you speak french', 'do you speak german', 'do you speak luxembourgish',
+        'what languages', 'english speaking', 'french speaking', 'german speaking'
       ],
-      response: () => `**Our World-Class Coaching Team** 🏆\n\n✅ **8 certified coaches** on our team\n✅ **12,000+ combined tunnel hours** of experience\n✅ All hold internationally recognised tunnel instructor certifications\n\n**Languages spoken:**\n🇬🇧 English | 🇫🇷 French | 🇩🇪 German | 🇱🇺 Luxembourgish | 🇮🇹 Italian\n\nFrom nervous first-timers to competitive athletes — our coaches adapt to every level. For beginner packages, your instructor is **inside the tunnel with you** the whole time. 💪`
+      response: () => `**Our World-Class Coaching Team** 🏆\n\n✅ **8 certified coaches** on our team\n✅ **12,000+ combined tunnel hours** of experience\n✅ All hold internationally recognised tunnel instructor certifications\n\n**Languages spoken:**\n🇬🇧 English | 🇫🇷 French | 🇩🇪 German | 🇱🇺 Luxembourgish | 🇮🇹 Italian\n\nFor beginner packages, your instructor is **inside the tunnel with you** from the first second — you're never alone! Our coaches adapt to every level, from nervous first-timers to competitive athletes. 💪`
     },
 
+    // ── TUNNEL SPECS ─────────────────────────────────────────────────────────
     tunnel: {
       keywords: [
         'tunnel', 'wind tunnel', 'wind speed', 'speed', 'how fast', 'km/h',
         'belly fly', 'belly flying', 'sit fly', 'sit flying', 'head down',
         'head-down', 'airflow', 'wind', 'power', 'tunnel size', 'technical',
         'specifications', 'specs', 'how big', 'how powerful', 'how strong',
-        'state of the art', 'vertical wind tunnel'
+        'state of the art', 'vertical wind tunnel', 'how many km/h',
+        'what speed', 'wind power', 'how much wind', 'how windy',
+        'is it very windy', 'how strong is the wind', 'what wind speed'
       ],
-      response: () => `**Luxfly Wind Tunnel — Technical Specs** ⚡\n\nOur state-of-the-art vertical wind tunnel is built for everyone from beginners to world champions!\n\n**Wind Speed by Discipline:**\n🤸 **Belly Flying** (beginner/recreational): **130–160 km/h**\n💺 **Sit Flying** (intermediate): **180–220 km/h**\n🔻 **Head-Down** (advanced/pro): **250–320 km/h**\n\nWind speed is precisely controlled per flyer's size, weight, and skill level.\n\n🛡️ All safety systems certified to the highest European standards. ✈️`
+      response: () => `**Luxfly Wind Tunnel — Technical Specs** ⚡\n\nOur state-of-the-art vertical wind tunnel is built for everyone from first-timers to world champions!\n\n**Wind Speed by Discipline:**\n🤸 **Belly Flying** (beginner/recreational): **130–160 km/h**\n💺 **Sit Flying** (intermediate): **180–220 km/h**\n🔻 **Head-Down** (advanced/pro): **250–320 km/h**\n\nWind speed is precisely controlled by our instructors and adjusted to suit your size, weight, and skill level.\n\n🛡️ All safety systems are certified to the highest European standards. ✈️`
     },
 
+    // ── PARTNERS ─────────────────────────────────────────────────────────────
     partners: {
       keywords: [
         'partner', 'partners', 'partnership', 'business', 'affiliate',
         'commission', 'resell', 'collaborate', 'b2b', 'travel agent',
         'tour operator', 'hotel', 'work together', 'collaboration', 'commercial',
         'partenaire', 'partenariat', 'partner programme', 'referral', 'agent',
-        'become a partner', 'trade', 'wholesale', 'reseller'
+        'become a partner', 'trade', 'wholesale', 'reseller', 'partners@',
+        'business enquiry', 'business inquiry', 'commercial enquiry',
+        'we want to partner', 'interested in partnering', 'refer customers',
+        'send customers', 'bring customers', 'get commission'
       ],
-      response: () => `**Become a Luxfly Partner** 🤝\n\nWe work with travel agencies, hotels, tour operators, and businesses across Luxembourg and the Greater Region.\n\n💰 Earn **10–15% commission** on all referrals\n🎟️ Special rates for your clients\n📦 Co-branded promotional materials\n🌐 Listed on our website as a preferred partner\n\n📧 partners@luxfly.lu\n📞 +32 63 39 11 63\n\nOur partnerships team responds within 48 hours! ✈️`
+      response: () => `**Become a Luxfly Partner** 🤝\n\nWe work with travel agencies, hotels, tour operators, and businesses across Luxembourg and the Greater Region.\n\n**Partner Benefits:**\n💰 Earn **10–15% commission** on all referrals\n🎟️ Special rates for your clients\n📦 Co-branded promotional materials\n🌐 Listed on our website as a preferred partner\n\n📧 **Apply:** partners@luxfly.lu\n📞 +32 63 39 11 63\n\nOur partnerships team responds within 48 hours! ✈️`
     },
 
+    // ── JOBS ─────────────────────────────────────────────────────────────────
     jobs: {
       keywords: [
         'job', 'jobs', 'career', 'careers', 'work', 'working', 'employment',
         'vacancy', 'vacancies', 'hiring', 'apply', 'application', 'position',
         'role', 'join the team', 'join us', 'recruitment', 'tunnel instructor job',
         'safety officer', 'events coordinator', 'customer experience', 'internship',
-        'emploi', 'nous rejoindre', 'arbeit', 'stelle', 'are you hiring'
+        'emploi', 'nous rejoindre', 'arbeit', 'stelle', 'are you hiring',
+        'do you have any jobs', 'do you need staff', 'work for luxfly',
+        'work with luxfly', 'i want to work for you', 'i want to work with you',
+        'is there a job', 'open role', 'job opening', 'cv', 'send my cv',
+        'send my resume', 'apply for a job', 'jobs@'
       ],
-      response: () => `**Careers at Luxfly** 💼✈️\n\n**Open Positions:**\n🌬️ **Tunnel Instructor** — Lead beginner and advanced sessions\n🛡️ **Safety Officer** — Maintain the highest safety standards\n🎉 **Events Coordinator** — Plan group, corporate & special events\n😊 **Customer Experience** — Front-of-house & guest services\n\nNot seeing your role? Get in touch — we're growing!\n\n📧 jobs@luxfly.lu\n📞 +32 63 39 11 63`
+      response: () => `**Careers at Luxfly** 💼✈️\n\nWe're always looking for passionate people to join the team!\n\n**Open Positions:**\n🌬️ **Tunnel Instructor** — Lead beginner and advanced sessions\n🛡️ **Safety Officer** — Maintain the highest safety standards\n🎉 **Events Coordinator** — Plan group, corporate & special events\n😊 **Customer Experience** — Front-of-house & guest services\n\nNot seeing your role? Get in touch anyway — we're a growing company!\n\n📧 **Send your CV to:** jobs@luxfly.lu\n📞 +32 63 39 11 63\n\nCome help others discover the joy of flight! 🚀`
     },
 
+    // ── HOT AIR BALLOON ──────────────────────────────────────────────────────
     balloon: {
       keywords: [
         'balloon', 'hot air balloon', 'ballon', 'hot air', 'montgolfière',
         'balloon ride', 'balloon experience', 'balloon flight', 'balloon partner',
-        'other activities', 'what else', 'anything else to do', 'other experiences'
+        'other activities', 'what else', 'anything else to do', 'other experiences',
+        'other things to do', 'what else do you offer', 'other adventures',
+        'outdoor experience', 'scenic flight', 'ballooning'
       ],
-      response: () => `**Hot Air Balloon Experiences** 🎈\n\nLuxfly has partnered with a premier hot air balloon operator!\n\n💶 **€180–€250 per person**\n📅 Season: **April – October**\n📍 Departing from the Luxembourg/Belgium region\n\nThe perfect complement to indoor skydiving — or a standalone special gift!\n\n📞 +32 63 39 11 63 | 📧 info@luxfly.lu`
+      response: () => `**Hot Air Balloon Experiences** 🎈\n\nLuxfly has partnered with a premier hot air balloon operator!\n\n💶 **€180–€250 per person**\n📅 Season: **April – October**\n📍 Departing from the Luxembourg/Belgium region\n\nA magical complement to indoor skydiving, or a beautiful standalone gift for someone special! 🌄\n\nFor details and bookings:\n📞 +32 63 39 11 63 | 📧 info@luxfly.lu`
     }
   };
 
@@ -306,7 +499,7 @@
     return bestScore > 0 ? bestCategory : null;
   }
 
-  // ─── Greeting / thanks detection ────────────────────────────────────────────
+  // ─── Greeting / thanks ───────────────────────────────────────────────────────
   function isGreeting(text) {
     return /^(hi|hello|hey|bonjour|hallo|salut|guten tag|good morning|good afternoon|good evening|howdy|yo|sup|hiya|greetings?|coucou|hoi|dag|moien|allo|moin)[\s!.?,]*$/i.test(text.trim());
   }
@@ -316,7 +509,7 @@
       text.trim().split(/\s+/).length < 10;
   }
 
-  // ─── Markdown formatter ──────────────────────────────────────────────────────
+  // ─── Formatter ───────────────────────────────────────────────────────────────
   function formatResponse(text) {
     return text
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
@@ -326,32 +519,33 @@
       .replace(/\n/g, '<br>');
   }
 
-  // ─── Get response ────────────────────────────────────────────────────────────
+  const greetings = [
+    "Hey! 👋 I'm Zoom, the Luxfly assistant. Ask me anything — prices, hours, booking, kids, location, and more!",
+    "Hi! 😊 Welcome to Luxfly. What can I help you with today?",
+    "Hello! Ready to talk indoor skydiving? 🌬️ What would you like to know?",
+    "Hey there! I'm Zoom ✈️ — your Luxfly guide. Prices, packages, health questions, directions — fire away!"
+  ];
+  const replies = [
+    "You're welcome! 😊 Anything else I can help with?",
+    "Happy to help! 🙌 Feel free to ask anything else.",
+    "Of course! Let me know if you have more questions. 😄",
+    "No problem at all! Is there anything else you'd like to know? ✈️"
+  ];
+  const fallbacks = [
+    "Hmm, I don't have a specific answer for that! For the most accurate info, our team is just a message away:\n\n📞 **+32 63 39 11 63**\n💬 **WhatsApp:** +32 477 528 566\n📧 **info@luxfly.lu**\n\nOr try asking me about prices, booking, hours, health, or what to wear! 😊",
+    "That one's a bit outside my knowledge! 😅 Our friendly team will have the answer:\n📞 **+32 63 39 11 63** | 📧 **info@luxfly.lu**",
+    "I want to make sure you get the right answer for that — please reach out to our team directly:\n📞 **+32 63 39 11 63** | 💬 **WhatsApp: +32 477 528 566**\n\nI can answer questions about prices, packages, booking, health, hours, location, and more! 😊"
+  ];
+
   function getResponse(userText) {
     const text = userText.trim();
-    if (!text) return fallbacks[Math.floor(Math.random() * fallbacks.length)];
+    if (!text) return fallbacks[0];
     if (isGreeting(text)) return greetings[Math.floor(Math.random() * greetings.length)];
     if (isThanks(text)) return replies[Math.floor(Math.random() * replies.length)];
     const category = classify(text);
     if (category && KB[category]) return KB[category].response();
     return fallbacks[Math.floor(Math.random() * fallbacks.length)];
   }
-
-  const greetings = [
-    "Hey! 👋 I'm Zoom, the Luxfly assistant. Ask me anything — prices, hours, booking, kids, location, and more!",
-    "Hi! 😊 Welcome to Luxfly. What can I help you with today?",
-    "Hello! Ready to talk indoor skydiving? 🌬️ What would you like to know?"
-  ];
-  const replies = [
-    "You're welcome! 😊 Anything else I can help with?",
-    "Happy to help! 🙌 Feel free to ask anything else.",
-    "Of course! Let me know if you have more questions. 😄"
-  ];
-  const fallbacks = [
-    "Good question! For that one I'd suggest reaching out to our team directly:\n\n📧 **info@luxfly.lu**\n📞 **+32 63 39 11 63**\n💬 **WhatsApp:** +32 477 528 566\n\nOr try asking me about prices, hours, booking, kids, or our packages! 😊",
-    "I'm not sure about that one! Your best bet is to contact us at **info@luxfly.lu** or **+32 63 39 11 63** — the team will get back to you quickly. 🙌",
-    "That's a great question for our team! Drop them a line at **info@luxfly.lu** and they'll sort you out. I can help with prices, hours, booking, kids packages, and more! 😊"
-  ];
 
   // ─── Styles (original dark theme) ───────────────────────────────────────────
   const css = `
@@ -366,10 +560,9 @@
     #lf-chat-btn:hover { transform: scale(1.08); box-shadow: 0 6px 32px rgba(240,44,184,0.6); }
     #lf-chat-btn svg { pointer-events: none; }
     #lf-chat-badge {
-      position: absolute; top: -4px; right: -4px;
-      width: 18px; height: 18px; background: #fff; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 11px; font-weight: 700; color: #f02cb8;
+      position: absolute; top: -4px; right: -4px; width: 18px; height: 18px;
+      background: #fff; border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-size: 11px; font-weight: 700; color: #f02cb8;
     }
     #lf-chat-window {
       position: fixed; bottom: 100px; right: 28px; z-index: 9998;
@@ -388,8 +581,7 @@
     }
     #lf-chat-header-avatar {
       width: 36px; height: 36px; border-radius: 50%; background: #f02cb8;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;
     }
     #lf-chat-header-info { flex: 1; }
     #lf-chat-header-name {
@@ -426,9 +618,7 @@
     .lf-dot:nth-child(2) { animation-delay: 0.2s; }
     .lf-dot:nth-child(3) { animation-delay: 0.4s; }
     @keyframes lf-bounce { 0%,60%,100% { transform: translateY(0); opacity: 0.4; } 30% { transform: translateY(-5px); opacity: 1; } }
-    #lf-chat-quick {
-      padding: 8px 14px 4px; display: flex; flex-wrap: wrap; gap: 6px; flex-shrink: 0;
-    }
+    #lf-chat-quick { padding: 8px 14px 4px; display: flex; flex-wrap: wrap; gap: 6px; flex-shrink: 0; }
     .lf-quick-btn {
       background: rgba(240,44,184,0.1); border: 1px solid rgba(240,44,184,0.3);
       border-radius: 20px; color: #f02cb8; font-size: 12px; font-family: 'Inter',sans-serif;
@@ -490,6 +680,7 @@
         <button class="lf-quick-btn" data-q="Is it safe for kids?">👦 Kids</button>
         <button class="lf-quick-btn" data-q="How do I book?">🎟️ Book</button>
         <button class="lf-quick-btn" data-q="Where are you located?">📍 Location</button>
+        <button class="lf-quick-btn" data-q="Which package would you recommend?">⭐ Recommend</button>
       </div>
       <form id="lf-chat-form" autocomplete="off">
         <textarea id="lf-chat-input" placeholder="Ask me anything…" rows="1"></textarea>
@@ -510,7 +701,6 @@
   const form      = document.getElementById('lf-chat-form');
   const input     = document.getElementById('lf-chat-input');
   const quickBtns = document.querySelectorAll('.lf-quick-btn');
-
   let isOpen = false, greeted = false;
 
   // ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -524,7 +714,6 @@
     }
     messages.appendChild(el);
     messages.scrollTop = messages.scrollHeight;
-    return el;
   }
 
   function showTyping() {
@@ -573,7 +762,7 @@
     if (!greeted) {
       greeted = true;
       setTimeout(() => {
-        addMsg("Hey! 👋 I'm Zoom, the Luxfly assistant. Ask me anything about our indoor skydiving experience — prices, hours, booking, kids, location, and more!", 'bot');
+        addMsg("Hey! 👋 I'm Zoom, the Luxfly assistant. Ask me anything about our indoor skydiving experience — prices, booking, health, kids, location, and more!", 'bot');
       }, 300);
     }
     input.focus();
@@ -591,21 +780,17 @@
   // ─── Events ──────────────────────────────────────────────────────────────────
   btn.addEventListener('click', () => isOpen ? closeChat() : openChat());
   closeBtn.addEventListener('click', closeChat);
-
   form.addEventListener('submit', (e) => { e.preventDefault(); sendMessage(input.value); });
-
   input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(input.value); }
   });
-
   input.addEventListener('input', () => {
     input.style.height = 'auto';
     input.style.height = Math.min(input.scrollHeight, 80) + 'px';
   });
-
   quickBtns.forEach(b => { b.addEventListener('click', () => sendMessage(b.dataset.q)); });
 
-  // Show badge after 8s if not opened
+  // Show notification badge after 8s if chat not yet opened
   setTimeout(() => {
     if (!isOpen && !greeted) {
       const b = document.getElementById('lf-chat-badge');
