@@ -746,11 +746,11 @@
     }
     #lf-chat-input {
       flex: 1; background: #1a1a1a; border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 10px; color: #fff; font-size: 13px; font-family: 'Inter',sans-serif;
+      border-radius: 10px; color: #fff; font-size: 16px; font-family: 'Inter',sans-serif; touch-action: manipulation;
       padding: 9px 13px; outline: none; resize: none; line-height: 1.4;
       max-height: 80px; transition: border-color 0.2s;
     }
-    #lf-chat-input::placeholder { color: rgba(255,255,255,0.3); }
+    #lf-chat-input::placeholder { color: rgba(255,255,255,0.3); font-size: 14px; }
     #lf-chat-input:focus { border-color: rgba(240,44,184,0.5); }
     #lf-chat-send {
       width: 38px; height: 38px; border-radius: 10px; background: #f02cb8; border: none;
