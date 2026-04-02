@@ -16,7 +16,7 @@
         'pricing', 'cost per', 'how much per', 'what are the prices',
         'tell me the prices', 'show me prices', 'list of packages'
       ],
-      response: () => `Here are our flight packages:\n\n**🧒 KIDS (under 18)**\n✈️ **JUNIOR DISCOVERY** — 2 flights (2 min): **€45.90**\n✈️ **JUNIOR EXPLORER** — 4 flights (4 min): **€79.90**\n✈️ **JUNIOR ADVENTURE** — 6 flights (6 min): **€109.90**\n\n**👤 ADULTS**\n✈️ **LUXCOVERY** — 2 flights (2 min): **€65.90**\n✈️ **LUXPLORER** — 4 flights (4 min): **€114.90**\n✈️ **LUXPERIENCE** — 6 flights (6 min): **€159.90**\n✈️ **LUXMASTER** — 8 flights (8 min): **€199.90**\n\nAll packages include gear, safety briefing, and **Aviation Museum** access. 🎫\n\nNot sure which to pick? Ask me for a recommendation! 😊`
+      response: () => `Here are our flight packages:\n\n**👤 ADULTS**\n✈️ **LUXCOVERY** — 2 flights (2 min): **€104.70**\n✈️ **LUXENSATION** — 2 flights (4 min): **€174.70**\n✈️ **LUXEMOTION** — 3 flights (6 min): **€236.70**\n💡 Basic option (no extras) from **€65.90**\n\n**🧒 KIDS (ages 4–12)**\n✈️ **Kids 2 flights:** **€89.70**\n✈️ **Kids 4 flights:** **€139.80**\n💡 Basic option from **€45.90**\n\nAll main packages include: full gear, safety briefing, qualified instructor, HighFly experience, professional souvenir photos, and **Art of Skydiving Museum** access. 🎫\n\nNot sure which to pick? Ask me for a recommendation! 😊`
     },
 
     // ── RECOMMENDATION ───────────────────────────────────────────────────────
@@ -32,7 +32,7 @@
         'worth it', 'is it worth', 'what should i start with', 'ideal package',
         'perfect package', 'suitable package', 'i don\'t know what to book'
       ],
-      response: () => `**Here's what we recommend for first-timers:** ✈️\n\n🌟 **LUXCOVERY (2 flights, €65.90)** is perfect to start — your first flight is all about getting the feel of it, and your second is where you really start to fly!\n\n💪 If you want more time in the tunnel, go for **LUXPLORER (4 flights, €114.90)** — great value and enough time to genuinely improve.\n\n🏆 The **LUXPERIENCE or LUXMASTER** packages are ideal if you want to push it further or treat yourself.\n\n🧒 **For kids:** **JUNIOR DISCOVERY (2 flights, €45.90)** is the perfect introduction!\n\nAll packages include full gear, a safety briefing, and **Aviation Museum** access. You can always upgrade on the day. 😊`
+      response: () => `**Here's what we recommend for first-timers:** ✈️\n\n🌟 **LUXCOVERY (2 flights, €104.70)** is the perfect start — your first flight is about getting the feel of it, and the second is where you really begin to fly. Includes HighFly experience and professional photos!\n\n💪 Want more tunnel time? **LUXENSATION (4 min, €174.70)** gives you noticeably more progression and is fantastic value.\n\n🏆 **LUXEMOTION (6 min, €236.70)** — the ultimate package for those who want the full experience.\n\n🧒 **For kids (4–12):** the **2-flight kids package (€89.70)** is the perfect introduction!\n\nAll main packages include gear, briefing, instructor, HighFly, professional photos, and **Museum** access. 😊`
     },
 
     // ── KIDS ─────────────────────────────────────────────────────────────────
@@ -49,7 +49,7 @@
         'is it safe for my child', 'children allowed', 'kids allowed',
         'minimum age for kids', 'what age can children'
       ],
-      response: () => `**Kids are absolutely welcome at Luxfly!** 🧒✈️\n\nThe **minimum age is 4 years old**.\n\n**Kids Packages:**\n✈️ **JUNIOR DISCOVERY** — 2 flights: **€45.90**\n✈️ **JUNIOR EXPLORER** — 4 flights: **€79.90**\n✈️ **JUNIOR ADVENTURE** — 6 flights: **€109.90**\n\n⚖️ Weight: minimum **30 kg**, maximum **120 kg** for all flyers.\n\nKids must be accompanied by a parent or guardian. Our instructors are specially trained to work with children — it's safe, fun, and unforgettable!\n\nAll packages include equipment, briefing, and **Aviation Museum** access. 🎫`
+      response: () => `**Kids are absolutely welcome at Luxfly!** 🧒✈️\n\n**Minimum age: 4 years old.** Maximum weight: 120 kg.\n\n**Kids Packages (ages 4–12):**\n✈️ **2 flights:** **€89.70** (includes HighFly, souvenir photos & museum)\n✈️ **4 flights:** **€139.80**\n💡 Basic option available from **€45.90** (limited slots, no extras)\n\nKids actually adapt to the air faster than adults! A parent or legal guardian must be present at all times, and a signed consent form is required for under-18s.\n\nAll instructors hold child-flight certification and adjust wind speeds for smaller flyers. 💙`
     },
 
     // ── OPENING HOURS ────────────────────────────────────────────────────────
@@ -65,7 +65,7 @@
         'which days', 'when are you open', 'do you open on', 'bank holiday',
         'public holiday', 'christmas', 'new year'
       ],
-      response: () => `**Luxfly Opening Hours:**\n\n📅 **Monday:** 12:00 – 20:00\n📅 **Tuesday:** 12:00 – 20:00\n📅 **Wednesday:** 12:00 – 20:00\n📅 **Thursday:** 12:00 – 20:00\n📅 **Friday:** 12:00 – 22:00\n📅 **Saturday:** 10:00 – 22:00\n📅 **Sunday:** 10:00 – 20:00\n\nWe recommend booking in advance — especially for weekends! Walk-ins are welcome subject to availability. 🎟️\n\nFor public holiday opening hours, please check our website or contact us at 📞 +32 63 39 11 63.`
+      response: () => `**Luxfly Opening Hours:**\n\n📅 **Monday:** Closed *(open on the 1st Monday of each month)*\n📅 **Tuesday:** Closed\n📅 **Wednesday – Friday:** 12:00 – 20:00\n📅 **Saturday & Sunday:** 10:00 – 19:00\n\n⏰ Last sessions admitted **90 minutes before closing**.\n\nAfter-hours private hire is available Mon–Thu from 07:00 — contact us for details.\n\nWe recommend booking ahead, especially for weekends. Walk-ins welcome subject to availability! 🎟️`
     },
 
     // ── LOCATION ─────────────────────────────────────────────────────────────
@@ -107,7 +107,7 @@
         'i need to cancel', 'cancellation policy', 'refund policy',
         'is it fully booked', 'when can i come', 'first come first served'
       ],
-      response: () => `**Booking at Luxfly:**\n\n🎟️ Book online at **luxfly.lu** or call us at **+32 63 39 11 63**.\n\n💳 **Payment:** We accept card and cash payments. Full payment at time of booking when booking online.\n\n🚶 **Walk-ins welcome** — but we strongly recommend booking ahead for weekends and peak times.\n\n**Cancellation Policy:**\n✅ **More than 48 hours before:** Full refund or free rescheduling\n⚠️ **24–48 hours before:** 50% refund\n❌ **Less than 24 hours before:** No refund\n\nGift vouchers can be used online or in-person for any package.`
+      response: () => `**Booking at Luxfly:**\n\n🎟️ Book online at **shop.indoorskydive.lu** or call **+32 63 39 11 63**.\n\n💳 Full payment required at time of booking. All major payment methods accepted.\n\n🚶 **Walk-ins welcome** subject to availability — but booking ahead is strongly recommended, especially for weekends. Groups of 5+ should book at least **48 hours in advance**.\n\n**Cancellation Policy:**\n✅ **More than 48 hours before:** Full refund or free rescheduling\n⚠️ **24–48 hours before:** 50% refund\n❌ **Less than 24 hours before:** No refund\n🚫 **No-show:** Full amount charged\n\nGift vouchers accepted online and in-person.`
     },
 
     // ── BIRTHDAY ─────────────────────────────────────────────────────────────
@@ -142,7 +142,7 @@
         'evg', 'evjf', 'junggesellenabschied', 'enterrement de vie de garcon',
         'hen do', 'hen night', 'bachelor night', 'going to be', 'party of'
       ],
-      response: () => `**Group & Event Packages at Luxfly** 👥\n\n**Group Flight Rates (per minute of flight time):**\n👥 2–9 people: **€35/min**\n👥 10–19 people: **€31.50/min**\n👥 20–49 people: **€29.75/min**\n👥 50–99 people: **€28/min**\n\n**🎊 Bachelor / Hen Party Packages:**\n🥂 Classic: **€28/person**\n🎉 Party Plus: **€52/person** (includes extras)\n👑 VIP Experience: from **€550** (full private experience)\n\n**🏢 Team Building:** Custom corporate events with dedicated staff, private sessions & catering.\n\nFor personalised group quotes:\n📧 info@luxfly.lu | 📞 +32 63 39 11 63`
+      response: () => `**Group & Event Packages at Luxfly** 👥\n\n**Group Flight Rates (per minute of flight time):**\n👥 2–9 guests: **€35/min** (base rate)\n👥 10–19 guests: **€31.50/min** (10% off)\n👥 20–49 guests: **€29.75/min** (15% off)\n👥 50–99 guests: **€28/min** (20% off)\n👥 100+ guests: **Custom quote**\n\n📌 Group discounts apply from **10 people**. Booking required **7 days in advance** minimum. A **30% deposit** secures your date.\n\n**🎊 Bachelor / Hen Party Packages** (min. 6 guests):\n🥂 **Classic:** €28/person (1 min tunnel time each)\n🎉 **Party Plus:** €52/person (2 min + group photo)\n👑 **VIP Send-Off:** from **€550 for 10 people** (private hire, photos, video & catering)\n\n**🏢 Team Building:** Scales from 8 to 250+ people. Meeting rooms, catering & AV available.\n\n📧 info@luxfly.lu | 📞 +32 63 39 11 63`
     },
 
     // ── EXPERIENCE / WHAT IS IT ──────────────────────────────────────────────
@@ -188,7 +188,7 @@
         'can i wear contacts', 'barefoot', 'lace up', 'sneakers', 'trainers',
         'what shoes', 'flip flops', 'sandals', 'heels', 'boots', 'lockers', 'locker'
       ],
-      response: () => `**Everything is provided — just show up!** 🎽\n\n**Included in your package:**\n✅ Flying suit (jumpsuit)\n✅ Helmet\n✅ Goggles\n✅ Earplugs\n\n**Wear underneath:**\n👟 Comfortable, sporty clothing (no skirts/dresses)\n👟 Lace-up trainers or sports shoes — no sandals, heels, or slip-ons!\n\n**Please remove/leave behind:**\n❌ Jewellery, watches, rings, earrings, piercings if possible\n❌ Scarves, belts, or loose accessories\n❌ Glasses (contact lenses are perfectly fine)\n\n💇 Long hair? Tie it back — we'll have it sorted under your helmet.\n\n🗝️ Lockers are available on-site for your belongings. See you in the tunnel! 🌬️`
+      response: () => `**Everything is provided — just show up!** 🎽\n\n**Included in your package:**\n✅ Flying suit (jumpsuit)\n✅ Helmet\n✅ Goggles\n✅ Earplugs\n\n**Wear underneath:**\n👟 Comfortable, sporty clothing (no skirts/dresses)\n👟 Lace-up trainers or sports shoes — no sandals, heels, or slip-ons!\n\n**Please remove/leave behind:**\n❌ Jewellery, watches, rings, earrings, piercings if possible\n❌ Scarves, belts, or loose accessories\n👓 **Glasses:** you can keep them on — we have oversized goggles that fit over glasses!\n\n💇 Long hair? Tie it back — we'll sort it under your helmet.\n\n🗝️ Lockers are available on-site for your belongings. See you in the tunnel! 🌬️`
     },
 
     // ── SPECTATORS ───────────────────────────────────────────────────────────
@@ -263,7 +263,7 @@
         // Alcohol / drugs
         'been drinking', 'had a drink', 'drunk', 'alcohol', 'hungover', 'hangover'
       ],
-      response: () => `**Health & Age at Luxfly** 🏥\n\n**Age:** There is **no upper age limit** — as long as you are in reasonable health, you can fly! We've welcomed flyers well into their 80s and beyond. 🎉\n\n**Minimum age:** 4 years old.\n\n**Weight:** Min **30 kg** | Max **120 kg**\n\n**Do NOT fly if you:**\n❌ Are pregnant\n❌ Have a serious heart condition or pacemaker\n❌ Have epilepsy (uncontrolled)\n❌ Have a recent injury, surgery, or serious back/neck problem\n❌ Have uncontrolled high blood pressure\n❌ Have been drinking alcohol or taking drugs\n\n**Unsure?** Consult your doctor before visiting, and always let us know at booking so we can help. Our team will always find the best solution for you. 💙\n\n📞 +32 63 39 11 63 | 📧 info@luxfly.lu`
+      response: () => `**Health & Age at Luxfly** 🏥\n\n**Age:** Minimum **4 years old**. There is **no upper age limit** — we fly guests all the way up to **95 years old**! 🎉\n\n**Weight:** Min **30 kg** | Max **120 kg**\n\n**Do NOT fly if you:**\n❌ Are pregnant\n❌ Have a serious heart condition or pacemaker\n❌ Have epilepsy (uncontrolled)\n❌ Have a recent injury, surgery, or serious back/neck problem\n❌ Have uncontrolled high blood pressure\n❌ Have been drinking alcohol or taking drugs\n\n**Unsure?** Consult your doctor before visiting, and always let us know at booking so we can help. Our team will always find the best solution for you. 💙\n\n📞 +32 63 39 11 63 | 📧 info@luxfly.lu`
     },
 
     // ── CONTACT ──────────────────────────────────────────────────────────────
