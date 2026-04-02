@@ -298,11 +298,6 @@
     return /\b(thanks?|thank you|merci|danke|dank je|cheers|perfect|great|awesome|brilliant|amazing|wonderful|super|parfait|genial|génial)\b/i.test(text) && text.split(' ').length < 8;
   }
 
-  /* ── ZOOM CODE MENTION ── */
-  function mentionsZoom(text) {
-    return /\bzoom\b/i.test(text) && !/promo|code|discount/i.test(text);
-  }
-
   /* ── FORMAT RESPONSE (markdown-lite) ── */
   function formatResponse(text) {
     return text
@@ -320,7 +315,7 @@
     // Greeting
     if (isGreeting(text)) {
       const greetings = [
-        "Hey there! 👋 I'm the Luxfly assistant. Ask me anything — prices, hours, booking, kids, location, and more!",
+        "Hey there! 👋 I'm Zoom, the Luxfly assistant. Ask me anything — prices, hours, booking, kids, location, and more!",
         "Hi! 😊 Welcome to Luxfly. What can I help you with today?",
         "Hello! Ready to talk indoor skydiving? 🌬️ What would you like to know?"
       ];
@@ -335,11 +330,6 @@
         "Of course! Let me know if you have more questions. 😄"
       ];
       return replies[Math.floor(Math.random() * replies.length)];
-    }
-
-    // "ZOOM" mentioned casually (e.g. "what is ZOOM?")
-    if (mentionsZoom(text)) {
-      return `**ZOOM** is our promo code! 🎉 Enter it at checkout on **shop.indoorskydive.lu** to get a special discount on any booking.`;
     }
 
     // Classify
@@ -616,7 +606,7 @@
       <div id="lf-chat-header">
         <div id="lf-chat-header-avatar">✈</div>
         <div id="lf-chat-header-info">
-          <div id="lf-chat-header-name">Luxfly Assistant</div>
+          <div id="lf-chat-header-name">Zoom</div>
           <div id="lf-chat-header-status">Online · Always here to help</div>
         </div>
         <button id="lf-chat-close" aria-label="Close chat">
@@ -728,7 +718,7 @@
     if (!greeted) {
       greeted = true;
       setTimeout(() => {
-        addMsg("Hey! 👋 I'm the Luxfly assistant. Ask me anything about our indoor skydiving experience — prices, hours, booking, kids, location, and more!", 'bot');
+        addMsg("Hey! 👋 I'm Zoom, the Luxfly assistant. Ask me anything about our indoor skydiving experience — prices, hours, booking, kids, location, and more!", 'bot');
       }, 300);
     }
     input.focus();
