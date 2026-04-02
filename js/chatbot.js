@@ -47,7 +47,14 @@
         'is it suitable for children', 'can babies', 'youngest', 'youngest age',
         'too young', 'safe for kids', 'safe for children', 'kids safe',
         'is it safe for my child', 'children allowed', 'kids allowed',
-        'minimum age for kids', 'what age can children'
+        'minimum age for kids', 'what age can children',
+        'kids package', 'kids packages', 'children package', 'children packages',
+        'how much for my daughter', 'how much for my son', 'how much for my child',
+        'how much for a child', 'how much for kids', 'how much for a kid',
+        'price for my daughter', 'price for my son', 'price for my child',
+        '7 year old', '8 year old', '9 year old', '10 year old', '11 year old', '12 year old',
+        '7 year', '8 year', '9 year', '10 year', '11 year', '12 year',
+        'year old child', 'year old kid', 'is there a kids package', 'do you have kids packages'
       ],
       response: () => `**Kids are absolutely welcome at Luxfly!** 🧒✈️\n\n**Minimum age: 4 years old.** Maximum weight: 120 kg.\n\n**Kids Packages (ages 4–12):**\n✈️ **2 flights:** **€89.70** (includes HighFly, souvenir photos & museum)\n✈️ **4 flights:** **€139.80**\n💡 Basic option available from **€45.90** (limited slots, no extras)\n\nKids actually adapt to the air faster than adults! A parent or legal guardian must be present at all times, and a signed consent form is required for under-18s.\n\nAll instructors hold child-flight certification and adjust wind speeds for smaller flyers. 💙`
     },
@@ -140,7 +147,15 @@
         'we are a group of', 'there are', 'people coming', 'how much for a group',
         'group of friends', 'group of colleagues', 'group deal',
         'evg', 'evjf', 'junggesellenabschied', 'enterrement de vie de garcon',
-        'hen do', 'hen night', 'bachelor night', 'going to be', 'party of'
+        'hen do', 'hen night', 'bachelor night', 'going to be', 'party of',
+        'how much for a hen party', 'hen party price', 'price for hen party',
+        'how much for hen', 'how much for 20 people', 'how much for 10 people',
+        'how much for 15 people', 'how much for 30 people', 'how much for 50 people',
+        'how much for a group', 'price for a group', 'cost for a group',
+        'book for our company', 'book for the company', 'book for my company',
+        'company outing', 'whole company', 'entire company', 'all my colleagues',
+        'book for our team', 'book for the whole team', 'group booking price',
+        'discount for groups', 'is there a discount for groups', 'group discount'
       ],
       response: () => `**Group & Event Packages at Luxfly** 👥\n\n**Group Flight Rates (per minute of flight time):**\n👥 2–9 guests: **€35/min** (base rate)\n👥 10–19 guests: **€31.50/min** (10% off)\n👥 20–49 guests: **€29.75/min** (15% off)\n👥 50–99 guests: **€28/min** (20% off)\n👥 100+ guests: **Custom quote**\n\n📌 Group discounts apply from **10 people**. Booking required **7 days in advance** minimum. A **30% deposit** secures your date.\n\n**🎊 Bachelor / Hen Party Packages** (min. 6 guests):\n🥂 **Classic:** €28/person (1 min tunnel time each)\n🎉 **Party Plus:** €52/person (2 min + group photo)\n👑 **VIP Send-Off:** from **€550 for 10 people** (private hire, photos, video & catering)\n\n**🏢 Team Building:** Scales from 8 to 250+ people. Meeting rooms, catering & AV available.\n\n📧 info@luxfly.lu | 📞 +32 63 39 11 63`
     },
@@ -166,7 +181,9 @@
         'do i need to be fit', 'how fit', 'fitness required', 'physically demanding',
         'do i need strength', 'can unfit people fly', 'is it tiring',
         'how safe is it', 'is it dangerous', 'danger', 'risk', 'safe activity',
-        'what are the risks', 'accident', 'injury risk', 'protection'
+        'what are the risks', 'accident', 'injury risk', 'protection',
+        'is it safe', 'is it completely safe', 'how safe is it', 'is luxfly safe',
+        'is it a safe activity', 'safe to do'
       ],
       response: () => `**Indoor skydiving — no experience needed!** 🌬️✈️\n\nIndoor skydiving (bodyflight) recreates the feeling of skydiving freefall inside a vertical wind tunnel. You float on a powerful column of air at up to **160 km/h** — safe, controlled, and completely addictive!\n\n🏠 **It's fully indoors** — weather never affects your flight.\n\n😰 **Scared? Don't worry!** Almost all our guests are first-timers. Your instructor is inside the tunnel with you the whole time and won't let go until you're ready.\n\n💪 **No fitness required** — it's floating, not fighting! All ages and fitness levels are welcome.\n\n🎓 **Full safety briefing** included with every package. All gear provided.\n\n🧒 Suitable for ages **4 and up** (min 30 kg, max 120 kg). It's one of the safest adventure activities available! ✅`
     },
@@ -261,7 +278,10 @@
         'is it physical', 'do you need strength', 'heart rate', 'blood pressure',
         'can i fly if i have', 'allowed to fly', 'unfit to fly', 'fit to fly',
         // Alcohol / drugs
-        'been drinking', 'had a drink', 'drunk', 'alcohol', 'hungover', 'hangover'
+        'been drinking', 'had a drink', 'drunk', 'alcohol', 'hungover', 'hangover',
+        // Back/neck problems explicitly
+        'bad back', 'have a bad back', 'bad back problem', 'bad neck', 'back injury',
+        'neck injury', 'slipped disc', 'herniated disc', 'spinal problem', 'spine issue'
       ],
       response: () => `**Health & Age at Luxfly** 🏥\n\n**Age:** Minimum **4 years old**. There is **no upper age limit** — we fly guests all the way up to **95 years old**! 🎉\n\n**Weight:** Min **30 kg** | Max **120 kg**\n\n**Do NOT fly if you:**\n❌ Are pregnant\n❌ Have a serious heart condition or pacemaker\n❌ Have epilepsy (uncontrolled)\n❌ Have a recent injury, surgery, or serious back/neck problem\n❌ Have uncontrolled high blood pressure\n❌ Have been drinking alcohol or taking drugs\n\n**Unsure?** Consult your doctor before visiting, and always let us know at booking so we can help. Our team will always find the best solution for you. 💙\n\n📞 +32 63 39 11 63 | 📧 info@luxfly.lu`
     },
@@ -288,17 +308,17 @@
     // ── PROMOTIONS / DISCOUNTS ───────────────────────────────────────────────
     promo: {
       keywords: [
-        'promo', 'promotion', 'discount', 'coupon', 'code', 'voucher code',
-        'offer', 'deal', 'special offer', 'student', 'military', 'reduce',
+        'promo', 'promotion', 'promotions', 'discount', 'coupon', 'code',
+        'deal', 'special offer', 'student', 'military', 'reduce',
         'reduction', 'save', 'cheaper', 'saving', 'spring', 'spring26',
         'group15', 'bring a friend', 'birthday month', 'rabatt', 'réduction',
         'offre', 'bon de réduction', 'current offers', 'any deals', 'sale',
         'promotional code', 'promo code', 'discount code', 'student discount',
         'do you have a discount', 'is there a discount', 'any discounts',
-        'any offers', 'any promotions', 'student card', 'student id',
-        'military discount', 'do you offer discounts', 'how can i save',
+        'any offers', 'any promotions', 'what promotions', 'current promotions',
+        'student card', 'student id', 'military discount', 'how can i save',
         'is there a cheaper way', 'loyalty discount', 'any codes',
-        'discount for groups', 'group discount'
+        'do you have any promotions', 'are there any deals', 'do you have any deals'
       ],
       response: () => `**Current Promotions at Luxfly** 🎉\n\n🌸 **SPRING26** — **15% off** all packages! Valid until **30 April 2026**. Use code **SPRING26** at checkout.\n\n👥 **GROUP15** — Extra **5% off** on top of group rates for 10+ people. Code: **GROUP15**.\n\n🎂 **Birthday Month** — Fly in your birthday month for **10% off**. Just mention it when booking!\n\n🎓 **Student Discount** — Show a valid student ID for **10% off**.\n\n👫 **Bring a Friend** — Refer a first-time visitor and both of you get a reward! Ask our team for details.\n\n⚠️ Discounts cannot be combined. Terms apply.`
     },
@@ -316,7 +336,10 @@
         'treat a friend', 'treat my partner', 'buy for my partner',
         'buy for my friend', 'buy for my family', 'how long is a voucher valid',
         'does the voucher expire', 'how long do i have', 'use my voucher',
-        'how do i use my voucher', 'redeem voucher', 'voucher code'
+        'how do i use my voucher', 'redeem voucher', 'voucher code',
+        'use a voucher', 'use my voucher online', 'voucher online', 'voucher at checkout',
+        'apply voucher', 'enter voucher', 'enter my voucher', 'use the voucher',
+        'can i use a voucher', 'use a gift voucher', 'redeem a voucher', 'redeem gift voucher'
       ],
       response: () => `**Luxfly Gift Vouchers — the perfect gift!** 🎁\n\n🛒 Buy online at **luxfly.lu** or in-person at reception.\n\n**Voucher Details:**\n📅 Valid for **12 months** from purchase date\n🔄 Renewable for an additional **3 months** (one renewal per voucher)\n👤 **Not nominative** — usable by anyone, not just the named recipient\n💸 Non-refundable once purchased\n✅ Redeemable against any flight package or add-on\n\nThe perfect birthday, Christmas, or anniversary gift — who wouldn't want to fly? 💝\n\n📞 +32 63 39 11 63 | 📧 info@luxfly.lu`
     },
@@ -335,7 +358,11 @@
         'buy tunnel time', 'rent tunnel time', 'solo session', 'coaching session',
         'wind tunnel coaching', 'improve my skills', 'improve my flying',
         'take my flying further', 'advanced training', 'competitive training',
-        'head down', 'sit fly', 'belly fly', 'vfs', 'dynamic flying'
+        'head down', 'sit fly', 'belly fly', 'vfs', 'dynamic flying',
+        'offer coaching', 'do you offer coaching', 'do you have coaching',
+        'coaching sessions', 'coaching available', 'get coaching', 'book coaching',
+        'personal coaching', 'one to one coaching', 'one-to-one coaching',
+        'get a coach', 'hire a coach', 'wind tunnel coaching sessions'
       ],
       response: () => `**Pro & Advanced Flying at Luxfly** 🏆\n\n**Block Time Packages (dedicated tunnel):**\n⏱️ **Starter** — 1 hr: **€180**\n⏱️ **Regular** — 5 hrs: **€840** (€168/hr)\n⏱️ **Dedicated** — 10 hrs: **€1,560** (€156/hr)\n⏱️ **Elite** — 20 hrs: **€2,880** (€144/hr)\n\n**Shared Pro Sessions:**\n📅 Mon, Wed, Fri, Sat (×2 daily slots), Sun\n💶 Single session: **€55** | 5 sessions: **€240** | 10 sessions: **€420**\n\n**Disciplines:** Belly (130–160 km/h) · Sit fly (180–220 km/h) · Head-down (250–320 km/h) · Freestyle · Formation\n\nOur coaches have **12,000+ combined tunnel hours**.\n📧 info@luxfly.lu for coaching enquiries`
     },
@@ -375,11 +402,14 @@
     // ── SKY PILATES ──────────────────────────────────────────────────────────
     pilates: {
       keywords: [
-        'pilates', 'sky pilates', 'pilates class', 'fitness', 'yoga', 'workout',
+        'pilates', 'sky pilates', 'pilates class', 'pilates classes', 'fitness', 'yoga', 'workout',
         'exercise', 'wellness', 'core', 'flexibility', 'wind tunnel pilates',
         'pilates schedule', 'pilates price', 'drop in', 'class pass',
         'pilates session', 'body workout', 'fitness class', 'tunnel fitness',
-        'fitness at luxfly', 'aerobics', 'pilates booking', 'join a class'
+        'fitness at luxfly', 'aerobics', 'pilates booking', 'join a class',
+        'offer pilates', 'do you offer pilates', 'do you have pilates',
+        'when are pilates', 'pilates times', 'pilates timetable', 'pilates cost',
+        'pilates available', 'pilates on offer', 'sky pilates class'
       ],
       response: () => `**Sky Pilates at Luxfly** 🧘✈️\n\nUnique **Sky Pilates** — pilates in the wind tunnel for an extraordinary core and body workout!\n\n**📅 Schedule:**\n🗓️ Tuesday & Thursday: **7:30 AM**\n🗓️ Saturday: **9:00 AM**\n\n**💶 Pricing:**\n- Drop-in (single class): **€45**\n- 4-class pass: **€160** (€40/class)\n- 8-class pass: **€280** (€35/class)\n\nNo flying experience required — just a love of movement! Classes led by certified instructors.\n\n📞 +32 63 39 11 63 | 📧 info@luxfly.lu`
     },
