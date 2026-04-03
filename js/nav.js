@@ -53,24 +53,35 @@
   // ── MOBILE HAMBURGER MENU ──
   if (!nav) return;
 
-  // ── LANGUAGE LINKS — stay on current page, swap language ──
+  // ── LANGUAGE LINKS — subdirectory-based switching ──
   const navLang = nav.querySelector('.nav-lang');
   if (navLang) {
-    // Update nav label to show current language
-    const currentLang = new URLSearchParams(window.location.search).get('lang');
-    const langLabel = currentLang ? currentLang.toUpperCase() : 'EN';
+    // Detect current language from path e.g. /website/fr/about.html -> 'fr'
+    const langDirs = ['fr', 'de', 'lb', 'nl'];
+    const pathParts = window.location.pathname.split('/').filter(Boolean);
+    let currentLang = 'en';
+    let inLangDir = false;
+    for (const part of pathParts) {
+      if (langDirs.includes(part)) { currentLang = part; inLangDir = true; break; }
+    }
+    const rawFile = pathParts[pathParts.length - 1] || 'index.html';
+    const page = (rawFile.endsWith('.html') || rawFile.endsWith('.htm')) ? rawFile : 'index.html';
+
+    // Update lang button label
     const langBtn = navLang.querySelector('.lang-btn');
     if (langBtn) {
       const svg = langBtn.querySelector('svg');
-      langBtn.textContent = langLabel + ' ';
+      langBtn.textContent = currentLang.toUpperCase() + ' ';
       if (svg) langBtn.appendChild(svg);
     }
-    // Build lang links: EN resets to no param, others add ?lang=xx
+    // Rewrite dropdown links using subdirectory paths
     navLang.querySelectorAll('.nav-dropdown a').forEach(a => {
       const l = a.textContent.trim().toLowerCase();
-      a.href = l === 'en'
-        ? window.location.pathname
-        : window.location.pathname + '?lang=' + l;
+      if (inLangDir) {
+        a.href = l === 'en' ? '../' + page : '../' + l + '/' + page;
+      } else {
+        a.href = l === 'en' ? page : l + '/' + page;
+      }
     });
     if (langBtn) {
       langBtn.addEventListener('click', (e) => {
