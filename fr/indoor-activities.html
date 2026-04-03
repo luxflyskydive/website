@@ -2,12 +2,12 @@ html
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
-<link href="img/favicon.png" rel="icon" type="image/png"/><link href="img/favicon.svg" rel="icon" type="image/svg+xml"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.png" rel="icon" type="image/png"/><link href="../img/favicon.svg" rel="icon" type="image/svg+xml"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Activités intérieures chez Luxfly</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet"/>
-<link href="css/style.css" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
 </head>
 <body class="light">
 <nav id="nav">
@@ -210,8 +210,8 @@ window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY
 const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
-<script src="js/nav.js?v=2"></script>
-<script src="js/chatbot.js"></script>
+<script src="../js/nav.js?v=2"></script>
+<script src="../js/chatbot.js"></script>
 
 </body>
 </html>

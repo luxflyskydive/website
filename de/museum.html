@@ -2,12 +2,12 @@ html
 <html lang="de">
 <head>
 <meta charset="utf-8"/>
-<link href="img/favicon.png" rel="icon" type="image/png"/><link href="img/favicon.svg" rel="icon" type="image/svg+xml"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.png" rel="icon" type="image/png"/><link href="../img/favicon.svg" rel="icon" type="image/svg+xml"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Museum für Fluggeschichte</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet"/>
-<link href="css/style.css" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
 </head>
 <body class="light">
 <nav id="nav">
@@ -97,7 +97,7 @@ html
 </div>
 </nav>
 <!-- HERO -->
-<section style="background: linear-gradient(rgba(0,0,0,0.48), rgba(0,0,0,0.48)), url('img/museum-4.jpg') center/cover; height: 65vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
+<section style="background: linear-gradient(rgba(0,0,0,0.48), rgba(0,0,0,0.48)), url('../img/museum-4.jpg') center/cover; height: 65vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
 <div>
 <p style="color: #f02cb8; font-size: 14px; font-weight: 700; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 2px;">Die Kunst des Fallschirmspringens</p>
 <h1 style="font-size: clamp(32px, 8vw, 72px); font-weight: 900; margin: 0 auto 24px; max-width: 900px; line-height: 1.2;">Ein Museum wie kein anderes.</h1>
@@ -114,7 +114,7 @@ html
 <p style="color: rgba(0,0,0,0.6); line-height: 1.85;">Ganz gleich, ob Sie begeisterter Fallschirmspringer sind oder einfach nur neugierig: Das Museum bietet Ihnen die Möglichkeit, vollständig in die Welt des Fliegens einzutauchen und seine Schönheit, Kunst und Geschichte zu zelebrieren.</p>
 </div>
 <div style="overflow: hidden; border-radius: 4px; aspect-ratio: 4/3;">
-<img alt="Ausstellungshalle des Museums „Die Kunst des Fallschirmspringens“" src="img/museum-2.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+<img alt="Ausstellungshalle des Museums „Die Kunst des Fallschirmspringens“" src="../img/museum-2.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"/>
 </div>
 </div>
 </section>
@@ -122,10 +122,10 @@ html
 <section style="background: #f7f7f7; padding: 0; overflow: hidden;">
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3px;">
 <div style="overflow: hidden; aspect-ratio: 4/3;">
-<img alt="Historische Fallschirmartefakte" onmouseout="this.style.transform='scale(1)'" onmouseover="this.style.transform='scale(1.04)'" src="img/museum-1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease;"/>
+<img alt="Historische Fallschirmartefakte" onmouseout="this.style.transform='scale(1)'" onmouseover="this.style.transform='scale(1.04)'" src="../img/museum-1.jpg" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease;"/>
 </div>
 <div style="overflow: hidden; aspect-ratio: 4/3;">
-<img alt="Hommage an Patrick de Gayardon und gerahmte Ausstellungen" onmouseout="this.style.transform='scale(1)'" onmouseover="this.style.transform='scale(1.04)'" src="img/museum-3.jpg" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease;"/>
+<img alt="Hommage an Patrick de Gayardon und gerahmte Ausstellungen" onmouseout="this.style.transform='scale(1)'" onmouseover="this.style.transform='scale(1.04)'" src="../img/museum-3.jpg" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease;"/>
 </div>
 </div>
 </section>
@@ -133,7 +133,7 @@ html
 <section style="background: #ffffff; padding: 80px 48px;">
 <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
 <div style="overflow: hidden; border-radius: 4px; aspect-ratio: 4/3;">
-<img alt="Hommage an Patrick de Gayardon und gerahmte Ausstellungen" src="img/museum-3.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+<img alt="Hommage an Patrick de Gayardon und gerahmte Ausstellungen" src="../img/museum-3.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"/>
 </div>
 <div>
 <p style="color: #f02cb8; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px;">Zugriff</p>
@@ -213,8 +213,8 @@ window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY
 const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
-<script src="js/nav.js?v=2"></script>
-<script src="js/chatbot.js"></script>
+<script src="../js/nav.js?v=2"></script>
+<script src="../js/chatbot.js"></script>
 
 </body>
 </html>
