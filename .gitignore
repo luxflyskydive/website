@@ -1,0 +1,4 @@
+.claude/
+inject_all*.py
+inject_final.py
+translation_cache.json
