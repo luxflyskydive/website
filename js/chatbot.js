@@ -61,7 +61,7 @@
         'family package', 'family packages',
         'toddlers', 'can toddlers fly', 'consent form', 'sign a form', 'parental consent', 'do i need to sign'
       ],
-      response: () => `**Kids are absolutely welcome at Luxfly!** 🧒✈️\n\n**Minimum age: 4 years old.** Maximum weight: 120 kg.\n\n**Kids Packages (ages 4–12):**\n✈️ **2 flights:** **€89.70** (includes HighFly, souvenir photos & museum)\n✈️ **4 flights:** **€139.80**\n💡 Basic option available from **€45.90** (limited slots, no extras)\n\nKids actually adapt to the air faster than adults! A parent or legal guardian must be present at all times, and a signed consent form is required for under-18s.\n\nAll instructors hold child-flight certification and adjust wind speeds for smaller flyers. 💙`
+      response: () => `Kids are very welcome at Luxfly! 🧒✈️\n\nMinimum age: **4 years old**. Weight range: 30–120 kg. No upper age limit.\n\nA parent or legal guardian must be present at all times for under-18s, and a signed consent form is required.\n\nAsk me about **kids pricing** or **health requirements** if you need more details!`
     },
 
     // ── OPENING HOURS ────────────────────────────────────────────────────────
@@ -96,7 +96,7 @@
         'from arlon', 'from liege', 'close to', 'how close', 'free parking', 'is there parking',
         'can i park', 'parking available', 'is parking free', 'where is your address', 'your address', 'full address'
       ],
-      response: () => `**Luxfly is in Sterpenich, Belgium** 📍\n\n🏠 **Address:** Route de l'Europe 1, 6700 Sterpenich, Belgium\n\n🚗 **By Car:** E411 motorway, exit 33 (Sterpenich/Arlon). We're right next to **IKEA** and **Decathlon** — very easy to find! **80+ free parking spaces** on site.\n\n🚌 **By Bus:** TEC bus line 222 stops right outside.\n\n📍 Just minutes from the Luxembourg border — easily accessible from Luxembourg City, Arlon, and the wider Greater Region.`
+      response: () => `**Route de l'Europe 1, 6700 Sterpenich, Belgium** 📍\n\nBy car: E411 motorway, exit 33 (Sterpenich/Arlon). Next to IKEA and Decathlon — easy to find. 80+ free parking spaces on site.\n\nJust minutes from the Luxembourg border.`
     },
 
     // ── BOOKING / CANCELLATION ───────────────────────────────────────────────
@@ -121,7 +121,7 @@
         'pay cash', 'pay in cash', 'credit cards', 'debit cards',
         'do you accept cash', 'do you accept cards', 'payment methods'
       ],
-      response: () => `**Booking at Luxfly:**\n\n🎟️ Book online at **shop.indoorskydive.lu** or call **+32 63 39 11 63**.\n\n💳 Full payment required at time of booking. All major payment methods accepted.\n\n🚶 **Walk-ins welcome** subject to availability — but booking ahead is strongly recommended, especially for weekends. Groups of 5+ should book at least **48 hours in advance**.\n\n**Cancellation Policy:**\n✅ **More than 48 hours before:** Full refund or free rescheduling\n⚠️ **24–48 hours before:** 50% refund\n❌ **Less than 24 hours before:** No refund\n🚫 **No-show:** Full amount charged\n\nGift vouchers accepted online and in-person.`
+      response: () => `Book online at **shop.indoorskydive.lu** or call **+32 63 39 11 63**.\n\nWalk-ins are welcome but advance booking is strongly recommended, especially on weekends. Groups of 5+ should book at least 48 hours ahead.\n\nFull payment required at booking. Cancellations with **48+ hours notice** get a full refund or free rescheduling. Gift vouchers accepted.`
     },
 
     // ── BIRTHDAY ─────────────────────────────────────────────────────────────
@@ -137,7 +137,7 @@
         'birthday package', 'birthday packages', 'do you have birthday packages',
         'birthday add-ons', 'birthday options'
       ],
-      response: () => `**🎂 Celebrate your birthday at Luxfly!**\n\n🎉 **Birthday Month Discount:** Fly during your birthday month and get **10% off** your package — just mention it when booking!\n\n🎁 **Birthday Add-ons:**\n- Private viewing gallery for friends & family\n- Photography & video package\n- Balloon & decoration package\n- Dedicated flight instructor for your group\n\n🎊 **Group birthday packages** available with custom quotes.\n\n📞 +32 63 39 11 63 | 📧 info@luxfly.lu`
+      response: () => `🎂 Fly during your birthday month and get **10% off** your package — just mention it when booking!\n\nGroup birthday packages are available with various add-ons (gallery, photos, decorations). For a custom quote:\n📞 +32 63 39 11 63 | 📧 info@luxfly.lu`
     },
 
     // ── GROUPS / BACHELOR / CORPORATE ────────────────────────────────────────
@@ -168,7 +168,7 @@
         'people', 'a party of', 'we are a party of',
         'discount for groups', 'is there a discount for groups', 'group discount'
       ],
-      response: () => `**Group & Event Packages at Luxfly** 👥\n\n**Group Flight Rates (per minute of flight time):**\n👥 2–9 guests: **€35/min** (base rate)\n👥 10–19 guests: **€31.50/min** (10% off)\n👥 20–49 guests: **€29.75/min** (15% off)\n👥 50–99 guests: **€28/min** (20% off)\n👥 100+ guests: **Custom quote**\n\n📌 Group discounts apply from **10 people**. Booking required **7 days in advance** minimum. A **30% deposit** secures your date.\n\n**🎊 Bachelor / Hen Party Packages** (min. 6 guests):\n🥂 **Classic:** €28/person (1 min tunnel time each)\n🎉 **Party Plus:** €52/person (2 min + group photo)\n👑 **VIP Send-Off:** from **€550 for 10 people** (private hire, photos, video & catering)\n\n**🏢 Team Building:** Scales from 8 to 250+ people. Meeting rooms, catering & AV available.\n\n📧 info@luxfly.lu | 📞 +32 63 39 11 63`
+      response: () => `**Group rates (per minute of flight time):**\n👥 2–9 people: **€35/min**\n👥 10–19 people: **€31.50/min** (10% off)\n👥 20–49 people: **€29.75/min** (15% off)\n👥 50–99 people: **€28/min** (20% off)\n👥 100+: Custom quote\n\nGroup discounts start from 10 people. A 30% deposit secures your date. Booking required at least 7 days in advance.\n\nFor bachelor/hen parties or team building events, contact us for a tailored package:\n📧 info@luxfly.lu | 📞 +32 63 39 11 63`
     },
 
     // ── EXPERIENCE / WHAT IS IT ──────────────────────────────────────────────
@@ -198,7 +198,7 @@
         'beginners', 'suitable for beginners', 'good for beginners',
         'how does the wind tunnel work', 'how does indoor skydiving work'
       ],
-      response: () => `**Indoor skydiving — no experience needed!** 🌬️✈️\n\nIndoor skydiving (bodyflight) recreates the feeling of skydiving freefall inside a vertical wind tunnel. You float on a powerful column of air at up to **160 km/h** — safe, controlled, and completely addictive!\n\n🏠 **It's fully indoors** — weather never affects your flight.\n\n😰 **Scared? Don't worry!** Almost all our guests are first-timers. Your instructor is inside the tunnel with you the whole time and won't let go until you're ready.\n\n💪 **No fitness required** — it's floating, not fighting! All ages and fitness levels are welcome.\n\n🎓 **Full safety briefing** included with every package. All gear provided.\n\n🧒 Suitable for ages **4 and up** (min 30 kg, max 120 kg). It's one of the safest adventure activities available! ✅`
+      response: () => `Indoor skydiving recreates the feeling of freefall in a vertical wind tunnel — you float on a column of air at up to **160 km/h**, fully indoors regardless of weather.\n\nNo experience or fitness needed. Your instructor is inside the tunnel with you the whole time. Suitable for ages 4 and up (30–120 kg).\n\nFull gear and safety briefing included with every package.`
     },
 
     // ── GEAR / WHAT TO WEAR ──────────────────────────────────────────────────
@@ -259,7 +259,7 @@
         'how long in total', 'how long is the session', 'how long is a session',
         '60 seconds', '1 minute', 'flight length'
       ],
-      response: () => `**Planning your Luxfly visit:**\n\n⏰ **Arrive 60 minutes before** your flight time — for check-in, kit-up, and safety briefing.\n\n✈️ **Each flight = 60 seconds** of pure tunnel exhilaration. (It feels MUCH longer when you're in there!)\n\n⏱️ **Total visit:** approximately **2 hours** including briefing, flights, and museum.\n\n**Typical breakdown:**\n📋 Arrival & registration: 10–15 min\n🎓 Safety briefing: 15–20 min\n🎽 Getting kitted up: 10 min\n🌬️ Your flights: 60 sec each with instructor\n🏛️ Museum: explore at your own pace!\n\nRunning late? Call us on **+32 63 39 11 63** as soon as possible.`
+      response: () => `Arrive **60 minutes before** your flight time for check-in, kit-up, and safety briefing.\n\nEach flight is **60 seconds** of tunnel time. Total visit is around **2 hours** including the briefing and museum.\n\nRunning late? Call us: **+32 63 39 11 63**`
     },
 
     // ── HEALTH / AGE / RESTRICTIONS ──────────────────────────────────────────
@@ -296,7 +296,7 @@
         'bad back', 'have a bad back', 'bad back problem', 'bad neck', 'back injury',
         'neck injury', 'slipped disc', 'herniated disc', 'spinal problem', 'spine issue'
       ],
-      response: () => `**Health & Age at Luxfly** 🏥\n\n**Age:** Minimum **4 years old**. There is **no upper age limit** — we fly guests all the way up to **95 years old**! 🎉\n\n**Weight:** Min **30 kg** | Max **120 kg**\n\n**Do NOT fly if you:**\n❌ Are pregnant\n❌ Have a serious heart condition or pacemaker\n❌ Have epilepsy (uncontrolled)\n❌ Have a recent injury, surgery, or serious back/neck problem\n❌ Have uncontrolled high blood pressure\n❌ Have been drinking alcohol or taking drugs\n\n**Unsure?** Consult your doctor before visiting, and always let us know at booking so we can help. Our team will always find the best solution for you. 💙\n\n📞 +32 63 39 11 63 | 📧 info@luxfly.lu`
+      response: () => `**Age:** Minimum **4 years old** — no upper age limit (we fly guests up to 95!).\n**Weight:** 30–120 kg.\n\nPlease don't fly if you are pregnant, have a serious heart condition or pacemaker, epilepsy, a recent surgery or injury, uncontrolled high blood pressure, or have been drinking.\n\nUnsure? Consult your doctor first, and let us know at booking — we'll always find the best solution. 💙\n📞 +32 63 39 11 63`
     },
 
     // ── CONTACT ──────────────────────────────────────────────────────────────
@@ -315,7 +315,7 @@
         'speak to a human', 'speak to someone real', 'live chat',
         'what is your whatsapp', 'do you have whatsapp'
       ],
-      response: () => `**Get in touch with Luxfly:** 📞\n\n📞 **Phone:** +32 63 39 11 63\n💬 **WhatsApp:** +32 477 528 566\n📧 **General:** info@luxfly.lu\n📧 **Press/Media:** press@luxfly.lu\n📧 **Partnerships:** partners@luxfly.lu\n\n🌐 **Website:** luxfly.lu\n📱 **Instagram:** @luxflyskydive\n\n🏠 **Address:** Route de l'Europe 1, 6700 Sterpenich, Belgium\n\nOur team loves hearing from you — don't hesitate to reach out! ✈️`
+      response: () => `📞 **Phone:** +32 63 39 11 63\n💬 **WhatsApp:** +32 477 528 566\n📧 **Email:** info@luxfly.lu\n🌐 **Website:** luxfly.lu\n\n🏠 Route de l'Europe 1, 6700 Sterpenich, Belgium`
     },
 
     // ── PROMOTIONS / DISCOUNTS ───────────────────────────────────────────────
@@ -388,7 +388,7 @@
         'advanced flying', 'advanced sessions', 'advanced flying sessions',
         'formation flying', 'flying practice', 'formation flying practice'
       ],
-      response: () => `**Pro & Advanced Flying at Luxfly** 🏆\n\n**Block Time Packages (dedicated tunnel):**\n⏱️ **Starter** — 1 hr: **€180**\n⏱️ **Regular** — 5 hrs: **€840** (€168/hr)\n⏱️ **Dedicated** — 10 hrs: **€1,560** (€156/hr)\n⏱️ **Elite** — 20 hrs: **€2,880** (€144/hr)\n\n**Shared Pro Sessions:**\n📅 Mon, Wed, Fri, Sat (×2 daily slots), Sun\n💶 Single session: **€55** | 5 sessions: **€240** | 10 sessions: **€420**\n\n**Disciplines:** Belly (130–160 km/h) · Sit fly (180–220 km/h) · Head-down (250–320 km/h) · Freestyle · Formation\n\nOur coaches have **12,000+ combined tunnel hours**.\n📧 info@luxfly.lu for coaching enquiries`
+      response: () => `**Block time (dedicated tunnel):** 1 hr €180 · 5 hrs €840 · 10 hrs €1,560 · 20 hrs €2,880\n\n**Shared pro sessions:** €55/session · 5 for €240 · 10 for €420\nSchedule: Mon, Wed, Fri, Sat & Sun.\n\nDisciplines: Belly · Sit Fly · Head-Down · Freestyle · Formation.\n📧 info@luxfly.lu for coaching enquiries`
     },
 
     // ── MUSEUM ───────────────────────────────────────────────────────────────
@@ -478,7 +478,7 @@
         'teach in german', 'teach in french', 'teach in english',
         'in german', 'in french', 'in english', 'in luxembourgish'
       ],
-      response: () => `**Our World-Class Coaching Team** 🏆\n\n✅ **8 certified coaches** on our team\n✅ **12,000+ combined tunnel hours** of experience\n✅ All hold internationally recognised tunnel instructor certifications\n\n**Languages spoken:**\n🇬🇧 English | 🇫🇷 French | 🇩🇪 German | 🇱🇺 Luxembourgish | 🇮🇹 Italian\n\nFor beginner packages, your instructor is **inside the tunnel with you** from the first second — you're never alone! Our coaches adapt to every level, from nervous first-timers to competitive athletes. 💪`
+      response: () => `8 certified coaches with **12,000+ combined tunnel hours** of experience.\n\nFor beginners, your instructor is inside the tunnel with you from the very first second. Our team speaks English, French, German, Luxembourgish, and Italian.`
     },
 
     // ── TUNNEL SPECS ─────────────────────────────────────────────────────────
