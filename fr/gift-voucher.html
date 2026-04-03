@@ -1,0 +1,602 @@
+html
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<link href="img/favicon.png" rel="icon" type="image/png"/><link href="img/favicon.svg" rel="icon" type="image/svg+xml"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chèques Cadeaux — Luxfly Indoor Skydiving</title>
+<meta content="Give the gift of flight. Luxfly gift vouchers are valid for 12 months and can be given to anyone." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+.hero-type {
+  background: #ffffff;
+  padding: 180px 48px 120px;
+  text-align: center;
+}
+
+.hero-type h1 {
+  font-family: Montserrat;
+  font-size: 72px;
+  font-weight: 900;
+  font-style: italic;
+  color: #111;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-type .sub {
+  font-size: 18px;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.cta-hero {
+  background: #f02cb8;
+  color: white;
+  padding: 16px 48px;
+  border: none;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.cta-hero:hover {
+  background: #d9219f;
+}
+
+.emotional-section {
+  background: #f7f7f7;
+  padding: 120px 48px;
+  text-align: center;
+}
+
+.emotional-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.emotional-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.emotional-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 40px;
+  line-height: 1.2;
+}
+
+.emotional-text {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.emotional-text p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.pull-quote {
+  background: #f7f7f7;
+  padding: 60px 48px;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 32px;
+  font-weight: 800;
+  color: #111;
+  font-style: italic;
+  line-height: 1.4;
+  margin: 80px auto;
+  max-width: 900px;
+}
+
+.pull-quote.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.pull-quote.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.how-works-section {
+  background: #ffffff;
+  padding: 80px 48px;
+}
+
+.how-works-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.how-works-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.how-works-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.how-works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.how-works-block {
+  text-align: center;
+}
+
+.how-works-block h3 {
+  font-family: Montserrat;
+  font-size: 22px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.how-works-block p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.voucher-options-section {
+  background: #fff5fb;
+  padding: 80px 48px;
+}
+
+.voucher-options-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.voucher-options-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.voucher-options-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.voucher-options-section > p {
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.voucher-list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.voucher-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+  padding: 32px 0;
+  border-bottom: 1px solid #fbe5f0;
+  transition: all 0.3s ease;
+}
+
+.voucher-item:hover {
+  padding-left: 8px;
+}
+
+.voucher-item:last-child {
+  border-bottom: none;
+}
+
+.voucher-name {
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 5px;
+}
+
+.voucher-meta {
+  color: #f02cb8;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.voucher-desc {
+  color: #999;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.voucher-price {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 900;
+  color: #f02cb8;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.redeem-section {
+  background: #f7f7f7;
+  padding: 80px 48px;
+}
+
+.redeem-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.redeem-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.redeem-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 30px;
+}
+
+.redeem-content {
+  max-width: 900px;
+}
+
+.redeem-content p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.redeem-steps {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 6px;
+  margin: 30px 0;
+}
+
+.redeem-steps ol {
+  list-style: decimal inside;
+  margin: 0;
+  padding: 0;
+}
+
+.redeem-steps li {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.redeem-steps li:last-child {
+  margin-bottom: 0;
+}
+
+.full-bleed-cta {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(240,44,184,0.15)), url('https://indoorskydive.lu/img/adults.jpg') center/cover;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 80px 48px;
+}
+
+.cta-final-content h2 {
+  font-family: Montserrat;
+  font-size: 56px;
+  font-weight: 900;
+  margin-bottom: 40px;
+}
+
+.cta-btn {
+  background: #f02cb8;
+  color: white;
+  padding: 16px 48px;
+  border: none;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s;
+  margin: 0 15px;
+}
+
+.cta-btn:hover {
+  background: #d9219f;
+}
+
+@media (max-width: 768px) {
+  .hero-type h1 {
+    font-size: 44px;
+  }
+  
+  .how-works-grid, .voucher-item {
+    grid-template-columns: 1fr;
+  }
+  
+  .voucher-price {
+    text-align: left;
+  }
+
+  .pull-quote {
+    font-size: 24px;
+  }
+}
+</style>
+</head>
+<body class="light">
+<nav id="nav">
+<a class="nav-logo" href="index.html"><svg height="28" viewbox="0 0 82 28" width="82" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="lsg" x1="52" x2="34" y1="1" y2="27">
+<stop class="lux-stop" offset="0%"></stop>
+<stop offset="100%" stop-color="#f02cb8"></stop>
+</lineargradient>
+<clippath clippathunits="userSpaceOnUse" id="lcl">
+<polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"></polygon>
+</clippath>
+<clippath clippathunits="userSpaceOnUse" id="lcf">
+<polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"></polygon>
+</clippath>
+</defs>
+<text class="lux-text" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="0" y="20">LUX</text>
+<text clip-path="url(#lcf)" fill="#f02cb8" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="40" y="24">VOLER</text>
+<line stroke="url(#lsg)" stroke-linecap="round" stroke-width="2" x1="52" x2="34" y1="1" y2="27"></line>
+</svg></a>
+<div class="nav-right">
+<div class="nav-menu">
+<div class="nav-item"><a class="nav-link" href="index.html">Accueil</a>
+<div class="nav-dropdown">
+<a href="bachelor.html">Bachelor &amp; Bachelorette</a>
+<a href="promotions.html">Événements et promotions</a>
+<a href="how-it-works.html">Flux d'activité</a>
+<a href="https://shop.indoorskydive.lu/store_10">Réservez maintenant</a>
+<a href="gift-voucher.html">Acheter un chèque cadeau</a>
+<a href="photos.html">Photos &amp; Vidéos</a>
+<a href="hot-air-balloon.html">Montgolfière</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="prices.html">Parachutisme en salle</a>
+<div class="nav-dropdown">
+<a href="loyalty.html">Programme de fidélité</a>
+<a href="birthdays.html">Anniversaires</a>
+<a href="prices.html">Tarifs</a>
+<a href="use-voucher.html">Utiliser un chèque cadeau</a>
+<a href="conditions.html">Conditions</a>
+<a href="activity.html">L'activité</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="events.html">Entreprise</a>
+<div class="nav-dropdown">
+<a href="events.html">Organiser un événement</a>
+<a href="team-building.html">Construction d'équipe</a>
+<a href="events-pricing.html">Tarifs</a>
+<a href="quote.html">Demande de devis</a>
+<a href="references.html">Références</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="pro.html">Dépliants professionnels</a>
+<div class="nav-dropdown">
+<a href="pro-prices.html">Tarifs</a>
+<a href="coaches.html">Entraîneurs</a>
+<a href="shared-sessions.html">Séance partagée</a>
+<a href="infrastructure.html">Infrastructures</a>
+<a href="become-proflyer.html">Devenir Proflyer</a>
+<a href="pro-events.html">Événements et camps</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="about.html">À propos</a>
+<div class="nav-dropdown">
+<a href="pilates.html">Pilates</a>
+<a href="indoor-activities.html">Activités intérieures</a>
+<a href="blog.html">Blogue</a>
+<a href="museum.html">Musée</a>
+<a href="flyology.html">FLYOLOGIE</a>
+<a href="faq.html">F.A.Q.</a>
+<a href="partners.html">Nos partenaires</a>
+<a href="jobs.html">Offres d'emploi</a>
+<a href="region.html">La Région</a>
+<a href="photos.html">Vos photos et vidéos</a>
+<a href="opening-hours.html">Heures d'ouverture</a>
+<a href="bar.html">Barre</a>
+<a href="about.html">Qui nous sommes</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="contact.html">Contacter</a></div>
+</div>
+<div class="nav-item nav-lang">
+<span class="lang-btn">FR <svg fill="none" height="6" style="opacity:0.55" viewbox="0 0 10 6" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></span>
+<div class="nav-dropdown"><a href="../gift-voucher.html">EN</a><a href="../de/gift-voucher.html">DE</a><a href="../lb/gift-voucher.html">LB</a><a href="../nl/gift-voucher.html">NL</a></div>
+</div>
+<a href="account.html" onmouseout="this.style.color='rgba(255,255,255,0.6)'" onmouseover="this.style.color='#fff'" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;"><svg fill="none" height="16" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="16"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="7" r="4"></circle></svg>Mon compte</a><a class="nav-book" href="https://shop.indoorskydive.lu/store_10">Réservez maintenant</a>
+</div>
+</nav>
+<section class="hero-type">
+<h1>Donnez-leur quelque chose qu'ils n'oublieront jamais.</h1>
+<p class="sub">Un chèque cadeau Luxfly. Le cadeau le plus insolite et le plus médiatisé que vous puissiez offrir.</p>
+<a class="cta-hero" href="https://shop.indoorskydive.lu/store_10">Commander un bon</a>
+</section>
+<section class="emotional-section reveal">
+<h2>Pas autre chose. Une expérience.</h2>
+<div class="emotional-text">
+<p>La plupart des cadeaux sont oubliés. Mais personne n’oublie sa première fois dans les airs. La sensation d'apesanteur. Le souffle du vent sur leur visage. Au moment où ils arrêtent de se battre et commencent à voler. C'est le genre de souvenir dont ils vous parleront des années plus tard.</p>
+<p>C'est le genre de cadeau que l'on offre lorsque l'on veut vraiment montrer que l'on y a pensé. Pas un autre gadget ou un autre vêtement – ​​un moment qu’ils rejoueront pour toujours dans leur esprit. Un sentiment qu’ils ne peuvent obtenir nulle part ailleurs.</p>
+<p>Chaque personne qui vole chez Luxfly dit la même chose à son atterrissage : "Je veux refaire ça." C'est ce que vous offre un chèque cadeau Luxfly. Pas seulement un vol, mais un souvenir, une histoire et le début d'une nouvelle passion.</p>
+</div>
+</section>
+<blockquote class="pull-quote reveal">"Pas rien. Une expérience. Du genre dont ils parlent aux gens."</blockquote>
+<section class="how-works-section reveal">
+<h2>Comment fonctionnent les bons</h2>
+<div class="how-works-grid">
+<div class="how-works-block">
+<h3>Valable 12 mois</h3>
+<p>Les chèques cadeaux sont valables 12 mois à compter de la date d'achat. Ils ne sont liés à personne et peuvent être donnés à n’importe qui pour qu’ils puissent les utiliser.</p>
+</div>
+<div class="how-works-block">
+<h3>N'importe quel forfait</h3>
+<p>Choisissez un forfait de vol spécifique ou donnez-leur une valeur monétaire et laissez-les décider quelle expérience leur convient le mieux.</p>
+</div>
+<div class="how-works-block">
+<h3>Instantané ou imprimé</h3>
+<p>Livraison numérique par email pour les cadeaux de dernière minute ou une belle carte imprimée pour quelque chose de plus personnel.</p>
+</div>
+</div>
+</section>
+<section class="voucher-options-section reveal">
+<h2>Choisissez un forfait à offrir</h2>
+<p>Choisissez un forfait prédéfini ou donnez un montant personnalisé. Le destinataire échange en ligne ou dans l'établissement.</p>
+<div class="voucher-list">
+<div class="voucher-item">
+<div>
+<div class="voucher-name">Enfants — 2 vols</div>
+<div class="voucher-meta">4-12 ans · 2 vols avec instructeur</div>
+<div class="voucher-desc">Forfait complet comprenant HighFly, photos et visite du musée</div>
+</div>
+<div class="voucher-price">€89.70</div>
+</div>
+<div class="voucher-item">
+<div>
+<div class="voucher-name">Enfants — 4 vols</div>
+<div class="voucher-meta">4-12 ans · 4 vols avec instructeur</div>
+<div class="voucher-desc">Plus de temps d'antenne pour les petits voyageurs qui veulent y retourner</div>
+</div>
+<div class="voucher-price">€139.80</div>
+</div>
+<div class="voucher-item">
+<div>
+<div class="voucher-name">Adultes — LUXCOVERY (2 vols)</div>
+<div class="voucher-meta">1 personne · 2 vols · Highfly + photos incluses</div>
+<div class="voucher-desc">Le parfait premier avant-goût de la chute libre pour un adulte</div>
+</div>
+<div class="voucher-price">€104.70</div>
+</div>
+<div class="voucher-item">
+<div>
+<div class="voucher-name">Adultes — LUXENSATION (4 vols)</div>
+<div class="voucher-meta">1 personne · 4 vols · Highfly + photos incluses</div>
+<div class="voucher-desc">Plus de temps, plus de compétences, plus de souvenirs</div>
+</div>
+<div class="voucher-price">€174.70</div>
+</div>
+<div class="voucher-item">
+<div>
+<div class="voucher-name">Adultes — LUXEMOTION (6 vols)</div>
+<div class="voucher-meta">1 personne · 6 vols · Highfly + photos incluses</div>
+<div class="voucher-desc">Le cadeau ultime pour quelqu'un prêt à s'engager dans le vol</div>
+</div>
+<div class="voucher-price">€236.70</div>
+</div>
+</div>
+</section>
+<section class="redeem-section reveal">
+<h2>Utiliser votre bon</h2>
+<div class="redeem-content">
+<p>Les chèques cadeaux sont simples à utiliser. Le destinataire se rend sur shop.indoorskydive.lu, réserve sa séance et saisit le code du bon d'achat lors du paiement. Si la séance coûte plus que la valeur du bon, ils paient la différence.</p>
+<div class="redeem-steps">
+<ol>
+<li><strong>Réservez une séance</strong> — Visitez shop.indoorskydive.lu et choisissez l'heure du vol, le forfait et la date souhaitée</li>
+<li><strong>Entrez le code du bon</strong> — Lors du paiement, collez le code du bon d'achat dans le champ "Chèque Cadeau"</li>
+<li><strong>Réservation complète</strong> — Le montant du bon est appliqué. Si nécessaire, payez le solde restant par carte à la caisse ou à la réception le jour même</li>
+<li><strong>Présentez-vous et volez</strong> — Présentez les détails de la confirmation à votre arrivée</li>
+</ol>
+</div>
+<p>Les codes de bon sont uniques à chaque bon. Ils peuvent être transférés ou donnés à une autre personne – les bons ne sont pas liés à un nom spécifique. Valable 12 mois à compter de l'achat. Pour utiliser un code promotionnel commençant par « Z », saisissez-le directement sur la page de réservation. Pour d'autres codes, envoyez un e-mail à hello@luxfly.eu avec votre code et la date et l'heure souhaitées.</p>
+</div>
+</section>
+<section class="full-bleed-cta">
+<div class="cta-final-content">
+<h2>Prêt à offrir le cadeau ?</h2>
+<a class="cta-btn" href="https://shop.indoorskydive.lu/store_10">Bon de commande</a>
+<a class="cta-btn" href="prices.html" style="background: transparent; border: 2px solid white; color: white;">Voir tous les forfaits</a>
+</div>
+</section>
+<footer>
+<div class="footer-brand">
+<img alt="Luxfly" src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg"/>
+<p>La plus haute soufflerie de parachutisme intérieure d'Europe. Sécuritaire de 4 à 95 ans.</p>
+</div>
+<div class="footer-col">
+<h5>Voler</h5>
+<ul>
+<li><a href="prices.html">Adultes</a></li>
+<li><a href="kids.html">Enfants et familles</a></li>
+<li><a href="pro.html">Dépliants professionnels</a></li>
+<li><a href="birthdays.html">Anniversaires</a></li>
+<li><a href="gift-voucher.html">Chèques cadeaux</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5>Informations</h5>
+<ul>
+<li><a href="about.html">À propos de nous</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="contact.html">Contacter</a></li>
+<li><a href="opening-hours.html">Heures d'ouverture</a></li>
+<li><a href="conditions.html">Conditions</a></li>
+</ul>
+</div>
+</footer>
+<div class="footer-bottom">
+<span>© 2026 Luxfly Parachutisme intérieur</span>
+<div style="display:flex;gap:24px;">
+<a href="conditions.html">Conditions générales</a>
+<a href="#">Politique de confidentialité</a>
+</div>
+</div>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY>60)},{passive:true});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<script src="js/nav.js?v=2"></script>
+<script src="js/chatbot.js"></script>
+
+</body>
+</html>

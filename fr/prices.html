@@ -1,0 +1,580 @@
+html
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<link href="img/favicon.png" rel="icon" type="image/png"/><link href="img/favicon.svg" rel="icon" type="image/svg+xml"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tarifs Adultes — Luxfly Indoor Skydiving</title>
+<meta content="Flight packages for adults. From first-timers to frequent flyers." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+.hero {
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(240,44,184,0.08) 100%), url('https://indoorskydive.lu/img/adults.jpg') center/cover;
+  height: 65vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 80px 48px;
+  color: white;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.eyebrow {
+  color: #f02cb8;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: Montserrat;
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-sub {
+  font-size: 18px;
+  font-weight: 300;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.pricing-section {
+  background: #ffffff;
+  padding: 100px 48px;
+}
+
+.pricing-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.pricing-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pricing-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.pricing-section > p {
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 60px;
+  max-width: 800px;
+}
+
+.pricing-list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.pricing-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+  padding: 32px 0;
+  border-bottom: 1px solid #e8e8e8;
+  transition: all 0.3s ease;
+}
+
+.pricing-item:hover {
+  padding-left: 8px;
+}
+
+.pricing-item:hover::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #f02cb8;
+}
+
+.pricing-item:last-child {
+  border-bottom: none;
+}
+
+.pricing-name {
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.pricing-desc {
+  color: #f02cb8;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.pricing-subtext {
+  color: #999;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.pricing-price {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 900;
+  color: #f02cb8;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.included-note {
+  background: #fff5fb;
+  border-left: 3px solid #f02cb8;
+  padding: 30px 40px;
+  margin: 60px auto 0;
+  max-width: 900px;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.included-section {
+  background: #f7f7f7;
+  padding: 80px 48px;
+}
+
+.included-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.included-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.included-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.included-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.included-col {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.included-col h3 {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.included-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.included-col li {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+.included-col li:before {
+  content: "✓ ";
+  color: #f02cb8;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.group-section {
+  background: #f7f7f7;
+  padding: 60px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.group-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.group-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.group-text h2 {
+  font-family: Montserrat;
+  font-size: 36px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.group-text p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.group-link {
+  color: #f02cb8;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.group-link:hover {
+  text-decoration: underline;
+}
+
+.booking-section {
+  background: #fff5fb;
+  padding: 60px 48px;
+}
+
+.booking-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.booking-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.booking-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.booking-section h2 {
+  font-family: Montserrat;
+  font-size: 36px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.booking-section p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.button-group {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  background: #f02cb8;
+  color: white;
+  padding: 14px 32px;
+  border: none;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #d9219f;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #f02cb8;
+  color: #f02cb8;
+}
+
+.btn-secondary:hover {
+  background: rgba(240, 44, 184, 0.1);
+}
+
+@media (max-width: 768px) {
+  .included-grid, .group-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero h1 {
+    font-size: 44px;
+  }
+  
+  .pricing-item {
+    grid-template-columns: 1fr;
+  }
+  
+  .pricing-price {
+    text-align: left;
+  }
+  
+  .button-group {
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+<body class="light">
+<nav id="nav">
+<a class="nav-logo" href="index.html"><svg height="28" viewbox="0 0 82 28" width="82" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="lsg" x1="52" x2="34" y1="1" y2="27">
+<stop class="lux-stop" offset="0%"></stop>
+<stop offset="100%" stop-color="#f02cb8"></stop>
+</lineargradient>
+<clippath clippathunits="userSpaceOnUse" id="lcl">
+<polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"></polygon>
+</clippath>
+<clippath clippathunits="userSpaceOnUse" id="lcf">
+<polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"></polygon>
+</clippath>
+</defs>
+<text class="lux-text" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="0" y="20">LUX</text>
+<text clip-path="url(#lcf)" fill="#f02cb8" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="40" y="24">VOLER</text>
+<line stroke="url(#lsg)" stroke-linecap="round" stroke-width="2" x1="52" x2="34" y1="1" y2="27"></line>
+</svg></a>
+<div class="nav-right">
+<div class="nav-menu">
+<div class="nav-item"><a class="nav-link" href="index.html">Accueil</a>
+<div class="nav-dropdown">
+<a href="bachelor.html">Bachelor &amp; Bachelorette</a>
+<a href="promotions.html">Événements et promotions</a>
+<a href="how-it-works.html">Flux d'activité</a>
+<a href="https://shop.indoorskydive.lu/store_10">Réservez maintenant</a>
+<a href="gift-voucher.html">Acheter un chèque cadeau</a>
+<a href="photos.html">Photos &amp; Vidéos</a>
+<a href="hot-air-balloon.html">Montgolfière</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="prices.html">Parachutisme en salle</a>
+<div class="nav-dropdown">
+<a href="loyalty.html">Programme de fidélité</a>
+<a href="birthdays.html">Anniversaires</a>
+<a href="prices.html">Tarifs</a>
+<a href="use-voucher.html">Utiliser un chèque cadeau</a>
+<a href="conditions.html">Conditions</a>
+<a href="activity.html">L'activité</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="events.html">Entreprise</a>
+<div class="nav-dropdown">
+<a href="events.html">Organiser un événement</a>
+<a href="team-building.html">Construction d'équipe</a>
+<a href="events-pricing.html">Tarifs</a>
+<a href="quote.html">Demande de devis</a>
+<a href="references.html">Références</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="pro.html">Dépliants professionnels</a>
+<div class="nav-dropdown">
+<a href="pro-prices.html">Tarifs</a>
+<a href="coaches.html">Entraîneurs</a>
+<a href="shared-sessions.html">Séance partagée</a>
+<a href="infrastructure.html">Infrastructures</a>
+<a href="become-proflyer.html">Devenir Proflyer</a>
+<a href="pro-events.html">Événements et camps</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="about.html">À propos</a>
+<div class="nav-dropdown">
+<a href="pilates.html">Pilates</a>
+<a href="indoor-activities.html">Activités intérieures</a>
+<a href="blog.html">Blogue</a>
+<a href="museum.html">Musée</a>
+<a href="flyology.html">FLYOLOGIE</a>
+<a href="faq.html">F.A.Q.</a>
+<a href="partners.html">Nos partenaires</a>
+<a href="jobs.html">Offres d'emploi</a>
+<a href="region.html">La Région</a>
+<a href="photos.html">Vos photos et vidéos</a>
+<a href="opening-hours.html">Heures d'ouverture</a>
+<a href="bar.html">Barre</a>
+<a href="about.html">Qui nous sommes</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="contact.html">Contacter</a></div>
+</div>
+<div class="nav-item nav-lang">
+<span class="lang-btn">FR <svg fill="none" height="6" style="opacity:0.55" viewbox="0 0 10 6" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></span>
+<div class="nav-dropdown"><a href="../prices.html">EN</a><a href="../de/prices.html">DE</a><a href="../lb/prices.html">LB</a><a href="../nl/prices.html">NL</a></div>
+</div>
+<a href="account.html" onmouseout="this.style.color='rgba(255,255,255,0.6)'" onmouseover="this.style.color='#fff'" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;"><svg fill="none" height="16" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="16"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="7" r="4"></circle></svg>Mon compte</a><a class="nav-book" href="https://shop.indoorskydive.lu/store_10">Réservez maintenant</a>
+</div>
+</nav>
+<section class="hero">
+<div class="hero-content">
+<span class="eyebrow">Voler</span>
+<h1>Des forfaits pour tout type de dépliant.</h1>
+<p class="hero-sub">Des débutants aux voyageurs fréquents. Tous les forfaits comprennent un équipement complet, un briefing sur la sécurité et un instructeur qualifié.</p>
+</div>
+</section>
+<section class="pricing-section reveal">
+<h2>Choisissez votre heure de vol</h2>
+<p>Tous les prix comprennent la location du matériel, le briefing de sécurité et la supervision d'un instructeur à l'intérieur du tunnel.</p>
+<div class="pricing-list">
+<div class="pricing-item">
+<div>
+<div class="pricing-name">LUXCOVERY</div>
+<div class="pricing-desc">2 min · 2 vols · 1 personne</div>
+<div class="pricing-subtext">Votre premier aperçu de la chute libre — comprend Highfly, photos et expo</div>
+</div>
+<div class="pricing-price">€104.70</div>
+</div>
+<div class="pricing-item">
+<div>
+<div class="pricing-name">LUXENSATION</div>
+<div class="pricing-desc">4 min · 2 vols · 1 personne</div>
+<div class="pricing-subtext">Plus de temps, plus de contrôle — inclut Highfly, photos et expo</div>
+</div>
+<div class="pricing-price">€174.70</div>
+</div>
+<div class="pricing-item">
+<div>
+<div class="pricing-name">LUXÉMOTION</div>
+<div class="pricing-desc">6 min · 3 vols · 1 personne</div>
+<div class="pricing-subtext">Le meilleur du meilleur — comprend Highfly, photos et expo</div>
+</div>
+<div class="pricing-price">€236.70</div>
+</div>
+</div>
+<div class="included-note">
+<strong>Tous les forfaits incluent</strong> location d'équipement complet, briefing de sécurité et instructeur qualifié dans le tunnel tout au long.
+  </div>
+</section>
+<section class="included-section reveal">
+<h2>Ce qui est inclus et les modules complémentaires</h2>
+<div class="included-grid">
+<div class="included-col">
+<h3>Dans chaque paquet</h3>
+<ul>
+<li>Combinaison de vol complète, casque, lunettes, bouchons d'oreilles</li>
+<li>Briefing de sécurité avant vol avec instructeur</li>
+<li>Instructeur qualifié à l'intérieur du tunnel</li>
+<li>Expérience HighFly avec votre instructeur</li>
+<li>Photos souvenirs professionnelles</li>
+<li>Démonstration de l'instructeur</li>
+<li>Visite du musée L'Art du Parachutisme</li>
+</ul>
+</div>
+<div class="included-col">
+<h3>Modules complémentaires facultatifs</h3>
+<ul>
+<li>Coaching privé (voir page coachs)</li>
+<li>Restauration de groupe disponible</li>
+<li>Points de fidélité sur chaque euro dépensé</li>
+<li>Chèques cadeaux pour tout forfait</li>
+</ul>
+</div>
+<div class="included-col">
+<h3>Non inclus</h3>
+<ul>
+<li>Coaching privé (à réserver séparément)</li>
+<li>Aliments et boissons</li>
+<li>Marchandises ou souvenirs</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="group-section reveal">
+<div class="group-text">
+<h2>Voler en groupe ?</h2>
+<p>Les groupes de 10 personnes ou plus bénéficient de tarifs préférentiels et d'une attention dédiée. Qu'il s'agisse d'un anniversaire, d'un team building d'entreprise ou d'un voyage scolaire, nous pouvons accueillir des groupes de 2 à 250 personnes.</p>
+<a class="group-link" href="events.html">Obtenir un devis groupe →</a>
+</div>
+<div style="background: url('https://indoorskydive.lu/img/groups.jpg') center/cover; border-radius: 8px; aspect-ratio: 4/3;"></div>
+</section>
+<section class="booking-section reveal">
+<div class="booking-content">
+<h2>Comment réserver</h2>
+<p>Réservez en ligne sur shop.indoorskydive.lu ou appelez-nous pour obtenir de l'aide. Le paiement intégral est requis au moment de la réservation. Les annulations plus de 48 heures avant votre séance sont intégralement remboursées. Consultez les conditions complètes pour connaître les détails de la politique et ce qui se passe si vous devez reporter.</p>
+<div class="button-group">
+<a class="btn" href="https://shop.indoorskydive.lu/store_10">Réservez en ligne</a>
+<a class="btn btn-secondary" href="conditions.html">Voir conditions</a>
+</div>
+</div>
+</section>
+<footer>
+<div class="footer-brand">
+<img alt="Luxfly" src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg"/>
+<p>La plus haute soufflerie de parachutisme intérieure d'Europe. Sécuritaire de 4 à 95 ans.</p>
+</div>
+<div class="footer-col">
+<h5>Voler</h5>
+<ul>
+<li><a href="prices.html">Adultes</a></li>
+<li><a href="kids.html">Enfants et familles</a></li>
+<li><a href="pro.html">Dépliants professionnels</a></li>
+<li><a href="birthdays.html">Anniversaires</a></li>
+<li><a href="gift-voucher.html">Chèques cadeaux</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5>Informations</h5>
+<ul>
+<li><a href="about.html">À propos de nous</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="contact.html">Contacter</a></li>
+<li><a href="opening-hours.html">Heures d'ouverture</a></li>
+<li><a href="conditions.html">Conditions</a></li>
+</ul>
+</div>
+</footer>
+<div class="footer-bottom">
+<span>© 2026 Luxfly Parachutisme intérieur</span>
+<div style="display:flex;gap:24px;">
+<a href="conditions.html">Conditions générales</a>
+<a href="#">Politique de confidentialité</a>
+</div>
+</div>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY>60)},{passive:true});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<script src="js/nav.js?v=2"></script>
+<script src="js/chatbot.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,584 @@
+html
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<link href="img/favicon.png" rel="icon" type="image/png"/><link href="img/favicon.svg" rel="icon" type="image/svg+xml"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Comment ça marche — Luxfly Indoor Skydiving</title>
+<meta content="Your first flight step by step. From check-in to flying in the tunnel." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+.hero-type {
+  background: #f0f4ff;
+  padding: 180px 48px 120px;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  color: #f02cb8;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.hero-type h1 {
+  font-family: Montserrat;
+  font-size: 72px;
+  font-weight: 900;
+  color: #111;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+.hero-type .sub {
+  font-size: 18px;
+  color: #666;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.timeline-section {
+  background: #ffffff;
+  padding: 100px 48px;
+}
+
+.timeline-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.step {
+  border-left: 4px solid #f02cb8;
+  padding-left: 40px;
+}
+
+.step.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.step.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.step-num {
+  font-family: Montserrat;
+  font-size: 80px;
+  font-weight: 900;
+  color: #f02cb8;
+  margin-bottom: 10px;
+  line-height: 0.9;
+}
+
+.step h3 {
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.step p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.pull-quote {
+  background: #f7f7f7;
+  padding: 60px 48px;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 32px;
+  font-weight: 800;
+  color: #111;
+  font-style: italic;
+  line-height: 1.4;
+  margin: 80px auto;
+  max-width: 900px;
+}
+
+.pull-quote.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.pull-quote.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.expect-section {
+  background: #f7f7f7;
+  padding: 100px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.expect-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.expect-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.expect-text {
+  order: -1;
+}
+
+.expect-text .label {
+  color: #f02cb8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.expect-text h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.expect-text p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.expect-section img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.practical-section {
+  background: #ffffff;
+  padding: 80px 48px;
+}
+
+.practical-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.practical-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.practical-card {
+  background: #f7f7f7;
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.practical-card.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.practical-card.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.practical-card h3 {
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.practical-card p, .practical-card ul {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.practical-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.practical-card li {
+  margin-bottom: 10px;
+}
+
+.practical-card li:before {
+  content: "• ";
+  color: #f02cb8;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.faq-section {
+  background: #ffffff;
+  padding: 80px 48px;
+}
+
+.faq-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.faq-item.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.faq-item.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faq-item h3 {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.faq-item p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.cta-section {
+  background: #fff5fb;
+  padding: 80px 48px;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  background: #f02cb8;
+  color: white;
+  padding: 16px 48px;
+  border: none;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background: #d9219f;
+}
+
+@media (max-width: 768px) {
+  .steps-grid, .practical-grid, .faq-grid, .expect-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-type h1 {
+    font-size: 44px;
+  }
+
+  .step-num {
+    font-size: 48px;
+  }
+
+  .pull-quote {
+    font-size: 24px;
+  }
+}
+</style>
+</head>
+<body class="light">
+<nav id="nav">
+<a class="nav-logo" href="index.html"><svg height="28" viewbox="0 0 82 28" width="82" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="lsg" x1="52" x2="34" y1="1" y2="27">
+<stop class="lux-stop" offset="0%"></stop>
+<stop offset="100%" stop-color="#f02cb8"></stop>
+</lineargradient>
+<clippath clippathunits="userSpaceOnUse" id="lcl">
+<polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"></polygon>
+</clippath>
+<clippath clippathunits="userSpaceOnUse" id="lcf">
+<polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"></polygon>
+</clippath>
+</defs>
+<text class="lux-text" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="0" y="20">LUX</text>
+<text clip-path="url(#lcf)" fill="#f02cb8" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="40" y="24">VOLER</text>
+<line stroke="url(#lsg)" stroke-linecap="round" stroke-width="2" x1="52" x2="34" y1="1" y2="27"></line>
+</svg></a>
+<div class="nav-right">
+<div class="nav-menu">
+<div class="nav-item"><a class="nav-link" href="index.html">Accueil</a>
+<div class="nav-dropdown">
+<a href="bachelor.html">Bachelor &amp; Bachelorette</a>
+<a href="promotions.html">Événements et promotions</a>
+<a href="how-it-works.html">Flux d'activité</a>
+<a href="https://shop.indoorskydive.lu/store_10">Réservez maintenant</a>
+<a href="gift-voucher.html">Acheter un chèque cadeau</a>
+<a href="photos.html">Photos &amp; Vidéos</a>
+<a href="hot-air-balloon.html">Montgolfière</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="prices.html">Parachutisme en salle</a>
+<div class="nav-dropdown">
+<a href="loyalty.html">Programme de fidélité</a>
+<a href="birthdays.html">Anniversaires</a>
+<a href="prices.html">Tarifs</a>
+<a href="use-voucher.html">Utiliser un chèque cadeau</a>
+<a href="conditions.html">Conditions</a>
+<a href="activity.html">L'activité</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="events.html">Entreprise</a>
+<div class="nav-dropdown">
+<a href="events.html">Organiser un événement</a>
+<a href="team-building.html">Construction d'équipe</a>
+<a href="events-pricing.html">Tarifs</a>
+<a href="quote.html">Demande de devis</a>
+<a href="references.html">Références</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="pro.html">Dépliants professionnels</a>
+<div class="nav-dropdown">
+<a href="pro-prices.html">Tarifs</a>
+<a href="coaches.html">Entraîneurs</a>
+<a href="shared-sessions.html">Séance partagée</a>
+<a href="infrastructure.html">Infrastructures</a>
+<a href="become-proflyer.html">Devenir Proflyer</a>
+<a href="pro-events.html">Événements et camps</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="about.html">À propos</a>
+<div class="nav-dropdown">
+<a href="pilates.html">Pilates</a>
+<a href="indoor-activities.html">Activités intérieures</a>
+<a href="blog.html">Blogue</a>
+<a href="museum.html">Musée</a>
+<a href="flyology.html">FLYOLOGIE</a>
+<a href="faq.html">F.A.Q.</a>
+<a href="partners.html">Nos partenaires</a>
+<a href="jobs.html">Offres d'emploi</a>
+<a href="region.html">La Région</a>
+<a href="photos.html">Vos photos et vidéos</a>
+<a href="opening-hours.html">Heures d'ouverture</a>
+<a href="bar.html">Barre</a>
+<a href="about.html">Qui nous sommes</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="contact.html">Contacter</a></div>
+</div>
+<div class="nav-item nav-lang">
+<span class="lang-btn">FR <svg fill="none" height="6" style="opacity:0.55" viewbox="0 0 10 6" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></span>
+<div class="nav-dropdown"><a href="../how-it-works.html">EN</a><a href="../de/how-it-works.html">DE</a><a href="../lb/how-it-works.html">LB</a><a href="../nl/how-it-works.html">NL</a></div>
+</div>
+<a href="account.html" onmouseout="this.style.color='rgba(255,255,255,0.6)'" onmouseover="this.style.color='#fff'" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;"><svg fill="none" height="16" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="16"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="7" r="4"></circle></svg>Mon compte</a><a class="nav-book" href="https://shop.indoorskydive.lu/store_10">Réservez maintenant</a>
+</div>
+</nav>
+<section class="hero-type">
+<span class="eyebrow">Pas à pas</span>
+<h1>De la porte au ciel.</h1>
+<p class="sub">Voici à quoi vous attendre du moment de votre arrivée jusqu'au moment de votre atterrissage.</p>
+</section>
+<section class="timeline-section">
+<h2>Votre baptême de l'air en quatre étapes</h2>
+<div class="steps-grid">
+<div class="step reveal">
+<div class="step-num">01</div>
+<h3>Arrivée et enregistrement</h3>
+<p>Présentez-vous 15 minutes avant votre séance. Apportez une pièce d'identité. La réception vous enregistrera et vous mettra en relation avec votre instructeur. Si vous voyagez en groupe, c'est ici que vous rencontrez tout le monde. Nous répondrons à toutes les questions de dernière minute et veillerons à ce que vous soyez à l'aise.</p>
+</div>
+<div class="step reveal reveal-delay-1">
+<div class="step-num">02</div>
+<h3>Préparez-vous</h3>
+<p>Casque, combinaison de vol, lunettes, bouchons d'oreilles. Tout est inclus et fourni par nos soins. La salle des équipements se trouve juste à côté du tunnel. Votre instructeur vous adapte personnellement tout, ajustant chaque pièce jusqu'à ce qu'elle vous convienne. Rien ne reste en place s'il ne s'ajuste pas correctement.</p>
+</div>
+<div class="step reveal reveal-delay-2">
+<div class="step-num">03</div>
+<h3>Briefing de sécurité</h3>
+<p>Une séance de 10 à 15 minutes au cours de laquelle votre instructeur vous explique les positions de base, les signaux manuels et ce à quoi vous attendre à l'intérieur du tunnel. Aucune expérience préalable n'est nécessaire - c'est à cela que sert le briefing. Vous apprendrez comment tenir votre corps, comment communiquer et exactement ce qui va se passer.</p>
+</div>
+<div class="step reveal reveal-delay-3">
+<div class="step-num">04</div>
+<h3>Vous volez</h3>
+<p>Séances de 1 à 2 minutes (selon votre forfait) avec votre instructeur à l'intérieur du tunnel avec vous tout le temps. Après chaque séance, vous faites un débriefing, vous vous reposez et c'est reparti. L'instructeur sera là, faisant les ajustements et renforçant votre confiance à chaque minute dans les airs.</p>
+</div>
+</div>
+</section>
+<blockquote class="pull-quote reveal">"Dès que vous êtes dans les airs, la peur se transforme en rire."</blockquote>
+<section class="expect-section reveal">
+<img alt="Dépliant pour la première fois" src="https://indoorskydive.lu/img/adults.jpg"/>
+<div class="expect-text">
+<span class="label">Première fois ?</span>
+<h2>Vous vous sentirez nerveux. C'est normal.</h2>
+<p>La plupart des débutants ressentent la nervosité avant de se lancer. Dès que vous êtes en l'air, la nervosité se transforme en rire. La sensation d’apesanteur frappe immédiatement et l’emporte sur toute anxiété. Au moment où vous atterrissez, vous planifiez déjà votre retour.</p>
+<p>Les instructeurs sont formés pour vous mettre à l'aise rapidement. Ils lisent votre langage corporel, ils savent exactement ce que pensent les débutants et ils ont guidé avec succès des centaines de personnes nerveuses dans les airs. Tout le monde finit par voler.</p>
+<p>Dès votre deuxième séance, vous demanderez plus de temps. À votre troisième, vous comprendrez pourquoi les gens en deviennent accros.</p>
+</div>
+</section>
+<section class="practical-section">
+<h2>Ce que vous devez savoir</h2>
+<div class="practical-grid">
+<div class="practical-card reveal">
+<h3>Que porter</h3>
+<p>Portez des vêtements confortables et ajustés. Les jeans, leggings, bas de survêtement fonctionnent tous. Les cheveux doivent être attachés s’ils sont plus longs que les épaules. Portez des chaussures à lacets ou des baskets.</p>
+<p style="margin-top: 15px;"><strong>Ne portez pas :</strong></p>
+<ul>
+<li>Foulards ou cravates amples</li>
+<li>Bijoux ou accessoires en vrac</li>
+<li>Montres ou bagues volumineuses</li>
+<li>Lunettes (les contacts vont bien)</li>
+</ul>
+</div>
+<div class="practical-card reveal reveal-delay-1">
+<h3>Ce qu'il ne faut pas apporter</h3>
+<ul>
+<li>Téléphones ou appareils photo (interdits dans le tunnel)</li>
+<li>Clés lâches ou petits objets</li>
+<li>Nourriture ou boisson dans l'établissement</li>
+<li>Tout ce qui a une valeur sentimentale irremplaçable</li>
+</ul>
+<p style="margin-top: 15px;">Nous mettons à votre disposition des casiers sécurisés pour vos objets de valeur. Des photographies professionnelles sont disponibles si vous souhaitez des photos de votre vol.</p>
+</div>
+<div class="practical-card reveal reveal-delay-2">
+<h3>Notes de santé</h3>
+<p>Vous devez être en bonne santé générale pour voler. Les personnes souffrant de problèmes de dos ou de cou, de problèmes cardiaques ou qui sont enceintes doivent consulter un médecin avant de réserver.</p>
+<p style="margin-top: 15px;">Une intervention chirurgicale récente, une épilepsie incontrôlée ou des vertiges sévères sont des contre-indications. En cas de doute, contactez-nous : nous pouvons vous conseiller au cas par cas. Les conditions médicales complètes sont répertoriées dans nos conditions.</p>
+</div>
+</div>
+</section>
+<section class="faq-section">
+<h2>Réponses rapides</h2>
+<div class="faq-grid">
+<div class="faq-item reveal">
+<h3>Combien de temps dure une séance ?</h3>
+<p>Généralement 1 à 2 minutes de temps d’antenne, plus briefing et préparation. La durée totale de l'expérience est d'environ 45 minutes à 1 heure selon votre forfait. Attendez-vous à passer 10 à 15 minutes à vous préparer et 10 à 15 minutes supplémentaires avant d'entrer dans le tunnel.</p>
+</div>
+<div class="faq-item reveal reveal-delay-1">
+<h3>Puis-je apporter mon téléphone ?</h3>
+<p>Non. Les téléphones ne peuvent pas entrer dans le tunnel : trop de vent et trop de risques de les perdre. Nous disposons d'une zone de visualisation où vos amis et votre famille peuvent regarder. Des forfaits de photographie professionnelle sont disponibles si vous souhaitez des images de votre vol.</p>
+</div>
+<div class="faq-item reveal reveal-delay-2">
+<h3>Et si j'ai peur ?</h3>
+<p>Parlez-en à votre instructeur. Ils y vont doucement. La plupart des instructeurs recommandent de commencer par une séance plus courte si vous êtes nerveux. Tout le monde finit par voler une fois qu'il sent l'air le soutenir. La peur est naturelle : la confiance vient après le premier vol.</p>
+</div>
+<div class="faq-item reveal reveal-delay-3">
+<h3>Est-ce bruyant ?</h3>
+<p>Oui, les moteurs sont puissants. Les bouchons d'oreilles sont inclus et obligatoires. À l’intérieur du tunnel, la communication se fait par signaux manuels car vous n’entendez pas la parole. En dehors du tunnel, le débriefing est parfaitement audible.</p>
+</div>
+</div>
+</section>
+<section class="cta-section">
+<h2>Assez de lecture. Il est temps de voler.</h2>
+<a class="cta-btn" href="https://shop.indoorskydive.lu/store_10">Réservez maintenant</a>
+</section>
+<footer>
+<div class="footer-brand">
+<img alt="Luxfly" src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg"/>
+<p>La plus haute soufflerie de parachutisme intérieure d'Europe. Sécuritaire de 4 à 95 ans.</p>
+</div>
+<div class="footer-col">
+<h5>Voler</h5>
+<ul>
+<li><a href="prices.html">Adultes</a></li>
+<li><a href="kids.html">Enfants et familles</a></li>
+<li><a href="pro.html">Dépliants professionnels</a></li>
+<li><a href="birthdays.html">Anniversaires</a></li>
+<li><a href="gift-voucher.html">Chèques cadeaux</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5>Informations</h5>
+<ul>
+<li><a href="about.html">À propos de nous</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="contact.html">Contacter</a></li>
+<li><a href="opening-hours.html">Heures d'ouverture</a></li>
+<li><a href="conditions.html">Conditions</a></li>
+</ul>
+</div>
+</footer>
+<div class="footer-bottom">
+<span>© 2026 Luxfly Parachutisme intérieur</span>
+<div style="display:flex;gap:24px;">
+<a href="conditions.html">Conditions générales</a>
+<a href="#">Politique de confidentialité</a>
+</div>
+</div>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY>60)},{passive:true});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<script src="js/nav.js?v=2"></script>
+<script src="js/chatbot.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,239 @@
+html
+<html lang="nl">
+<head>
+<meta charset="utf-8"/>
+<link href="img/favicon.png" rel="icon" type="image/png"/><link href="img/favicon.svg" rel="icon" type="image/svg+xml"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wat voor soort vlieger ben jij?</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+    .quiz-container { max-width: 800px; margin: 0 auto; }
+    .quiz-question { background: #f7f7f7; padding: 32px; border-radius: 8px; margin-bottom: 32px; border-left: 3px solid #f02cb8; }
+    .quiz-options { display: grid; gap: 12px; }
+    .quiz-option { padding: 16px; background: #ffffff; border: 1px solid rgba(0,0,0,0.1); border-radius: 6px; cursor: pointer; color: rgba(0,0,0,0.55); transition: all 0.2s; }
+    .quiz-option:hover { background: rgba(240, 44, 184, 0.05); border-color: #f02cb8; }
+    .profile-card { background: #f7f7f7; padding: 40px; border-radius: 8px; margin: 40px 0; text-align: center; border-top: 3px solid #f02cb8; }
+    .profile-icon { font-size: 60px; margin-bottom: 20px; }
+  </style>
+</head>
+<body class="light">
+<nav id="nav">
+<a class="nav-logo" href="index.html"><svg height="28" viewbox="0 0 82 28" width="82" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="lsg" x1="52" x2="34" y1="1" y2="27">
+<stop class="lux-stop" offset="0%"></stop>
+<stop offset="100%" stop-color="#f02cb8"></stop>
+</lineargradient>
+<clippath clippathunits="userSpaceOnUse" id="lcl">
+<polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"></polygon>
+</clippath>
+<clippath clippathunits="userSpaceOnUse" id="lcf">
+<polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"></polygon>
+</clippath>
+</defs>
+<text class="lux-text" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="0" y="20">LUX</text>
+<text clip-path="url(#lcf)" fill="#f02cb8" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="40" y="24">VLIEG</text>
+<line stroke="url(#lsg)" stroke-linecap="round" stroke-width="2" x1="52" x2="34" y1="1" y2="27"></line>
+</svg></a>
+<div class="nav-right">
+<div class="nav-menu">
+<div class="nav-item"><a class="nav-link" href="index.html">Thuis</a>
+<div class="nav-dropdown">
+<a href="bachelor.html">Vrijgezel &amp; Vrijgezel</a>
+<a href="promotions.html">Evenementen en promoties</a>
+<a href="how-it-works.html">Activiteitenstroom</a>
+<a href="https://shop.indoorskydive.lu/store_10">Boek nu</a>
+<a href="gift-voucher.html">Koop een cadeaubon</a>
+<a href="photos.html">Foto's en video's</a>
+<a href="hot-air-balloon.html">Heteluchtballon</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="prices.html">Indoor skydiven</a>
+<div class="nav-dropdown">
+<a href="loyalty.html">Loyaliteitsprogramma</a>
+<a href="birthdays.html">Verjaardagen</a>
+<a href="prices.html">Prijzen</a>
+<a href="use-voucher.html">Gebruik een cadeaubon</a>
+<a href="conditions.html">Voorwaarden</a>
+<a href="activity.html">De activiteit</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="events.html">Zakelijk</a>
+<div class="nav-dropdown">
+<a href="events.html">Organiseer een evenement</a>
+<a href="team-building.html">Teambuilding</a>
+<a href="events-pricing.html">Prijzen</a>
+<a href="quote.html">Offerteaanvraag</a>
+<a href="references.html">Referenties</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="pro.html">Pro-flyers</a>
+<div class="nav-dropdown">
+<a href="pro-prices.html">Prijzen</a>
+<a href="coaches.html">Coaches</a>
+<a href="shared-sessions.html">Gedeelde sessie</a>
+<a href="infrastructure.html">Infrastructuur</a>
+<a href="become-proflyer.html">Proflyer worden</a>
+<a href="pro-events.html">Evenementen en kampen</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="about.html">Over</a>
+<div class="nav-dropdown">
+<a href="pilates.html">Pilates</a>
+<a href="indoor-activities.html">Binnenactiviteiten</a>
+<a href="blog.html">Blog</a>
+<a href="museum.html">Museum</a>
+<a href="flyology.html">VLIEGENLOGIE</a>
+<a href="faq.html">Veelgestelde vragen</a>
+<a href="partners.html">Onze partners</a>
+<a href="jobs.html">Vacatures</a>
+<a href="region.html">De regio</a>
+<a href="photos.html">Jouw foto's en video's</a>
+<a href="opening-hours.html">Openingstijden</a>
+<a href="bar.html">Balk</a>
+<a href="about.html">Wie we zijn</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="contact.html">Neem contact op met</a></div>
+</div>
+<div class="nav-item nav-lang">
+<span class="lang-btn">NL <svg fill="none" height="6" style="opacity:0.55" viewbox="0 0 10 6" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></span>
+<div class="nav-dropdown"><a href="../my-flight-test.html">EN</a><a href="../fr/my-flight-test.html">FR</a><a href="../de/my-flight-test.html">DE</a><a href="../lb/my-flight-test.html">LB</a></div>
+</div>
+<a href="account.html" onmouseout="this.style.color='rgba(255,255,255,0.6)'" onmouseover="this.style.color='#fff'" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;"><svg fill="none" height="16" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="16"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="7" r="4"></circle></svg>Mijn account</a><a class="nav-book" href="https://shop.indoorskydive.lu/store_10">Boek nu</a>
+</div>
+</nav>
+<section style="background: #f0f4ff; padding: 180px 48px 100px; text-align: center;">
+<h1 style="font-size: clamp(40px, 8vw, 72px); font-weight: 900; margin: 0 auto 24px; max-width: 900px; line-height: 1.2; color: #111;">Wat voor vlieger ben jij?</h1>
+<p style="font-size: 18px; color: rgba(0,0,0,0.4); margin: 0; max-width: 700px; margin: 0 auto; line-height: 1.6;">Beantwoord een paar vragen om erachter te komen welk pakket bij jouw vliegstijl past.</p>
+</section>
+<section style="background: #ffffff; padding: 80px 48px;">
+<div class="quiz-container">
+<div class="quiz-question">
+<h3 style="color: #111; font-size: 18px; margin-bottom: 20px;">1. Wat is je grootste gevoel als je voor de eerste keer vliegt?</h3>
+<div class="quiz-options">
+<div class="quiz-option">Zenuwachtig maar opgewonden: ik wil professionele geruststelling</div>
+<div class="quiz-option">Ik wil begrijpen hoe het precies werkt</div>
+<div class="quiz-option">Laat mij gewoon de lucht in gaan en het ervaren</div>
+<div class="quiz-option">Ik wil dit met vrienden doen en het moment delen</div>
+</div>
+</div>
+<div class="quiz-question">
+<h3 style="color: #111; font-size: 18px; margin-bottom: 20px;">2. Als je iets nieuws leert, doe je doorgaans:</h3>
+<div class="quiz-options">
+<div class="quiz-option">Volg de instructies nauwkeurig en stel vragen</div>
+<div class="quiz-option">Lees/onderzoek alles voordat je begint</div>
+<div class="quiz-option">Spring erin en zoek het uit terwijl je bezig bent</div>
+<div class="quiz-option">Leer beter met een groep en gedeelde energie</div>
+</div>
+</div>
+<div class="quiz-question">
+<h3 style="color: #111; font-size: 18px; margin-bottom: 20px;">3. Jouw ideale vliegervaring omvat:</h3>
+<div class="quiz-options">
+<div class="quiz-option">Wetende dat ik goed wordt gecoacht op het gebied van veiligheid en vorm</div>
+<div class="quiz-option">De fysica begrijpen en hoe elk detail werkt</div>
+<div class="quiz-option">De pure sensatie en niets anders doet er toe</div>
+<div class="quiz-option">Vrienden en familie juichen mij toe</div>
+</div>
+</div>
+<div class="quiz-question">
+<h3 style="color: #111; font-size: 18px; margin-bottom: 20px;">4. Na uw vlucht wilt u:</h3>
+<div class="quiz-options">
+<div class="quiz-option">Bespreek met je instructeur wat je hebt gedaan</div>
+<div class="quiz-option">Bekijk de beelden en analyseer je techniek</div>
+<div class="quiz-option">Beleef de adrenaline hoog en vier</div>
+<div class="quiz-option">Pak een drankje met iedereen die heeft gevlogen en wissel verhalen uit</div>
+</div>
+</div>
+<div class="quiz-question">
+<h3 style="color: #111; font-size: 18px; margin-bottom: 20px;">5. Hoe avontuurlijk ben jij, op een bepaalde schaal?</h3>
+<div class="quiz-options">
+<div class="quiz-option">Ik hou van avontuur, maar met veiligheidsleuningen en begeleiding</div>
+<div class="quiz-option">Ik hou ervan om vaardigheden in de loop van de tijd methodisch onder de knie te krijgen</div>
+<div class="quiz-option">Ik ben een sensatiezoeker - laat de intensiteit maar komen</div>
+<div class="quiz-option">Ik ben overal voor in, als mijn vrienden het ook doen</div>
+</div>
+</div>
+</div>
+</section>
+<section style="background: #f7f7f7; padding: 80px 48px;">
+<div class="quiz-container">
+<h2 style="color: #111; font-size: 36px; font-weight: 900; margin-bottom: 60px; text-align: center;">Uw flyerprofielen</h2>
+<div class="profile-card reveal">
+<div class="profile-icon">🧠</div>
+<h3 style="color: #111; font-size: 24px; font-weight: 900; margin-bottom: 16px;">De denker</h3>
+<p style="color: rgba(0,0,0,0.55); line-height: 1.8; margin-bottom: 20px;">Je wilt begrijpen hoe alles werkt. Je bent nieuwsgierig naar de natuurkunde, de techniek, de techniek. Waarschijnlijk bezoekt u eerst ons museum, vliegt u dan en analyseert u vervolgens de video.</p>
+<p style="color: #f02cb8; font-weight: 700; margin-bottom: 20px;">Beste voor jou: hoe het werkt + Educatieve inhoud</p>
+<a href="how-it-works.html" style="color: rgba(0,0,0,0.55); text-decoration: none; font-weight: 700;">Meer informatie →</a>
+</div>
+<div class="profile-card reveal reveal-delay-1">
+<div class="profile-icon">⚡</div>
+<h3 style="color: #111; font-size: 24px; font-weight: 900; margin-bottom: 16px;">De waaghals</h3>
+<p style="color: rgba(0,0,0,0.55); line-height: 1.8; margin-bottom: 20px;">Je leeft voor de adrenaline. Je wilt snelheid, intensiteit en het puurste vlieggevoel. Veiligheid is een gegeven, maar je wilt je grenzen verleggen en je volledig levend voelen.</p>
+<p style="color: #f02cb8; font-weight: 700; margin-bottom: 20px;">Het beste voor u: Pro Flying + geavanceerde training</p>
+<a href="pro.html" style="color: rgba(0,0,0,0.55); text-decoration: none; font-weight: 700;">Word een professional →</a>
+</div>
+<div class="profile-card reveal reveal-delay-2">
+<div class="profile-icon">💰</div>
+<h3 style="color: #111; font-size: 24px; font-weight: 900; margin-bottom: 16px;">Het natuurlijke</h3>
+<p style="color: rgba(0,0,0,0.55); line-height: 1.8; margin-bottom: 20px;">Je leert snel en hebt een goed lichaamsbewustzijn. U vertrouwt op uw instinct en heeft geen uitgebreide briefing nodig. Je gaat liever de lucht in en voelt het dan dat je erover praat.</p>
+<p style="color: #f02cb8; font-weight: 700; margin-bottom: 20px;">Het beste voor u: duidelijke prijzen + directe boeking</p>
+<a href="prices.html" style="color: rgba(0,0,0,0.55); text-decoration: none; font-weight: 700;">Bekijk prijzen →</a>
+</div>
+<div class="profile-card reveal reveal-delay-3">
+<div class="profile-icon">👥</div>
+<h3 style="color: #111; font-size: 24px; font-weight: 900; margin-bottom: 16px;">De teamspeler</h3>
+<p style="color: rgba(0,0,0,0.55); line-height: 1.8; margin-bottom: 20px;">Solo is de ervaring maar half zo goed. Je wilt dit delen met vrienden of familie. Het gejuich, het gelach, het groepsfeest – dat is de echte sensatie.</p>
+<p style="color: #f02cb8; font-weight: 700; margin-bottom: 20px;">Het beste voor jou: groepsevenementen en gedeelde ervaringen</p>
+<a href="events.html" style="color: rgba(0,0,0,0.55); text-decoration: none; font-weight: 700;">Plan uw evenement →</a>
+</div>
+</div>
+</section>
+<section style="background: #ffffff; padding: 80px 48px; text-align: center;">
+<h2 style="color: #111; font-size: 36px; font-weight: 900; margin-bottom: 32px;">Nog niet zeker?</h2>
+<p style="color: rgba(0,0,0,0.55); line-height: 1.8; margin-bottom: 40px;">Dat is oké. Elke eerste vlieger krijgt een briefing en een instructeur die zich aanpast aan jouw stijl. Geen druk, gewoon vliegen.</p>
+<a href="https://shop.indoorskydive.lu/store_10" style="display: inline-block; padding: 16px 48px; background: #f02cb8; color: white; font-weight: 700; text-decoration: none; border-radius: 6px; font-size: 16px;">Boek een Discovery-vlucht</a>
+</section>
+<footer style="background: #f7f7f7; padding: 60px 48px; border-top: 1px solid rgba(0,0,0,0.08);">
+<div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 40px;">
+<div class="footer-brand">
+<img alt="Luxfly" src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg" style="height: 40px; margin-bottom: 16px;"/>
+<p style="color: rgba(0,0,0,0.4); font-size: 14px; line-height: 1.6; margin: 0;">Europa's hoogste indoor skydiving-windtunnel. Veilig van 4 tot 95 jaar.</p>
+</div>
+<div class="footer-col">
+<h5 style="color: #111; font-weight: 700; margin-bottom: 16px; font-size: 14px; text-transform: uppercase;">Vlieg</h5>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="margin-bottom: 8px;"><a href="prices.html" style="color: rgba(0,0,0,0.4); text-decoration: none;">Volwassenen</a></li>
+<li style="margin-bottom: 8px;"><a href="kids.html" style="color: rgba(0,0,0,0.4); text-decoration: none;">Kinderen en gezinnen</a></li>
+<li style="margin-bottom: 8px;"><a href="pro.html" style="color: rgba(0,0,0,0.4); text-decoration: none;">Pro-flyers</a></li>
+<li><a href="birthdays.html" style="color: rgba(0,0,0,0.4); text-decoration: none;">Verjaardagen</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5 style="color: #111; font-weight: 700; margin-bottom: 16px; font-size: 14px; text-transform: uppercase;">Informatie</h5>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="margin-bottom: 8px;"><a href="about.html" style="color: rgba(0,0,0,0.4); text-decoration: none;">Over ons</a></li>
+<li style="margin-bottom: 8px;"><a href="faq.html" style="color: rgba(0,0,0,0.4); text-decoration: none;">Veelgestelde vragen</a></li>
+<li style="margin-bottom: 8px;"><a href="contact.html" style="color: rgba(0,0,0,0.4); text-decoration: none;">Neem contact op met</a></li>
+<li><a href="conditions.html" style="color: rgba(0,0,0,0.4); text-decoration: none;">Voorwaarden</a></li>
+</ul>
+</div>
+</div>
+<div style="border-top: 1px solid rgba(0,0,0,0.08); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; color: rgba(0,0,0,0.4); font-size: 14px;">
+<span>© 2026 Luxfly Indoor Skydiving</span>
+<div style="display:flex;gap:24px;"><a href="conditions.html" style="color: rgba(0,0,0,0.4); text-decoration: none;">Voorwaarden</a><a href="#" style="color: rgba(0,0,0,0.4); text-decoration: none;">Privacy</a></div>
+</div>
+</footer>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY>60)},{passive:true});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<script src="js/nav.js?v=2"></script>
+<script src="js/chatbot.js"></script>
+
+</body>
+</html>

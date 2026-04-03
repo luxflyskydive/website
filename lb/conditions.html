@@ -1,0 +1,540 @@
+html
+<html lang="lb">
+<head>
+<meta charset="utf-8"/>
+<link href="img/favicon.png" rel="icon" type="image/png"/><link href="img/favicon.svg" rel="icon" type="image/svg+xml"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reservatiounsbedéngungen &amp; Sécherheetsregelen — Luxfly</title>
+<meta content="Booking conditions, health requirements, and safety rules for Luxfly Indoor Skydiving." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+.hero-type {
+  background: #ffffff;
+  padding: 160px 48px 80px;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-type h1 {
+  font-family: Montserrat;
+  font-size: 56px;
+  font-weight: 900;
+  color: #111;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  max-width: 800px;
+}
+
+.hero-type .sub {
+  font-size: 16px;
+  color: #666;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.content-section {
+  padding: 80px 48px;
+}
+
+.content-section h2 {
+  font-family: Montserrat;
+  font-size: 36px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.content-section p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 20px;
+  max-width: 1000px;
+}
+
+.content-section ul, .content-section ol {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 20px;
+  max-width: 1000px;
+  padding-left: 25px;
+}
+
+.content-section li {
+  margin-bottom: 12px;
+}
+
+.health-section {
+  background: #ffffff;
+  padding: 80px 48px;
+}
+
+.health-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.health-col h3 {
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f02cb8;
+}
+
+.health-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.health-col li {
+  color: #555;
+  font-size: 14px;
+  line-height: 2;
+  margin-bottom: 0;
+}
+
+.health-col li:before {
+  content: "• ";
+  color: #f02cb8;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.age-section {
+  background: #f7f7f7;
+  padding: 80px 48px;
+}
+
+.age-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.age-section h2 {
+  font-family: Montserrat;
+  font-size: 36px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.age-section p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.age-section strong {
+  color: #f02cb8;
+}
+
+.cancellation-section {
+  background: #ffffff;
+  padding: 80px 48px;
+}
+
+.cancellation-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.cancellation-section h2 {
+  font-family: Montserrat;
+  font-size: 36px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.policy-item {
+  background: #f7f7f7;
+  padding: 25px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border-left: 4px solid #f02cb8;
+}
+
+.policy-item strong {
+  color: #f02cb8;
+}
+
+.policy-item p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.what-to-wear-section {
+  background: #ffffff;
+  padding: 80px 48px;
+}
+
+.what-to-wear-section h2 {
+  font-family: Montserrat;
+  font-size: 36px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.wear-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.wear-col h3 {
+  font-family: Montserrat;
+  font-size: 22px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.wear-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.wear-col li {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.9;
+  margin-bottom: 10px;
+}
+
+.wear-col li:before {
+  content: "✓ ";
+  color: #f02cb8;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.rules-section {
+  background: #f7f7f7;
+  padding: 80px 48px;
+}
+
+.rules-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.rules-section h2 {
+  font-family: Montserrat;
+  font-size: 36px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.rules-list {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.rules-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.rules-list li {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.9;
+  margin-bottom: 15px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.rules-list li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #f02cb8;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .health-grid, .wear-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-type h1 {
+    font-size: 36px;
+  }
+}
+</style>
+</head>
+<body class="light">
+<nav id="nav">
+<a class="nav-logo" href="index.html"><svg height="28" viewbox="0 0 82 28" width="82" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="lsg" x1="52" x2="34" y1="1" y2="27">
+<stop class="lux-stop" offset="0%"></stop>
+<stop offset="100%" stop-color="#f02cb8"></stop>
+</lineargradient>
+<clippath clippathunits="userSpaceOnUse" id="lcl">
+<polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"></polygon>
+</clippath>
+<clippath clippathunits="userSpaceOnUse" id="lcf">
+<polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"></polygon>
+</clippath>
+</defs>
+<text class="lux-text" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="0" y="20">LUX</text>
+<text clip-path="url(#lcf)" fill="#f02cb8" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="40" y="24">FLÉIEREN</text>
+<line stroke="url(#lsg)" stroke-linecap="round" stroke-width="2" x1="52" x2="34" y1="1" y2="27"></line>
+</svg></a>
+<div class="nav-right">
+<div class="nav-menu">
+<div class="nav-item"><a class="nav-link" href="index.html">Home</a>
+<div class="nav-dropdown">
+<a href="bachelor.html">Bachelor &amp; Bachelorette</a>
+<a href="promotions.html">Evenementer &amp; Promotiounen</a>
+<a href="how-it-works.html">Aktivitéit Flow</a>
+<a href="https://shop.indoorskydive.lu/store_10">Buch elo</a>
+<a href="gift-voucher.html">Kaaft e Kaddosbong</a>
+<a href="photos.html">Fotoen &amp; Videoen</a>
+<a href="hot-air-balloon.html">Loftballon</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="prices.html">Indoor Skydiving</a>
+<div class="nav-dropdown">
+<a href="loyalty.html">Loyalitéit Programm</a>
+<a href="birthdays.html">Gebuertsdeeg</a>
+<a href="prices.html">Präisser</a>
+<a href="use-voucher.html">Benotzt e Kaddosbong</a>
+<a href="conditions.html">Konditioune</a>
+<a href="activity.html">Aktivitéit</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="events.html">Firmen</a>
+<div class="nav-dropdown">
+<a href="events.html">Organiséieren en Event</a>
+<a href="team-building.html">Team Building</a>
+<a href="events-pricing.html">Präis</a>
+<a href="quote.html">Ufro fir Zitat</a>
+<a href="references.html">Referenzen</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="pro.html">Pro Flyers</a>
+<div class="nav-dropdown">
+<a href="pro-prices.html">Präisser</a>
+<a href="coaches.html">Traineren</a>
+<a href="shared-sessions.html">Gemeinsam Sëtzung</a>
+<a href="infrastructure.html">Infrastruktur</a>
+<a href="become-proflyer.html">Proflyer ginn</a>
+<a href="pro-events.html">Evenementer a Campen</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="about.html">Iwwer</a>
+<div class="nav-dropdown">
+<a href="pilates.html">Pilates</a>
+<a href="indoor-activities.html">Indoor Aktivitéiten</a>
+<a href="blog.html">Blog</a>
+<a href="museum.html">Musée</a>
+<a href="flyology.html">FLYOLOGIE</a>
+<a href="faq.html">F.A.Q.</a>
+<a href="partners.html">Eis Partner</a>
+<a href="jobs.html">Aarbechtsplazen</a>
+<a href="region.html">D'Regioun</a>
+<a href="photos.html">Är Fotoen a Videoen</a>
+<a href="opening-hours.html">Öffnungszäiten</a>
+<a href="bar.html">Bar</a>
+<a href="about.html">Wien si mir</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="contact.html">Kontakt</a></div>
+</div>
+<div class="nav-item nav-lang">
+<span class="lang-btn">LB <svg fill="none" height="6" style="opacity:0.55" viewbox="0 0 10 6" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></span>
+<div class="nav-dropdown"><a href="../conditions.html">EN</a><a href="../fr/conditions.html">FR</a><a href="../de/conditions.html">DE</a><a href="../nl/conditions.html">NL</a></div>
+</div>
+<a href="account.html" onmouseout="this.style.color='rgba(255,255,255,0.6)'" onmouseover="this.style.color='#fff'" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;"><svg fill="none" height="16" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="16"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="7" r="4"></circle></svg>Mäi Kont</a><a class="nav-book" href="https://shop.indoorskydive.lu/store_10">Buch elo</a>
+</div>
+</nav>
+<section class="hero-type">
+<h1>Konditioune vun Participatioun.</h1>
+<p class="sub">Liest w.e.g. virun der Buchung. Dës Konditioune garantéieren eng sécher an agreabel Erfahrung fir jiddereen.</p>
+</section>
+<section class="health-section">
+<h2 style="text-align: center; margin-bottom: 60px; color: #111;">Gesondheet &amp; Fitness Ufuerderunge</h2>
+<div class="health-grid">
+<div class="health-col">
+<h3>Wien kann fléien</h3>
+<ul>
+<li>Am Allgemengen gutt Gesondheet</li>
+<li>Keng akut Krankheet oder Infektioun</li>
+<li>Keng schwéier Schwindel oder Gläichgewiicht Stéierungen</li>
+<li>Keng onkontrolléiert Héicht Angscht</li>
+<li>Kënnen verbal a visuell Instruktioune verfollegen</li>
+<li>Kann d'Glieder onofhängeg bewegen</li>
+</ul>
+</div>
+<div class="health-col">
+<h3>Muss als éischt en Dokter konsultéieren</h3>
+<ul>
+<li>Réck- oder Halsverletzungen an de leschten 12 Méint</li>
+<li>Häerzkrankheeten oder Häerzkrankheeten</li>
+<li>Epilepsie oder Epilepsie Stéierungen</li>
+<li>Rezent Schëller Dislokatioun</li>
+<li>Schwangerschaft (all Trimester)</li>
+<li>Schwéier Asthma oder Atmungskonditioun</li>
+<li>Héich Blutdrock (onkontrolléiert)</li>
+</ul>
+</div>
+</div>
+<p style="text-align: center; margin-top: 40px; color: #666; font-size: 14px;">Wann Dir Zweifel hutt, konsultéiert Äre GP. Réceptioun Personal kann op engem Fall-vun-Fall Basis beroden.</p>
+</section>
+<section class="age-section">
+<div class="age-content">
+<h2>Alter &amp; Héicht Ufuerderunge</h2>
+<p><strong>Minimum Alter:</strong> 4 Joer al. Mir hunn erfollegräich Kanner fléien esou jonk wéi 4 an Participanten esou al wéi 95.</p>
+<p><strong>Gewiicht Limite:</strong> Fléien ass net recommandéiert fir Leit iwwer 120 kg oder déi mat enger Geschicht vu Schëllerdislokatioun.</p>
+<p><strong>Ënner 18 Ufuerderunge:</strong> Kanner a Jugendlecher musse vun engem Elterendeel oder Erzéiungsberechtegten begleet ginn. Eng ënnerschriwwe Verzichterklärung ass erfuerderlech vun engem Erzéiungsberechtegten virun der Participatioun. Guardians sinn verantwortlech fir d'Gesondheetserklärung ze garantéieren.</p>
+<p><strong>Verzicht erfuerderlech:</strong> All Participanten onofhängeg vum Alter mussen eng Haftungsverzicht ënnerschreiwen ier se fléien. Fir Mannerjäreg muss en Elterendeel oder Erzéiungsberechtegten am Numm ënnerschreiwen.</p>
+</div>
+</section>
+<section class="cancellation-section">
+<div class="cancellation-content">
+<h2>Annuléierungen &amp; Ännerungen</h2>
+<div class="policy-item">
+<p><strong>Voll Remboursement:</strong> Méi wéi 48 Stonnen virun Ärer Sëtzung. Keng Froen gestallt.</p>
+</div>
+<div class="policy-item">
+<p><strong>50% Remboursement:</strong> Tëscht 24-48 Stonnen virun Ärer Sëtzung. Dir kritt 50% vum Buchungsbetrag.</p>
+</div>
+<div class="policy-item">
+<p><strong>Kee Remboursement:</strong> Manner wéi 24 Stonnen virun Ärer Sëtzung. Wann Dir musst mat kuerzen Avis annuléieren, Dir verbitt de ganze Betrag.</p>
+</div>
+<div class="policy-item">
+<p><strong>Ëmplang:</strong> Gratis mat 48 Stonnen Notiz. Beweegt Är Buchung op all verfügbaren Datum ouni Käschten.</p>
+</div>
+<div class="policy-item">
+<p><strong>Keen weist:</strong> Wann Dir net fir Är gebuchte Sessioun kommt ouni ze annuléieren, wäert Dir de ganze Betrag verrechent ginn.</p>
+</div>
+<div class="policy-item">
+<p><strong>Force majeure:</strong> Krankheet, Verletzung oder dokumentéiert Noutfall mat medizinesche Beweiser kënne vu Fall zu Fall behandelt ginn. Kontaktéiert eis direkt wann Ëmstänn d'Präsenz verhënneren.</p>
+</div>
+</div>
+</section>
+<section class="what-to-wear-section">
+<h2>Wat ze droen &amp; bréngen</h2>
+<div class="wear-grid">
+<div class="wear-col">
+<h3>Wat ze droen</h3>
+<ul>
+<li>Gemittlech, enk-passend Kleeder</li>
+<li>Jeans, Leggings, oder Tracksuit ënnen</li>
+<li>Schong oder Turnschueder (obligatoresch)</li>
+<li>Hoer zréck gebonnen wann Schëllerlängt oder méi laang</li>
+<li>Kleeder déi Iech fräi bewegen</li>
+</ul>
+</div>
+<div class="wear-col">
+<h3>Net an den Tunnel droen</h3>
+<ul>
+<li>Schal oder locker Halskette</li>
+<li>Los Bijouen oder Hoer Clips</li>
+<li>Aueren oder voluminöse Réng</li>
+<li>Los Saachen an Taschen - ewechzehuelen alles virum Entrée</li>
+<li>Alles wat de Wand opfänke kann</li>
+<li>Hutt oder Hood (net geséchert)</li>
+</ul>
+</div>
+</div>
+<p style="text-align: center; margin-top: 40px; color: #666; font-size: 14px; max-width: 900px; margin-left: auto; margin-right: auto;">Séchert Schlässer gi fir all Wäertsaachen zur Verfügung gestallt. Brëller si gutt - mir hu méi grouss Brëller déi iwwer si passen. Alles wat net geséchert ass, gëtt virum Entrée aus dem Tunnel geläscht.</p>
+</section>
+<section class="rules-section">
+<div class="rules-content">
+<h2>Hausregelen &amp; Ariichtungsrichtlinnen</h2>
+<div class="rules-list">
+<ul>
+<li>Follegt all Instruktor Instruktioune zu all Moment ouni Ausnam</li>
+<li>Keen Iessen oder Gedrénks am Tunnel oder Ausrüstungsraum (Waasserfläsch am Waardeberäich ass gutt)</li>
+<li>Keen Alkohol oder Fräizäitstoffer virum Fluch</li>
+<li>Keng perséinlech Fotografie am Tunnel (berufflech Fotoen verfügbar)</li>
+<li>Sidd Respekt vun anere Flyeren Zäit a Raum</li>
+<li>Kanner ënner 4 sinn wëllkomm aus der Vue Beräich ze kucken mee kann net an den Tunnel goen</li>
+<li>Rapport all kierperlech Unerkennung oder Suerg direkt un Ären Instruktor</li>
+<li>Probéiert keng Tricken oder Beweegungen déi net vun Ärem Instruktor guttgeheescht ginn</li>
+<li>Fëmmen ass an der ganzer Ariichtung verbueden</li>
+<li>Verluer oder beschiedegt perséinlech Saache sinn net d'Verantwortung vu Luxfly</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="content-section" style="background: #f7f7f7;">
+<h2>Haftung &amp; Verzicht</h2>
+<p>Andeems Dir un Indoor Skydiving deelhëllt, erkennt Dir déi inherent Risiken vun der Aktivitéit. Wärend eis Ariichtung no den héchste Sécherheetsnormen funktionnéiert an all Instruktoren voll zertifizéiert sinn, kënnen Accidenter optrieden. All Participanten mussen eng ëmfaassend Haftungsverzicht ënnerschreiwen, déi dës Risiken akzeptéieren. Fir Mannerjäreger iwwerhëlt den Elterendeel oder Erzéiungsberechtegten voll Verantwortung.</p>
+<p>Luxfly ass fir Fräizäit Fluchaktivitéite verséchert. D'Participanten ginn encouragéiert hir eege Rees- oder Sportsversécherungsofdeckung ze kontrolléieren ier Dir reservéiert.</p>
+</section>
+<section class="content-section">
+<h2>Froen oder Bedenken?</h2>
+<p>Wann Dir Froen iwwer dës Konditiounen hutt, da kontaktéiert eis direkt. Eist Team kann Klärung iwwer all Politik ubidden oder individuell Ëmstänn diskutéieren déi speziell Rücksicht erfuerderen. Telefonsnummer an E-Mail sinn op eiser Kontakt Säit verfügbar.</p>
+<p style="color: #666; font-size: 14px; margin-top: 30px;">Lescht aktualiséiert: Mäerz 2026</p>
+</section>
+<footer>
+<div class="footer-brand">
+<img alt="Luxfly" src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg"/>
+<p>Europa's héchsten Indoor Skydiving Wandtunnel. Sécher vum Alter 4 ze 95.</p>
+</div>
+<div class="footer-col">
+<h5>Fléien</h5>
+<ul>
+<li><a href="prices.html">Erwuessener</a></li>
+<li><a href="kids.html">Kanner a Familljen</a></li>
+<li><a href="pro.html">Pro Flyers</a></li>
+<li><a href="birthdays.html">Gebuertsdeeg</a></li>
+<li><a href="gift-voucher.html">Kaddosbongen</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5>Info</h5>
+<ul>
+<li><a href="about.html">Iwwer eis</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="contact.html">Kontakt</a></li>
+<li><a href="opening-hours.html">Öffnungszäiten</a></li>
+<li><a href="conditions.html">Konditioune</a></li>
+</ul>
+</div>
+</footer>
+<div class="footer-bottom">
+<span>© 2026 Luxfly Indoor Skydiving</span>
+<div style="display:flex;gap:24px;">
+<a href="conditions.html">Konditioune</a>
+<a href="#">Privatsphär Politik</a>
+</div>
+</div>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY>60)},{passive:true});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<script src="js/nav.js?v=2"></script>
+<script src="js/chatbot.js"></script>
+
+</body>
+</html>

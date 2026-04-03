@@ -1,0 +1,268 @@
+html
+<html lang="nl">
+<head>
+<meta charset="utf-8"/>
+<link href="img/favicon.png" rel="icon" type="image/png"/><link href="img/favicon.svg" rel="icon" type="image/svg+xml"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Veelgestelde vragen — Luxfly Indoor Skydiven</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+    .accordion-section { margin-bottom: 40px; }
+    .accordion-section h3 { color: #f02cb8; font-size: 16px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid rgba(240,44,184,0.2); }
+    .accordion-item { border-bottom: 1px solid rgba(0,0,0,0.08); }
+    .accordion-question { padding: 20px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: color 0.2s; color: #111; font-weight: 700; font-size: 16px; user-select: none; }
+    .accordion-question:hover { color: #f02cb8; }
+    .accordion-toggle { font-size: 20px; color: rgba(0,0,0,0.3); transition: color 0.2s; }
+    .accordion-item.active .accordion-toggle { color: #f02cb8; }
+    .accordion-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; color: rgba(0,0,0,0.6); line-height: 1.85; padding: 0 0; }
+    .accordion-item.active .accordion-answer { max-height: 500px; padding: 20px 0; }
+  </style>
+</head>
+<body class="light">
+<nav id="nav">
+<a class="nav-logo" href="index.html"><svg height="28" viewbox="0 0 82 28" width="82" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="lsg" x1="52" x2="34" y1="1" y2="27">
+<stop class="lux-stop" offset="0%"></stop>
+<stop offset="100%" stop-color="#f02cb8"></stop>
+</lineargradient>
+<clippath clippathunits="userSpaceOnUse" id="lcl">
+<polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"></polygon>
+</clippath>
+<clippath clippathunits="userSpaceOnUse" id="lcf">
+<polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"></polygon>
+</clippath>
+</defs>
+<text class="lux-text" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="0" y="20">LUX</text>
+<text clip-path="url(#lcf)" fill="#f02cb8" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="40" y="24">VLIEG</text>
+<line stroke="url(#lsg)" stroke-linecap="round" stroke-width="2" x1="52" x2="34" y1="1" y2="27"></line>
+</svg></a>
+<div class="nav-right">
+<div class="nav-menu">
+<div class="nav-item"><a class="nav-link" href="index.html">Thuis</a>
+<div class="nav-dropdown">
+<a href="bachelor.html">Vrijgezel &amp; Vrijgezel</a>
+<a href="promotions.html">Evenementen en promoties</a>
+<a href="how-it-works.html">Activiteitenstroom</a>
+<a href="https://shop.indoorskydive.lu/store_10">Boek nu</a>
+<a href="gift-voucher.html">Koop een cadeaubon</a>
+<a href="photos.html">Foto's en video's</a>
+<a href="hot-air-balloon.html">Heteluchtballon</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="prices.html">Indoor skydiven</a>
+<div class="nav-dropdown">
+<a href="loyalty.html">Loyaliteitsprogramma</a>
+<a href="birthdays.html">Verjaardagen</a>
+<a href="prices.html">Prijzen</a>
+<a href="use-voucher.html">Gebruik een cadeaubon</a>
+<a href="conditions.html">Voorwaarden</a>
+<a href="activity.html">De activiteit</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="events.html">Zakelijk</a>
+<div class="nav-dropdown">
+<a href="events.html">Organiseer een evenement</a>
+<a href="team-building.html">Teambuilding</a>
+<a href="events-pricing.html">Prijzen</a>
+<a href="quote.html">Offerteaanvraag</a>
+<a href="references.html">Referenties</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="pro.html">Pro-flyers</a>
+<div class="nav-dropdown">
+<a href="pro-prices.html">Prijzen</a>
+<a href="coaches.html">Coaches</a>
+<a href="shared-sessions.html">Gedeelde sessie</a>
+<a href="infrastructure.html">Infrastructuur</a>
+<a href="become-proflyer.html">Proflyer worden</a>
+<a href="pro-events.html">Evenementen en kampen</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="about.html">Over</a>
+<div class="nav-dropdown">
+<a href="pilates.html">Pilates</a>
+<a href="indoor-activities.html">Binnenactiviteiten</a>
+<a href="blog.html">Blog</a>
+<a href="museum.html">Museum</a>
+<a href="flyology.html">VLIEGENLOGIE</a>
+<a href="faq.html">Veelgestelde vragen</a>
+<a href="partners.html">Onze partners</a>
+<a href="jobs.html">Vacatures</a>
+<a href="region.html">De regio</a>
+<a href="photos.html">Jouw foto's en video's</a>
+<a href="opening-hours.html">Openingstijden</a>
+<a href="bar.html">Balk</a>
+<a href="about.html">Wie we zijn</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="contact.html">Neem contact op met</a></div>
+</div>
+<div class="nav-item nav-lang">
+<span class="lang-btn">NL <svg fill="none" height="6" style="opacity:0.55" viewbox="0 0 10 6" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></span>
+<div class="nav-dropdown"><a href="../faq.html">EN</a><a href="../fr/faq.html">FR</a><a href="../de/faq.html">DE</a><a href="../lb/faq.html">LB</a></div>
+</div>
+<a href="account.html" onmouseout="this.style.color='rgba(255,255,255,0.6)'" onmouseover="this.style.color='#fff'" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;"><svg fill="none" height="16" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="16"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="7" r="4"></circle></svg>Mijn account</a><a class="nav-book" href="https://shop.indoorskydive.lu/store_10">Boek nu</a>
+</div>
+</nav>
+<section class="reveal" style="background: #f0f4ff; padding: 180px 48px 100px; text-align: center;">
+<p style="color: #f02cb8; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px;">Veelgestelde vragen</p>
+<h1 style="font-size: clamp(40px, 8vw, 72px); font-weight: 900; margin: 0 auto 24px; max-width: 900px; line-height: 1.2; color: #111;">Vragen, beantwoord.</h1>
+<p style="font-size: 18px; color: rgba(0,0,0,0.55); margin: 0; max-width: 700px; margin: 0 auto; line-height: 1.6;">Alles wat u moet weten voordat u boekt. Staat uw vraag er niet bij, neem dan contact met ons op.</p>
+</section>
+<section class="reveal" style="background: #ffffff; padding: 80px 48px;">
+<div style="max-width: 900px; margin: 0 auto;">
+<div class="accordion-section">
+<h3>Algemeen</h3>
+<div class="accordion-item">
+<div class="accordion-question"><span>Wat is indoor skydiven?</span><span class="accordion-toggle">+</span></div>
+<div class="accordion-answer">Het is de ervaring van een vrije val in een verticale windtunnel. De luchtkolom beweegt met een snelheid tot 350 km/u en ondersteunt uw lichaamsgewicht. Geen parachute, geen vliegtuig – alleen jij en de lucht.</div>
+</div>
+<div class="accordion-item">
+<div class="accordion-question"><span>Hoe is het anders dan echt parachutespringen?</span><span class="accordion-toggle">+</span></div>
+<div class="accordion-answer">Outdoor skydiven is een eenmalige vrije val van 60 seconden vanaf een hoogte. Binnenvliegen is herhaalbaar, gecontroleerd en leerbaar. De meeste outdoor skydivers gebruiken tunneltijd om te oefenen, omdat de feedback onmiddellijk is en je meer luchttijd per sessie krijgt.</div>
+</div>
+<div class="accordion-item">
+<div class="accordion-question"><span>Is het eigenlijk wel leuk?</span><span class="accordion-toggle">+</span></div>
+<div class="accordion-answer">Ja. De meeste mensen lachen de hele eerste sessie. Sommigen huilen. Ze komen allemaal terug.</div>
+</div>
+<div class="accordion-item">
+<div class="accordion-question"><span>Kan ik iemand anders zien vliegen?</span><span class="accordion-toggle">+</span></div>
+<div class="accordion-answer">Ja. Direct naast de tunnel bevindt zich een kijkgalerij met kamerhoge ramen. Beste zitplaats in huis.</div>
+</div>
+</div>
+<div class="accordion-section">
+<h3>Veiligheid</h3>
+<div class="accordion-item">
+<div class="accordion-question"><span>Is het veilig?</span><span class="accordion-toggle">+</span></div>
+<div class="accordion-answer">Indoor skydiven is een van de veiligste avontuurlijke activiteiten die er zijn. Onze instructeurs zijn gecertificeerd en begeleiden u tijdens uw vlucht. De tunnel wordt geïnspecteerd en onderhouden volgens de Europese veiligheidsnormen.</div>
+</div>
+<div class="accordion-item">
+<div class="accordion-question"><span>Welke gezondheidsproblemen verhinderen mij om te vliegen?</span><span class="accordion-toggle">+</span></div>
+<div class="accordion-answer">Zwangerschap, ernstige hartaandoeningen, recente operaties (binnen 3 maanden), ongecontroleerde epilepsie en ernstige aandoeningen aan de wervelkolom zijn de belangrijkste contra-indicaties. Als u het niet zeker weet, raadpleeg dan uw huisarts en laat het ons weten tijdens het reserveren.</div>
+</div>
+<div class="accordion-item">
+<div class="accordion-question"><span>Wat is de minimumleeftijd?</span><span class="accordion-toggle">+</span></div>
+<div class="accordion-answer">4 jaar oud. Er is geen maximale leeftijdsgrens; we vliegen gasten tot 95 jaar.</div>
+</div>
+<div class="accordion-item">
+<div class="accordion-question"><span>Moet ik weten hoe ik moet zwemmen?</span><span class="accordion-toggle">+</span></div>
+<div class="accordion-answer">Nee. Dit is gevraagd. Het antwoord is nee.</div>
+</div>
+</div>
+<div class="accordion-section">
+<h3>Boeking</h3>
+<div class="accordion-item">
+<div class="accordion-question"><span>Hoe boek ik?</span><span class="accordion-toggle">+</span></div>
+<div class="accordion-answer">Online op shop.indoorskydive.lu of per telefoon. Walk-in-boekingen worden geaccepteerd op basis van beschikbaarheid.</div>
+</div>
+<div class="accordion-item">
+<div class="accordion-question"><span>Kan ik annuleren of verzetten?</span><span class="accordion-toggle">+</span></div>
+<div class="accordion-answer">Ja – gratis met een opzegtermijn van meer dan 48 uur. Bekijk de volledige voorwaarden op condition.html.</div>
+</div>
+<div class="accordion-item">
+<div class="accordion-question"><span>Hoe vroeg moet ik aanwezig zijn?</span><span class="accordion-toggle">+</span></div>
+<div class="accordion-answer">60 minuten vóór uw geplande vluchttijd. Inchecken, trainen, uitrusting aanpassen en briefing gebeuren allemaal in dit venster. Als uw vlucht om 14:00 uur vertrekt, dient u om 13:00 uur aan te komen en in te loggen.</div>
+</div>
+<div class="accordion-item">
+<div class="accordion-question"><span>Kan ik voor een groep boeken?</span><span class="accordion-toggle">+</span></div>
+<div class="accordion-answer">Ja. Groepen van 10+ ontvangen kortingstarieven. Neem contact op met events@luxfly.lu voor groepsboekingen.</div>
+</div>
+<div class="accordion-item">
+<div class="accordion-question"><span>Moet ik vooraf reserveren?</span><span class="accordion-toggle">+</span></div>
+<div class="accordion-answer">Wij raden het aan, vooral voor het weekend. Walk-ins zijn welkom, maar we kunnen niet altijd een plekje op de dag garanderen.</div>
+</div>
+</div>
+<div class="accordion-section">
+<h3>Wat kunt u verwachten</h3>
+<div class="accordion-item">
+<div class="accordion-question"><span>Wat draag ik?</span><span class="accordion-toggle">+</span></div>
+<div class="accordion-answer">Comfortabele, nauwsluitende kleding. Sneakers of veterschoenen. Geen sjaals, losse sieraden of spullen die wind kunnen vangen.</div>
+</div>
+<div class="accordion-item">
+<div class="accordion-question"><span>Kan ik mijn telefoon meenemen?</span><span class="accordion-toggle">+</span></div>
+<div class="accordion-answer">Nee. Er zijn kluisjes aanwezig. Er is een kijkhoek en we bieden professionele fotografie.</div>
+</div>
+<div class="accordion-item">
+<div class="accordion-question"><span>Hoe lang duurt een sessie?</span><span class="accordion-toggle">+</span></div>
+<div class="accordion-answer">Uw totale bezoek duurt ongeveer 2 uur – dit omvat het inchecken (60 minuten vóór uw vlucht), briefing, uitrusting, uw vluchttijd in de tunnel en de tijd daarna om foto's te bekijken. Elke individuele vlucht duurt 60 seconden; het aantal vluchten is afhankelijk van uw pakket.</div>
+</div>
+<div class="accordion-item">
+<div class="accordion-question"><span>Wat als ik bang ben?</span><span class="accordion-toggle">+</span></div>
+<div class="accordion-answer">Vertel het je instructeur. Ze zijn getraind om nerveuze beginners elke dag te laten vliegen. Langzaam gaan is volkomen normaal en gerespecteerd.</div>
+</div>
+</div>
+<div class="accordion-section">
+<h3>Prijzen en vouchers</h3>
+<div class="accordion-item">
+<div class="accordion-question"><span>Hoeveel kost het?</span><span class="accordion-toggle">+</span></div>
+<div class="accordion-answer">Pakketten beginnen vanaf € 45,90 voor kinderen (4 t/m 12 jaar) en € 65,90 voor volwassenen. Zie prijzen.html voor volledige details inclusief alle pakketten.</div>
+</div>
+<div class="accordion-item">
+<div class="accordion-question"><span>Vervallen cadeaubonnen?</span><span class="accordion-toggle">+</span></div>
+<div class="accordion-answer">Cadeaubonnen zijn 12 maanden geldig vanaf de datum van aankoop. Na deze periode kunnen zij niet worden verlengd. De voucher is niet op naam, hij kan door iedereen worden gebruikt.</div>
+</div>
+<div class="accordion-item">
+<div class="accordion-question"><span>Kan ik een terugbetaling krijgen op een voucher?</span><span class="accordion-toggle">+</span></div>
+<div class="accordion-answer">Vouchers zijn niet restitueerbaar en niet inwisselbaar voor contant geld. Ze zijn 12 maanden geldig vanaf aankoop. Als u de uwe vóór de vervaldatum niet kunt gebruiken, kunt u deze met nog eens 3 maanden verlengen. Voer uw code in en volg de stappen op de website.</div>
+</div>
+<div class="accordion-item">
+<div class="accordion-question"><span>Zijn er studenten- of groepskortingen?</span><span class="accordion-toggle">+</span></div>
+<div class="accordion-answer">Groepskortingen vanaf 10 personen. Vraag naar de studententarieven bij de receptie.</div>
+</div>
+</div>
+</div>
+</section>
+<footer style="background: #0d0d0d; padding: 60px 48px; border-top: 1px solid rgba(255,255,255,0.08);">
+<div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 40px;">
+<div class="footer-brand">
+<img alt="Luxfly" src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg" style="height: 40px; margin-bottom: 16px;"/>
+<p style="color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.6; margin: 0;">Europa's hoogste indoor skydiving-windtunnel. Veilig van 4 tot 95 jaar.</p>
+</div>
+<div class="footer-col">
+<h5 style="color: white; font-weight: 700; margin-bottom: 16px; font-size: 14px; text-transform: uppercase;">Vlieg</h5>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="margin-bottom: 8px;"><a href="prices.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Volwassenen</a></li>
+<li style="margin-bottom: 8px;"><a href="kids.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Kinderen en gezinnen</a></li>
+<li style="margin-bottom: 8px;"><a href="pro.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Pro-flyers</a></li>
+<li><a href="birthdays.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Verjaardagen</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5 style="color: white; font-weight: 700; margin-bottom: 16px; font-size: 14px; text-transform: uppercase;">Informatie</h5>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="margin-bottom: 8px;"><a href="about.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Over ons</a></li>
+<li style="margin-bottom: 8px;"><a href="faq.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Veelgestelde vragen</a></li>
+<li style="margin-bottom: 8px;"><a href="contact.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Neem contact op met</a></li>
+<li><a href="conditions.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Voorwaarden</a></li>
+</ul>
+</div>
+</div>
+<div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,0.6); font-size: 14px;">
+<span>© 2026 Luxfly Indoor Skydiving</span>
+<div style="display:flex;gap:24px;"><a href="conditions.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Voorwaarden</a><a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none;">Privacy</a></div>
+</div>
+</footer>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY>60)},{passive:true});
+
+const accordionItems = document.querySelectorAll('.accordion-item');
+accordionItems.forEach(item => {
+  item.querySelector('.accordion-question').addEventListener('click', () => {
+    const isActive = item.classList.contains('active');
+    accordionItems.forEach(el => el.classList.remove('active'));
+    if (!isActive) item.classList.add('active');
+  });
+});
+
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<script src="js/nav.js?v=2"></script>
+<script src="js/chatbot.js"></script>
+
+</body>
+</html>

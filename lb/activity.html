@@ -1,0 +1,550 @@
+html
+<html lang="lb">
+<head>
+<meta charset="utf-8"/>
+<link href="img/favicon.png" rel="icon" type="image/png"/><link href="img/favicon.svg" rel="icon" type="image/svg+xml"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>D'Aktivitéit — Luxfly Indoor Skydiving</title>
+<meta content="What is indoor skydiving? Discover the sensation of freefall in Europe's tallest wind tunnel." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+.hero {
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(240,44,184,0.08) 100%), url('https://indoorskydive.lu/img/adults.jpg') center/cover;
+  height: 75vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 80px 48px;
+  color: white;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.eyebrow {
+  color: #f02cb8;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: Montserrat;
+  font-size: 72px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-sub {
+  font-size: 20px;
+  font-weight: 300;
+  max-width: 500px;
+}
+
+.statement-section {
+  background: #ffffff;
+  padding: 120px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.statement-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.statement-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ghost-number {
+  font-family: Montserrat;
+  font-size: 320px;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(240, 44, 184, 0.12);
+  line-height: 0.9;
+  margin: -80px 0;
+}
+
+.statement-right h2 {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  color: #111;
+  line-height: 1.2;
+}
+
+.statement-right .label {
+  color: #f02cb8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.statement-right p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.stats-grid {
+  background: #fff5fb;
+  padding: 80px 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.stats-grid.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.stats-grid.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-family: Montserrat;
+  font-size: 56px;
+  font-weight: 900;
+  color: #f02cb8;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.editorial-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #f7f7f7;
+}
+
+.editorial-split.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.editorial-split.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.editorial-split img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.editorial-content {
+  padding: 120px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.editorial-content .label {
+  color: #f02cb8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.editorial-content h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.editorial-content h2 em {
+  font-style: italic;
+}
+
+.editorial-content p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.editorial-content a {
+  color: #f02cb8;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.comparison-section {
+  background: #ffffff;
+  padding: 80px 48px;
+}
+
+.comparison-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.comparison-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.comparison-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.comparison-col h3 {
+  font-family: Montserrat;
+  font-size: 28px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f02cb8;
+}
+
+.comparison-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.comparison-col li {
+  color: #555;
+  font-size: 15px;
+  line-height: 2;
+  padding: 10px 0;
+}
+
+.comparison-col:first-child li:before {
+  content: "✓ ";
+  color: #f02cb8;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.comparison-col:last-child li:before {
+  content: "– ";
+  color: #999;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.comparison-text {
+  font-size: 15px;
+  color: #666;
+  margin-top: 30px;
+  line-height: 1.7;
+  grid-column: 1 / -1;
+}
+
+.full-bleed-cta {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(240,44,184,0.15)), url('https://indoorskydive.lu/img/groups.jpg') center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 80px 48px;
+}
+
+.cta-content h2 {
+  font-family: Montserrat;
+  font-size: 56px;
+  font-weight: 900;
+  margin-bottom: 40px;
+}
+
+.cta-btn {
+  background: #f02cb8;
+  color: white;
+  padding: 16px 48px;
+  border: none;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background: #d9219f;
+}
+
+@media (max-width: 768px) {
+  .statement-section, .stats-grid, .comparison-grid, .editorial-split {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero h1 {
+    font-size: 48px;
+  }
+  
+  .ghost-number {
+    font-size: 180px;
+  }
+}
+</style>
+</head>
+<body class="light">
+<nav id="nav">
+<a class="nav-logo" href="index.html"><svg height="28" viewbox="0 0 82 28" width="82" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="lsg" x1="52" x2="34" y1="1" y2="27">
+<stop class="lux-stop" offset="0%"></stop>
+<stop offset="100%" stop-color="#f02cb8"></stop>
+</lineargradient>
+<clippath clippathunits="userSpaceOnUse" id="lcl">
+<polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"></polygon>
+</clippath>
+<clippath clippathunits="userSpaceOnUse" id="lcf">
+<polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"></polygon>
+</clippath>
+</defs>
+<text class="lux-text" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="0" y="20">LUX</text>
+<text clip-path="url(#lcf)" fill="#f02cb8" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="40" y="24">FLÉIEREN</text>
+<line stroke="url(#lsg)" stroke-linecap="round" stroke-width="2" x1="52" x2="34" y1="1" y2="27"></line>
+</svg></a>
+<div class="nav-right">
+<div class="nav-menu">
+<div class="nav-item"><a class="nav-link" href="index.html">Home</a>
+<div class="nav-dropdown">
+<a href="bachelor.html">Bachelor &amp; Bachelorette</a>
+<a href="promotions.html">Evenementer &amp; Promotiounen</a>
+<a href="how-it-works.html">Aktivitéit Flow</a>
+<a href="https://shop.indoorskydive.lu/store_10">Buch elo</a>
+<a href="gift-voucher.html">Kaaft e Kaddosbong</a>
+<a href="photos.html">Fotoen &amp; Videoen</a>
+<a href="hot-air-balloon.html">Loftballon</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="prices.html">Indoor Skydiving</a>
+<div class="nav-dropdown">
+<a href="loyalty.html">Loyalitéit Programm</a>
+<a href="birthdays.html">Gebuertsdeeg</a>
+<a href="prices.html">Präisser</a>
+<a href="use-voucher.html">Benotzt e Kaddosbong</a>
+<a href="conditions.html">Konditioune</a>
+<a href="activity.html">Aktivitéit</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="events.html">Firmen</a>
+<div class="nav-dropdown">
+<a href="events.html">Organiséieren en Event</a>
+<a href="team-building.html">Team Building</a>
+<a href="events-pricing.html">Präis</a>
+<a href="quote.html">Ufro fir Zitat</a>
+<a href="references.html">Referenzen</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="pro.html">Pro Flyers</a>
+<div class="nav-dropdown">
+<a href="pro-prices.html">Präisser</a>
+<a href="coaches.html">Traineren</a>
+<a href="shared-sessions.html">Gemeinsam Sëtzung</a>
+<a href="infrastructure.html">Infrastruktur</a>
+<a href="become-proflyer.html">Proflyer ginn</a>
+<a href="pro-events.html">Evenementer a Campen</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="about.html">Iwwer</a>
+<div class="nav-dropdown">
+<a href="pilates.html">Pilates</a>
+<a href="indoor-activities.html">Indoor Aktivitéiten</a>
+<a href="blog.html">Blog</a>
+<a href="museum.html">Musée</a>
+<a href="flyology.html">FLYOLOGIE</a>
+<a href="faq.html">F.A.Q.</a>
+<a href="partners.html">Eis Partner</a>
+<a href="jobs.html">Aarbechtsplazen</a>
+<a href="region.html">D'Regioun</a>
+<a href="photos.html">Är Fotoen a Videoen</a>
+<a href="opening-hours.html">Öffnungszäiten</a>
+<a href="bar.html">Bar</a>
+<a href="about.html">Wien si mir</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="contact.html">Kontakt</a></div>
+</div>
+<div class="nav-item nav-lang">
+<span class="lang-btn">LB <svg fill="none" height="6" style="opacity:0.55" viewbox="0 0 10 6" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></span>
+<div class="nav-dropdown"><a href="../activity.html">EN</a><a href="../fr/activity.html">FR</a><a href="../de/activity.html">DE</a><a href="../nl/activity.html">NL</a></div>
+</div>
+<a href="account.html" onmouseout="this.style.color='rgba(255,255,255,0.6)'" onmouseover="this.style.color='#fff'" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;"><svg fill="none" height="16" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="16"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="7" r="4"></circle></svg>Mäi Kont</a><a class="nav-book" href="https://shop.indoorskydive.lu/store_10">Buch elo</a>
+</div>
+</nav>
+<section class="hero">
+<div class="hero-content">
+<span class="eyebrow">Aktivitéit</span>
+<h1>Wat ass <em>Indoor Skydiving?</em></h1>
+<p class="hero-sub">E Wandtunnel 35 Meter héich. Bis zu 350 km/h glat vertikalen Loftfloss. An Dir, Gewiichtlos dran.</p>
+</div>
+</section>
+<section class="statement-section reveal">
+<img alt="Indoor Skydiving bei Luxfly" src="img/thrill-seeker.jpg" style="width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 8px;"/>
+<div class="statement-right">
+<span class="label">Europa's héchsten</span>
+<h2>Net eng Simulatioun. Déi richteg Saach.</h2>
+<p>Indoor Skydiving ass fräie Fall. Pur an einfach. Dir trëppelt an e vertikale Wandtunnel, wou d'Loft mat Geschwindegkeete bis zu 350 km/h beweegt. Dee Loftfloss ass staark genuch fir Äert Kierpergewiicht z'ënnerstëtzen, a schaaft déi exakt Sensatioun vum Sprangen aus engem Fliger. Den Ënnerscheed: Dir sidd dobannen, d'Héicht gëtt kontrolléiert, an et gëtt kee Fallschierm gebraucht well d'Loft Iech um Héicht hält.</p>
+<p>D'Sensatioun trëfft Iech direkt. De Rush vum Wand iwwer Äert Gesiicht. Äre Kierper gëtt Gewiichtlos. De Moment wou Dir ophale mat der Loft ze kämpfen a fänkt un ze fléien. Instruktoren sinn déi ganzen Zäit mat Iech, guidéieren all Bewegung, suergen dofir datt Dir sécher sidd an d'Zäit vun Ärem Liewen hutt.</p>
+<p>Déi meescht Leit mengen datt Indoor Skydiving eng Simulatioun ass. Et ass net. Et ass déi richteg Physik vum fräie Fall, just an engem kontrolléierten Ëmfeld. Pro Skydivers trainéieren a Wandtunnelen wéi eis. Kommerziell Raumfluchfirmen benotze Wandtunnelen fir Astronauten ze preparéieren. Esou léiere Mënschen ze fléien.</p>
+</div>
+</section>
+<section class="stats-grid reveal">
+<div class="stat-item">
+<div class="stat-number">35m</div>
+<div class="stat-label">Tunnel Héicht</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">350</div>
+<div class="stat-label">Max Loftgeschwindegkeet (km/h)</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">4</div>
+<div class="stat-label">Elektromotoren</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">4+</div>
+<div class="stat-label">Minimum Alter</div>
+</div>
+</section>
+<section class="editorial-split reveal">
+<img alt="Erwuessener fléien am Wandtunnel" src="https://indoorskydive.lu/img/tunnel-sketch.jpg"/>
+<div class="editorial-content">
+<span class="label">D'Gefill</span>
+<h2>Näischt anescht fillt sech wéi <em>dëst.</em></h2>
+<p>Äre Kierper schwëmmt. Äre Geescht geet roueg. Dat eenzegt wat Dir fillt ass de Rush vum Wand op Äert Gesiicht an d'Sensatioun vu Gewiichtlosegkeet, déi déi meescht Leit nëmmen eemol an hirer Liewensdauer erliewen - an engem Skydive. Awer hei kënnt Dir dat Gefill ëmmer erëm hunn.</p>
+<p>De Moment wou Dir an der Loft sidd, gëtt Angscht zu Laachen. Ären Instruktor ass direkt mat Iech do, hält Iech stänneg, encouragéiert all Bewegung. Mat Ärem zweete Fluch freet Dir méi Zäit. Vun Ärer drëtter reservéiert Dir Är nächst Sessioun. Dëst ass Suchtfaktor op déi bescht Manéier méiglech.</p>
+<a href="prices.html">Buch Ären éischte Fluch →</a>
+</div>
+</section>
+<section class="comparison-section reveal">
+<h2>Indoor vs Outdoor Skydiving</h2>
+<div class="comparison-grid">
+<div class="comparison-col">
+<h3>Indoor</h3>
+<ul>
+<li>Kee Fliger néideg</li>
+<li>Wieder-onofhängeg</li>
+<li>Komplett kontrolléiert Ëmfeld</li>
+<li>Widderhuelend Erfahrung</li>
+<li>Jiddereen kann et maachen</li>
+<li>Direkte Feedback vum Instruktor</li>
+</ul>
+</div>
+<div class="comparison-col">
+<h3>Outdoor</h3>
+<ul>
+<li>Verlaangt Fliger a sprangen Pilot</li>
+<li>Wieder ofhängeg</li>
+<li>Single Fräifall Erfahrung</li>
+<li>Verlaangt Zertifizéierung</li>
+<li>Limitéiert duerch kierperlech Fitness</li>
+<li>Feedback kënnt no der Landung</li>
+</ul>
+</div>
+<p class="comparison-text">Wousst Dir? Vill berufflech Skydivers trainéieren a Wandtunnelen wéi eis ier se dobausse Fräifall probéieren. Indoor fléien léiert Kierperbewosstsinn, Stabilitéit a Kontroll déi direkt an den Himmel iwwersetzt. Dir wäert tatsächlech besser Fluchfäegkeeten an engem Tunnel entwéckelen wéi Dir jeemools aus engem Fliger sprange kënnt eemol oder zweemol am Joer.</p>
+</div>
+</section>
+<section class="full-bleed-cta">
+<div class="cta-content">
+<h2>Prett fir erauszefannen wéi et fillt?</h2>
+<a class="cta-btn" href="https://shop.indoorskydive.lu/store_10">Buch elo</a>
+</div>
+</section>
+<footer>
+<div class="footer-brand">
+<img alt="Luxfly" src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg"/>
+<p>Europa's héchsten Indoor Skydiving Wandtunnel. Sécher vum Alter 4 ze 95.</p>
+</div>
+<div class="footer-col">
+<h5>Fléien</h5>
+<ul>
+<li><a href="prices.html">Erwuessener</a></li>
+<li><a href="kids.html">Kanner a Familljen</a></li>
+<li><a href="pro.html">Pro Flyers</a></li>
+<li><a href="birthdays.html">Gebuertsdeeg</a></li>
+<li><a href="gift-voucher.html">Kaddosbongen</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5>Info</h5>
+<ul>
+<li><a href="about.html">Iwwer eis</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<a href="contact.html">Kontakt</a>
+<li><a href="opening-hours.html">Öffnungszäiten</a></li>
+<li><a href="conditions.html">Konditioune</a></li>
+</ul>
+</div>
+</footer>
+<div class="footer-bottom">
+<span>© 2026 Luxfly Indoor Skydiving</span>
+<div style="display:flex;gap:24px;">
+<a href="conditions.html">Konditioune</a>
+<a href="#">Privatsphär Politik</a>
+</div>
+</div>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY>60)},{passive:true});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<script src="js/nav.js?v=2"></script>
+<script src="js/chatbot.js"></script>
+
+</body>
+</html>

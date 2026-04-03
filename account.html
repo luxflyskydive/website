@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="img/favicon.png"><link rel="icon" type="image/svg+xml" href="img/favicon.svg"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Account — Luxfly Indoor Skydiving</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <style>
+<meta charset="utf-8"/>
+<link href="img/favicon.png" rel="icon" type="image/png"/><link href="img/favicon.svg" rel="icon" type="image/svg+xml"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Account — Luxfly Indoor Skydiving</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
     *, *::before, *::after { box-sizing: border-box; }
 
     body.account-page {
@@ -300,147 +301,137 @@
   </style>
 </head>
 <body class="account-page">
-
 <!-- NAV -->
 <nav id="nav" style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 28px 48px; display: flex; align-items: center; justify-content: space-between; background: transparent; transition: padding 0.4s, background 0.4s;">
-  <a href="index.html" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82 28" width="82" height="28">
-  <defs>
-    <linearGradient id="lsg" gradientUnits="userSpaceOnUse" x1="52" y1="1" x2="34" y2="27">
-      <stop offset="0%" class="lux-stop"/>
-      <stop offset="100%" stop-color="#f02cb8"/>
-    </linearGradient>
-    <clipPath id="lcl" clipPathUnits="userSpaceOnUse">
-      <polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"/>
-    </clipPath>
-    <clipPath id="lcf" clipPathUnits="userSpaceOnUse">
-      <polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"/>
-    </clipPath>
-  </defs>
-  <text x="0" y="20" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-weight="900" font-size="21" letter-spacing="-0.42" class="lux-text">LUX</text>
-  <text x="40" y="24" clip-path="url(#lcf)" font-family="Montserrat,sans-serif" font-weight="900" font-size="21" letter-spacing="-0.42" fill="#f02cb8">FLY</text>
-  <line x1="52" y1="1" x2="34" y2="27" stroke="url(#lsg)" stroke-width="2" stroke-linecap="round"/>
+<a class="nav-logo" href="index.html"><svg height="28" viewbox="0 0 82 28" width="82" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="lsg" x1="52" x2="34" y1="1" y2="27">
+<stop class="lux-stop" offset="0%"></stop>
+<stop offset="100%" stop-color="#f02cb8"></stop>
+</lineargradient>
+<clippath clippathunits="userSpaceOnUse" id="lcl">
+<polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"></polygon>
+</clippath>
+<clippath clippathunits="userSpaceOnUse" id="lcf">
+<polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"></polygon>
+</clippath>
+</defs>
+<text class="lux-text" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="0" y="20">LUX</text>
+<text clip-path="url(#lcf)" fill="#f02cb8" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="40" y="24">FLY</text>
+<line stroke="url(#lsg)" stroke-linecap="round" stroke-width="2" x1="52" x2="34" y1="1" y2="27"></line>
 </svg></a>
-  <a href="index.html" style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">← Back to site</a>
+<a href="index.html" onmouseout="this.style.color='rgba(255,255,255,0.45)'" onmouseover="this.style.color='#fff'" style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); transition: color 0.2s;">← Back to site</a>
 </nav>
-
 <!-- MAIN -->
 <div class="account-wrap">
-
-  <!-- LEFT: Brand panel -->
-  <div class="account-brand">
-    <div class="account-brand-bg"></div>
-    <div class="account-brand-content">
-      <p class="account-brand-tag">Your Luxfly account</p>
-      <h1 class="account-brand-title">Track every<br>second of<br>your <em>flight.</em></h1>
-      <p class="account-brand-body">Log in to view your flight history, access your videos, manage bookings, and track your progress over time.</p>
-      <div class="account-brand-perks">
-        <div class="account-perk">
-          <span class="account-perk-dot"></span>
+<!-- LEFT: Brand panel -->
+<div class="account-brand">
+<div class="account-brand-bg"></div>
+<div class="account-brand-content">
+<p class="account-brand-tag">Your Luxfly account</p>
+<h1 class="account-brand-title">Track every<br/>second of<br/>your <em>flight.</em></h1>
+<p class="account-brand-body">Log in to view your flight history, access your videos, manage bookings, and track your progress over time.</p>
+<div class="account-brand-perks">
+<div class="account-perk">
+<span class="account-perk-dot"></span>
           View and download your flight videos
         </div>
-        <div class="account-perk">
-          <span class="account-perk-dot"></span>
+<div class="account-perk">
+<span class="account-perk-dot"></span>
           Track your tunnel time and progression
         </div>
-        <div class="account-perk">
-          <span class="account-perk-dot"></span>
+<div class="account-perk">
+<span class="account-perk-dot"></span>
           Manage upcoming bookings
         </div>
-        <div class="account-perk">
-          <span class="account-perk-dot"></span>
+<div class="account-perk">
+<span class="account-perk-dot"></span>
           Access loyalty rewards and vouchers
         </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- RIGHT: Form panel -->
-  <div class="account-form-side">
-    <div class="account-form-inner">
-
-      <!-- Tabs -->
-      <div class="auth-tabs">
-        <button class="auth-tab active" onclick="switchTab('login')">Sign In</button>
-        <button class="auth-tab" onclick="switchTab('signup')">Create Account</button>
-      </div>
-
-      <!-- LOGIN FORM -->
-      <form class="auth-form active" id="form-login" onsubmit="return false;">
-        <div class="form-group">
-          <label class="form-label">Email address</label>
-          <input class="form-input" type="email" placeholder="you@email.com" autocomplete="email">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Password</label>
-          <div class="form-input-wrap">
-            <input class="form-input" type="password" id="login-pw" placeholder="••••••••" autocomplete="current-password">
-            <button type="button" class="toggle-pw" onclick="togglePw('login-pw', this)">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-            </button>
-          </div>
-        </div>
-        <a href="#" class="form-forgot">Forgot password?</a>
-        <button type="submit" class="btn-auth">Sign In</button>
-        <div class="auth-switch">
-          Don't have an account?
-          <button type="button" onclick="switchTab('signup')">Create one</button>
-        </div>
-      </form>
-
-      <!-- SIGNUP FORM -->
-      <form class="auth-form" id="form-signup" onsubmit="return false;">
-        <div class="form-group">
-          <div class="form-input-row">
-            <div>
-              <label class="form-label">First name</label>
-              <input class="form-input" type="text" placeholder="Alex" autocomplete="given-name">
-            </div>
-            <div>
-              <label class="form-label">Last name</label>
-              <input class="form-input" type="text" placeholder="Smith" autocomplete="family-name">
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Email address</label>
-          <input class="form-input" type="email" placeholder="you@email.com" autocomplete="email">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Password</label>
-          <div class="form-input-wrap">
-            <input class="form-input" type="password" id="signup-pw" placeholder="Min. 8 characters" autocomplete="new-password">
-            <button type="button" class="toggle-pw" onclick="togglePw('signup-pw', this)">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-            </button>
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Confirm password</label>
-          <div class="form-input-wrap">
-            <input class="form-input" type="password" id="signup-pw2" placeholder="••••••••" autocomplete="new-password">
-            <button type="button" class="toggle-pw" onclick="togglePw('signup-pw2', this)">
-              <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-            </button>
-          </div>
-        </div>
-        <div class="form-check">
-          <input type="checkbox" id="terms">
-          <label class="form-check-label" for="terms">
-            I agree to the <a href="conditions.html">Terms & Conditions</a> and confirm I am aged 4 or over (or booking on behalf of a participant).
-          </label>
-        </div>
-        <button type="submit" class="btn-auth">Create Account</button>
-        <div class="auth-switch">
-          Already have an account?
-          <button type="button" onclick="switchTab('login')">Sign in</button>
-        </div>
-      </form>
-
-    </div>
-  </div>
-
 </div>
-
+</div>
+</div>
+<!-- RIGHT: Form panel -->
+<div class="account-form-side">
+<div class="account-form-inner">
+<!-- Tabs -->
+<div class="auth-tabs">
+<button class="auth-tab active" onclick="switchTab('login')">Sign In</button>
+<button class="auth-tab" onclick="switchTab('signup')">Create Account</button>
+</div>
+<!-- LOGIN FORM -->
+<form class="auth-form active" id="form-login" onsubmit="return false;">
+<div class="form-group">
+<label class="form-label">Email address</label>
+<input autocomplete="email" class="form-input" placeholder="you@email.com" type="email"/>
+</div>
+<div class="form-group">
+<label class="form-label">Password</label>
+<div class="form-input-wrap">
+<input autocomplete="current-password" class="form-input" id="login-pw" placeholder="••••••••" type="password"/>
+<button class="toggle-pw" onclick="togglePw('login-pw', this)" type="button">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="18"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+</button>
+</div>
+</div>
+<a class="form-forgot" href="#">Forgot password?</a>
+<button class="btn-auth" type="submit">Sign In</button>
+<div class="auth-switch">
+          Don't have an account?
+          <button onclick="switchTab('signup')" type="button">Create one</button>
+</div>
+</form>
+<!-- SIGNUP FORM -->
+<form class="auth-form" id="form-signup" onsubmit="return false;">
+<div class="form-group">
+<div class="form-input-row">
+<div>
+<label class="form-label">First name</label>
+<input autocomplete="given-name" class="form-input" placeholder="Alex" type="text"/>
+</div>
+<div>
+<label class="form-label">Last name</label>
+<input autocomplete="family-name" class="form-input" placeholder="Smith" type="text"/>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="form-label">Email address</label>
+<input autocomplete="email" class="form-input" placeholder="you@email.com" type="email"/>
+</div>
+<div class="form-group">
+<label class="form-label">Password</label>
+<div class="form-input-wrap">
+<input autocomplete="new-password" class="form-input" id="signup-pw" placeholder="Min. 8 characters" type="password"/>
+<button class="toggle-pw" onclick="togglePw('signup-pw', this)" type="button">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="18"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+</button>
+</div>
+</div>
+<div class="form-group">
+<label class="form-label">Confirm password</label>
+<div class="form-input-wrap">
+<input autocomplete="new-password" class="form-input" id="signup-pw2" placeholder="••••••••" type="password"/>
+<button class="toggle-pw" onclick="togglePw('signup-pw2', this)" type="button">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="18"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+</button>
+</div>
+</div>
+<div class="form-check">
+<input id="terms" type="checkbox"/>
+<label class="form-check-label" for="terms">
+            I agree to the <a href="conditions.html">Terms &amp; Conditions</a> and confirm I am aged 4 or over (or booking on behalf of a participant).
+          </label>
+</div>
+<button class="btn-auth" type="submit">Create Account</button>
+<div class="auth-switch">
+          Already have an account?
+          <button onclick="switchTab('login')" type="button">Sign in</button>
+</div>
+</form>
+</div>
+</div>
+</div>
 <script>
   // Tab switcher
   function switchTab(tab) {
@@ -465,9 +456,8 @@
   // Check URL param to open signup directly
   if (new URLSearchParams(location.search).get('tab') === 'signup') switchTab('signup');
 </script>
-
 <script src="js/nav.js?v=2"></script>
 <script src="js/chatbot.js"></script>
-  <script src="js/i18n.js"></script>
+<script src="js/i18n.js"></script>
 </body>
 </html>

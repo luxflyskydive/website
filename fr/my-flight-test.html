@@ -1,0 +1,239 @@
+html
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<link href="img/favicon.png" rel="icon" type="image/png"/><link href="img/favicon.svg" rel="icon" type="image/svg+xml"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quel genre de flyer êtes-vous ?</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+    .quiz-container { max-width: 800px; margin: 0 auto; }
+    .quiz-question { background: #f7f7f7; padding: 32px; border-radius: 8px; margin-bottom: 32px; border-left: 3px solid #f02cb8; }
+    .quiz-options { display: grid; gap: 12px; }
+    .quiz-option { padding: 16px; background: #ffffff; border: 1px solid rgba(0,0,0,0.1); border-radius: 6px; cursor: pointer; color: rgba(0,0,0,0.55); transition: all 0.2s; }
+    .quiz-option:hover { background: rgba(240, 44, 184, 0.05); border-color: #f02cb8; }
+    .profile-card { background: #f7f7f7; padding: 40px; border-radius: 8px; margin: 40px 0; text-align: center; border-top: 3px solid #f02cb8; }
+    .profile-icon { font-size: 60px; margin-bottom: 20px; }
+  </style>
+</head>
+<body class="light">
+<nav id="nav">
+<a class="nav-logo" href="index.html"><svg height="28" viewbox="0 0 82 28" width="82" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="lsg" x1="52" x2="34" y1="1" y2="27">
+<stop class="lux-stop" offset="0%"></stop>
+<stop offset="100%" stop-color="#f02cb8"></stop>
+</lineargradient>
+<clippath clippathunits="userSpaceOnUse" id="lcl">
+<polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"></polygon>
+</clippath>
+<clippath clippathunits="userSpaceOnUse" id="lcf">
+<polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"></polygon>
+</clippath>
+</defs>
+<text class="lux-text" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="0" y="20">LUX</text>
+<text clip-path="url(#lcf)" fill="#f02cb8" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="40" y="24">VOLER</text>
+<line stroke="url(#lsg)" stroke-linecap="round" stroke-width="2" x1="52" x2="34" y1="1" y2="27"></line>
+</svg></a>
+<div class="nav-right">
+<div class="nav-menu">
+<div class="nav-item"><a class="nav-link" href="index.html">Accueil</a>
+<div class="nav-dropdown">
+<a href="bachelor.html">Bachelor &amp; Bachelorette</a>
+<a href="promotions.html">Événements et promotions</a>
+<a href="how-it-works.html">Flux d'activité</a>
+<a href="https://shop.indoorskydive.lu/store_10">Réservez maintenant</a>
+<a href="gift-voucher.html">Acheter un chèque cadeau</a>
+<a href="photos.html">Photos &amp; Vidéos</a>
+<a href="hot-air-balloon.html">Montgolfière</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="prices.html">Parachutisme en salle</a>
+<div class="nav-dropdown">
+<a href="loyalty.html">Programme de fidélité</a>
+<a href="birthdays.html">Anniversaires</a>
+<a href="prices.html">Tarifs</a>
+<a href="use-voucher.html">Utiliser un chèque cadeau</a>
+<a href="conditions.html">Conditions</a>
+<a href="activity.html">L'activité</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="events.html">Entreprise</a>
+<div class="nav-dropdown">
+<a href="events.html">Organiser un événement</a>
+<a href="team-building.html">Construction d'équipe</a>
+<a href="events-pricing.html">Tarifs</a>
+<a href="quote.html">Demande de devis</a>
+<a href="references.html">Références</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="pro.html">Dépliants professionnels</a>
+<div class="nav-dropdown">
+<a href="pro-prices.html">Tarifs</a>
+<a href="coaches.html">Entraîneurs</a>
+<a href="shared-sessions.html">Séance partagée</a>
+<a href="infrastructure.html">Infrastructures</a>
+<a href="become-proflyer.html">Devenir Proflyer</a>
+<a href="pro-events.html">Événements et camps</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="about.html">À propos</a>
+<div class="nav-dropdown">
+<a href="pilates.html">Pilates</a>
+<a href="indoor-activities.html">Activités intérieures</a>
+<a href="blog.html">Blogue</a>
+<a href="museum.html">Musée</a>
+<a href="flyology.html">FLYOLOGIE</a>
+<a href="faq.html">F.A.Q.</a>
+<a href="partners.html">Nos partenaires</a>
+<a href="jobs.html">Offres d'emploi</a>
+<a href="region.html">La Région</a>
+<a href="photos.html">Vos photos et vidéos</a>
+<a href="opening-hours.html">Heures d'ouverture</a>
+<a href="bar.html">Barre</a>
+<a href="about.html">Qui nous sommes</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="contact.html">Contacter</a></div>
+</div>
+<div class="nav-item nav-lang">
+<span class="lang-btn">FR <svg fill="none" height="6" style="opacity:0.55" viewbox="0 0 10 6" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></span>
+<div class="nav-dropdown"><a href="../my-flight-test.html">EN</a><a href="../de/my-flight-test.html">DE</a><a href="../lb/my-flight-test.html">LB</a><a href="../nl/my-flight-test.html">NL</a></div>
+</div>
+<a href="account.html" onmouseout="this.style.color='rgba(255,255,255,0.6)'" onmouseover="this.style.color='#fff'" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;"><svg fill="none" height="16" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="16"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="7" r="4"></circle></svg>Mon compte</a><a class="nav-book" href="https://shop.indoorskydive.lu/store_10">Réservez maintenant</a>
+</div>
+</nav>
+<section style="background: #f0f4ff; padding: 180px 48px 100px; text-align: center;">
+<h1 style="font-size: clamp(40px, 8vw, 72px); font-weight: 900; margin: 0 auto 24px; max-width: 900px; line-height: 1.2; color: #111;">Quel genre de flyer êtes-vous ?</h1>
+<p style="font-size: 18px; color: rgba(0,0,0,0.4); margin: 0; max-width: 700px; margin: 0 auto; line-height: 1.6;">Répondez à quelques questions pour savoir quel forfait convient à votre style de vol.</p>
+</section>
+<section style="background: #ffffff; padding: 80px 48px;">
+<div class="quiz-container">
+<div class="quiz-question">
+<h3 style="color: #111; font-size: 18px; margin-bottom: 20px;">1. Quel est votre plus grand sentiment à l'idée de voler pour la première fois ?</h3>
+<div class="quiz-options">
+<div class="quiz-option">Nerveux mais excité — je veux être rassuré par un professionnel</div>
+<div class="quiz-option">Je veux comprendre exactement comment ça marche</div>
+<div class="quiz-option">Laissez-moi simplement prendre l'air et en faire l'expérience</div>
+<div class="quiz-option">Je veux faire ça avec des amis et partager ce moment</div>
+</div>
+</div>
+<div class="quiz-question">
+<h3 style="color: #111; font-size: 18px; margin-bottom: 20px;">2. Lorsque vous apprenez quelque chose de nouveau, vous :</h3>
+<div class="quiz-options">
+<div class="quiz-option">Suivez exactement les instructions et posez des questions</div>
+<div class="quiz-option">Lisez/recherchez tout avant de commencer</div>
+<div class="quiz-option">Lancez-vous et découvrez-le au fur et à mesure</div>
+<div class="quiz-option">Mieux apprendre en groupe et en énergie partagée</div>
+</div>
+</div>
+<div class="quiz-question">
+<h3 style="color: #111; font-size: 18px; margin-bottom: 20px;">3. Votre expérience de vol idéale comprend :</h3>
+<div class="quiz-options">
+<div class="quiz-option">Sachant que je suis correctement coaché ​​en matière de sécurité et de forme</div>
+<div class="quiz-option">Comprendre la physique et le fonctionnement de chaque détail</div>
+<div class="quiz-option">La sensation pure et rien d'autre ne compte</div>
+<div class="quiz-option">Mes amis et ma famille m'encouragent</div>
+</div>
+</div>
+<div class="quiz-question">
+<h3 style="color: #111; font-size: 18px; margin-bottom: 20px;">4. Après votre vol, vous voudriez :</h3>
+<div class="quiz-options">
+<div class="quiz-option">Faites un débriefing avec votre instructeur et comprenez ce que vous avez fait</div>
+<div class="quiz-option">Revoyez les images et analysez votre technique</div>
+<div class="quiz-option">Montez à fond d'adrénaline et célébrez</div>
+<div class="quiz-option">Prenez un verre avec tous ceux qui ont pris l'avion et échangez des histoires</div>
+</div>
+</div>
+<div class="quiz-question">
+<h3 style="color: #111; font-size: 18px; margin-bottom: 20px;">5. Sur une échelle, à quel point êtes-vous aventureux ?</h3>
+<div class="quiz-options">
+<div class="quiz-option">J'aime l'aventure, mais avec des garde-corps et des conseils de sécurité</div>
+<div class="quiz-option">J'aime maîtriser les compétences méthodiquement au fil du temps</div>
+<div class="quiz-option">Je suis un amateur de sensations fortes – apportez de l'intensité</div>
+<div class="quiz-option">Je suis prêt à tout si mes amis le font aussi</div>
+</div>
+</div>
+</div>
+</section>
+<section style="background: #f7f7f7; padding: 80px 48px;">
+<div class="quiz-container">
+<h2 style="color: #111; font-size: 36px; font-weight: 900; margin-bottom: 60px; text-align: center;">Vos profils de flyers</h2>
+<div class="profile-card reveal">
+<div class="profile-icon">🧠</div>
+<h3 style="color: #111; font-size: 24px; font-weight: 900; margin-bottom: 16px;">Le penseur</h3>
+<p style="color: rgba(0,0,0,0.55); line-height: 1.8; margin-bottom: 20px;">Vous voulez comprendre comment tout fonctionne. Vous êtes curieux de connaître la physique, l'ingénierie, la technique. Vous visiterez probablement d'abord notre musée, puis volerez, puis analyserez la vidéo.</p>
+<p style="color: #f02cb8; font-weight: 700; margin-bottom: 20px;">Le meilleur pour vous : comment ça marche + Contenu éducatif</p>
+<a href="how-it-works.html" style="color: rgba(0,0,0,0.55); text-decoration: none; font-weight: 700;">En savoir plus →</a>
+</div>
+<div class="profile-card reveal reveal-delay-1">
+<div class="profile-icon">⚡</div>
+<h3 style="color: #111; font-size: 24px; font-weight: 900; margin-bottom: 16px;">Le casse-cou</h3>
+<p style="color: rgba(0,0,0,0.55); line-height: 1.8; margin-bottom: 20px;">Vous vivez pour l'adrénaline. Vous voulez de la vitesse, de l’intensité et la sensation de vol la plus pure. La sécurité est une évidence, mais vous souhaitez repousser vos limites et vous sentir pleinement vivant.</p>
+<p style="color: #f02cb8; font-weight: 700; margin-bottom: 20px;">Le meilleur pour vous : Pro Flying + Formation avancée</p>
+<a href="pro.html" style="color: rgba(0,0,0,0.55); text-decoration: none; font-weight: 700;">Devenez un pro →</a>
+</div>
+<div class="profile-card reveal reveal-delay-2">
+<div class="profile-icon">💰</div>
+<h3 style="color: #111; font-size: 24px; font-weight: 900; margin-bottom: 16px;">Le Naturel</h3>
+<p style="color: rgba(0,0,0,0.55); line-height: 1.8; margin-bottom: 20px;">Vous apprenez vite avec une bonne conscience de votre corps. Vous faites confiance à votre instinct et n’avez pas besoin d’un briefing approfondi. Vous préférez prendre l'air et le ressentir plutôt que d'en parler.</p>
+<p style="color: #f02cb8; font-weight: 700; margin-bottom: 20px;">Le meilleur pour vous : tarification simple + réservation directe</p>
+<a href="prices.html" style="color: rgba(0,0,0,0.55); text-decoration: none; font-weight: 700;">Voir les prix →</a>
+</div>
+<div class="profile-card reveal reveal-delay-3">
+<div class="profile-icon">👥</div>
+<h3 style="color: #111; font-size: 24px; font-weight: 900; margin-bottom: 16px;">Le joueur d'équipe</h3>
+<p style="color: rgba(0,0,0,0.55); line-height: 1.8; margin-bottom: 20px;">L’expérience n’est qu’à moitié aussi bonne en solo. Vous souhaitez partager cela avec vos amis ou votre famille. Les acclamations, les rires, la célébration de groupe, voilà le vrai frisson.</p>
+<p style="color: #f02cb8; font-weight: 700; margin-bottom: 20px;">Le meilleur pour vous : événements de groupe et expériences partagées</p>
+<a href="events.html" style="color: rgba(0,0,0,0.55); text-decoration: none; font-weight: 700;">Planifiez votre événement →</a>
+</div>
+</div>
+</section>
+<section style="background: #ffffff; padding: 80px 48px; text-align: center;">
+<h2 style="color: #111; font-size: 36px; font-weight: 900; margin-bottom: 32px;">Vous n'êtes pas encore sûr ?</h2>
+<p style="color: rgba(0,0,0,0.55); line-height: 1.8; margin-bottom: 40px;">C'est bon. Chaque voyageur débutant bénéficie d'un briefing et d'un instructeur qui s'adapte à votre style. Pas de pression, juste voler.</p>
+<a href="https://shop.indoorskydive.lu/store_10" style="display: inline-block; padding: 16px 48px; background: #f02cb8; color: white; font-weight: 700; text-decoration: none; border-radius: 6px; font-size: 16px;">Réserver un vol Découverte</a>
+</section>
+<footer style="background: #f7f7f7; padding: 60px 48px; border-top: 1px solid rgba(0,0,0,0.08);">
+<div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 40px;">
+<div class="footer-brand">
+<img alt="Luxfly" src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg" style="height: 40px; margin-bottom: 16px;"/>
+<p style="color: rgba(0,0,0,0.4); font-size: 14px; line-height: 1.6; margin: 0;">La plus haute soufflerie de parachutisme intérieure d'Europe. Sécuritaire de 4 à 95 ans.</p>
+</div>
+<div class="footer-col">
+<h5 style="color: #111; font-weight: 700; margin-bottom: 16px; font-size: 14px; text-transform: uppercase;">Voler</h5>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="margin-bottom: 8px;"><a href="prices.html" style="color: rgba(0,0,0,0.4); text-decoration: none;">Adultes</a></li>
+<li style="margin-bottom: 8px;"><a href="kids.html" style="color: rgba(0,0,0,0.4); text-decoration: none;">Enfants et familles</a></li>
+<li style="margin-bottom: 8px;"><a href="pro.html" style="color: rgba(0,0,0,0.4); text-decoration: none;">Dépliants professionnels</a></li>
+<li><a href="birthdays.html" style="color: rgba(0,0,0,0.4); text-decoration: none;">Anniversaires</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5 style="color: #111; font-weight: 700; margin-bottom: 16px; font-size: 14px; text-transform: uppercase;">Informations</h5>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="margin-bottom: 8px;"><a href="about.html" style="color: rgba(0,0,0,0.4); text-decoration: none;">À propos de nous</a></li>
+<li style="margin-bottom: 8px;"><a href="faq.html" style="color: rgba(0,0,0,0.4); text-decoration: none;">FAQ</a></li>
+<li style="margin-bottom: 8px;"><a href="contact.html" style="color: rgba(0,0,0,0.4); text-decoration: none;">Contacter</a></li>
+<li><a href="conditions.html" style="color: rgba(0,0,0,0.4); text-decoration: none;">Conditions</a></li>
+</ul>
+</div>
+</div>
+<div style="border-top: 1px solid rgba(0,0,0,0.08); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; color: rgba(0,0,0,0.4); font-size: 14px;">
+<span>© 2026 Luxfly Parachutisme intérieur</span>
+<div style="display:flex;gap:24px;"><a href="conditions.html" style="color: rgba(0,0,0,0.4); text-decoration: none;">Conditions</a><a href="#" style="color: rgba(0,0,0,0.4); text-decoration: none;">Confidentialité</a></div>
+</div>
+</footer>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY>60)},{passive:true});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<script src="js/nav.js?v=2"></script>
+<script src="js/chatbot.js"></script>
+
+</body>
+</html>

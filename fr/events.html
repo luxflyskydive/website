@@ -1,0 +1,548 @@
+html
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<link href="img/favicon.png" rel="icon" type="image/png"/><link href="img/favicon.svg" rel="icon" type="image/svg+xml"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Événements — Parachutisme intérieur Luxfly</title>
+<meta content="Host corporate events, birthday parties, school trips, and stag/hen parties at Luxfly. We accommodate groups from 2 to 250 people." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+body { background: #ffffff; }
+
+.hero-section {
+  background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.25) 60%, rgba(0,0,0,0.08) 100%), url('https://indoorskydive.lu/img/groups.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.hero-content {
+  color: white;
+  padding-left: 48px;
+  max-width: 600px;
+}
+
+.hero-eyebrow {
+  color: #f02cb8;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+
+.hero-section h1 {
+  font-family: Montserrat;
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 20px 0;
+}
+
+.hero-section p {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.overview-section {
+  background: #f0f4ff;
+  padding: 100px 48px;
+}
+
+.overview-section h2 {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 60px 0;
+  text-align: center;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px 56px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card h3 {
+  font-family: Montserrat;
+  font-size: 17px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 10px 0;
+  letter-spacing: 0.01em;
+}
+
+.card p {
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(0,0,0,0.65);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.pull-quote {
+  font-family: Montserrat;
+  font-size: 28px;
+  font-weight: 800;
+  font-style: italic;
+  color: #111;
+  padding: 48px;
+  text-align: center;
+  margin: 80px auto;
+  max-width: 700px;
+  line-height: 1.4;
+}
+
+.capacity-section {
+  background: #ffffff;
+  padding: 100px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.capacity-left h2 {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 40px 0;
+  line-height: 1.2;
+}
+
+.capacity-stat {
+  font-family: Montserrat;
+  font-size: 72px;
+  font-weight: 900;
+  color: #f02cb8;
+  margin: 40px 0;
+}
+
+.capacity-left p {
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(0,0,0,0.8);
+  line-height: 1.8;
+  margin: 0 0 24px 0;
+}
+
+.capacity-stats-list {
+  background: #f7f7f7;
+  padding: 32px;
+  border-radius: 4px;
+}
+
+.capacity-stats-list h4 {
+  font-family: Montserrat;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(0,0,0,0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 20px 0;
+}
+
+.capacity-stats-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.capacity-stats-list li {
+  font-family: Inter;
+  font-size: 15px;
+  color: rgba(0,0,0,0.8);
+  margin: 0 0 12px 0;
+  padding-left: 24px;
+  position: relative;
+}
+
+.capacity-stats-list li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #f02cb8;
+  font-weight: 700;
+}
+
+.facility-section {
+  background: #f7f7f7;
+  padding: 80px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.facility-content h3 {
+  font-family: Montserrat;
+  font-size: 13px;
+  font-weight: 700;
+  color: #f02cb8;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0 0 20px 0;
+}
+
+.facility-content h2 {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 32px 0;
+  line-height: 1.2;
+}
+
+.facility-content p {
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(0,0,0,0.8);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.facility-image {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  background-image: url('https://indoorskydive.lu/img/adults.jpg');
+}
+
+.testimonial-section {
+  background: #f0f4ff;
+  padding: 80px 48px;
+}
+
+.testimonial-section h2 {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.testimonial-sub {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(0,0,0,0.7);
+  text-align: center;
+  margin: 0 0 60px 0;
+}
+
+.industries-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.industry-item {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #ffffff;
+  border: 1px solid #f02cb8;
+  border-radius: 24px;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  color: #f02cb8;
+  text-align: center;
+}
+
+.cta-section {
+  background: #fff5fb;
+  padding: 100px 48px;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 24px 0;
+}
+
+.cta-section p {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(0,0,0,0.8);
+  margin: 0 0 40px 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-primary {
+  display: inline-block;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 16px 48px;
+  background: #f02cb8;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #e00a9f;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 { font-size: 40px; }
+  .capacity-section { grid-template-columns: 1fr; gap: 40px; }
+  .facility-section { grid-template-columns: 1fr; gap: 40px; }
+  .overview-section h2 { font-size: 36px; }
+  .card-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body class="light">
+<nav id="nav">
+<a class="nav-logo" href="index.html"><svg height="28" viewbox="0 0 82 28" width="82" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="lsg" x1="52" x2="34" y1="1" y2="27">
+<stop class="lux-stop" offset="0%"></stop>
+<stop offset="100%" stop-color="#f02cb8"></stop>
+</lineargradient>
+<clippath clippathunits="userSpaceOnUse" id="lcl">
+<polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"></polygon>
+</clippath>
+<clippath clippathunits="userSpaceOnUse" id="lcf">
+<polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"></polygon>
+</clippath>
+</defs>
+<text class="lux-text" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="0" y="20">LUX</text>
+<text clip-path="url(#lcf)" fill="#f02cb8" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="40" y="24">VOLER</text>
+<line stroke="url(#lsg)" stroke-linecap="round" stroke-width="2" x1="52" x2="34" y1="1" y2="27"></line>
+</svg></a>
+<div class="nav-right">
+<div class="nav-menu">
+<div class="nav-item"><a class="nav-link" href="index.html">Accueil</a>
+<div class="nav-dropdown">
+<a href="bachelor.html">Bachelor &amp; Bachelorette</a>
+<a href="promotions.html">Événements et promotions</a>
+<a href="how-it-works.html">Flux d'activité</a>
+<a href="https://shop.indoorskydive.lu/store_10">Réservez maintenant</a>
+<a href="gift-voucher.html">Acheter un chèque cadeau</a>
+<a href="photos.html">Photos &amp; Vidéos</a>
+<a href="hot-air-balloon.html">Montgolfière</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="prices.html">Parachutisme en salle</a>
+<div class="nav-dropdown">
+<a href="loyalty.html">Programme de fidélité</a>
+<a href="birthdays.html">Anniversaires</a>
+<a href="prices.html">Tarifs</a>
+<a href="use-voucher.html">Utiliser un chèque cadeau</a>
+<a href="conditions.html">Conditions</a>
+<a href="activity.html">L'activité</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="events.html">Entreprise</a>
+<div class="nav-dropdown">
+<a href="events.html">Organiser un événement</a>
+<a href="team-building.html">Construction d'équipe</a>
+<a href="events-pricing.html">Tarifs</a>
+<a href="quote.html">Demande de devis</a>
+<a href="references.html">Références</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="pro.html">Dépliants professionnels</a>
+<div class="nav-dropdown">
+<a href="pro-prices.html">Tarifs</a>
+<a href="coaches.html">Entraîneurs</a>
+<a href="shared-sessions.html">Séance partagée</a>
+<a href="infrastructure.html">Infrastructures</a>
+<a href="become-proflyer.html">Devenir Proflyer</a>
+<a href="pro-events.html">Événements et camps</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="about.html">À propos</a>
+<div class="nav-dropdown">
+<a href="pilates.html">Pilates</a>
+<a href="indoor-activities.html">Activités intérieures</a>
+<a href="blog.html">Blogue</a>
+<a href="museum.html">Musée</a>
+<a href="flyology.html">FLYOLOGIE</a>
+<a href="faq.html">F.A.Q.</a>
+<a href="partners.html">Nos partenaires</a>
+<a href="jobs.html">Offres d'emploi</a>
+<a href="region.html">La Région</a>
+<a href="photos.html">Vos photos et vidéos</a>
+<a href="opening-hours.html">Heures d'ouverture</a>
+<a href="bar.html">Barre</a>
+<a href="about.html">Qui nous sommes</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="contact.html">Contacter</a></div>
+</div>
+<div class="nav-item nav-lang">
+<span class="lang-btn">FR <svg fill="none" height="6" style="opacity:0.55" viewbox="0 0 10 6" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></span>
+<div class="nav-dropdown"><a href="../events.html">EN</a><a href="../de/events.html">DE</a><a href="../lb/events.html">LB</a><a href="../nl/events.html">NL</a></div>
+</div>
+<a href="account.html" onmouseout="this.style.color='rgba(255,255,255,0.6)'" onmouseover="this.style.color='#fff'" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;"><svg fill="none" height="16" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="16"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="7" r="4"></circle></svg>Mon compte</a><a class="nav-book" href="https://shop.indoorskydive.lu/store_10">Réservez maintenant</a>
+</div>
+</nav>
+<div class="hero-section">
+<div class="hero-content">
+<div class="hero-eyebrow">Événements</div>
+<h1>Votre prochain événement extraordinaire.</h1>
+<p>Journées d'entreprise, sorties scolaires, anniversaires, enterrements de vie de garçon. Nous pouvons accueillir des groupes de 2 à 250 personnes. Et nous le faisons correctement.</p>
+</div>
+</div>
+<section class="overview-section reveal">
+<h2>Ce que nous hébergeons</h2>
+<div class="card-grid">
+<div class="card reveal reveal-delay-1">
+<h3>Journées de team building</h3>
+<p>Événements d'équipe trimestriels et journées d'entreprise structurés autour de votre groupe. Nous gérons toute la logistique, du briefing d'arrivée au débriefing après le vol.</p>
+</div>
+<div class="card reveal reveal-delay-2">
+<h3>Leadership hors sites</h3>
+<p>Sortez votre équipe de direction de la salle de conférence et entrez dans le tunnel. Adrénaline partagée et règles du jeu totalement équitables – pas de hiérarchie en chute libre.</p>
+</div>
+<div class="card reveal reveal-delay-3">
+<h3>Activités pour les nouveaux membres</h3>
+<p>Le moyen le plus rapide de créer des liens avec une nouvelle cohorte. Le parachutisme en salle convient à tous les niveaux de forme physique et à toutes les expériences, afin que personne ne soit laissé de côté dès le premier jour.</p>
+</div>
+<div class="card reveal reveal-delay-1">
+<h3>Divertissement client</h3>
+<p>Offrez aux clients une expérience qui mérite d’être évoquée. Temps de tunnel privé, personnel d'encadrement dédié et accès à notre bar et à notre terrasse après le vol.</p>
+</div>
+<div class="card reveal reveal-delay-2">
+<h3>Jalons de l'entreprise</h3>
+<p>Célébrez un trimestre record, un lancement de produit ou un anniversaire d'entreprise avec quelque chose qui ressemble réellement à une récompense, pas seulement à un dîner.</p>
+</div>
+<div class="card reveal reveal-delay-3">
+<h3>Retraites annuelles</h3>
+<p>Utilisez Luxfly comme pièce maîtresse de votre retraite annuelle. Salles de réunion, restauration et accès complet au tunnel : tout sous un même toit, entièrement coordonné.</p>
+</div>
+</div>
+</section>
+<blockquote class="pull-quote reveal">"De 2 personnes à 250. Nous avons fait les deux. Nous avons tout fait entre les deux."</blockquote>
+<section class="capacity-section reveal">
+<div class="capacity-left">
+<h2>Conçu pour les groupes de toutes tailles</h2>
+<div class="capacity-stat">2–250</div>
+<p>Luxfly est conçu pour accueillir des groupes de toute taille. Que vous veniez avec 2 personnes ou 250 personnes, nous disposons de l'infrastructure, de l'expertise et de la flexibilité nécessaires pour que votre événement se déroule sans problème.</p>
+<p>Chaque groupe dispose d'un coordinateur d'événement dédié, du premier contact au lendemain. Nous gérons la communication préalable à l'événement, les dossiers d'information, les plages horaires flexibles et pouvons organiser la location exclusive de tunnels pour les événements plus importants pour lesquels vous souhaitez un contrôle total.</p>
+<p>Notre installation à deux voies nous permet d'organiser plusieurs groupes simultanément ou de donner un accès exclusif à l'ensemble de votre groupe. Le choix vous appartient et nous adapterons le programme en fonction de votre vision.</p>
+</div>
+<div>
+<div class="capacity-stats-list">
+<h4>Ce que vous obtenez</h4>
+<ul>
+<li>Salles de réunion disponibles</li>
+<li>Restauration sur place</li>
+<li>2 voies de tunnel</li>
+<li>AV complet dans les salles de réunion</li>
+<li>Coordinateur d'événements dédié</li>
+<li>Horaires flexibles</li>
+<li>Casiers</li>
+<li>Accès bar et terrasse</li>
+<li>Transferts aéroport disponibles</li>
+<li>Options de produits de marque</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="facility-section reveal">
+<div class="facility-image"></div>
+<div class="facility-content">
+<h3>L'Espace</h3>
+<h2>Tout ce dont vous avez besoin. Sous un même toit.</h2>
+<p>Les installations Luxfly de 3 000 m² sont spécialement conçues pour les événements. Il comprend la soufflerie, un espace de briefing dédié aux événements, une salle de réunion de 60 personnes avec capacités audiovisuelles, un bar-terrasse avec vue sur le tunnel, des installations de restauration pour des groupes jusqu'à 250 personnes et des vestiaires complets. Tout, des transferts aéroport aux marchandises de marque personnalisées, peut être organisé pour des événements plus importants. Une installation. Tout ce dont vous avez besoin.</p>
+</div>
+</section>
+<section class="testimonial-section reveal">
+<h2>Qui vole avec nous ?</h2>
+<p class="testimonial-sub">Nous avons accueilli des groupes de certains des plus grands noms du Luxembourg.</p>
+<div class="industries-grid">
+<div class="industry-item">Finances et Banques</div>
+<div class="industry-item">Cabinets d'avocats</div>
+<div class="industry-item">Entreprises technologiques</div>
+<div class="industry-item">Écoles internationales</div>
+<div class="industry-item">Équipes sportives</div>
+<div class="industry-item">Organismes gouvernementaux</div>
+<div class="industry-item">Cabinets de conseil</div>
+<div class="industry-item">Produits de grande consommation</div>
+<div class="industry-item">Énergie et services publics</div>
+</div>
+</section>
+<section class="cta-section reveal">
+<h2>Prêt à planifier ?</h2>
+<p>Prenez contact et l'un de nos coordinateurs d'événements reviendra vers vous dans les 24 heures avec des disponibilités et une proposition personnalisée.</p>
+<a class="btn-primary" href="quote.html">Demander un devis</a>
+</section>
+<footer style="background: #0d0d0d; padding: 60px 48px; border-top: 1px solid rgba(255,255,255,0.08);">
+<div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 40px;">
+<div class="footer-brand">
+<img alt="Luxfly" src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg" style="height: 40px; margin-bottom: 16px;"/>
+<p style="color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.6; margin: 0;">La plus haute soufflerie de parachutisme intérieure d'Europe. Sécuritaire de 4 à 95 ans.</p>
+</div>
+<div class="footer-col">
+<h5 style="color: white; font-weight: 700; margin-bottom: 16px; font-size: 14px; text-transform: uppercase;">Voler</h5>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="margin-bottom: 8px;"><a href="prices.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Adultes</a></li>
+<li style="margin-bottom: 8px;"><a href="kids.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Enfants et familles</a></li>
+<li style="margin-bottom: 8px;"><a href="pro.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Dépliants professionnels</a></li>
+<li><a href="birthdays.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Anniversaires</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5 style="color: white; font-weight: 700; margin-bottom: 16px; font-size: 14px; text-transform: uppercase;">Informations</h5>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="margin-bottom: 8px;"><a href="about.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">À propos de nous</a></li>
+<li style="margin-bottom: 8px;"><a href="faq.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">FAQ</a></li>
+<li style="margin-bottom: 8px;"><a href="contact.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Contacter</a></li>
+<li><a href="conditions.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Conditions</a></li>
+</ul>
+</div>
+</div>
+<div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,0.6); font-size: 14px;">
+<span>© 2026 Luxfly Parachutisme intérieur</span>
+<div style="display:flex;gap:24px;"><a href="conditions.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Conditions</a><a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none;">Confidentialité</a></div>
+</div>
+</footer>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY>60)},{passive:true});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<script src="js/nav.js?v=2"></script>
+<script src="js/chatbot.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,588 @@
+html
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<link href="img/favicon.png" rel="icon" type="image/png"/><link href="img/favicon.svg" rel="icon" type="image/svg+xml"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Programme de fidélité — Luxfly Indoor Skydiving</title>
+<meta content="Earn points every time you fly with Luxfly. Redeem for free flights and discounts through the FidelityBox loyalty programme." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+.hero-type {
+  background: #f0f4ff;
+  padding: 180px 48px 120px;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  color: #f02cb8;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.hero-type h1 {
+  font-family: Montserrat;
+  font-size: 72px;
+  font-weight: 900;
+  color: #111;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+.hero-type .sub {
+  font-size: 18px;
+  color: #666;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.pull-quote {
+  background: #f7f7f7;
+  padding: 60px 48px;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 32px;
+  font-weight: 800;
+  color: #111;
+  font-style: italic;
+  line-height: 1.4;
+  margin: 80px auto;
+  max-width: 900px;
+}
+
+.pull-quote.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.pull-quote.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.how-it-works-section {
+  background: #f7f7f7;
+  padding: 100px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.how-it-works-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.how-it-works-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.how-it-works-text h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.how-it-works-text p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.comparison-box {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+.comparison-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 15px 0;
+}
+
+.comparison-item:not(:last-child) {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.comparison-label {
+  font-size: 13px;
+  color: #666;
+  font-weight: 600;
+}
+
+.comparison-value {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 800;
+  color: #f02cb8;
+}
+
+.tiers-section {
+  background: #ffffff;
+  padding: 80px 48px;
+}
+
+.tiers-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.tiers-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tiers-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tier-card {
+  background: #f7f7f7;
+  padding: 50px 40px;
+  border-radius: 8px;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.tier-card:hover {
+  border-color: #f02cb8;
+}
+
+.tier-name {
+  font-family: Montserrat;
+  font-size: 28px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.tier-minutes {
+  font-size: 14px;
+  color: #f02cb8;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.tier-price-main {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 900;
+  color: #f02cb8;
+  margin-bottom: 5px;
+}
+
+.tier-price-unit {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.tier-benefit {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.tier-ctc {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #666;
+}
+
+.perks-section {
+  background: #ffffff;
+  padding: 80px 48px;
+}
+
+.perks-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.perks-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.perks-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.perks-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.perk-item {
+  display: flex;
+  gap: 20px;
+}
+
+.perk-icon {
+  font-size: 24px;
+  color: #f02cb8;
+  font-weight: 700;
+  min-width: 30px;
+}
+
+.perk-text {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.get-card-section {
+  background: #fff5fb;
+  padding: 80px 48px;
+  text-align: center;
+}
+
+.get-card-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.get-card-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.get-card-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.get-card-section p {
+  color: #555;
+  font-size: 15px;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-btn {
+  background: #f02cb8;
+  color: white;
+  padding: 16px 48px;
+  border: none;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background: #d9219f;
+}
+
+@media (max-width: 768px) {
+  .how-it-works-section, .tiers-grid, .perks-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-type h1 {
+    font-size: 44px;
+  }
+
+  .pull-quote {
+    font-size: 24px;
+  }
+}
+</style>
+</head>
+<body class="light">
+<nav id="nav">
+<a class="nav-logo" href="index.html"><svg height="28" viewbox="0 0 82 28" width="82" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="lsg" x1="52" x2="34" y1="1" y2="27">
+<stop class="lux-stop" offset="0%"></stop>
+<stop offset="100%" stop-color="#f02cb8"></stop>
+</lineargradient>
+<clippath clippathunits="userSpaceOnUse" id="lcl">
+<polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"></polygon>
+</clippath>
+<clippath clippathunits="userSpaceOnUse" id="lcf">
+<polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"></polygon>
+</clippath>
+</defs>
+<text class="lux-text" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="0" y="20">LUX</text>
+<text clip-path="url(#lcf)" fill="#f02cb8" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="40" y="24">VOLER</text>
+<line stroke="url(#lsg)" stroke-linecap="round" stroke-width="2" x1="52" x2="34" y1="1" y2="27"></line>
+</svg></a>
+<div class="nav-right">
+<div class="nav-menu">
+<div class="nav-item"><a class="nav-link" href="index.html">Accueil</a>
+<div class="nav-dropdown">
+<a href="bachelor.html">Bachelor &amp; Bachelorette</a>
+<a href="promotions.html">Événements et promotions</a>
+<a href="how-it-works.html">Flux d'activité</a>
+<a href="https://shop.indoorskydive.lu/store_10">Réservez maintenant</a>
+<a href="gift-voucher.html">Acheter un chèque cadeau</a>
+<a href="photos.html">Photos &amp; Vidéos</a>
+<a href="hot-air-balloon.html">Montgolfière</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="prices.html">Parachutisme en salle</a>
+<div class="nav-dropdown">
+<a href="loyalty.html">Programme de fidélité</a>
+<a href="birthdays.html">Anniversaires</a>
+<a href="prices.html">Tarifs</a>
+<a href="use-voucher.html">Utiliser un chèque cadeau</a>
+<a href="conditions.html">Conditions</a>
+<a href="activity.html">L'activité</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="events.html">Entreprise</a>
+<div class="nav-dropdown">
+<a href="events.html">Organiser un événement</a>
+<a href="team-building.html">Construction d'équipe</a>
+<a href="events-pricing.html">Tarifs</a>
+<a href="quote.html">Demande de devis</a>
+<a href="references.html">Références</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="pro.html">Dépliants professionnels</a>
+<div class="nav-dropdown">
+<a href="pro-prices.html">Tarifs</a>
+<a href="coaches.html">Entraîneurs</a>
+<a href="shared-sessions.html">Séance partagée</a>
+<a href="infrastructure.html">Infrastructures</a>
+<a href="become-proflyer.html">Devenir Proflyer</a>
+<a href="pro-events.html">Événements et camps</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="about.html">À propos</a>
+<div class="nav-dropdown">
+<a href="pilates.html">Pilates</a>
+<a href="indoor-activities.html">Activités intérieures</a>
+<a href="blog.html">Blogue</a>
+<a href="museum.html">Musée</a>
+<a href="flyology.html">FLYOLOGIE</a>
+<a href="faq.html">F.A.Q.</a>
+<a href="partners.html">Nos partenaires</a>
+<a href="jobs.html">Offres d'emploi</a>
+<a href="region.html">La Région</a>
+<a href="photos.html">Vos photos et vidéos</a>
+<a href="opening-hours.html">Heures d'ouverture</a>
+<a href="bar.html">Barre</a>
+<a href="about.html">Qui nous sommes</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="contact.html">Contacter</a></div>
+</div>
+<div class="nav-item nav-lang">
+<span class="lang-btn">FR <svg fill="none" height="6" style="opacity:0.55" viewbox="0 0 10 6" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></span>
+<div class="nav-dropdown"><a href="../loyalty.html">EN</a><a href="../de/loyalty.html">DE</a><a href="../lb/loyalty.html">LB</a><a href="../nl/loyalty.html">NL</a></div>
+</div>
+<a href="account.html" onmouseout="this.style.color='rgba(255,255,255,0.6)'" onmouseover="this.style.color='#fff'" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;"><svg fill="none" height="16" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="16"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="7" r="4"></circle></svg>Mon compte</a><a class="nav-book" href="https://shop.indoorskydive.lu/store_10">Réservez maintenant</a>
+</div>
+</nav>
+<section class="hero-type">
+<span class="eyebrow">Fidélité</span>
+<h1>Volez davantage. Payez moins.</h1>
+<p class="sub">Gagnez des points à chaque fois que vous volez. Échangez-les contre des vols gratuits et des réductions. Votre numéro de téléphone est votre carte de fidélité.</p>
+</section>
+<blockquote class="pull-quote reveal">"Inscrivez-vous à la réception en quelques secondes. Votre numéro de téléphone est tout ce dont vous avez besoin."</blockquote>
+<section class="how-it-works-section reveal">
+<div class="how-it-works-text">
+<h2>Comment ça marche</h2>
+<p>Le programme de fidélité Luxfly fonctionne via FidelityBox. L'inscription est gratuite : il suffit de donner votre numéro de téléphone à la réception et il devient votre carte de fidélité. Aucune application nécessaire pour s'inscrire, aucun contrat, rien à transporter.</p>
+<p>Vous gagnez automatiquement des points à chaque visite. La façon dont vous gagnez dépend de votre profil : <strong>Première minuterie</strong> (nouveaux arrivants et visiteurs occasionnels) ou <strong>SportFlyer</strong> (dépliants réguliers et de formation). Les deux profils sont actifs sur le même numéro de téléphone.</p>
+<p>Suivez vos points et vos récompenses disponibles à tout moment grâce à l'application gratuite FidelityBox, disponible sur iOS et Android.</p>
+</div>
+<div class="comparison-box">
+<div class="comparison-item">
+<div>
+<div class="comparison-label">S'inscrire</div>
+<div class="comparison-value">Gratuit à la réception</div>
+</div>
+<div>
+<div class="comparison-label">Votre carte de fidélité</div>
+<div class="comparison-value">Votre numéro de téléphone</div>
+</div>
+</div>
+<div class="comparison-item">
+<div>
+<div class="comparison-label">Tarif pour la première fois</div>
+<div class="comparison-value">1 € = 1 point</div>
+</div>
+<div>
+<div class="comparison-label">Tarif SportFlyer</div>
+<div class="comparison-value">Points par visite</div>
+</div>
+</div>
+<div class="comparison-item">
+<div>
+<div class="comparison-label">Points de suivi</div>
+<div class="comparison-value">Application FidelityBox</div>
+</div>
+<div>
+<div class="comparison-label">Minutes de récompense</div>
+<div class="comparison-value">Valable 6 mois</div>
+</div>
+</div>
+</div>
+</section>
+<section class="tiers-section reveal">
+<h2>Ce que vous pouvez gagner</h2>
+<div class="tiers-grid">
+<div class="tier-card">
+<div class="tier-name">Première minuterie</div>
+<div class="tier-minutes">300 points</div>
+<div class="tier-price-main">1 vol répété gratuit</div>
+<div class="tier-price-unit">dans le cadre d'une séance réservée</div>
+<div class="tier-benefit">Gagnez 1 point par euro dépensé sur place. Points crédités au moment du paiement. Les achats promotionnels ne rapportent pas de points.</div>
+<div class="tier-ctc">Achats sur place uniquement</div>
+</div>
+<div class="tier-card">
+<div class="tier-name">Première minuterie</div>
+<div class="tier-minutes">400 points</div>
+<div class="tier-price-main">5% de réduction</div>
+<div class="tier-price-unit">sur votre prochain achat</div>
+<div class="tier-benefit">Remise appliquée sur votre prochaine visite — renseignez-vous à la réception lorsque vous atteignez le seuil.</div>
+<div class="tier-ctc">Ou continuez à économiser 10 %</div>
+</div>
+<div class="tier-card">
+<div class="tier-name">Première minuterie</div>
+<div class="tier-minutes">600 points</div>
+<div class="tier-price-main">10 % de réduction</div>
+<div class="tier-price-unit">sur votre prochain achat</div>
+<div class="tier-benefit">La meilleure récompense pour la première fois. Continuez à dépenser et les économies continuent de croître.</div>
+<div class="tier-ctc">Crédité à la réception</div>
+</div>
+</div>
+</section>
+<section class="perks-section reveal">
+<h2>Pour les voyageurs réguliers</h2>
+<p style="font-family: Inter; font-size: 16px; color: rgba(0,0,0,0.65); max-width: 640px; margin: 0 auto 48px; text-align: center; line-height: 1.7;">Les SportFlyers gagnent directement des minutes de vol. Les points sont attribués le jour de votre vol — renseignez-vous à la réception <em>avant</em> entrer dans le tunnel. Aucun point rétroactif.</p>
+<div class="perks-list">
+<div class="perk-item">
+<div class="perk-icon">✓</div>
+<div class="perk-text"><strong>100 points = 1 minute de vol</strong> crédité sur votre compte.</div>
+</div>
+<div class="perk-item">
+<div class="perk-icon">✓</div>
+<div class="perk-text"><strong>500 points = 5 minutes de vol</strong> – la récompense populaire de niveau intermédiaire.</div>
+</div>
+<div class="perk-item">
+<div class="perk-icon">✓</div>
+<div class="perk-text"><strong>1 500 points = 15 minutes de vol</strong> — la récompense la plus avantageuse disponible.</div>
+</div>
+<div class="perk-item">
+<div class="perk-icon">✓</div>
+<div class="perk-text"><strong>Minutes récompenses valables 6 mois</strong> à compter de la date à laquelle ils sont crédités.</div>
+</div>
+<div class="perk-item">
+<div class="perk-icon">✓</div>
+<div class="perk-text"><strong>Vous partez après 20h ?</strong> Si la réception est fermée, WhatsApp <a href="tel:+32477528566" style="color: #f02cb8;">+32 477 52 85 66</a> avant votre séance avec votre nom, numéro, date et heure.</div>
+</div>
+<div class="perk-item">
+<div class="perk-icon">✓</div>
+<div class="perk-text"><strong>Séances partagées :</strong> points basés sur la durée totale du vol et non sur le nombre de participants. Doit être réclamé ensemble à la réception – pas de partage ultérieur.</div>
+</div>
+</div>
+</section>
+<section class="get-card-section reveal">
+<h2>Commencez à gagner aujourd'hui.</h2>
+<p>Donnez simplement votre numéro de téléphone à la réception lors de votre prochaine visite. L'inscription est instantanée et gratuite – pas de formulaire, pas de carte à transporter. Vos récompenses vous attendent.</p>
+<a class="cta-btn" href="https://shop.indoorskydive.lu/store_10">Réservez votre prochain vol</a>
+</section>
+<footer>
+<div class="footer-brand">
+<img alt="Luxfly" src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg"/>
+<p>La plus haute soufflerie de parachutisme intérieure d'Europe. Sécuritaire de 4 à 95 ans.</p>
+</div>
+<div class="footer-col">
+<h5>Voler</h5>
+<ul>
+<li><a href="prices.html">Adultes</a></li>
+<li><a href="kids.html">Enfants et familles</a></li>
+<li><a href="pro.html">Dépliants professionnels</a></li>
+<li><a href="birthdays.html">Anniversaires</a></li>
+<li><a href="gift-voucher.html">Chèques cadeaux</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5>Informations</h5>
+<ul>
+<li><a href="about.html">À propos de nous</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="contact.html">Contacter</a></li>
+<li><a href="opening-hours.html">Heures d'ouverture</a></li>
+<li><a href="conditions.html">Conditions</a></li>
+</ul>
+</div>
+</footer>
+<div class="footer-bottom">
+<span>© 2026 Luxfly Parachutisme intérieur</span>
+<div style="display:flex;gap:24px;">
+<a href="conditions.html">Conditions générales</a>
+<a href="#">Politique de confidentialité</a>
+</div>
+</div>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY>60)},{passive:true});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<script src="js/nav.js?v=2"></script>
+<script src="js/chatbot.js"></script>
+
+</body>
+</html>

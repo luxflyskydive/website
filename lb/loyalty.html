@@ -1,0 +1,588 @@
+html
+<html lang="lb">
+<head>
+<meta charset="utf-8"/>
+<link href="img/favicon.png" rel="icon" type="image/png"/><link href="img/favicon.svg" rel="icon" type="image/svg+xml"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Loyalitéit Programm — Luxfly Indoor Skydiving</title>
+<meta content="Earn points every time you fly with Luxfly. Redeem for free flights and discounts through the FidelityBox loyalty programme." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+.hero-type {
+  background: #f0f4ff;
+  padding: 180px 48px 120px;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  color: #f02cb8;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.hero-type h1 {
+  font-family: Montserrat;
+  font-size: 72px;
+  font-weight: 900;
+  color: #111;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+.hero-type .sub {
+  font-size: 18px;
+  color: #666;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.pull-quote {
+  background: #f7f7f7;
+  padding: 60px 48px;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 32px;
+  font-weight: 800;
+  color: #111;
+  font-style: italic;
+  line-height: 1.4;
+  margin: 80px auto;
+  max-width: 900px;
+}
+
+.pull-quote.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.pull-quote.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.how-it-works-section {
+  background: #f7f7f7;
+  padding: 100px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.how-it-works-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.how-it-works-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.how-it-works-text h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.how-it-works-text p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.comparison-box {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+.comparison-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 15px 0;
+}
+
+.comparison-item:not(:last-child) {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.comparison-label {
+  font-size: 13px;
+  color: #666;
+  font-weight: 600;
+}
+
+.comparison-value {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 800;
+  color: #f02cb8;
+}
+
+.tiers-section {
+  background: #ffffff;
+  padding: 80px 48px;
+}
+
+.tiers-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.tiers-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tiers-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tier-card {
+  background: #f7f7f7;
+  padding: 50px 40px;
+  border-radius: 8px;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.tier-card:hover {
+  border-color: #f02cb8;
+}
+
+.tier-name {
+  font-family: Montserrat;
+  font-size: 28px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.tier-minutes {
+  font-size: 14px;
+  color: #f02cb8;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.tier-price-main {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 900;
+  color: #f02cb8;
+  margin-bottom: 5px;
+}
+
+.tier-price-unit {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.tier-benefit {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.tier-ctc {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #666;
+}
+
+.perks-section {
+  background: #ffffff;
+  padding: 80px 48px;
+}
+
+.perks-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.perks-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.perks-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.perks-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.perk-item {
+  display: flex;
+  gap: 20px;
+}
+
+.perk-icon {
+  font-size: 24px;
+  color: #f02cb8;
+  font-weight: 700;
+  min-width: 30px;
+}
+
+.perk-text {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.get-card-section {
+  background: #fff5fb;
+  padding: 80px 48px;
+  text-align: center;
+}
+
+.get-card-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.get-card-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.get-card-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.get-card-section p {
+  color: #555;
+  font-size: 15px;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-btn {
+  background: #f02cb8;
+  color: white;
+  padding: 16px 48px;
+  border: none;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background: #d9219f;
+}
+
+@media (max-width: 768px) {
+  .how-it-works-section, .tiers-grid, .perks-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-type h1 {
+    font-size: 44px;
+  }
+
+  .pull-quote {
+    font-size: 24px;
+  }
+}
+</style>
+</head>
+<body class="light">
+<nav id="nav">
+<a class="nav-logo" href="index.html"><svg height="28" viewbox="0 0 82 28" width="82" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="lsg" x1="52" x2="34" y1="1" y2="27">
+<stop class="lux-stop" offset="0%"></stop>
+<stop offset="100%" stop-color="#f02cb8"></stop>
+</lineargradient>
+<clippath clippathunits="userSpaceOnUse" id="lcl">
+<polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"></polygon>
+</clippath>
+<clippath clippathunits="userSpaceOnUse" id="lcf">
+<polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"></polygon>
+</clippath>
+</defs>
+<text class="lux-text" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="0" y="20">LUX</text>
+<text clip-path="url(#lcf)" fill="#f02cb8" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="40" y="24">FLÉIEREN</text>
+<line stroke="url(#lsg)" stroke-linecap="round" stroke-width="2" x1="52" x2="34" y1="1" y2="27"></line>
+</svg></a>
+<div class="nav-right">
+<div class="nav-menu">
+<div class="nav-item"><a class="nav-link" href="index.html">Home</a>
+<div class="nav-dropdown">
+<a href="bachelor.html">Bachelor &amp; Bachelorette</a>
+<a href="promotions.html">Evenementer &amp; Promotiounen</a>
+<a href="how-it-works.html">Aktivitéit Flow</a>
+<a href="https://shop.indoorskydive.lu/store_10">Buch elo</a>
+<a href="gift-voucher.html">Kaaft e Kaddosbong</a>
+<a href="photos.html">Fotoen &amp; Videoen</a>
+<a href="hot-air-balloon.html">Loftballon</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="prices.html">Indoor Skydiving</a>
+<div class="nav-dropdown">
+<a href="loyalty.html">Loyalitéit Programm</a>
+<a href="birthdays.html">Gebuertsdeeg</a>
+<a href="prices.html">Präisser</a>
+<a href="use-voucher.html">Benotzt e Kaddosbong</a>
+<a href="conditions.html">Konditioune</a>
+<a href="activity.html">Aktivitéit</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="events.html">Firmen</a>
+<div class="nav-dropdown">
+<a href="events.html">Organiséieren en Event</a>
+<a href="team-building.html">Team Building</a>
+<a href="events-pricing.html">Präis</a>
+<a href="quote.html">Ufro fir Zitat</a>
+<a href="references.html">Referenzen</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="pro.html">Pro Flyers</a>
+<div class="nav-dropdown">
+<a href="pro-prices.html">Präisser</a>
+<a href="coaches.html">Traineren</a>
+<a href="shared-sessions.html">Gemeinsam Sëtzung</a>
+<a href="infrastructure.html">Infrastruktur</a>
+<a href="become-proflyer.html">Proflyer ginn</a>
+<a href="pro-events.html">Evenementer a Campen</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="about.html">Iwwer</a>
+<div class="nav-dropdown">
+<a href="pilates.html">Pilates</a>
+<a href="indoor-activities.html">Indoor Aktivitéiten</a>
+<a href="blog.html">Blog</a>
+<a href="museum.html">Musée</a>
+<a href="flyology.html">FLYOLOGIE</a>
+<a href="faq.html">F.A.Q.</a>
+<a href="partners.html">Eis Partner</a>
+<a href="jobs.html">Aarbechtsplazen</a>
+<a href="region.html">D'Regioun</a>
+<a href="photos.html">Är Fotoen a Videoen</a>
+<a href="opening-hours.html">Öffnungszäiten</a>
+<a href="bar.html">Bar</a>
+<a href="about.html">Wien si mir</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="contact.html">Kontakt</a></div>
+</div>
+<div class="nav-item nav-lang">
+<span class="lang-btn">LB <svg fill="none" height="6" style="opacity:0.55" viewbox="0 0 10 6" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></span>
+<div class="nav-dropdown"><a href="../loyalty.html">EN</a><a href="../fr/loyalty.html">FR</a><a href="../de/loyalty.html">DE</a><a href="../nl/loyalty.html">NL</a></div>
+</div>
+<a href="account.html" onmouseout="this.style.color='rgba(255,255,255,0.6)'" onmouseover="this.style.color='#fff'" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;"><svg fill="none" height="16" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="16"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="7" r="4"></circle></svg>Mäi Kont</a><a class="nav-book" href="https://shop.indoorskydive.lu/store_10">Buch elo</a>
+</div>
+</nav>
+<section class="hero-type">
+<span class="eyebrow">Loyalitéit</span>
+<h1>Méi fléien. Bezuelen manner.</h1>
+<p class="sub">Verdéngt Punkten all Kéier wann Dir flitt. Erléist se fir gratis Flich a Remise. Är Telefonsnummer ass Är Loyalitéitskaart.</p>
+</section>
+<blockquote class="pull-quote reveal">"Schreift Iech an der Receptioun a Sekonnen un. Är Telefonsnummer ass alles wat Dir braucht."</blockquote>
+<section class="how-it-works-section reveal">
+<div class="how-it-works-text">
+<h2>Wéi et funktionnéiert</h2>
+<p>De Luxfly Loyalitéit Programm leeft duerch FidelityBox. Aschreiwung ass gratis - gitt just Är Telefonsnummer an der Empfang an et gëtt Är Loyalitéitskaart. Keng App gebraucht fir sech unzemellen, keng Kontrakter, näischt ze droen.</p>
+<p>Dir verdéngt Punkten automatesch all Kéier wann Dir besicht. Wéi Dir verdéngt hänkt vun Ärem Profil of: <strong>Éischt Timer</strong> (Newcomer an Casual Visiteuren) oder <strong>SportFlyer</strong> (regelméisseg an Training Flyeren). Béid Profiler sinn aktiv op der selwechter Telefonsnummer.</p>
+<p>Verfollegt Är Punkten a verfügbar Belounungen zu all Moment duerch déi gratis FidelityBox App, verfügbar op iOS an Android.</p>
+</div>
+<div class="comparison-box">
+<div class="comparison-item">
+<div>
+<div class="comparison-label">Aschreiwen</div>
+<div class="comparison-value">Gratis an der Réceptioun</div>
+</div>
+<div>
+<div class="comparison-label">Är Loyalitéit Kaart</div>
+<div class="comparison-value">Är Telefonsnummer</div>
+</div>
+</div>
+<div class="comparison-item">
+<div>
+<div class="comparison-label">Éischt Timer Taux</div>
+<div class="comparison-value">€ 1 = 1 Punkt</div>
+</div>
+<div>
+<div class="comparison-label">SportFlyer Taux</div>
+<div class="comparison-value">Punkte pro Besuch</div>
+</div>
+</div>
+<div class="comparison-item">
+<div>
+<div class="comparison-label">Streck Punkten</div>
+<div class="comparison-value">FidelityBox App</div>
+</div>
+<div>
+<div class="comparison-label">Belounung Minutten</div>
+<div class="comparison-value">Valabel 6 Méint</div>
+</div>
+</div>
+</div>
+</section>
+<section class="tiers-section reveal">
+<h2>Wat Dir kënnt verdéngen</h2>
+<div class="tiers-grid">
+<div class="tier-card">
+<div class="tier-name">Éischt Timer</div>
+<div class="tier-minutes">300 Punkten</div>
+<div class="tier-price-main">1 fräi widderhuelen Fluch</div>
+<div class="tier-price-unit">als Deel vun enger reservéierter Sëtzung</div>
+<div class="tier-benefit">Verdéngt 1 Punkt pro Euro op der Plaz verbraucht. Punkten op der Zäit vun Bezuelen kredittéiert. Promotiouns Akeef verdéngen keng Punkten.</div>
+<div class="tier-ctc">Nëmmen Akeef op der Plaz</div>
+</div>
+<div class="tier-card">
+<div class="tier-name">Éischt Timer</div>
+<div class="tier-minutes">400 Punkten</div>
+<div class="tier-price-main">5% Off</div>
+<div class="tier-price-unit">op Ärem nächste Kaf</div>
+<div class="tier-benefit">Remise applizéiert fir Ären nächste Besuch - frot an der Receptioun wann Dir d'Schwell erreecht.</div>
+<div class="tier-ctc">Oder spuert weider fir 10%</div>
+</div>
+<div class="tier-card">
+<div class="tier-name">Éischt Timer</div>
+<div class="tier-minutes">600 Punkten</div>
+<div class="tier-price-main">10% Off</div>
+<div class="tier-price-unit">op Ärem nächste Kaf</div>
+<div class="tier-benefit">Déi bescht Éischt Timer Belounung. Fuert weider an d'Erspuernisser wuessen weider.</div>
+<div class="tier-ctc">Kreditt an der Réceptioun</div>
+</div>
+</div>
+</section>
+<section class="perks-section reveal">
+<h2>Fir regelméisseg Flyeren</h2>
+<p style="font-family: Inter; font-size: 16px; color: rgba(0,0,0,0.65); max-width: 640px; margin: 0 auto 48px; text-align: center; line-height: 1.7;">SportFlyers verdéngen Fluchminuten direkt. Punkte ginn am Dag vun Ärem Fluch ausgezeechent - frot an der Receptioun <em>virun</em> an den Tunnel erakommen. Keng retroaktiv Punkten.</p>
+<div class="perks-list">
+<div class="perk-item">
+<div class="perk-icon">✓</div>
+<div class="perk-text"><strong>100 Punkten = 1 Minutt Fluch</strong> op Äre Kont zougeschriwwen.</div>
+</div>
+<div class="perk-item">
+<div class="perk-icon">✓</div>
+<div class="perk-text"><strong>500 Punkten = 5 Minutten Fluch</strong> - déi populär Mëttelstuf Belounung.</div>
+</div>
+<div class="perk-item">
+<div class="perk-icon">✓</div>
+<div class="perk-text"><strong>1.500 Punkten = 15 Minutten Fluch</strong> - déi bescht verfügbar Belounung.</div>
+</div>
+<div class="perk-item">
+<div class="perk-icon">✓</div>
+<div class="perk-text"><strong>Belounung Minutt valabel fir 6 Méint</strong> ab dem Datum wou se kreditéiert ginn.</div>
+</div>
+<div class="perk-item">
+<div class="perk-icon">✓</div>
+<div class="perk-text"><strong>No 8 Auer fléien?</strong> Wann d'Receptioun zou ass, WhatsApp <a href="tel:+32477528566" style="color: #f02cb8;">+32 477 52 85 66</a> virun Ärer Sëtzung mat Ärem Numm, Nummer, Datum an Zäit.</div>
+</div>
+<div class="perk-item">
+<div class="perk-icon">✓</div>
+<div class="perk-text"><strong>Shared Sessiounen:</strong> Punkten baséiert op Ganzen Fluch Zäit, net Zuel vun de Participanten. Muss zesummen an der Réceptioun behaapt ginn - keng Spaltung méi spéit.</div>
+</div>
+</div>
+</section>
+<section class="get-card-section reveal">
+<h2>Start haut ze verdéngen.</h2>
+<p>Gitt einfach Är Telefonsnummer an der Empfang bei Ärem nächste Besuch. Aschreiwung ass direkt a gratis - keng Formen, keng Kaart fir ze droen. Är Belounungen waarden.</p>
+<a class="cta-btn" href="https://shop.indoorskydive.lu/store_10">Buch Ären nächste Fluch</a>
+</section>
+<footer>
+<div class="footer-brand">
+<img alt="Luxfly" src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg"/>
+<p>Europa's héchsten Indoor Skydiving Wandtunnel. Sécher vum Alter 4 ze 95.</p>
+</div>
+<div class="footer-col">
+<h5>Fléien</h5>
+<ul>
+<li><a href="prices.html">Erwuessener</a></li>
+<li><a href="kids.html">Kanner a Familljen</a></li>
+<li><a href="pro.html">Pro Flyers</a></li>
+<li><a href="birthdays.html">Gebuertsdeeg</a></li>
+<li><a href="gift-voucher.html">Kaddosbongen</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5>Info</h5>
+<ul>
+<li><a href="about.html">Iwwer eis</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="contact.html">Kontakt</a></li>
+<li><a href="opening-hours.html">Öffnungszäiten</a></li>
+<li><a href="conditions.html">Konditioune</a></li>
+</ul>
+</div>
+</footer>
+<div class="footer-bottom">
+<span>© 2026 Luxfly Indoor Skydiving</span>
+<div style="display:flex;gap:24px;">
+<a href="conditions.html">Konditioune</a>
+<a href="#">Privatsphär Politik</a>
+</div>
+</div>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY>60)},{passive:true});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<script src="js/nav.js?v=2"></script>
+<script src="js/chatbot.js"></script>
+
+</body>
+</html>

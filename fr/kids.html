@@ -1,0 +1,622 @@
+html
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<link href="img/favicon.png" rel="icon" type="image/png"/><link href="img/favicon.svg" rel="icon" type="image/svg+xml"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Enfants et familles — Parachutisme intérieur Luxfly</title>
+<meta content="Indoor skydiving for kids from age 4. Safe, certified, and unforgettable." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+.hero {
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(240,44,184,0.08) 100%), url('https://indoorskydive.lu/img/kids.jpg') center/cover;
+  height: 70vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 80px 48px;
+  color: white;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.eyebrow {
+  color: #f02cb8;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: Montserrat;
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-sub {
+  font-size: 18px;
+  font-weight: 300;
+  max-width: 500px;
+}
+
+.reassurance-section {
+  background: #ffffff;
+  padding: 100px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.reassurance-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reassurance-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reassurance-text h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.reassurance-text p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.stat-block {
+  background: #f7f7f7;
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-item:last-child {
+  margin-bottom: 0;
+}
+
+.stat-num {
+  font-family: Montserrat;
+  font-size: 36px;
+  font-weight: 900;
+  color: #f02cb8;
+  min-width: 100px;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.stat-sublabel {
+  color: #999;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: none;
+  display: block;
+  margin-top: 4px;
+}
+
+.kids-packages-section {
+  background: #fff5fb;
+  padding: 80px 48px;
+}
+
+.kids-packages-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.kids-packages-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.kids-packages-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.kids-packages-section > p {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 60px;
+}
+
+.packages-list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.package-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+  padding: 32px 0;
+  border-bottom: 1px solid #fbe5f0;
+  transition: all 0.3s ease;
+}
+
+.package-item:hover {
+  padding-left: 8px;
+}
+
+.package-item:last-child {
+  border-bottom: none;
+}
+
+.package-name {
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 5px;
+}
+
+.package-meta {
+  color: #f02cb8;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.package-text {
+  color: #999;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.package-price {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 900;
+  color: #f02cb8;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.editorial-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #f7f7f7;
+}
+
+.editorial-split.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.editorial-split.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.editorial-split img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.editorial-content {
+  padding: 120px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.editorial-content .label {
+  color: #f02cb8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.editorial-content h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.editorial-content p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.editorial-content ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.editorial-content li {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+.editorial-content li:before {
+  content: "• ";
+  color: #f02cb8;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.combinations-section {
+  background: #ffffff;
+  padding: 80px 48px;
+}
+
+.combinations-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.combinations-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.combinations-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.combo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.combo-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #f0f0f0;
+}
+
+.combo-card h3 {
+  font-family: Montserrat;
+  font-size: 22px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.combo-card p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.combo-card a {
+  color: #f02cb8;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.combo-card a:hover {
+  text-decoration: underline;
+}
+
+.cta-section {
+  background: #fff5fb;
+  padding: 80px 48px;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  background: #f02cb8;
+  color: white;
+  padding: 16px 48px;
+  border: none;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background: #d9219f;
+}
+
+@media (max-width: 768px) {
+  .reassurance-section, .editorial-split, .combo-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero h1 {
+    font-size: 44px;
+  }
+  
+  .package-price {
+    text-align: left;
+  }
+}
+</style>
+</head>
+<body class="light">
+<nav id="nav">
+<a class="nav-logo" href="index.html"><svg height="28" viewbox="0 0 82 28" width="82" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="lsg" x1="52" x2="34" y1="1" y2="27">
+<stop class="lux-stop" offset="0%"></stop>
+<stop offset="100%" stop-color="#f02cb8"></stop>
+</lineargradient>
+<clippath clippathunits="userSpaceOnUse" id="lcl">
+<polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"></polygon>
+</clippath>
+<clippath clippathunits="userSpaceOnUse" id="lcf">
+<polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"></polygon>
+</clippath>
+</defs>
+<text class="lux-text" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="0" y="20">LUX</text>
+<text clip-path="url(#lcf)" fill="#f02cb8" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="40" y="24">VOLER</text>
+<line stroke="url(#lsg)" stroke-linecap="round" stroke-width="2" x1="52" x2="34" y1="1" y2="27"></line>
+</svg></a>
+<div class="nav-right">
+<div class="nav-menu">
+<div class="nav-item"><a class="nav-link" href="index.html">Accueil</a>
+<div class="nav-dropdown">
+<a href="bachelor.html">Bachelor &amp; Bachelorette</a>
+<a href="promotions.html">Événements et promotions</a>
+<a href="how-it-works.html">Flux d'activité</a>
+<a href="https://shop.indoorskydive.lu/store_10">Réservez maintenant</a>
+<a href="gift-voucher.html">Acheter un chèque cadeau</a>
+<a href="photos.html">Photos &amp; Vidéos</a>
+<a href="hot-air-balloon.html">Montgolfière</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="prices.html">Parachutisme en salle</a>
+<div class="nav-dropdown">
+<a href="loyalty.html">Programme de fidélité</a>
+<a href="birthdays.html">Anniversaires</a>
+<a href="prices.html">Tarifs</a>
+<a href="use-voucher.html">Utiliser un chèque cadeau</a>
+<a href="conditions.html">Conditions</a>
+<a href="activity.html">L'activité</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="events.html">Entreprise</a>
+<div class="nav-dropdown">
+<a href="events.html">Organiser un événement</a>
+<a href="team-building.html">Construction d'équipe</a>
+<a href="events-pricing.html">Tarifs</a>
+<a href="quote.html">Demande de devis</a>
+<a href="references.html">Références</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="pro.html">Dépliants professionnels</a>
+<div class="nav-dropdown">
+<a href="pro-prices.html">Tarifs</a>
+<a href="coaches.html">Entraîneurs</a>
+<a href="shared-sessions.html">Séance partagée</a>
+<a href="infrastructure.html">Infrastructures</a>
+<a href="become-proflyer.html">Devenir Proflyer</a>
+<a href="pro-events.html">Événements et camps</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="about.html">À propos</a>
+<div class="nav-dropdown">
+<a href="pilates.html">Pilates</a>
+<a href="indoor-activities.html">Activités intérieures</a>
+<a href="blog.html">Blogue</a>
+<a href="museum.html">Musée</a>
+<a href="flyology.html">FLYOLOGIE</a>
+<a href="faq.html">F.A.Q.</a>
+<a href="partners.html">Nos partenaires</a>
+<a href="jobs.html">Offres d'emploi</a>
+<a href="region.html">La Région</a>
+<a href="photos.html">Vos photos et vidéos</a>
+<a href="opening-hours.html">Heures d'ouverture</a>
+<a href="bar.html">Barre</a>
+<a href="about.html">Qui nous sommes</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="contact.html">Contacter</a></div>
+</div>
+<div class="nav-item nav-lang">
+<span class="lang-btn">FR <svg fill="none" height="6" style="opacity:0.55" viewbox="0 0 10 6" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></span>
+<div class="nav-dropdown"><a href="../kids.html">EN</a><a href="../de/kids.html">DE</a><a href="../lb/kids.html">LB</a><a href="../nl/kids.html">NL</a></div>
+</div>
+<a href="account.html" onmouseout="this.style.color='rgba(255,255,255,0.6)'" onmouseover="this.style.color='#fff'" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;"><svg fill="none" height="16" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="16"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="7" r="4"></circle></svg>Mon compte</a><a class="nav-book" href="https://shop.indoorskydive.lu/store_10">Réservez maintenant</a>
+</div>
+</nav>
+<section class="hero">
+<div class="hero-content">
+<span class="eyebrow">Enfants et familles</span>
+<h1>Pour les plus courageux. Dès l'âge de quatre ans.</h1>
+<p class="hero-sub">L'activité la plus amusante au monde pour les enfants. Vraiment sûr. Vraiment incroyable.</p>
+</div>
+</section>
+<section class="reassurance-section reveal">
+<div class="reassurance-text">
+<h2>Sûr. Agréé. Testé.</h2>
+<p>Notre installation répond aux normes de sécurité européennes pour les opérations en soufflerie. Chaque instructeur est certifié en instruction de vol spécifique aux enfants. Nous ajustons la vitesse du vent pour les petits volants et veillons à tout moment au bon positionnement du corps.</p>
+<p>En fait, les enfants s’adaptent à l’air plus rapidement que les adultes. Ils sont plus légers, ils suivent les instructions avec précision et comprennent instinctivement comment bouger leur corps pour rester stables. La plupart des enfants partent en demandant quand ils pourront revenir.</p>
+<p>Un parent ou un tuteur légal doit être présent à tout moment. Les enfants de moins de 18 ans doivent obtenir une autorisation parentale signée. Nous proposons des équipements adaptés à l'âge de toutes les tailles, à partir de 4 ans.</p>
+</div>
+<div class="stat-block">
+<div class="stat-item">
+<div class="stat-num">4+</div>
+<div class="stat-label">Âge minimum</div>
+</div>
+<div class="stat-item">
+<div class="stat-num">120 kg</div>
+<div class="stat-label">Poids maximum<span class="stat-sublabel">pour des conditions de vol sûres</span></div>
+</div>
+<div class="stat-item">
+<div class="stat-num">100%</div>
+<div class="stat-label">Couverture des instructeurs</div>
+</div>
+</div>
+</section>
+<section class="kids-packages-section reveal">
+<h2>Forfaits vols</h2>
+<p>Tous les prix comprennent l'équipement complet, les instructions de sécurité et la supervision d'un instructeur qualifié.</p>
+<div class="packages-list">
+<div class="package-item">
+<div>
+<div class="package-name">Enfants — 2 vols</div>
+<div class="package-meta">4-12 ans · 2 vols avec instructeur</div>
+<div class="package-text">Forfait complet comprenant HighFly, photos souvenirs et visite du musée</div>
+</div>
+<div class="package-price">€89.70</div>
+</div>
+<div class="package-item">
+<div>
+<div class="package-name">Enfants — 4 vols</div>
+<div class="package-meta">4-12 ans · 4 vols avec instructeur</div>
+<div class="package-text">Plus de temps dans les airs — pour les petits voyageurs qui veulent continuer</div>
+</div>
+<div class="package-price">€139.80</div>
+</div>
+</div>
+<p style="margin-top: 24px; color: #666; font-size: 14px; text-align: center;">Les prix commencent à partir de 45,90 € pour l'option de base (créneaux horaires limités, pas d'extras). Voir <a href="https://shop.indoorskydive.lu/store_10" style="color: #f02cb8;">notre page de réservation</a> pour tous les forfaits disponibles.</p>
+</section>
+<section class="editorial-split reveal">
+<img alt="Enfants volant dans une soufflerie" src="https://indoorskydive.lu/img/groups.jpg"/>
+<div class="editorial-content">
+<span class="label">Parents</span>
+<h2>Ce que les parents doivent savoir.</h2>
+<p>Les enfants doivent être accompagnés à l'établissement par un parent ou un tuteur légal à tout moment. Les moins de 18 ans doivent obtenir une renonciation signée d'un tuteur avant de participer.</p>
+<p>Les enfants de moins de 4 ans ne peuvent pas voler, mais sont invités à regarder depuis notre zone d'observation. Nous avons des considérations de sécurité adaptées à l'âge pour tous les problèmes de santé.</p>
+<ul>
+<li>Âge minimum 4</li>
+<li>Tous les équipements sont dimensionnés spécifiquement pour les petits flyers</li>
+<li>Les instructeurs ont une certification de vol pour enfants</li>
+<li>Pas de chirurgie récente ni de troubles de l'équilibre</li>
+<li>Le parent/tuteur doit signer le formulaire de consentement</li>
+</ul>
+</div>
+</section>
+<section class="combinations-section reveal">
+<h2>Combinez avec d'autres expériences</h2>
+<div class="combo-grid">
+<div class="combo-card">
+<h3>Fêtes d'anniversaire</h3>
+<p>Temps de vol privé avec instructeur d'anniversaire dédié, salle d'observation et forfaits de restauration disponibles.</p>
+<a href="birthdays.html">Explorer les anniversaires →</a>
+</div>
+<div class="combo-card">
+<h3>Groupes scolaires</h3>
+<p>Visites pédagogiques enseignant la physique et l'aérodynamique dans la plus haute soufflerie du monde.</p>
+<a href="events.html">Visites de groupe →</a>
+</div>
+<div class="combo-card">
+<h3>Chèques cadeaux</h3>
+<p>Le cadeau parfait pour les enfants et les adolescents. N'expire jamais, peut être utilisé à tout moment avec flexibilité.</p>
+<a href="gift-voucher.html">Acheter des bons →</a>
+</div>
+</div>
+</section>
+<section class="cta-section">
+<h2>Réservez leur aventure aujourd'hui.</h2>
+<a class="cta-btn" href="https://shop.indoorskydive.lu/store_10">Réservez maintenant</a>
+</section>
+<footer>
+<div class="footer-brand">
+<img alt="Luxfly" src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg"/>
+<p>La plus haute soufflerie de parachutisme intérieure d'Europe. Sécuritaire de 4 à 95 ans.</p>
+</div>
+<div class="footer-col">
+<h5>Voler</h5>
+<ul>
+<li><a href="prices.html">Adultes</a></li>
+<li><a href="kids.html">Enfants et familles</a></li>
+<li><a href="pro.html">Dépliants professionnels</a></li>
+<li><a href="birthdays.html">Anniversaires</a></li>
+<li><a href="gift-voucher.html">Chèques cadeaux</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5>Informations</h5>
+<ul>
+<li><a href="about.html">À propos de nous</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="contact.html">Contacter</a></li>
+<li><a href="opening-hours.html">Heures d'ouverture</a></li>
+<li><a href="conditions.html">Conditions</a></li>
+</ul>
+</div>
+</footer>
+<div class="footer-bottom">
+<span>© 2026 Luxfly Parachutisme intérieur</span>
+<div style="display:flex;gap:24px;">
+<a href="conditions.html">Conditions générales</a>
+<a href="#">Politique de confidentialité</a>
+</div>
+</div>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY>60)},{passive:true});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<script src="js/nav.js?v=2"></script>
+<script src="js/chatbot.js"></script>
+
+</body>
+</html>

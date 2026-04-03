@@ -1,0 +1,550 @@
+html
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<link href="img/favicon.png" rel="icon" type="image/png"/><link href="img/favicon.svg" rel="icon" type="image/svg+xml"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>L'activité — Parachutisme intérieur Luxfly</title>
+<meta content="What is indoor skydiving? Discover the sensation of freefall in Europe's tallest wind tunnel." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+.hero {
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(240,44,184,0.08) 100%), url('https://indoorskydive.lu/img/adults.jpg') center/cover;
+  height: 75vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 80px 48px;
+  color: white;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.eyebrow {
+  color: #f02cb8;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: Montserrat;
+  font-size: 72px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-sub {
+  font-size: 20px;
+  font-weight: 300;
+  max-width: 500px;
+}
+
+.statement-section {
+  background: #ffffff;
+  padding: 120px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.statement-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.statement-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ghost-number {
+  font-family: Montserrat;
+  font-size: 320px;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(240, 44, 184, 0.12);
+  line-height: 0.9;
+  margin: -80px 0;
+}
+
+.statement-right h2 {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  color: #111;
+  line-height: 1.2;
+}
+
+.statement-right .label {
+  color: #f02cb8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.statement-right p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.stats-grid {
+  background: #fff5fb;
+  padding: 80px 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.stats-grid.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.stats-grid.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-family: Montserrat;
+  font-size: 56px;
+  font-weight: 900;
+  color: #f02cb8;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.editorial-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #f7f7f7;
+}
+
+.editorial-split.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.editorial-split.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.editorial-split img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.editorial-content {
+  padding: 120px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.editorial-content .label {
+  color: #f02cb8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.editorial-content h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.editorial-content h2 em {
+  font-style: italic;
+}
+
+.editorial-content p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.editorial-content a {
+  color: #f02cb8;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.comparison-section {
+  background: #ffffff;
+  padding: 80px 48px;
+}
+
+.comparison-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.comparison-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.comparison-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.comparison-col h3 {
+  font-family: Montserrat;
+  font-size: 28px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f02cb8;
+}
+
+.comparison-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.comparison-col li {
+  color: #555;
+  font-size: 15px;
+  line-height: 2;
+  padding: 10px 0;
+}
+
+.comparison-col:first-child li:before {
+  content: "✓ ";
+  color: #f02cb8;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.comparison-col:last-child li:before {
+  content: "– ";
+  color: #999;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.comparison-text {
+  font-size: 15px;
+  color: #666;
+  margin-top: 30px;
+  line-height: 1.7;
+  grid-column: 1 / -1;
+}
+
+.full-bleed-cta {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(240,44,184,0.15)), url('https://indoorskydive.lu/img/groups.jpg') center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 80px 48px;
+}
+
+.cta-content h2 {
+  font-family: Montserrat;
+  font-size: 56px;
+  font-weight: 900;
+  margin-bottom: 40px;
+}
+
+.cta-btn {
+  background: #f02cb8;
+  color: white;
+  padding: 16px 48px;
+  border: none;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background: #d9219f;
+}
+
+@media (max-width: 768px) {
+  .statement-section, .stats-grid, .comparison-grid, .editorial-split {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero h1 {
+    font-size: 48px;
+  }
+  
+  .ghost-number {
+    font-size: 180px;
+  }
+}
+</style>
+</head>
+<body class="light">
+<nav id="nav">
+<a class="nav-logo" href="index.html"><svg height="28" viewbox="0 0 82 28" width="82" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="lsg" x1="52" x2="34" y1="1" y2="27">
+<stop class="lux-stop" offset="0%"></stop>
+<stop offset="100%" stop-color="#f02cb8"></stop>
+</lineargradient>
+<clippath clippathunits="userSpaceOnUse" id="lcl">
+<polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"></polygon>
+</clippath>
+<clippath clippathunits="userSpaceOnUse" id="lcf">
+<polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"></polygon>
+</clippath>
+</defs>
+<text class="lux-text" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="0" y="20">LUX</text>
+<text clip-path="url(#lcf)" fill="#f02cb8" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="40" y="24">VOLER</text>
+<line stroke="url(#lsg)" stroke-linecap="round" stroke-width="2" x1="52" x2="34" y1="1" y2="27"></line>
+</svg></a>
+<div class="nav-right">
+<div class="nav-menu">
+<div class="nav-item"><a class="nav-link" href="index.html">Accueil</a>
+<div class="nav-dropdown">
+<a href="bachelor.html">Bachelor &amp; Bachelorette</a>
+<a href="promotions.html">Événements et promotions</a>
+<a href="how-it-works.html">Flux d'activité</a>
+<a href="https://shop.indoorskydive.lu/store_10">Réservez maintenant</a>
+<a href="gift-voucher.html">Acheter un chèque cadeau</a>
+<a href="photos.html">Photos &amp; Vidéos</a>
+<a href="hot-air-balloon.html">Montgolfière</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="prices.html">Parachutisme en salle</a>
+<div class="nav-dropdown">
+<a href="loyalty.html">Programme de fidélité</a>
+<a href="birthdays.html">Anniversaires</a>
+<a href="prices.html">Tarifs</a>
+<a href="use-voucher.html">Utiliser un chèque cadeau</a>
+<a href="conditions.html">Conditions</a>
+<a href="activity.html">L'activité</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="events.html">Entreprise</a>
+<div class="nav-dropdown">
+<a href="events.html">Organiser un événement</a>
+<a href="team-building.html">Construction d'équipe</a>
+<a href="events-pricing.html">Tarifs</a>
+<a href="quote.html">Demande de devis</a>
+<a href="references.html">Références</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="pro.html">Dépliants professionnels</a>
+<div class="nav-dropdown">
+<a href="pro-prices.html">Tarifs</a>
+<a href="coaches.html">Entraîneurs</a>
+<a href="shared-sessions.html">Séance partagée</a>
+<a href="infrastructure.html">Infrastructures</a>
+<a href="become-proflyer.html">Devenir Proflyer</a>
+<a href="pro-events.html">Événements et camps</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="about.html">À propos</a>
+<div class="nav-dropdown">
+<a href="pilates.html">Pilates</a>
+<a href="indoor-activities.html">Activités intérieures</a>
+<a href="blog.html">Blogue</a>
+<a href="museum.html">Musée</a>
+<a href="flyology.html">FLYOLOGIE</a>
+<a href="faq.html">F.A.Q.</a>
+<a href="partners.html">Nos partenaires</a>
+<a href="jobs.html">Offres d'emploi</a>
+<a href="region.html">La Région</a>
+<a href="photos.html">Vos photos et vidéos</a>
+<a href="opening-hours.html">Heures d'ouverture</a>
+<a href="bar.html">Barre</a>
+<a href="about.html">Qui nous sommes</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="contact.html">Contacter</a></div>
+</div>
+<div class="nav-item nav-lang">
+<span class="lang-btn">FR <svg fill="none" height="6" style="opacity:0.55" viewbox="0 0 10 6" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></span>
+<div class="nav-dropdown"><a href="../activity.html">EN</a><a href="../de/activity.html">DE</a><a href="../lb/activity.html">LB</a><a href="../nl/activity.html">NL</a></div>
+</div>
+<a href="account.html" onmouseout="this.style.color='rgba(255,255,255,0.6)'" onmouseover="this.style.color='#fff'" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;"><svg fill="none" height="16" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="16"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="7" r="4"></circle></svg>Mon compte</a><a class="nav-book" href="https://shop.indoorskydive.lu/store_10">Réservez maintenant</a>
+</div>
+</nav>
+<section class="hero">
+<div class="hero-content">
+<span class="eyebrow">L'activité</span>
+<h1>Qu'est-ce que <em>le parachutisme en salle ?</em></h1>
+<p class="hero-sub">Une soufflerie de 35 mètres de haut. Jusqu'à 350 km/h de flux d'air vertical fluide. Et toi, en apesanteur à l'intérieur.</p>
+</div>
+</section>
+<section class="statement-section reveal">
+<img alt="Parachutisme indoor à Luxfly" src="img/thrill-seeker.jpg" style="width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 8px;"/>
+<div class="statement-right">
+<span class="label">Le plus haut d'Europe</span>
+<h2>Pas une simulation. La vraie chose.</h2>
+<p>Le parachutisme en salle est une chute libre. Pur et simple. Vous entrez dans une soufflerie verticale où l'air se déplace à des vitesses allant jusqu'à 350 km/h. Ce flux d’air est suffisamment puissant pour supporter le poids de votre corps, créant ainsi la sensation exacte de sauter d’un avion. La différence : vous êtes à l'intérieur, la hauteur est contrôlée et aucun parachute n'est nécessaire car l'air vous maintient en l'air.</p>
+<p>La sensation vous frappe immédiatement. Le souffle du vent sur ton visage. Votre corps devient en apesanteur. Au moment où vous arrêtez de combattre l’air et commencez à voler. Les instructeurs sont avec vous tout le temps, guidant chaque mouvement, s'assurant que vous êtes en sécurité et que vous passez le moment de votre vie.</p>
+<p>La plupart des gens pensent que le parachutisme en salle est une simulation. Ce n'est pas le cas. C'est la vraie physique de la chute libre, juste dans un environnement contrôlé. Les parachutistes professionnels s’entraînent dans des souffleries comme la nôtre. Les compagnies de vols spatiaux commerciaux utilisent des souffleries pour préparer les astronautes. C'est ainsi que les humains apprennent à voler.</p>
+</div>
+</section>
+<section class="stats-grid reveal">
+<div class="stat-item">
+<div class="stat-number">35m</div>
+<div class="stat-label">Hauteur du tunnel</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">350</div>
+<div class="stat-label">Vitesse maximale (km/h)</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">4</div>
+<div class="stat-label">Moteurs électriques</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">4+</div>
+<div class="stat-label">Âge minimum</div>
+</div>
+</section>
+<section class="editorial-split reveal">
+<img alt="Adulte volant en soufflerie" src="https://indoorskydive.lu/img/tunnel-sketch.jpg"/>
+<div class="editorial-content">
+<span class="label">Le sentiment</span>
+<h2>Rien d'autre ne ressemble à <em>ce.</em></h2>
+<p>Votre corps flotte. Votre esprit se calme. La seule chose que vous ressentez est le souffle du vent sur votre visage et la sensation d’apesanteur que la plupart des gens ne ressentent qu’une seule fois dans leur vie : lors d’un saut en parachute. Mais ici, vous pouvez ressentir ce sentiment encore et encore.</p>
+<p>Dès que vous êtes dans les airs, la peur se transforme en rire. Votre instructeur est à vos côtés, vous maintient stable et vous encourage à chaque mouvement. Lors de votre deuxième vol, vous demandez plus de temps. À votre troisième séance, vous réservez votre prochaine séance. C’est addictif de la meilleure façon possible.</p>
+<a href="prices.html">Réservez votre premier vol →</a>
+</div>
+</section>
+<section class="comparison-section reveal">
+<h2>Saut en parachute intérieur ou extérieur</h2>
+<div class="comparison-grid">
+<div class="comparison-col">
+<h3>Intérieur</h3>
+<ul>
+<li>Aucun avion n'est nécessaire</li>
+<li>Indépendant de la météo</li>
+<li>Environnement entièrement contrôlé</li>
+<li>Expérience reproductible</li>
+<li>Tout le monde peut le faire</li>
+<li>Commentaires immédiats de l'instructeur</li>
+</ul>
+</div>
+<div class="comparison-col">
+<h3>Extérieur</h3>
+<ul>
+<li>Nécessite un avion et un pilote de saut</li>
+<li>Dépendant de la météo</li>
+<li>Expérience de chute libre unique</li>
+<li>Nécessite une certification</li>
+<li>Limité par la forme physique</li>
+<li>Les commentaires arrivent après l'atterrissage</li>
+</ul>
+</div>
+<p class="comparison-text">Saviez-vous? De nombreux parachutistes professionnels s’entraînent dans des souffleries comme la nôtre avant de tenter une chute libre en extérieur. Le vol en salle enseigne la conscience du corps, la stabilité et le contrôle qui se traduisent directement dans le ciel. En fait, vous développerez de meilleures compétences de vol dans un tunnel que si vous sautiez d'un avion une ou deux fois par an.</p>
+</div>
+</section>
+<section class="full-bleed-cta">
+<div class="cta-content">
+<h2>Prêt à découvrir ce que ça fait ?</h2>
+<a class="cta-btn" href="https://shop.indoorskydive.lu/store_10">Réservez maintenant</a>
+</div>
+</section>
+<footer>
+<div class="footer-brand">
+<img alt="Luxfly" src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg"/>
+<p>La plus haute soufflerie de parachutisme intérieure d'Europe. Sécuritaire de 4 à 95 ans.</p>
+</div>
+<div class="footer-col">
+<h5>Voler</h5>
+<ul>
+<li><a href="prices.html">Adultes</a></li>
+<li><a href="kids.html">Enfants et familles</a></li>
+<li><a href="pro.html">Dépliants professionnels</a></li>
+<li><a href="birthdays.html">Anniversaires</a></li>
+<li><a href="gift-voucher.html">Chèques cadeaux</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5>Informations</h5>
+<ul>
+<li><a href="about.html">À propos de nous</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<a href="contact.html">Contacter</a>
+<li><a href="opening-hours.html">Heures d'ouverture</a></li>
+<li><a href="conditions.html">Conditions</a></li>
+</ul>
+</div>
+</footer>
+<div class="footer-bottom">
+<span>© 2026 Luxfly Parachutisme intérieur</span>
+<div style="display:flex;gap:24px;">
+<a href="conditions.html">Conditions générales</a>
+<a href="#">Politique de confidentialité</a>
+</div>
+</div>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY>60)},{passive:true});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<script src="js/nav.js?v=2"></script>
+<script src="js/chatbot.js"></script>
+
+</body>
+</html>

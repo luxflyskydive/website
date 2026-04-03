@@ -1,0 +1,584 @@
+html
+<html lang="lb">
+<head>
+<meta charset="utf-8"/>
+<link href="img/favicon.png" rel="icon" type="image/png"/><link href="img/favicon.svg" rel="icon" type="image/svg+xml"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wéi et funktionnéiert - Luxfly Indoor Skydiving</title>
+<meta content="Your first flight step by step. From check-in to flying in the tunnel." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+.hero-type {
+  background: #f0f4ff;
+  padding: 180px 48px 120px;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  color: #f02cb8;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.hero-type h1 {
+  font-family: Montserrat;
+  font-size: 72px;
+  font-weight: 900;
+  color: #111;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+.hero-type .sub {
+  font-size: 18px;
+  color: #666;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.timeline-section {
+  background: #ffffff;
+  padding: 100px 48px;
+}
+
+.timeline-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.step {
+  border-left: 4px solid #f02cb8;
+  padding-left: 40px;
+}
+
+.step.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.step.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.step-num {
+  font-family: Montserrat;
+  font-size: 80px;
+  font-weight: 900;
+  color: #f02cb8;
+  margin-bottom: 10px;
+  line-height: 0.9;
+}
+
+.step h3 {
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.step p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.pull-quote {
+  background: #f7f7f7;
+  padding: 60px 48px;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 32px;
+  font-weight: 800;
+  color: #111;
+  font-style: italic;
+  line-height: 1.4;
+  margin: 80px auto;
+  max-width: 900px;
+}
+
+.pull-quote.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.pull-quote.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.expect-section {
+  background: #f7f7f7;
+  padding: 100px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.expect-section.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.expect-section.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.expect-text {
+  order: -1;
+}
+
+.expect-text .label {
+  color: #f02cb8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.expect-text h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.expect-text p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.expect-section img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.practical-section {
+  background: #ffffff;
+  padding: 80px 48px;
+}
+
+.practical-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.practical-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.practical-card {
+  background: #f7f7f7;
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.practical-card.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.practical-card.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.practical-card h3 {
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.practical-card p, .practical-card ul {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.practical-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.practical-card li {
+  margin-bottom: 10px;
+}
+
+.practical-card li:before {
+  content: "• ";
+  color: #f02cb8;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.faq-section {
+  background: #ffffff;
+  padding: 80px 48px;
+}
+
+.faq-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.faq-item.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.faq-item.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faq-item h3 {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.faq-item p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.cta-section {
+  background: #fff5fb;
+  padding: 80px 48px;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  background: #f02cb8;
+  color: white;
+  padding: 16px 48px;
+  border: none;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background: #d9219f;
+}
+
+@media (max-width: 768px) {
+  .steps-grid, .practical-grid, .faq-grid, .expect-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-type h1 {
+    font-size: 44px;
+  }
+
+  .step-num {
+    font-size: 48px;
+  }
+
+  .pull-quote {
+    font-size: 24px;
+  }
+}
+</style>
+</head>
+<body class="light">
+<nav id="nav">
+<a class="nav-logo" href="index.html"><svg height="28" viewbox="0 0 82 28" width="82" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="lsg" x1="52" x2="34" y1="1" y2="27">
+<stop class="lux-stop" offset="0%"></stop>
+<stop offset="100%" stop-color="#f02cb8"></stop>
+</lineargradient>
+<clippath clippathunits="userSpaceOnUse" id="lcl">
+<polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"></polygon>
+</clippath>
+<clippath clippathunits="userSpaceOnUse" id="lcf">
+<polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"></polygon>
+</clippath>
+</defs>
+<text class="lux-text" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="0" y="20">LUX</text>
+<text clip-path="url(#lcf)" fill="#f02cb8" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="40" y="24">FLÉIEREN</text>
+<line stroke="url(#lsg)" stroke-linecap="round" stroke-width="2" x1="52" x2="34" y1="1" y2="27"></line>
+</svg></a>
+<div class="nav-right">
+<div class="nav-menu">
+<div class="nav-item"><a class="nav-link" href="index.html">Home</a>
+<div class="nav-dropdown">
+<a href="bachelor.html">Bachelor &amp; Bachelorette</a>
+<a href="promotions.html">Evenementer &amp; Promotiounen</a>
+<a href="how-it-works.html">Aktivitéit Flow</a>
+<a href="https://shop.indoorskydive.lu/store_10">Buch elo</a>
+<a href="gift-voucher.html">Kaaft e Kaddosbong</a>
+<a href="photos.html">Fotoen &amp; Videoen</a>
+<a href="hot-air-balloon.html">Loftballon</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="prices.html">Indoor Skydiving</a>
+<div class="nav-dropdown">
+<a href="loyalty.html">Loyalitéit Programm</a>
+<a href="birthdays.html">Gebuertsdeeg</a>
+<a href="prices.html">Präisser</a>
+<a href="use-voucher.html">Benotzt e Kaddosbong</a>
+<a href="conditions.html">Konditioune</a>
+<a href="activity.html">Aktivitéit</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="events.html">Firmen</a>
+<div class="nav-dropdown">
+<a href="events.html">Organiséieren en Event</a>
+<a href="team-building.html">Team Building</a>
+<a href="events-pricing.html">Präis</a>
+<a href="quote.html">Ufro fir Zitat</a>
+<a href="references.html">Referenzen</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="pro.html">Pro Flyers</a>
+<div class="nav-dropdown">
+<a href="pro-prices.html">Präisser</a>
+<a href="coaches.html">Traineren</a>
+<a href="shared-sessions.html">Gemeinsam Sëtzung</a>
+<a href="infrastructure.html">Infrastruktur</a>
+<a href="become-proflyer.html">Proflyer ginn</a>
+<a href="pro-events.html">Evenementer a Campen</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="about.html">Iwwer</a>
+<div class="nav-dropdown">
+<a href="pilates.html">Pilates</a>
+<a href="indoor-activities.html">Indoor Aktivitéiten</a>
+<a href="blog.html">Blog</a>
+<a href="museum.html">Musée</a>
+<a href="flyology.html">FLYOLOGIE</a>
+<a href="faq.html">F.A.Q.</a>
+<a href="partners.html">Eis Partner</a>
+<a href="jobs.html">Aarbechtsplazen</a>
+<a href="region.html">D'Regioun</a>
+<a href="photos.html">Är Fotoen a Videoen</a>
+<a href="opening-hours.html">Öffnungszäiten</a>
+<a href="bar.html">Bar</a>
+<a href="about.html">Wien si mir</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="contact.html">Kontakt</a></div>
+</div>
+<div class="nav-item nav-lang">
+<span class="lang-btn">LB <svg fill="none" height="6" style="opacity:0.55" viewbox="0 0 10 6" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></span>
+<div class="nav-dropdown"><a href="../how-it-works.html">EN</a><a href="../fr/how-it-works.html">FR</a><a href="../de/how-it-works.html">DE</a><a href="../nl/how-it-works.html">NL</a></div>
+</div>
+<a href="account.html" onmouseout="this.style.color='rgba(255,255,255,0.6)'" onmouseover="this.style.color='#fff'" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;"><svg fill="none" height="16" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="16"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="7" r="4"></circle></svg>Mäi Kont</a><a class="nav-book" href="https://shop.indoorskydive.lu/store_10">Buch elo</a>
+</div>
+</nav>
+<section class="hero-type">
+<span class="eyebrow">Schrëtt fir Schrëtt</span>
+<h1>Vun der Dier an den Himmel.</h1>
+<p class="sub">Hei ass wat Dir erwaart vum Moment wou Dir ukommt bis de Moment wou Dir landen.</p>
+</section>
+<section class="timeline-section">
+<h2>Ären éischte Fluch a véier Schrëtt</h2>
+<div class="steps-grid">
+<div class="step reveal">
+<div class="step-num">01</div>
+<h3>Arrivée &amp; Check-In</h3>
+<p>Show 15 Minutte virun Ärer Sëtzung. Bréngt ID. D'Receptioun wäert Iech iwwerpréiwen an Iech mat Ärem Instruktor paréieren. Wann Dir mat engem Grupp flitt, ass dat wou Dir jiddereen begéint. Mir beäntweren all Last-Minute Froen a stellen Iech sécher datt Dir bequem sidd.</p>
+</div>
+<div class="step reveal reveal-delay-1">
+<div class="step-num">02</div>
+<h3>Gear Up</h3>
+<p>Helm, Fluch Kostüm, Brëller, Ouerstécker. Alles abegraff a vun eis geliwwert. De Gangraum ass direkt nieft dem Tunnel. Ären Instruktor passt alles fir Iech perséinlech a passt all Stéck un bis et richteg fillt. Näischt bleift op wann et net richteg passt.</p>
+</div>
+<div class="step reveal reveal-delay-2">
+<div class="step-num">03</div>
+<h3>Sécherheet Briefing</h3>
+<p>Eng 10-15 Minutte Sessioun wou Ären Instruktor Iech duerch d'Basispositiounen, Handsignaler féiert, a wat am Tunnel erwaart. Keng virdrun Erfahrung néideg - dat ass wat de Briefing ass fir. Dir léiert wéi Dir Äre Kierper hält, wéi Dir kommunizéiert, a genau wat geschitt.</p>
+</div>
+<div class="step reveal reveal-delay-3">
+<div class="step-num">04</div>
+<h3>Dir flitt</h3>
+<p>1-2 Minutte Sessiounen (ofhängeg vun Ärem Package) mat Ärem Instruktor am Tunnel mat Iech déi ganz Zäit. No all Sessioun Dir debrieft, rascht a gitt erëm. Den Instruktor wäert direkt do sinn, Upassunge maachen an Äert Vertrauen opbauen mat all Minutt an der Loft.</p>
+</div>
+</div>
+</section>
+<blockquote class="pull-quote reveal">"Déi zweet Dir sidd an der Loft, Angscht gëtt Laachen."</blockquote>
+<section class="expect-section reveal">
+<img alt="Éischte Kéier Flyer" src="https://indoorskydive.lu/img/adults.jpg"/>
+<div class="expect-text">
+<span class="label">Éischt Kéier?</span>
+<h2>Dir wäert nervös fillen. Dat ass normal.</h2>
+<p>Déi meescht Éischt-Timer fillen d'Nerven ier se eragoen. Déi zweet Dir sidd an der Loft, Nerve ginn zu Laachen. D'Sensatioun vu Gewiichtlosegkeet trëfft direkt an iwwerschreift all Besuergnëss. Mat der Zäit wou Dir landen, plangt Dir scho wéini Dir zréck kënnt.</p>
+<p>D'Instrukteuren sinn trainéiert fir Iech séier bequem ze kréien. Si liesen Är Kierpersprooch, si wësse genee wat Éischt-Timer denken, a si hunn Honnerte vun nervös Leit erfollegräich an d'Loft gefouert. Jiddereen flitt schlussendlech.</p>
+<p>Mat Ärer zweeter Sessioun wäert Dir méi Zäit froen. Vun Ärem drëtten, Dir wäert verstoen firwat Leit zu dëser süchteg ginn.</p>
+</div>
+</section>
+<section class="practical-section">
+<h2>Wat Dir musst wëssen</h2>
+<div class="practical-grid">
+<div class="practical-card reveal">
+<h3>Wat ze droen</h3>
+<p>Droen bequem, enk-passend Kleeder. Jeans, Leggings, Tracksuit ënnen all Aarbecht. Hoer sollen zréck gebonnen ginn wa méi laang wéi d'Schëllerlängt. Droen Schong oder Traineren.</p>
+<p style="margin-top: 15px;"><strong>Net droen:</strong></p>
+<ul>
+<li>Schal oder locker Halskette</li>
+<li>Lous Bijouen oder Accessoiren</li>
+<li>Aueren oder voluminöse Réng</li>
+<li>Brëller (Kontakter sinn gutt)</li>
+</ul>
+</div>
+<div class="practical-card reveal reveal-delay-1">
+<h3>Wat net matbréngen</h3>
+<ul>
+<li>Telefonen oder Kameraen (am Tunnel verbueden)</li>
+<li>Los Schlësselen oder kleng Saache</li>
+<li>Iessen oder Gedrénks an der Ariichtung</li>
+<li>Alles vun irreplaceable sentimental Wäert</li>
+</ul>
+<p style="margin-top: 15px;">Mir bidden sécher Schlässer fir Är Wäertsaachen. Professionell Fotografie ass verfügbar wann Dir Fotoe vun Ärem Fluch wëllt.</p>
+</div>
+<div class="practical-card reveal reveal-delay-2">
+<h3>Gesondheet Notize</h3>
+<p>Dir musst allgemeng gesond sinn fir ze fléien. Déi mat Réck- oder Halsprobleemer, Häerzkrankheeten, oder déi schwanger sinn, sollten en Dokter konsultéieren ier Dir reservéiert.</p>
+<p style="margin-top: 15px;">Rezent Chirurgie, onkontrolléiert Epilepsie oder schwéier Schwindel sinn Kontraindikatiounen. Wann Dir net sécher sidd, kontaktéiert eis - mir kënne vu Fall zu Fall beroden. Voll medizinesch Bedéngungen sinn an eise Konditioune opgelëscht.</p>
+</div>
+</div>
+</section>
+<section class="faq-section">
+<h2>Schnell Äntwerten</h2>
+<div class="faq-grid">
+<div class="faq-item reveal">
+<h3>Wéi laang ass eng Sessioun?</h3>
+<p>Typesch 1-2 Minutte Loftzäit, plus Briefing an Ausrüstung. Gesamt Erfahrungszäit ass ongeféier 45 Minutten bis 1 Stonn ofhängeg vun Ärem Package. Erwaart Iech 10-15 Minutten opzemaachen an eng aner 10-15 Minutte Briefing ier Dir an den Tunnel gitt.</p>
+</div>
+<div class="faq-item reveal reveal-delay-1">
+<h3>Kann ech mäin Telefon matbréngen?</h3>
+<p>Nee Telefone kënnen net an den Tunnel goen - ze vill Wand an ze vill Risiko et ze verléieren. Mir hunn e Vue Beräich wou Är Frënn a Famill kënne kucken. Professionell Fotografie Packagen sinn verfügbar wann Dir Biller vun Ärem Fluch wëllt.</p>
+</div>
+<div class="faq-item reveal reveal-delay-2">
+<h3>Wat wann ech Angscht hunn?</h3>
+<p>Sot Ären Instruktor. Si huelen et lues. Déi meescht Instruktoren recommandéieren mat enger méi kuerzer Sessioun unzefänken wann Dir nervös sidd. Jidderee flitt schlussendlech eemol se fillen datt d'Loft se ënnerstëtzen. Angscht ass natierlech - Vertrauen kënnt nom éischte Fluch.</p>
+</div>
+<div class="faq-item reveal reveal-delay-3">
+<h3>Ass et haart?</h3>
+<p>Jo - d'Motoren si mächteg. Earplugs sinn abegraff an obligatoresch. Am Tunnel geschitt Kommunikatioun duerch Handsignaler well Dir keng Ried héiert. Ausserhalb vum Tunnel ass debriefing perfekt héieren.</p>
+</div>
+</div>
+</section>
+<section class="cta-section">
+<h2>Genuch liesen. Zäit ze fléien.</h2>
+<a class="cta-btn" href="https://shop.indoorskydive.lu/store_10">Buch elo</a>
+</section>
+<footer>
+<div class="footer-brand">
+<img alt="Luxfly" src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg"/>
+<p>Europa's héchsten Indoor Skydiving Wandtunnel. Sécher vum Alter 4 ze 95.</p>
+</div>
+<div class="footer-col">
+<h5>Fléien</h5>
+<ul>
+<li><a href="prices.html">Erwuessener</a></li>
+<li><a href="kids.html">Kanner a Familljen</a></li>
+<li><a href="pro.html">Pro Flyers</a></li>
+<li><a href="birthdays.html">Gebuertsdeeg</a></li>
+<li><a href="gift-voucher.html">Kaddosbongen</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5>Info</h5>
+<ul>
+<li><a href="about.html">Iwwer eis</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="contact.html">Kontakt</a></li>
+<li><a href="opening-hours.html">Öffnungszäiten</a></li>
+<li><a href="conditions.html">Konditioune</a></li>
+</ul>
+</div>
+</footer>
+<div class="footer-bottom">
+<span>© 2026 Luxfly Indoor Skydiving</span>
+<div style="display:flex;gap:24px;">
+<a href="conditions.html">Konditioune</a>
+<a href="#">Privatsphär Politik</a>
+</div>
+</div>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY>60)},{passive:true});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<script src="js/nav.js?v=2"></script>
+<script src="js/chatbot.js"></script>
+
+</body>
+</html>

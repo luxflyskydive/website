@@ -1,0 +1,533 @@
+html
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<link href="img/favicon.png" rel="icon" type="image/png"/><link href="img/favicon.svg" rel="icon" type="image/svg+xml"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Veranstaltungspreise – Luxfly Indoor Skydiving</title>
+<meta content="Transparent group pricing for corporate events, birthdays, and team building. No hidden costs. From 2 to 250 people." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+body { background: #f0f4ff; }
+
+.hero-section {
+  background: #f0f4ff;
+  padding: 180px 48px 100px;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  color: #f02cb8;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+
+.hero-section h1 {
+  font-family: Montserrat;
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1.1;
+  color: #111;
+  margin: 0 0 20px 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-section p {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(0,0,0,0.55);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.table-section {
+  background: #f0f4ff;
+  padding: 80px 48px;
+}
+
+.table-section h2 {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 60px 0;
+}
+
+.pricing-table {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.pricing-table th {
+  background: #f7f7f7;
+  padding: 20px;
+  text-align: left;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #f02cb8;
+}
+
+.pricing-table td {
+  padding: 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  font-family: Inter;
+  font-size: 15px;
+  color: rgba(0,0,0,0.55);
+}
+
+.pricing-table tr:last-child td {
+  border-bottom: none;
+}
+
+.pricing-table tbody tr:hover {
+  background: rgba(240,44,184,0.03);
+}
+
+.group-size {
+  font-family: Montserrat;
+  font-weight: 700;
+  color: #111;
+}
+
+.price-highlight {
+  color: #f02cb8;
+  font-weight: 700;
+  font-family: Montserrat;
+  font-size: 16px;
+}
+
+.included-section {
+  background: #f7f7f7;
+  padding: 80px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.included-left h2 {
+  font-family: Montserrat;
+  font-size: 40px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 40px 0;
+}
+
+.included-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.included-list li {
+  font-family: Inter;
+  font-size: 15px;
+  color: rgba(0,0,0,0.55);
+  margin: 0 0 16px 0;
+  padding-left: 24px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.included-list li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #f02cb8;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.addons-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.addons-list li {
+  font-family: Inter;
+  font-size: 15px;
+  color: rgba(0,0,0,0.55);
+  margin: 0 0 14px 0;
+  line-height: 1.6;
+}
+
+.addons-list .addon-title {
+  font-weight: 600;
+}
+
+.minimums-section {
+  background: #ffffff;
+  padding: 80px 48px;
+}
+
+.minimums-section h2 {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 60px 0;
+}
+
+.minimums-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.minimum-item {
+  background: #f7f7f7;
+  padding: 32px;
+  border-radius: 4px;
+  border-left: 4px solid #f02cb8;
+}
+
+.minimum-item h3 {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 16px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.minimum-item p {
+  font-family: Inter;
+  font-size: 14px;
+  color: rgba(0,0,0,0.55);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.exclusive-section {
+  background: #fff5fb;
+  padding: 80px 48px;
+}
+
+.exclusive-section h2 {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 32px 0;
+}
+
+.exclusive-section p {
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(0,0,0,0.55);
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0;
+}
+
+.vat-note {
+  background: #f7f7f7;
+  padding: 24px;
+  border-radius: 4px;
+  font-family: Inter;
+  font-size: 14px;
+  color: rgba(0,0,0,0.55);
+  text-align: center;
+  margin-top: 60px;
+}
+
+.cta-section {
+  background: #f0f4ff;
+  padding: 80px 48px;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 20px 0;
+}
+
+.cta-section p {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(0,0,0,0.55);
+  margin: 0 0 40px 0;
+}
+
+.btn-primary {
+  display: inline-block;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 16px 48px;
+  background: #f02cb8;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #e00a9f;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 { font-size: 40px; }
+  .included-section { grid-template-columns: 1fr; gap: 40px; }
+  .minimums-grid { grid-template-columns: 1fr; }
+  .pricing-table { font-size: 13px; }
+  .pricing-table th, .pricing-table td { padding: 14px; }
+}
+</style>
+</head>
+<body class="light">
+<nav id="nav">
+<a class="nav-logo" href="index.html"><svg height="28" viewbox="0 0 82 28" width="82" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="lsg" x1="52" x2="34" y1="1" y2="27">
+<stop class="lux-stop" offset="0%"></stop>
+<stop offset="100%" stop-color="#f02cb8"></stop>
+</lineargradient>
+<clippath clippathunits="userSpaceOnUse" id="lcl">
+<polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"></polygon>
+</clippath>
+<clippath clippathunits="userSpaceOnUse" id="lcf">
+<polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"></polygon>
+</clippath>
+</defs>
+<text class="lux-text" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="0" y="20">LUX</text>
+<text clip-path="url(#lcf)" fill="#f02cb8" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="40" y="24">FLIEGEN</text>
+<line stroke="url(#lsg)" stroke-linecap="round" stroke-width="2" x1="52" x2="34" y1="1" y2="27"></line>
+</svg></a>
+<div class="nav-right">
+<div class="nav-menu">
+<div class="nav-item"><a class="nav-link" href="index.html">Startseite</a>
+<div class="nav-dropdown">
+<a href="bachelor.html">Bachelor &amp; Bachelorette</a>
+<a href="promotions.html">Veranstaltungen und Werbeaktionen</a>
+<a href="how-it-works.html">Aktivitätsablauf</a>
+<a href="https://shop.indoorskydive.lu/store_10">Jetzt buchen</a>
+<a href="gift-voucher.html">Kaufen Sie einen Geschenkgutschein</a>
+<a href="photos.html">Fotos und Videos</a>
+<a href="hot-air-balloon.html">Heißluftballon</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="prices.html">Indoor-Fallschirmspringen</a>
+<div class="nav-dropdown">
+<a href="loyalty.html">Treueprogramm</a>
+<a href="birthdays.html">Geburtstage</a>
+<a href="prices.html">Preise</a>
+<a href="use-voucher.html">Verwenden Sie einen Geschenkgutschein</a>
+<a href="conditions.html">Bedingungen</a>
+<a href="activity.html">Die Aktivität</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="events.html">Unternehmen</a>
+<div class="nav-dropdown">
+<a href="events.html">Eine Veranstaltung organisieren</a>
+<a href="team-building.html">Teambildung</a>
+<a href="events-pricing.html">Preise</a>
+<a href="quote.html">Angebotsanfrage</a>
+<a href="references.html">Referenzen</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="pro.html">Profi-Flyer</a>
+<div class="nav-dropdown">
+<a href="pro-prices.html">Preise</a>
+<a href="coaches.html">Trainer</a>
+<a href="shared-sessions.html">Geteilte Sitzung</a>
+<a href="infrastructure.html">Infrastruktur</a>
+<a href="become-proflyer.html">Proflyer werden</a>
+<a href="pro-events.html">Veranstaltungen und Camps</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="about.html">Um</a>
+<div class="nav-dropdown">
+<a href="pilates.html">Pilates</a>
+<a href="indoor-activities.html">Indoor-Aktivitäten</a>
+<a href="blog.html">Blog</a>
+<a href="museum.html">Museum</a>
+<a href="flyology.html">FLYOLOGIE</a>
+<a href="faq.html">FAQ</a>
+<a href="partners.html">Unsere Partner</a>
+<a href="jobs.html">Stellenangebote</a>
+<a href="region.html">Die Region</a>
+<a href="photos.html">Ihre Fotos und Videos</a>
+<a href="opening-hours.html">Öffnungszeiten</a>
+<a href="bar.html">Bar</a>
+<a href="about.html">Wer wir sind</a>
+</div>
+</div>
+<div class="nav-item"><a class="nav-link" href="contact.html">Kontakt</a></div>
+</div>
+<div class="nav-item nav-lang">
+<span class="lang-btn">DE <svg fill="none" height="6" style="opacity:0.55" viewbox="0 0 10 6" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></span>
+<div class="nav-dropdown"><a href="../events-pricing.html">EN</a><a href="../fr/events-pricing.html">FR</a><a href="../lb/events-pricing.html">LB</a><a href="../nl/events-pricing.html">NL</a></div>
+</div>
+<a href="account.html" onmouseout="this.style.color='rgba(255,255,255,0.6)'" onmouseover="this.style.color='#fff'" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;"><svg fill="none" height="16" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="16"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="7" r="4"></circle></svg>Mein Konto</a><a class="nav-book" href="https://shop.indoorskydive.lu/store_10">Jetzt buchen</a>
+</div>
+</nav>
+<section class="hero-section">
+<div class="hero-eyebrow">Gruppentarife</div>
+<h1>Transparente Preisgestaltung. Keine Überraschungen.</h1>
+<p>Gruppenpreise ab 10 Personen. Individuelle Vorschläge für Großveranstaltungen.</p>
+</section>
+<section class="table-section reveal">
+<h2>Preise pro Person nach Gruppengröße</h2>
+<table class="pricing-table">
+<thead>
+<tr>
+<th>Gruppengröße</th>
+<th>Rabatt</th>
+<th>Preis pro Person</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="group-size">2–9 Gäste</span></td>
+<td>Kein Rabatt</td>
+<td><span class="price-highlight">35 €/Min.</span></td>
+</tr>
+<tr>
+<td><span class="group-size">10–19 Gäste</span></td>
+<td><span class="price-highlight">10 % Rabatt</span></td>
+<td><span class="price-highlight">31,50 €/Min.</span></td>
+</tr>
+<tr>
+<td><span class="group-size">20–49 Gäste</span></td>
+<td><span class="price-highlight">15 % Rabatt</span></td>
+<td><span class="price-highlight">29,75 €/Min.</span></td>
+</tr>
+<tr>
+<td><span class="group-size">50–99 Gäste</span></td>
+<td><span class="price-highlight">20 % Rabatt</span></td>
+<td><span class="price-highlight">28 €/Min.</span></td>
+</tr>
+<tr>
+<td><span class="group-size">100+ Gäste</span></td>
+<td>Benutzerdefiniert</td>
+<td><span class="price-highlight">Kontakt für Angebot</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="included-section reveal">
+<div class="included-left">
+<h2>Was immer enthalten ist</h2>
+<ul class="included-list">
+<li>Vollständige Flugausrüstung für alle Teilnehmer</li>
+<li>Sicherheitseinweisung durch qualifizierte Instruktoren</li>
+<li>Qualifizierte Ausbilder (Verhältnis 1:6)</li>
+<li>Zugriff auf die Galerie</li>
+<li>Zugang zum Umkleideraum</li>
+<li>Umfassende Unterstützung bei der Veranstaltungsplanung</li>
+</ul>
+</div>
+<div>
+<h3 style="font-family: Montserrat; font-size: 20px; font-weight: 700; color: #111; margin: 0 0 32px 0; padding-bottom: 16px; border-bottom: 2px solid #f02cb8;">Optionale Add-ons</h3>
+<ul class="addons-list">
+<li><span class="addon-title">Tagungsraum:</span> 80 €/Stunde</li>
+<li><span class="addon-title">Catering (Snacks):</span> ab 12 €/Person</li>
+<li><span class="addon-title">Catering (warme Mahlzeit):</span> ab 35 €/Person</li>
+<li><span class="addon-title">Professionelle Fotografie:</span> €150</li>
+<li><span class="addon-title">Video-Highlight-Reel:</span> €250</li>
+<li><span class="addon-title">Benutzerdefiniertes Event-Branding:</span> ab 100 €</li>
+</ul>
+</div>
+</section>
+<section class="minimums-section reveal">
+<h2>Mindestanforderungen</h2>
+<div class="minimums-grid">
+<div class="minimum-item reveal reveal-delay-1">
+<h3>Gruppengröße für Tarife</h3>
+<p>Mindestens 10 Teilnehmer, um Gruppenrabatte zu erhalten.</p>
+</div>
+<div class="minimum-item reveal reveal-delay-2">
+<h3>Vorbestellung</h3>
+<p>Mindestens 7 Tage. Für optimale Planungsflexibilität werden 14 Tage empfohlen.</p>
+</div>
+<div class="minimum-item reveal reveal-delay-3">
+<h3>Anzahlung</h3>
+<p>30 % sind zum Zeitpunkt der Buchung fällig, um Ihr Datum und Zeitfenster zu sichern.</p>
+</div>
+<div class="minimum-item reveal reveal-delay-1">
+<h3>Restzahlung</h3>
+<p>Der Restbetrag ist 7 Tage vor Ihrer Veranstaltung fällig. Wir akzeptieren alle gängigen Zahlungsmethoden.</p>
+</div>
+</div>
+</section>
+<section class="exclusive-section reveal">
+<h2>Exklusive Tunnelmiete</h2>
+<p>Bei Großveranstaltungen mit mehr als 75 Personen ist es möglich, den Tunnel exklusiv für Ihre Gruppe zu buchen – während Ihrer Veranstaltung fliegen keine anderen Zuschauer. Dies bietet maximale zeitliche Flexibilität und ist von Montag bis Donnerstag zu Premium-Tarifen verfügbar. Zu den exklusiven Mietpaketen gehören ein spezielles Eventmanagement, gestaffelte Flugrotationen, die für Ihre Gruppengröße optimiert sind, und ein flexibler Zeitplan, der sich an Ihre anderen Aktivitäten anpasst. Kontaktieren Sie uns direkt für exklusive Mietpreise und Verfügbarkeit.</p>
+</section>
+<div class="vat-note reveal">
+<strong>Alle Preise verstehen sich zuzüglich Mehrwertsteuer.</strong> Rechnungsstellung für Firmenkunden möglich.
+</div>
+<section class="cta-section reveal">
+<h2>Sind Sie bereit, ein genaues Angebot zu erhalten?</h2>
+<a class="btn-primary" href="quote.html">Fordern Sie ein vollständiges Angebot an</a>
+</section>
+<footer style="background: #0d0d0d; padding: 60px 48px; border-top: 1px solid rgba(255,255,255,0.08);">
+<div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 40px;">
+<div class="footer-brand">
+<img alt="Luxfly" src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg" style="height: 40px; margin-bottom: 16px;"/>
+<p style="color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.6; margin: 0;">Europas höchster Indoor-Fallschirmsprung-Windkanal. Sicher von 4 bis 95 Jahren.</p>
+</div>
+<div class="footer-col">
+<h5 style="color: white; font-weight: 700; margin-bottom: 16px; font-size: 14px; text-transform: uppercase;">Fliegen</h5>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="margin-bottom: 8px;"><a href="prices.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Erwachsene</a></li>
+<li style="margin-bottom: 8px;"><a href="kids.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Kinder &amp; Familien</a></li>
+<li style="margin-bottom: 8px;"><a href="pro.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Profi-Flyer</a></li>
+<li><a href="birthdays.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Geburtstage</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5 style="color: white; font-weight: 700; margin-bottom: 16px; font-size: 14px; text-transform: uppercase;">Infos</h5>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="margin-bottom: 8px;"><a href="about.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Über uns</a></li>
+<li style="margin-bottom: 8px;"><a href="faq.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">FAQ</a></li>
+<li style="margin-bottom: 8px;"><a href="contact.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Kontakt</a></li>
+<li><a href="conditions.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Bedingungen</a></li>
+</ul>
+</div>
+</div>
+<div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,0.6); font-size: 14px;">
+<span>© 2026 Luxfly Indoor Skydiving</span>
+<div style="display:flex;gap:24px;"><a href="conditions.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Begriffe</a><a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none;">Datenschutz</a></div>
+</div>
+</footer>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY>60)},{passive:true});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<script src="js/nav.js?v=2"></script>
+<script src="js/chatbot.js"></script>
+
+</body>
+</html>

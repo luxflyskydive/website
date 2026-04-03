@@ -1,0 +1,462 @@
+html
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<link href="img/favicon.png" rel="icon" type="image/png"/><link href="img/favicon.svg" rel="icon" type="image/svg+xml"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mein Konto — Luxfly Indoor Skydiving</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body.account-page {
+      background: #000;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── FULL PAGE LAYOUT ── */
+    .account-wrap {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+    }
+
+    /* ── LEFT PANEL — brand side ── */
+    .account-brand {
+      position: relative;
+      overflow: hidden;
+      background: #000;
+    }
+    .account-brand-bg {
+      position: absolute; inset: 0;
+      background: url('https://indoorskydive.lu/img/pro.jpg') center/cover no-repeat;
+      filter: brightness(0.35);
+    }
+    .account-brand-content {
+      position: relative; z-index: 2;
+      padding: 160px 64px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 100%;
+    }
+    .account-brand-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #f02cb8;
+      margin-bottom: 20px;
+    }
+    .account-brand-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(32px, 3.5vw, 52px);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+    .account-brand-title em { color: #f02cb8; font-style: italic; }
+    .account-brand-body {
+      font-size: 15px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.5);
+      max-width: 380px;
+    }
+    .account-brand-perks {
+      margin-top: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .account-perk {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+    }
+    .account-perk-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #f02cb8;
+      flex-shrink: 0;
+    }
+
+    /* ── RIGHT PANEL — form side ── */
+    .account-form-side {
+      background: #0a0a0a;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 64px;
+      border-left: 1px solid rgba(255,255,255,0.06);
+    }
+    .account-form-inner {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    /* ── TABS ── */
+    .auth-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 40px;
+    }
+    .auth-tab {
+      padding: 12px 0;
+      margin-right: 32px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.2s, border-color 0.2s;
+      background: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+    .auth-tab.active {
+      color: #fff;
+      border-bottom-color: #f02cb8;
+    }
+    .auth-tab:hover:not(.active) { color: rgba(255,255,255,0.6); }
+
+    /* ── FORMS ── */
+    .auth-form { display: none; }
+    .auth-form.active { display: block; }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 8px;
+    }
+    .form-input {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 3px;
+      padding: 14px 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: #fff;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .form-input::placeholder { color: rgba(255,255,255,0.2); }
+    .form-input:focus {
+      border-color: #f02cb8;
+      background: rgba(240,44,184,0.04);
+    }
+    .form-input-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    /* ── PASSWORD VISIBILITY TOGGLE ── */
+    .form-input-wrap {
+      position: relative;
+    }
+    .form-input-wrap .form-input {
+      padding-right: 44px;
+    }
+    .toggle-pw {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: rgba(255,255,255,0.3);
+      padding: 0;
+      transition: color 0.2s;
+    }
+    .toggle-pw:hover { color: rgba(255,255,255,0.7); }
+
+    /* ── FORGOT ── */
+    .form-forgot {
+      display: block;
+      text-align: right;
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      margin-top: -12px;
+      margin-bottom: 20px;
+      transition: color 0.2s;
+    }
+    .form-forgot:hover { color: #f02cb8; }
+
+    /* ── SUBMIT ── */
+    .btn-auth {
+      width: 100%;
+      padding: 15px;
+      background: #f02cb8;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      margin-top: 8px;
+    }
+    .btn-auth:hover { opacity: 0.85; }
+
+    /* ── DIVIDER ── */
+    .auth-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 28px 0;
+      color: rgba(255,255,255,0.15);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .auth-divider::before,
+    .auth-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    /* ── TERMS CHECKBOX ── */
+    .form-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .form-check input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      accent-color: #f02cb8;
+      cursor: pointer;
+    }
+    .form-check-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.5;
+    }
+    .form-check-label a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .form-check-label a:hover { color: #f02cb8; }
+
+    /* ── SWITCH PROMPT ── */
+    .auth-switch {
+      margin-top: 32px;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255,255,255,0.3);
+    }
+    .auth-switch button {
+      background: none;
+      border: none;
+      color: #f02cb8;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 0;
+      margin-left: 4px;
+    }
+    .auth-switch button:hover { text-decoration: underline; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .account-wrap { grid-template-columns: 1fr; }
+      .account-brand { display: none; }
+      .account-form-side { padding: 120px 32px 60px; }
+    }
+  </style>
+</head>
+<body class="account-page">
+<!-- NAV -->
+<nav id="nav" style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 28px 48px; display: flex; align-items: center; justify-content: space-between; background: transparent; transition: padding 0.4s, background 0.4s;">
+<a class="nav-logo" href="index.html"><svg height="28" viewbox="0 0 82 28" width="82" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="lsg" x1="52" x2="34" y1="1" y2="27">
+<stop class="lux-stop" offset="0%"></stop>
+<stop offset="100%" stop-color="#f02cb8"></stop>
+</lineargradient>
+<clippath clippathunits="userSpaceOnUse" id="lcl">
+<polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"></polygon>
+</clippath>
+<clippath clippathunits="userSpaceOnUse" id="lcf">
+<polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"></polygon>
+</clippath>
+</defs>
+<text class="lux-text" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="0" y="20">LUX</text>
+<text clip-path="url(#lcf)" fill="#f02cb8" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="40" y="24">FLIEGEN</text>
+<line stroke="url(#lsg)" stroke-linecap="round" stroke-width="2" x1="52" x2="34" y1="1" y2="27"></line>
+</svg></a>
+<a href="index.html" onmouseout="this.style.color='rgba(255,255,255,0.45)'" onmouseover="this.style.color='#fff'" style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); transition: color 0.2s;">← Zurück zur Website</a>
+</nav>
+<!-- MAIN -->
+<div class="account-wrap">
+<!-- LEFT: Brand panel -->
+<div class="account-brand">
+<div class="account-brand-bg"></div>
+<div class="account-brand-content">
+<p class="account-brand-tag">Ihr Luxfly-Konto</p>
+<h1 class="account-brand-title">Verfolgen Sie jedes<br/>Sekunde von<br/>dein <em>Flug.</em></h1>
+<p class="account-brand-body">Melden Sie sich an, um Ihren Flugverlauf anzuzeigen, auf Ihre Videos zuzugreifen, Buchungen zu verwalten und Ihren Fortschritt im Laufe der Zeit zu verfolgen.</p>
+<div class="account-brand-perks">
+<div class="account-perk">
+<span class="account-perk-dot"></span>
+          Sehen Sie sich Ihre Flugvideos an und laden Sie sie herunter
+        </div>
+<div class="account-perk">
+<span class="account-perk-dot"></span>
+          reden Verfolgen Sie Ihre Tunnelzeit und Ihren Tunnelfortschritt
+        </div>
+<div class="account-perk">
+<span class="account-perk-dot"></span>
+          Anstehende Buchungen verwalten
+        </div>
+<div class="account-perk">
+<span class="account-perk-dot"></span>
+          Greifen Sie auf Treueprämien und Gutscheine zu
+        </div>
+</div>
+</div>
+</div>
+<!-- RIGHT: Form panel -->
+<div class="account-form-side">
+<div class="account-form-inner">
+<!-- Tabs -->
+<div class="auth-tabs">
+<button class="auth-tab active" onclick="switchTab('login')">Anmelden</button>
+<button class="auth-tab" onclick="switchTab('signup')">Konto erstellen</button>
+</div>
+<!-- LOGIN FORM -->
+<form class="auth-form active" id="form-login" onsubmit="return false;">
+<div class="form-group">
+<label class="form-label">E-Mail-Adresse</label>
+<input autocomplete="email" class="form-input" placeholder="you@email.com" type="email"/>
+</div>
+<div class="form-group">
+<label class="form-label">Passwort</label>
+<div class="form-input-wrap">
+<input autocomplete="current-password" class="form-input" id="login-pw" placeholder="••••••••" type="password"/>
+<button class="toggle-pw" onclick="togglePw('login-pw', this)" type="button">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="18"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+</button>
+</div>
+</div>
+<a class="form-forgot" href="#">Passwort vergessen?</a>
+<button class="btn-auth" type="submit">Anmelden</button>
+<div class="auth-switch">
+          Sie haben noch kein Konto?
+          <button onclick="switchTab('signup')" type="button">Erstellen Sie ein</button>
+</div>
+</form>
+<!-- SIGNUP FORM -->
+<form class="auth-form" id="form-signup" onsubmit="return false;">
+<div class="form-group">
+<div class="form-input-row">
+<div>
+<label class="form-label">Vorname</label>
+<input autocomplete="given-name" class="form-input" placeholder="Alex" type="text"/>
+</div>
+<div>
+<label class="form-label">Nachname</label>
+<input autocomplete="family-name" class="form-input" placeholder="Smith" type="text"/>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="form-label">E-Mail-Adresse</label>
+<input autocomplete="email" class="form-input" placeholder="you@email.com" type="email"/>
+</div>
+<div class="form-group">
+<label class="form-label">Passwort</label>
+<div class="form-input-wrap">
+<input autocomplete="new-password" class="form-input" id="signup-pw" placeholder="Min. 8 Zeichen" type="password"/>
+<button class="toggle-pw" onclick="togglePw('signup-pw', this)" type="button">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="18"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+</button>
+</div>
+</div>
+<div class="form-group">
+<label class="form-label">Passwort bestätigen</label>
+<div class="form-input-wrap">
+<input autocomplete="new-password" class="form-input" id="signup-pw2" placeholder="••••••••" type="password"/>
+<button class="toggle-pw" onclick="togglePw('signup-pw2', this)" type="button">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="18"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+</button>
+</div>
+</div>
+<div class="form-check">
+<input id="terms" type="checkbox"/>
+<label class="form-check-label" for="terms">
+            Ich stimme dem <a href="conditions.html">Allgemeine Geschäftsbedingungen</a> und bestätige, dass ich mindestens 4 Jahre alt bin (oder buche im Namen eines Teilnehmers).
+          </label>
+</div>
+<button class="btn-auth" type="submit">Konto erstellen</button>
+<div class="auth-switch">
+          Sie haben bereits ein Konto?
+          <button onclick="switchTab('login')" type="button">Anmelden</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<script>
+  // Tab switcher
+  function switchTab(tab) {
+    document.querySelectorAll('.auth-tab').forEach((t, i) => {
+      t.classList.toggle('active', (i === 0 && tab === 'login') || (i === 1 && tab === 'signup'));
+    });
+    document.getElementById('form-login').classList.toggle('active', tab === 'login');
+    document.getElementById('form-signup').classList.toggle('active', tab === 'signup');
+  }
+
+  // Show/hide password
+  function togglePw(inputId, btn) {
+    const input = document.getElementById(inputId);
+    const isText = input.type === 'text';
+    input.type = isText ? 'password' : 'text';
+    btn.innerHTML = isText
+      ? '<svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>'
+      : '<svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>';
+    btn.style.color = isText ? 'rgba(255,255,255,0.3)' : 'rgba(255,255,255,0.6)';
+  }
+
+  // Check URL param to open signup directly
+  if (new URLSearchParams(location.search).get('tab') === 'signup') switchTab('signup');
+</script>
+<script src="js/nav.js?v=2"></script>
+<script src="js/chatbot.js"></script>
+
+</body>
+</html>
