@@ -72,7 +72,6 @@
         ? window.location.pathname
         : window.location.pathname + '?lang=' + l;
     });
-    const langBtn = navLang.querySelector('.lang-btn');
     if (langBtn) {
       langBtn.addEventListener('click', (e) => {
         if (window.innerWidth <= 1024) {
