@@ -56,9 +56,21 @@
   // ── LANGUAGE LINKS — stay on current page, swap language ──
   const navLang = nav.querySelector('.nav-lang');
   if (navLang) {
+    // Update nav label to show current language
+    const currentLang = new URLSearchParams(window.location.search).get('lang');
+    const langLabel = currentLang ? currentLang.toUpperCase() : 'EN';
+    const langBtn = navLang.querySelector('.lang-btn');
+    if (langBtn) {
+      const svg = langBtn.querySelector('svg');
+      langBtn.textContent = langLabel + ' ';
+      if (svg) langBtn.appendChild(svg);
+    }
+    // Build lang links: EN resets to no param, others add ?lang=xx
     navLang.querySelectorAll('.nav-dropdown a').forEach(a => {
-      const lang = a.textContent.trim().toLowerCase();
-      a.href = window.location.pathname + '?lang=' + lang;
+      const l = a.textContent.trim().toLowerCase();
+      a.href = l === 'en'
+        ? window.location.pathname
+        : window.location.pathname + '?lang=' + l;
     });
     const langBtn = navLang.querySelector('.lang-btn');
     if (langBtn) {
