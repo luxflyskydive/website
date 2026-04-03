@@ -1,27 +1,338 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <link href="img/favicon.png" rel="icon" type="image/png"/><link href="img/favicon.svg" rel="icon" type="image/svg+xml"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>About — Luxfly Indoor Skydiving</title>
+<meta content="Europe's tallest indoor skydiving wind tunnel. 35 metres. 350 km/h. At the Luxembourg border." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&family=Inter:wght@300;400&display=swap" rel="stylesheet"/>
 <link href="css/style.css" rel="stylesheet"/>
+<style>
+.hero {
+  background: linear-gradient(to top, rgba(0,0,0,0.80) 0%, rgba(240,44,184,0.06) 100%), url('https://indoorskydive.lu/img/adults.jpg') center/cover;
+  height: 75vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 80px 48px;
+  color: white;
+}
+.hero-content { max-width: 700px; }
+.eyebrow {
+  color: #f02cb8;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: Montserrat;
+  font-size: clamp(40px, 6vw, 80px);
+  font-weight: 900;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+.hero-sub {
+  font-size: 18px;
+  font-weight: 300;
+  max-width: 520px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.85);
+}
+
+/* ── WHO WE ARE ── */
+.who-section {
+  background: #ffffff;
+  padding: 120px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.who-section.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.who-section.reveal.in { opacity: 1; transform: translateY(0); }
+.section-label {
+  color: #f02cb8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.who-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 900;
+  color: #111;
+  line-height: 1.15;
+  margin-bottom: 32px;
+}
+.who-section p {
+  font-size: 15px;
+  color: rgba(0,0,0,0.55);
+  line-height: 1.85;
+  margin-bottom: 20px;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.stat-box {
+  background: #f7f7f7;
+  padding: 28px;
+  border-radius: 3px;
+}
+.stat-number {
+  font-family: Montserrat;
+  font-size: 42px;
+  font-weight: 900;
+  color: #f02cb8;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+.stat-number span { font-size: 20px; }
+.stat-desc {
+  font-size: 13px;
+  color: rgba(0,0,0,0.5);
+  line-height: 1.5;
+}
+
+/* ── WHAT'S AT LUXFLY ── */
+.whats-here {
+  background: #f7f7f7;
+  padding: 100px 48px;
+}
+.whats-here.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.whats-here.reveal.in { opacity: 1; transform: translateY(0); }
+.whats-here h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 900;
+  color: #111;
+  text-align: center;
+  margin-bottom: 64px;
+}
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.feature-card {
+  background: #ffffff;
+  padding: 36px 28px;
+  border-radius: 3px;
+}
+.feature-card.reveal { opacity: 0; transform: translateY(20px); transition: all 0.7s ease-out; }
+.feature-card.reveal.in { opacity: 1; transform: translateY(0); }
+.feature-title {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 800;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+}
+.feature-card p {
+  font-size: 14px;
+  color: rgba(0,0,0,0.5);
+  line-height: 1.75;
+}
+
+/* ── FOR EVERYONE ── */
+.for-everyone {
+  background: #ffffff;
+  padding: 100px 48px;
+}
+.for-everyone.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.for-everyone.reveal.in { opacity: 1; transform: translateY(0); }
+.for-everyone h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 900;
+  color: #111;
+  text-align: center;
+  margin-bottom: 64px;
+}
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.audience-item {
+  border-top: 2px solid #f02cb8;
+  padding-top: 24px;
+}
+.audience-item.reveal { opacity: 0; transform: translateY(20px); transition: all 0.7s ease-out; }
+.audience-item.reveal.in { opacity: 1; transform: translateY(0); }
+.audience-item h3 {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 12px;
+}
+.audience-item p {
+  font-size: 14px;
+  color: rgba(0,0,0,0.5);
+  line-height: 1.75;
+}
+
+/* ── LOCATION ── */
+.location-section {
+  background: #f7f7f7;
+  padding: 100px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+.location-section.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.location-section.reveal.in { opacity: 1; transform: translateY(0); }
+.location-section h2 {
+  font-family: Montserrat;
+  font-size: 36px;
+  font-weight: 900;
+  color: #111;
+  margin-bottom: 36px;
+}
+.address-card {
+  background: rgba(240,44,184,0.07);
+  border-left: 3px solid #f02cb8;
+  padding: 24px 28px;
+  margin-bottom: 32px;
+  border-radius: 0 3px 3px 0;
+}
+.address-card strong {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 800;
+  color: #111;
+  display: block;
+  margin-bottom: 8px;
+}
+.address-card p {
+  font-size: 15px;
+  color: rgba(0,0,0,0.55);
+  line-height: 1.7;
+  margin-bottom: 4px;
+}
+.address-card .directions-note {
+  font-size: 13px;
+  color: rgba(0,0,0,0.45);
+  margin-top: 12px;
+}
+.btn-cta {
+  display: inline-block;
+  padding: 14px 30px;
+  background: #f02cb8;
+  color: white;
+  font-family: Montserrat;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.btn-cta:hover { opacity: 0.85; }
+.map-wrap iframe {
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+}
+.map-wrap p {
+  font-size: 13px;
+  color: rgba(0,0,0,0.4);
+  margin-top: 12px;
+  font-family: Inter;
+}
+.map-wrap a { color: #f02cb8; }
+
+/* ── CTA STRIP ── */
+.cta-strip {
+  background: #fff5fb;
+  padding: 100px 48px;
+  text-align: center;
+}
+.cta-strip.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.cta-strip.reveal.in { opacity: 1; transform: translateY(0); }
+.cta-strip h2 {
+  font-family: Montserrat;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 900;
+  color: #111;
+  margin-bottom: 36px;
+}
+
+/* ── FOOTER ── */
+.site-footer {
+  background: #0d0d0d;
+  padding: 60px 48px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 40px;
+}
+.footer-brand p {
+  color: rgba(255,255,255,0.6);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  font-family: Inter;
+}
+.footer-col h5 {
+  color: white;
+  font-weight: 700;
+  margin-bottom: 16px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: Montserrat;
+}
+.footer-col ul { list-style: none; padding: 0; margin: 0; }
+.footer-col li { margin-bottom: 8px; }
+.footer-col a { color: rgba(255,255,255,0.6); text-decoration: none; font-family: Inter; font-size: 14px; transition: color 0.2s; }
+.footer-col a:hover { color: white; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(255,255,255,0.6);
+  font-size: 14px;
+  font-family: Inter;
+}
+.footer-bottom a { color: rgba(255,255,255,0.6); text-decoration: none; }
+.footer-links { display: flex; gap: 24px; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero { padding: 48px 24px; }
+  .who-section { grid-template-columns: 1fr; gap: 48px; padding: 80px 24px; }
+  .whats-here { padding: 80px 24px; }
+  .for-everyone { padding: 80px 24px; }
+  .location-section { grid-template-columns: 1fr; gap: 40px; padding: 80px 24px; }
+  .cta-strip { padding: 80px 24px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+}
+</style>
 </head>
-<body class="light">
+<body>
 <nav id="nav">
 <a class="nav-logo" href="index.html"><svg height="28" viewbox="0 0 82 28" width="82" xmlns="http://www.w3.org/2000/svg">
 <defs>
@@ -82,7 +393,7 @@
 <a href="pro-events.html">Events and Camps</a>
 </div>
 </div>
-<div class="nav-item"><a class="nav-link" href="about.html">About</a>
+<div class="nav-item"><a class="nav-link active" href="about.html">About</a>
 <div class="nav-dropdown">
 <a href="pilates.html">Pilates</a>
 <a href="indoor-activities.html">Indoor Activities</a>
@@ -105,167 +416,158 @@
 <span class="lang-btn">EN <svg fill="none" height="6" style="opacity:0.55" viewbox="0 0 10 6" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></span>
 <div class="nav-dropdown"><a href="fr/about.html">FR</a><a href="de/about.html">DE</a><a href="lb/about.html">LB</a><a href="nl/about.html">NL</a></div>
 </div>
-<a href="account.html" onmouseout="this.style.color='rgba(255,255,255,0.6)'" onmouseover="this.style.color='#fff'" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;"><svg fill="none" height="16" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="16"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="7" r="4"></circle></svg>My Account</a><a class="nav-book" href="https://shop.indoorskydive.lu/store_10">Book now</a>
+<a href="account.html" onmouseout="this.style.color='rgba(255,255,255,0.6)'" onmouseover="this.style.color='#fff'" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;"><svg fill="none" height="16" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="16"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="7" r="4"></circle></svg>My Account</a>
+<a class="nav-book" href="https://shop.indoorskydive.lu/store_10">Book now</a>
 </div>
 </nav>
+
 <!-- Hero -->
-<section style="background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.25) 60%, rgba(0,0,0,0.08) 100%), url('https://indoorskydive.lu/img/adults.jpg') center/cover; height: 70vh; display: flex; align-items: flex-end; padding-bottom: 80px;">
-<div style="padding: 0 48px; max-width: 700px;">
-<p style="color: #f02cb8; font-size: 14px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin: 0 0 16px 0; font-family: Montserrat, sans-serif;">About Luxfly</p>
-<h1 style="font-size: clamp(32px, 6vw, 64px); font-weight: 900; color: white; margin: 0 0 20px 0; line-height: 1.2; font-family: Montserrat, sans-serif;">Europe's tallest indoor skydiving tunnel.</h1>
-<p style="font-size: 18px; color: rgba(255,255,255,0.85); max-width: 560px; line-height: 1.6; font-family: Inter, sans-serif; font-weight: 300; margin: 0;">Safe from age 4 to 95. Located in Sterpenich, Belgium — right on the Luxembourg border.</p>
-</div>
+<section class="hero">
+  <div class="hero-content">
+    <p class="eyebrow">About Luxfly</p>
+    <h1>Europe's tallest indoor skydiving tunnel.</h1>
+    <p class="hero-sub">Safe from age 4 to 99. Located in Sterpenich, Belgium — right on the Luxembourg border.</p>
+  </div>
 </section>
+
 <!-- Who we are -->
-<section class="reveal" style="background: #ffffff; padding: 100px 48px;">
-<div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;">
-<div>
-<p style="font-family: Montserrat, sans-serif; color: #f02cb8; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px;">Who we are</p>
-<h2 style="font-family: Montserrat, sans-serif; font-size: 40px; font-weight: 900; margin-bottom: 32px; color: #111; line-height: 1.2;">Your destination for indoor freefall.</h2>
-<p style="font-family: Inter, sans-serif; font-size: 15px; color: rgba(0,0,0,0.55); line-height: 1.8; margin-bottom: 20px;">Luxfly is a next-generation wind tunnel located in Sterpenich, near the Luxembourg border. Our mission is to make the incredible sensation of freefall accessible to everyone — in a safe, professional, and welcoming environment.</p>
-<p style="font-family: Inter, sans-serif; font-size: 15px; color: rgba(0,0,0,0.55); line-height: 1.8; margin-bottom: 20px;">The tunnel stands 35 metres tall with airflow up to 350 km/h — one of the tallest and most powerful in the world. Whether you're a complete beginner or an experienced Proflyer, the experience is adapted to you.</p>
-<p style="font-family: Inter, sans-serif; font-size: 15px; color: rgba(0,0,0,0.55); line-height: 1.8;">We've welcomed thousands of visitors since opening — from children as young as 4 taking their first flight, to national-level competitors training for championships.</p>
-</div>
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
-<div style="padding: 28px; background: #f7f7f7; border-radius: 4px;">
-<p style="font-family: Montserrat, sans-serif; font-size: 40px; font-weight: 900; color: #f02cb8; margin: 0 0 8px 0;">35m</p>
-<p style="font-family: Inter, sans-serif; font-size: 14px; color: rgba(0,0,0,0.55); margin: 0;">Tunnel height — one of the tallest in the world</p>
-</div>
-<div style="padding: 28px; background: #f7f7f7; border-radius: 4px;">
-<p style="font-family: Montserrat, sans-serif; font-size: 40px; font-weight: 900; color: #f02cb8; margin: 0 0 8px 0;">350<span style="font-size: 20px;">km/h</span></p>
-<p style="font-family: Inter, sans-serif; font-size: 14px; color: rgba(0,0,0,0.55); margin: 0;">Maximum airflow — powered by 4 motors</p>
-</div>
-<div style="padding: 28px; background: #f7f7f7; border-radius: 4px;">
-<p style="font-family: Montserrat, sans-serif; font-size: 40px; font-weight: 900; color: #f02cb8; margin: 0 0 8px 0;">4–95</p>
-<p style="font-family: Inter, sans-serif; font-size: 14px; color: rgba(0,0,0,0.55); margin: 0;">Age range — accessible to everyone</p>
-</div>
-<div style="padding: 28px; background: #f7f7f7; border-radius: 4px;">
-<p style="font-family: Montserrat, sans-serif; font-size: 40px; font-weight: 900; color: #f02cb8; margin: 0 0 8px 0;">5 days</p>
-<p style="font-family: Inter, sans-serif; font-size: 14px; color: rgba(0,0,0,0.55); margin: 0;">Open Wed–Sun, plus select Mondays</p>
-</div>
-</div>
-</div>
+<section class="who-section reveal">
+  <div>
+    <p class="section-label">Who we are</p>
+    <h2>Your destination for indoor freefall.</h2>
+    <p>Luxfly is a wind tunnel located in Sterpenich, right on the Belgium-Luxembourg border. Our mission is to make the incredible sensation of freefall accessible to everyone — in a safe, professional, and welcoming environment.</p>
+    <p>The tunnel stands 35 metres tall with airflow up to 350 km/h — one of the tallest in the world. Whether you're a complete beginner or an experienced Proflyer, the experience is adapted to you.</p>
+    <p>Open from age 4 to 99, with no prior experience needed. Your instructor is in the tunnel with you from the very first second.</p>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-box">
+      <p class="stat-number">35<span>m</span></p>
+      <p class="stat-desc">Tunnel height — one of the tallest in the world</p>
+    </div>
+    <div class="stat-box">
+      <p class="stat-number">350<span>km/h</span></p>
+      <p class="stat-desc">Maximum airflow — powered by 4 motors</p>
+    </div>
+    <div class="stat-box">
+      <p class="stat-number">4–99</p>
+      <p class="stat-desc">Age range — accessible to everyone</p>
+    </div>
+    <div class="stat-box">
+      <p class="stat-number">5<span style="font-size:18px">days</span></p>
+      <p class="stat-desc">Open Wed–Sun, plus the first Monday of each month</p>
+    </div>
+  </div>
 </section>
-<!-- What's here -->
-<section class="reveal" style="background: #f7f7f7; padding: 80px 48px;">
-<div style="max-width: 1200px; margin: 0 auto;">
-<h2 style="font-family: Montserrat, sans-serif; font-size: 40px; font-weight: 900; margin-bottom: 60px; color: #111; text-align: center;">What's at Luxfly</h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px;">
-<div class="reveal" style="background: white; padding: 32px; border-radius: 4px;">
-<h3 style="font-family: Montserrat, sans-serif; font-size: 16px; font-weight: 700; color: #111; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em;">The Wind Tunnel</h3>
-<p style="font-family: Inter, sans-serif; font-size: 14px; color: rgba(0,0,0,0.55); line-height: 1.7; margin: 0;">A 35-metre vertical flight chamber with transparent walls — powered by 4 motors and built for the full freefall experience.</p>
-</div>
-<div class="reveal reveal-delay-1" style="background: white; padding: 32px; border-radius: 4px;">
-<h3 style="font-family: Montserrat, sans-serif; font-size: 16px; font-weight: 700; color: #111; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em;">The Museum</h3>
-<p style="font-family: Inter, sans-serif; font-size: 14px; color: rgba(0,0,0,0.55); line-height: 1.7; margin: 0;">The Art of Skydiving — an interactive museum dedicated to the history of parachuting and human flight. Open to all visitors.</p>
-</div>
-<div class="reveal reveal-delay-2" style="background: white; padding: 32px; border-radius: 4px;">
-<h3 style="font-family: Montserrat, sans-serif; font-size: 16px; font-weight: 700; color: #111; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em;">The Bar</h3>
-<p style="font-family: Inter, sans-serif; font-size: 14px; color: rgba(0,0,0,0.55); line-height: 1.7; margin: 0;">A warm bar with a direct view into the wind tunnel — the perfect place to watch flyers and unwind after your session.</p>
-</div>
-<div class="reveal reveal-delay-1" style="background: white; padding: 32px; border-radius: 4px;">
-<h3 style="font-family: Montserrat, sans-serif; font-size: 16px; font-weight: 700; color: #111; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em;">The Amphitheatre</h3>
-<p style="font-family: Inter, sans-serif; font-size: 14px; color: rgba(0,0,0,0.55); line-height: 1.7; margin: 0;">A dedicated viewing area where spectators can watch the flyers and share the experience with family or colleagues.</p>
-</div>
-</div>
-</div>
+
+<!-- What's at Luxfly -->
+<section class="whats-here reveal">
+  <h2>What's at Luxfly</h2>
+  <div class="feature-grid">
+    <div class="feature-card reveal">
+      <h3 class="feature-title">The Wind Tunnel</h3>
+      <p>A 35-metre vertical flight chamber with transparent walls — powered by 4 motors and built for the full freefall experience.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-1">
+      <h3 class="feature-title">The Museum</h3>
+      <p>The Art of Skydiving — an interactive museum dedicated to the history of parachuting and human flight. Open to all visitors.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-2">
+      <h3 class="feature-title">The Bar</h3>
+      <p>A bar with a direct view into the wind tunnel — the perfect place to watch flyers and unwind after your session.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-1">
+      <h3 class="feature-title">The Amphitheatre</h3>
+      <p>A dedicated viewing area where spectators can watch the flyers and share the experience with family or colleagues.</p>
+    </div>
+  </div>
 </section>
+
 <!-- For everyone -->
-<section class="reveal" style="background: #ffffff; padding: 80px 48px;">
-<div style="max-width: 1200px; margin: 0 auto;">
-<h2 style="font-family: Montserrat, sans-serif; font-size: 40px; font-weight: 900; margin-bottom: 60px; color: #111; text-align: center;">For everyone</h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px;">
-<div class="reveal" style="border-top: 2px solid #f02cb8; padding-top: 24px;">
-<h3 style="font-family: Montserrat, sans-serif; font-size: 16px; font-weight: 700; color: #111; margin-bottom: 12px;">Beginners</h3>
-<p style="font-family: Inter, sans-serif; font-size: 14px; color: rgba(0,0,0,0.55); line-height: 1.7; margin: 0;">Experience indoor freefall with no prior experience needed. Fully guided by a qualified instructor in the tunnel with you.</p>
-</div>
-<div class="reveal reveal-delay-1" style="border-top: 2px solid #f02cb8; padding-top: 24px;">
-<h3 style="font-family: Montserrat, sans-serif; font-size: 16px; font-weight: 700; color: #111; margin-bottom: 12px;">Families &amp; Kids</h3>
-<p style="font-family: Inter, sans-serif; font-size: 14px; color: rgba(0,0,0,0.55); line-height: 1.7; margin: 0;">Safe from age 4. Birthday parties, family sessions, and kids' packages all available — with dedicated kids' instructors.</p>
-</div>
-<div class="reveal reveal-delay-2" style="border-top: 2px solid #f02cb8; padding-top: 24px;">
-<h3 style="font-family: Montserrat, sans-serif; font-size: 16px; font-weight: 700; color: #111; margin-bottom: 12px;">Proflyers</h3>
-<p style="font-family: Inter, sans-serif; font-size: 14px; color: rgba(0,0,0,0.55); line-height: 1.7; margin: 0;">Preferential rates and regular access for certified Proflyers. Coaching, shared sessions, and competition preparation available.</p>
-</div>
-<div class="reveal reveal-delay-1" style="border-top: 2px solid #f02cb8; padding-top: 24px;">
-<h3 style="font-family: Montserrat, sans-serif; font-size: 16px; font-weight: 700; color: #111; margin-bottom: 12px;">Companies</h3>
-<p style="font-family: Inter, sans-serif; font-size: 14px; color: rgba(0,0,0,0.55); line-height: 1.7; margin: 0;">Unforgettable team building and corporate events. Groups from 2 to 250, with meeting rooms and catering through EVENTIFY.</p>
-</div>
-</div>
-</div>
+<section class="for-everyone reveal">
+  <h2>For everyone</h2>
+  <div class="audience-grid">
+    <div class="audience-item reveal">
+      <h3>Beginners</h3>
+      <p>No experience needed. Your instructor flies in the tunnel with you from the very first second and guides you at every step.</p>
+    </div>
+    <div class="audience-item reveal reveal-delay-1">
+      <h3>Families &amp; Kids</h3>
+      <p>Safe from age 4. Birthday parties, family sessions, and kids' packages — with instructors who specialise in younger flyers.</p>
+    </div>
+    <div class="audience-item reveal reveal-delay-2">
+      <h3>Proflyers</h3>
+      <p>Preferential rates and regular access for certified Proflyers. Coaching, shared sessions, and camp events available.</p>
+    </div>
+    <div class="audience-item reveal reveal-delay-1">
+      <h3>Companies</h3>
+      <p>Team building and corporate events for groups from 2 to 250, with meeting rooms and catering through EVENTIFY.</p>
+    </div>
+  </div>
 </section>
-<!-- Our team -->
-<section class="reveal" style="background: #f0f4ff; padding: 80px 48px;">
-<div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
-<div>
-<p style="font-family: Montserrat, sans-serif; color: #f02cb8; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px;">The Team</p>
-<h2 style="font-family: Montserrat, sans-serif; font-size: 40px; font-weight: 900; margin-bottom: 28px; color: #111; line-height: 1.2;">Passionate experts. Certified instructors.</h2>
-<p style="font-family: Inter, sans-serif; font-size: 15px; color: rgba(0,0,0,0.55); line-height: 1.8; margin-bottom: 16px;">Our team is made up of flight enthusiasts and qualified professionals — instructors, event coordinators, safety officers, and coaches who are committed to making every visit safe, enjoyable, and memorable.</p>
-<p style="font-family: Inter, sans-serif; font-size: 15px; color: rgba(0,0,0,0.55); line-height: 1.8;">Every certified instructor guides you step by step — so you can experience wind tunnel flying in a secure environment, whether it's your first time or your hundredth.</p>
-</div>
-<div style="background: url('https://indoorskydive.lu/img/groups.jpg') center/cover; border-radius: 4px; aspect-ratio: 4/3;"></div>
-</div>
-</section>
+
 <!-- Location -->
-<section class="reveal" style="background: #ffffff; padding: 80px 48px;">
-<div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px;">
-<div>
-<h2 style="font-family: Montserrat, sans-serif; font-size: 32px; font-weight: 900; margin-bottom: 32px; color: #111;">Where to find us</h2>
-<div style="background: rgba(240,44,184,0.08); padding: 24px; border-radius: 4px; border-left: 3px solid #f02cb8; margin-bottom: 32px;">
-<p style="margin: 0 0 8px 0; font-family: Montserrat, sans-serif; color: #111; font-weight: 700; font-size: 14px;">Luxfly Indoor Skydive S.A.</p>
-<p style="margin: 0 0 4px 0; font-family: Inter, sans-serif; font-size: 15px; color: rgba(0,0,0,0.55);">Rue De Grass 103</p>
-<p style="margin: 0 0 16px 0; font-family: Inter, sans-serif; font-size: 15px; color: rgba(0,0,0,0.55);">6700 Sterpenich — Belgium (Luxembourg border)</p>
-<p style="margin: 0 0 4px 0; font-family: Inter, sans-serif; color: rgba(0,0,0,0.55); font-size: 14px;">E411, exit 33 — next to IKEA &amp; Decathlon</p>
-<p style="margin: 0; font-family: Inter, sans-serif; color: rgba(0,0,0,0.55); font-size: 14px;">Free parking · 7 km from Arlon</p>
-</div>
-<a href="contact.html" style="display: inline-block; padding: 14px 28px; background: #f02cb8; color: white; font-family: Montserrat, sans-serif; font-weight: 700; text-decoration: none; border-radius: 4px; font-size: 14px;">Get directions</a>
-</div>
-<div>
-<iframe allowfullscreen="" height="360" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=6.023%2C49.627%2C6.083%2C49.667&amp;layer=mapnik&amp;marker=49.647%2C6.053" style="border: none; border-radius: 4px; width: 100%;"></iframe>
-<p style="margin: 12px 0 0 0; font-size: 13px; color: rgba(0,0,0,0.4); font-family: Inter, sans-serif;"><a href="https://www.google.com/maps/search/Luxfly+Indoor+Skydiving+Rue+De+Grass+103+Sterpenich+Belgium" rel="noopener" style="color: #f02cb8;" target="_blank">Open in Google Maps →</a></p>
-</div>
-</div>
+<section class="location-section reveal">
+  <div>
+    <h2>Where to find us</h2>
+    <div class="address-card">
+      <strong>Luxfly Indoor Skydive S.A.</strong>
+      <p>Rue De Grass 103</p>
+      <p>6700 Sterpenich — Belgium (Luxembourg border)</p>
+      <p class="directions-note">E411, exit 33 · Next to IKEA &amp; Décathlon · Free parking · 7 km from Arlon</p>
+    </div>
+    <a class="btn-cta" href="contact.html">Get directions</a>
+  </div>
+  <div class="map-wrap">
+    <iframe allowfullscreen="" height="360" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=6.023%2C49.627%2C6.083%2C49.667&layer=mapnik&marker=49.647%2C6.053"></iframe>
+    <p><a href="https://www.google.com/maps/search/Luxfly+Indoor+Skydiving+Rue+De+Grass+103+Sterpenich+Belgium" rel="noopener" target="_blank">Open in Google Maps →</a></p>
+  </div>
 </section>
+
 <!-- CTA -->
-<section class="reveal" style="background: #fff5fb; padding: 80px 48px; text-align: center;">
-<h2 style="font-family: Montserrat, sans-serif; font-size: 42px; font-weight: 900; margin-bottom: 32px; color: #111;">Come and fly.</h2>
-<a href="https://shop.indoorskydive.lu/store_10" style="display: inline-block; padding: 16px 48px; background: #f02cb8; color: white; font-family: Montserrat, sans-serif; font-weight: 700; text-decoration: none; border-radius: 4px; font-size: 15px; text-transform: uppercase; letter-spacing: 1px;">Book a flight</a>
+<section class="cta-strip reveal">
+  <h2>Come and fly.</h2>
+  <a class="btn-cta" href="https://shop.indoorskydive.lu/store_10">Book a flight</a>
 </section>
-<footer style="background: #0d0d0d; padding: 60px 48px; border-top: 1px solid rgba(255,255,255,0.08);">
-<div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; margin-bottom: 40px;">
-<div class="footer-brand">
-<img alt="Luxfly" src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg" style="height: 40px; margin-bottom: 16px;"/>
-<p style="color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.6; margin: 0; font-family: Inter;">Europe's tallest indoor skydiving wind tunnel. Safe from age 4 to 95.</p>
-</div>
-<div class="footer-col">
-<h5 style="color: white; font-weight: 700; margin-bottom: 16px; font-size: 14px; text-transform: uppercase; font-family: Montserrat;">Fly</h5>
-<ul style="list-style: none; padding: 0; margin: 0;">
-<li style="margin-bottom: 8px;"><a href="prices.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-family: Inter;">Adults</a></li>
-<li style="margin-bottom: 8px;"><a href="kids.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-family: Inter;">Kids &amp; Families</a></li>
-<li style="margin-bottom: 8px;"><a href="pro.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-family: Inter;">Pro Flyers</a></li>
-<li><a href="birthdays.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-family: Inter;">Birthdays</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h5 style="color: white; font-weight: 700; margin-bottom: 16px; font-size: 14px; text-transform: uppercase; font-family: Montserrat;">Info</h5>
-<ul style="list-style: none; padding: 0; margin: 0;">
-<li style="margin-bottom: 8px;"><a href="about.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-family: Inter;">About us</a></li>
-<li style="margin-bottom: 8px;"><a href="faq.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-family: Inter;">FAQ</a></li>
-<li style="margin-bottom: 8px;"><a href="contact.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-family: Inter;">Contact</a></li>
-<li><a href="conditions.html" style="color: rgba(255,255,255,0.6); text-decoration: none; font-family: Inter;">Conditions</a></li>
-</ul>
-</div>
-</div>
-<div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; color: rgba(255,255,255,0.6); font-size: 14px; font-family: Inter;">
-<span>© 2026 Luxfly Indoor Skydiving</span>
-<div style="display:flex;gap:24px;"><a href="conditions.html" style="color: rgba(255,255,255,0.6); text-decoration: none;">Terms</a><a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none;">Privacy</a></div>
-</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img alt="Luxfly" src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg" style="height:40px;margin-bottom:16px;"/>
+      <p>Europe's tallest indoor skydiving wind tunnel. Safe from age 4 to 99.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Fly</h5>
+      <ul>
+        <li><a href="prices.html">Adults</a></li>
+        <li><a href="kids.html">Kids &amp; Families</a></li>
+        <li><a href="pro.html">Pro Flyers</a></li>
+        <li><a href="birthdays.html">Birthdays</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Info</h5>
+      <ul>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="conditions.html">Conditions</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Luxfly Indoor Skydiving</span>
+    <div class="footer-links">
+      <a href="conditions.html">Terms</a>
+      <a href="#">Privacy</a>
+    </div>
+  </div>
 </footer>
+
 <script>
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY>60)},{passive:true});
-const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => { nav.classList.toggle('dark', window.scrollY > 60); }, { passive: true });
+const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }), { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
 <script src="js/nav.js?v=2"></script>
 <script src="js/chatbot.js"></script>
