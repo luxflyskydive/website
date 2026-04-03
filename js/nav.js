@@ -53,9 +53,16 @@
   // ── MOBILE HAMBURGER MENU ──
   if (!nav) return;
 
-  // Language dropdown: tap to open/close on mobile
+  // ── LANGUAGE LINKS — always stay on current domain ──
   const navLang = nav.querySelector('.nav-lang');
   if (navLang) {
+    navLang.querySelectorAll('.nav-dropdown a').forEach(a => {
+      const href = a.getAttribute('href');
+      if (href) {
+        const path = href.replace(/^https?:\/\/[^/]+/, '');
+        a.href = window.location.origin + path;
+      }
+    });
     const langBtn = navLang.querySelector('.lang-btn');
     if (langBtn) {
       langBtn.addEventListener('click', (e) => {
