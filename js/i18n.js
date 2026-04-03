@@ -1,9 +1,16 @@
 (function () {
   'use strict';
 
-  // ── Detect language from URL param ──────────────────────────────────────────
+  // ── Detect language: URL param → localStorage → 'en' ───────────────────────
   const params = new URLSearchParams(window.location.search);
-  const lang = (params.get('lang') || 'en').toLowerCase();
+  let lang = (params.get('lang') || '').toLowerCase();
+  if (lang && lang !== 'en') {
+    // URL param wins — persist it
+    try { localStorage.setItem('luxfly_lang', lang); } catch(e) {}
+  } else {
+    // Fall back to localStorage
+    try { lang = localStorage.getItem('luxfly_lang') || 'en'; } catch(e) { lang = 'en'; }
+  }
   if (lang === 'en') return; // nothing to do
 
   // ── Translation dictionary ───────────────────────────────────────────────────
@@ -5606,11 +5613,31 @@
   const titleKey = document.title;
   if (dict[titleKey]) document.title = dict[titleKey];
 
-  // Run translations once DOM is ready
+  // ── Patch all internal links to carry current language ───────────────────
+  function addLangToLinks() {
+    document.querySelectorAll('a[href]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      if (!href) return;
+      // Skip external, anchors, mailto, tel, javascript
+      if (href.indexOf('http') === 0 || href.indexOf('mailto') === 0 ||
+          href.indexOf('#') === 0 || href.indexOf('tel:') === 0 ||
+          href.indexOf('javascript') === 0) return;
+      // Skip if already has a lang param
+      if (href.indexOf('lang=') !== -1) return;
+      var sep = href.indexOf('?') !== -1 ? '&' : '?';
+      a.setAttribute('href', href + sep + 'lang=' + lang);
+    });
+  }
+
+  // Run translations + link patching once DOM is ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => translateNode(document.body));
+    document.addEventListener('DOMContentLoaded', function() {
+      translateNode(document.body);
+      addLangToLinks();
+    });
   } else {
     translateNode(document.body);
+    addLangToLinks();
   }
 
 })();
