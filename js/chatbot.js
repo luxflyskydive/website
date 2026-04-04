@@ -168,7 +168,7 @@
         'people', 'a party of', 'we are a party of',
         'discount for groups', 'is there a discount for groups', 'group discount'
       ],
-      response: () => `**Group rates (per minute of flight time):**\n👥 2–9 people: **€35/min**\n👥 10–19 people: **€31.50/min** (10% off)\n👥 20–49 people: **€29.75/min** (15% off)\n👥 50–99 people: **€28/min** (20% off)\n👥 100+: Custom quote\n\nGroup discounts start from 10 people. A 30% deposit secures your date. Booking required at least 7 days in advance.\n\nFor bachelor/hen parties or team building events, contact us for a tailored package:\n📧 info@luxfly.lu | 📞 +32 63 39 11 63`
+      response: () => `**Group rates (per minute of flight time):**\n👥 2–9 people: **€35/min**\n👥 10–19 people: **€31.50/min** (10% off)\n👥 20–49 people: **€29.75/min** (15% off)\n👥 50–99 people: **€28/min** (20% off)\n👥 100+: Custom quote\n\nGroup discounts start from 10 people. A 30% deposit secures your date. Booking required at least 7 days in advance.\n\nFor bachelor/hen parties or team building events, contact us for a tailored package:\n📧 events@luxfly.lu | 📞 +32 63 39 11 63`
     },
 
     // ── EXPERIENCE / WHAT IS IT ──────────────────────────────────────────────
@@ -239,7 +239,7 @@
         'professional photos', 'photos of my flight', 'video of my flight',
         'record my flight', 'film my flight', 'how to get footage'
       ],
-      response: () => `**Friends & family are very welcome to come along!** 📸👀\n\n🏟️ **Dedicated viewing gallery** with clear glass panels — spectators get a perfect view of everything inside the tunnel.\n\n📷 **Photos & Video:**\n- Spectators can photograph and film freely from the gallery\n- Professional **photography/video packages** available — ask at reception!\n- In-tunnel cameras capture incredible footage\n\n🎟️ **Entry for spectators is FREE** — no ticket needed.\n\n🏛️ All packages include **Aviation Museum** access, so non-flyers have plenty to enjoy while waiting! ✈️`
+      response: () => `**Friends & family are very welcome to come along!** 📸👀\n\n🏟️ **Dedicated viewing gallery** with clear glass panels — spectators get a perfect view of everything inside the tunnel.\n\n📷 **Photos & Video:**\n- Spectators can photograph and film freely from the gallery\n- Professional **photography/video packages** available — ask at reception!\n- In-tunnel cameras capture incredible footage\n\n🎟️ **Entry for spectators is FREE** — no ticket needed.\n\n🏛️ All packages include **Art of Skydiving Museum** access, so non-flyers have plenty to enjoy while waiting! ✈️`
     },
 
     // ── DURATION / TIMING ────────────────────────────────────────────────────
@@ -337,7 +337,7 @@
         'cheaper rate', 'cheaper option', 'cheaper price',
         'special offers', 'any special offers', 'current special offers'
       ],
-      response: () => `**Current Promotions at Luxfly** 🎉\n\n🌸 **SPRING26** — **15% off** all packages! Valid until **30 April 2026**. Use code **SPRING26** at checkout.\n\n👥 **GROUP15** — Extra **5% off** on top of group rates for 10+ people. Code: **GROUP15**.\n\n🎂 **Birthday Month** — Fly in your birthday month for **10% off**. Just mention it when booking!\n\n🎓 **Student Discount** — Show a valid student ID for **10% off**.\n\n👫 **Bring a Friend** — Refer a first-time visitor and both of you get a reward! Ask our team for details.\n\n⚠️ Discounts cannot be combined. Terms apply.`
+      response: () => `**Current Promotions at Luxfly** 🎉\n\n🌸 **SPRING26** — **15% off** your first LUXCOVERY or LUXENSATION package! Valid until **30 April 2026**. Use code **SPRING26** at checkout.\n\n👥 **GROUP15** — Extra **5% off** on top of group rates for 10+ people. Code: **GROUP15**.\n\n🎂 **Birthday Month** — Fly in your birthday month for **10% off**. Just mention it when booking!\n\n🎓 **Student Discount** — Show a valid student ID for **10% off**.\n\n👫 **Bring a Friend** — Refer a first-time visitor and both of you get a reward! Ask our team for details.\n\n⚠️ Discounts cannot be combined. Terms apply.`
     },
 
     // ── GIFT VOUCHERS ────────────────────────────────────────────────────────
@@ -405,7 +405,7 @@
         'visit the museum', 'can i visit the museum', 'museum on its own',
         'museum standalone', 'museum by itself', 'museum without a flight'
       ],
-      response: () => `**The Luxfly Aviation Museum** ✈️🏛️\n\nEvery Luxfly visit includes our **Aviation Museum** — a fantastic collection celebrating the history of flight!\n\n🎫 **Included FREE** in all flight packages — no extra cost!\n🎟️ **Standalone museum entry (no flight):** **€15** per person\n\nInside you'll find:\n- Historic aircraft and interactive displays\n- Aviation history timeline\n- Great for all ages — especially families!\n\nPerfect for before or after your flight, or for non-flying visitors accompanying the group. 🛩️`
+      response: () => `**The Art of Skydiving Museum** ✈️🏛️\n\nEvery Luxfly visit includes our **Art of Skydiving Museum** — a fantastic collection celebrating the history of flight!\n\n🎫 **Included FREE** in all flight packages — no extra cost!\n🎟️ **Standalone museum entry (no flight):** **€15** per person\n\nInside you'll find:\n- Historic aircraft and interactive displays\n- Aviation history timeline\n- Great for all ages — especially families!\n\nPerfect for before or after your flight, or for non-flying visitors accompanying the group. 🛩️`
     },
 
     // ── BAR & FOOD ───────────────────────────────────────────────────────────
