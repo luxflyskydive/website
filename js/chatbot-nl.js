@@ -797,185 +797,193 @@
       to   { opacity: 1; transform: translateY(0) scale(1); }
     }
     .lf-bubble-out {
-      animation: lf-bubble-out 0.35s cubic-bezier(0.34,1.56,0.64,1) forwards !important;
+      animation: lf-bubble-out 0.25s ease forwards !important;
     }
     @keyframes lf-bubble-out {
-      from { opacity: 1; transform: translateY(0) scale(1); }
-      to   { opacity: 0; transform: translateY(14px) scale(0.9); }
+      to { opacity: 0; transform: translateY(8px) scale(0.92); }
     }
   `;
+  const styleEl = document.createElement('style');
+  styleEl.textContent = css;
+  document.head.appendChild(styleEl);
 
-  // ─── DOM Setup & Initialization ────────────────────────────────────────────
-  if (document.readyState !== 'loading') {
-    init();
-  } else {
-    document.addEventListener('DOMContentLoaded', init);
-  }
-
-  function init() {
-    // Insert CSS
-    const style = document.createElement('style');
-    style.textContent = css;
-    document.head.appendChild(style);
-
-    // Create HTML
-    const wrapper = document.createElement('div');
-    wrapper.id = 'lf-chat-wrapper';
-
-    // Chat button
-    const btn = document.createElement('button');
-    btn.id = 'lf-chat-btn';
-    btn.innerHTML = '<svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:white"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3 .97 4.29L2.6 20.4c-.33.8.2 1.69 1 1.69.2 0 .39-.04.59-.12l4.11-1.37C9 21.64 10.5 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.41 0-2.73-.36-3.88-1L5 20l1-3.12C4.36 14.73 4 13.41 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>';
-    btn.title = 'Luxfly Chat';
-    btn.setAttribute('aria-label', 'Open Luxfly chatbot');
-
-    const badge = document.createElement('div');
-    badge.id = 'lf-chat-badge';
-    badge.textContent = '1';
-    btn.appendChild(badge);
-
-    btn.addEventListener('click', () => {
-      const window = document.getElementById('lf-chat-window');
-      const bubble = document.getElementById('lf-chat-bubble');
-      if (window) {
-        window.classList.toggle('open');
-        if (window.classList.contains('open')) {
-          if (bubble) bubble.style.display = 'none';
-          document.getElementById('lf-chat-input').focus();
-        } else {
-          if (bubble) bubble.style.display = 'block';
-        }
-      }
-    });
-
-    wrapper.appendChild(btn);
-
-    // Chat window
-    const chatWindow = document.createElement('div');
-    chatWindow.id = 'lf-chat-window';
-
-    const header = document.createElement('div');
-    header.id = 'lf-chat-header';
-    header.innerHTML = `
-      <div id="lf-chat-header-avatar">💬</div>
-      <div id="lf-chat-header-info">
-        <div id="lf-chat-header-name">Zoom</div>
-        <div id="lf-chat-header-status">Online · Altijd hier om u te helpen</div>
+  // ─── Build DOM ───────────────────────────────────────────────────────────────
+  document.body.insertAdjacentHTML('beforeend', `
+    <button id="lf-chat-btn" aria-label="Chat met Luxfly">
+      <span id="lf-chat-badge" style="display:none">1</span>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2C6.48 2 2 6.06 2 11c0 2.64 1.18 5.02 3.07 6.72L4 22l4.54-2.04A10.7 10.7 0 0012 20c5.52 0 10-4.06 10-9S17.52 2 12 2z" fill="white"/>
+      </svg>
+    </button>
+    <div id="lf-chat-window" role="dialog" aria-label="Luxfly Chat">
+      <div id="lf-chat-header">
+        <div id="lf-chat-header-avatar">✈</div>
+        <div id="lf-chat-header-info">
+          <div id="lf-chat-header-name">Zoom</div>
+          <div id="lf-chat-header-status">Online · Altijd hier om u te helpen</div>
+        </div>
+        <button id="lf-chat-close" aria-label="Chat sluiten">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
       </div>
-      <button id="lf-chat-close" aria-label="Close chat">
-        <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
-    `;
+      <div id="lf-chat-messages"></div>
+      <div id="lf-chat-quick">
+        <button class="lf-quick-btn" data-q="Wat zijn uw prijzen?">💰 Prijzen</button>
+        <button class="lf-quick-btn" data-q="Wat zijn uw openingstijden?">🕐 Openingstijden</button>
+        <button class="lf-quick-btn" data-q="Is het veilig voor kinderen?">👦 Kinderen</button>
+        <button class="lf-quick-btn" data-q="Hoe kan ik boeken?">🎟️ Boeken</button>
+        <button class="lf-quick-btn" data-q="Waar bent u gevestigd?">📍 Locatie</button>
+        <button class="lf-quick-btn" data-q="Welk pakket beveelt u aan?">⭐ Aanbeveling</button>
+      </div>
+      <form id="lf-chat-form" autocomplete="off">
+        <textarea id="lf-chat-input" placeholder="Stel me een vraag…" rows="1"></textarea>
+        <button type="submit" id="lf-chat-send" aria-label="Verstuur">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+            <path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  `);
 
-    document.getElementById('lf-chat-close')?.addEventListener('click', () => {
-      chatWindow.classList.remove('open');
-      const bubble = document.getElementById('lf-chat-bubble');
-      if (bubble) bubble.style.display = 'block';
-    });
+  // ─── Elements ────────────────────────────────────────────────────────────────
+  const btn       = document.getElementById('lf-chat-btn');
+  const win       = document.getElementById('lf-chat-window');
+  const closeBtn  = document.getElementById('lf-chat-close');
+  const messages  = document.getElementById('lf-chat-messages');
+  const form      = document.getElementById('lf-chat-form');
+  const input     = document.getElementById('lf-chat-input');
+  const quickBtns = document.querySelectorAll('.lf-quick-btn');
+  let isOpen = false, greeted = false;
 
-    const messages = document.createElement('div');
-    messages.id = 'lf-chat-messages';
-
-    const quick = document.createElement('div');
-    quick.id = 'lf-chat-quick';
-    const quickBtns = [
-      { text: '💰 Prijzen', q: 'Wat zijn uw prijzen?' },
-      { text: '🕐 Openingstijden', q: 'Wat zijn uw openingstijden?' },
-      { text: '👦 Kinderen', q: 'Is het veilig voor kinderen?' },
-      { text: '🎟️ Boeken', q: 'Hoe kan ik boeken?' },
-      { text: '📍 Locatie', q: 'Waar bent u gevestigd?' },
-      { text: '⭐ Aanbeveling', q: 'Welk pakket beveelt u aan?' }
-    ];
-    quickBtns.forEach(btn => {
-      const btnEl = document.createElement('button');
-      btnEl.className = 'lf-quick-btn';
-      btnEl.textContent = btn.text;
-      btnEl.setAttribute('data-q', btn.q);
-      btnEl.addEventListener('click', () => {
-        const input = document.getElementById('lf-chat-input');
-        input.value = btn.q;
-        input.focus();
-      });
-      quick.appendChild(btnEl);
-    });
-
-    const form = document.createElement('form');
-    form.id = 'lf-chat-form';
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const input = document.getElementById('lf-chat-input');
-      const msg = input.value.trim();
-      if (!msg) return;
-
-      // User message
-      const userMsg = document.createElement('div');
-      userMsg.className = 'lf-msg lf-msg-user';
-      userMsg.textContent = msg;
-      messages.appendChild(userMsg);
-
-      input.value = '';
-      messages.scrollTop = messages.scrollHeight;
-
-      // Bot typing
-      const typingMsg = document.createElement('div');
-      typingMsg.className = 'lf-msg lf-msg-typing';
-      typingMsg.innerHTML = '<div class="lf-dot"></div><div class="lf-dot"></div><div class="lf-dot"></div>';
-      messages.appendChild(typingMsg);
-      messages.scrollTop = messages.scrollHeight;
-
-      setTimeout(() => {
-        typingMsg.remove();
-        const reply = getResponse(msg);
-        const botMsg = document.createElement('div');
-        botMsg.className = 'lf-msg lf-msg-bot';
-        botMsg.innerHTML = formatResponse(reply);
-        messages.appendChild(botMsg);
-        messages.scrollTop = messages.scrollHeight;
-      }, 400);
-    });
-
-    const input = document.createElement('input');
-    input.id = 'lf-chat-input';
-    input.type = 'text';
-    input.placeholder = 'Stel me een vraag…';
-    input.setAttribute('aria-label', 'Chat input');
-
-    const send = document.createElement('button');
-    send.id = 'lf-chat-send';
-    send.type = 'submit';
-    send.setAttribute('aria-label', 'Send message');
-    send.innerHTML = '<svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:white"><path d="M16.6915026,12.4744748 L3.50612381,13.2599618 C3.19218622,13.2599618 3.03521743,13.4170592 3.03521743,13.5741566 L1.15159189,20.0151496 C0.8376543,20.8006365 0.99,21.89 1.77946707,22.52 C2.41,22.99 3.50612381,23.1 4.13399899,22.8429026 L21.714504,14.0454487 C22.6563168,13.5741566 23.1272231,12.6315722 22.9702544,11.6889879 L4.13399899,1.16clean47281 C3.34915502,0.9 2.40734225,1.00636533 1.77946707,1.4776575 C0.994623095,2.10604706 0.837654326,3.0486314 1.15159189,3.99021575 L3.03521743,10.4312088 C3.03521743,10.5883061 3.19218622,10.7454035 3.50612381,10.7454035 L16.6915026,11.5308905 C16.6915026,11.5308905 17.1624089,11.5308905 17.1624089,12.0021827 C17.1624089,12.4734748 16.6915026,12.4744748 16.6915026,12.4744748 Z"/></svg>';
-
-    form.appendChild(input);
-    form.appendChild(send);
-
-    chatWindow.appendChild(header);
-    chatWindow.appendChild(messages);
-    chatWindow.appendChild(quick);
-    chatWindow.appendChild(form);
-
-    wrapper.appendChild(chatWindow);
-
-    // Bubble
-    const bubble = document.createElement('div');
-    bubble.id = 'lf-chat-bubble';
-    bubble.textContent = 'Heeft u een vraag? Stel hem hier!';
-    bubble.addEventListener('click', () => {
-      chatWindow.classList.add('open');
-      bubble.style.display = 'none';
-      document.getElementById('lf-chat-input').focus();
-    });
-    wrapper.appendChild(bubble);
-
-    document.body.appendChild(wrapper);
-
-    // Initial greeting
-    setTimeout(() => {
-      const greeting = greetings[0];
-      const msg = document.createElement('div');
-      msg.className = 'lf-msg lf-msg-bot';
-      msg.innerHTML = formatResponse(greeting);
-      messages.appendChild(msg);
-    }, 500);
+  // ─── Helpers ─────────────────────────────────────────────────────────────────
+  function addMsg(html, role) {
+    const el = document.createElement('div');
+    el.className = 'lf-msg ' + (role === 'user' ? 'lf-msg-user' : 'lf-msg-bot');
+    if (role === 'user') {
+      el.textContent = html;
+    } else {
+      el.innerHTML = '<p>' + formatResponse(html) + '</p>';
+    }
+    messages.appendChild(el);
+    messages.scrollTop = messages.scrollHeight;
   }
+
+  function showTyping() {
+    const el = document.createElement('div');
+    el.className = 'lf-msg lf-msg-bot lf-msg-typing';
+    el.id = 'lf-typing';
+    el.innerHTML = '<div class="lf-dot"></div><div class="lf-dot"></div><div class="lf-dot"></div>';
+    messages.appendChild(el);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function removeTyping() {
+    const el = document.getElementById('lf-typing');
+    if (el) el.remove();
+  }
+
+  function toggleQuickBtns(show) {
+    document.getElementById('lf-chat-quick').style.display = show ? 'flex' : 'none';
+  }
+
+  // ─── Send ────────────────────────────────────────────────────────────────────
+  function sendMessage(text) {
+    text = text.trim();
+    if (!text) return;
+    toggleQuickBtns(false);
+    addMsg(text, 'user');
+    input.value = '';
+    input.style.height = 'auto';
+    showTyping();
+    setTimeout(() => {
+      removeTyping();
+      addMsg(getResponse(text), 'bot');
+      input.focus();
+    }, 400 + Math.random() * 500);
+  }
+
+  // ─── Open / Close ────────────────────────────────────────────────────────────
+  // Touch detection + scroll lock helpers
+  const isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+  let _lockedScrollY = 0;
+  function lockBodyScroll() {
+    _lockedScrollY = window.scrollY;
+    document.body.style.cssText += ';position:fixed;top:-' + _lockedScrollY + 'px;width:100%;overflow-y:scroll';
+  }
+  function unlockBodyScroll() {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    document.body.style.overflowY = '';
+    window.scrollTo(0, _lockedScrollY);
+  }
+
+  function openChat() {
+    isOpen = true;
+    dismissBubble();
+    win.classList.add('open');
+    const badge = document.getElementById('lf-chat-badge');
+    if (badge) badge.style.display = 'none';
+    btn.innerHTML = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+      <path d="M18 6L6 18M6 6l12 12" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>`;
+    if (!greeted) {
+      greeted = true;
+      setTimeout(() => {
+        addMsg("Hey! 👋 Ik ben Zoom, de Luxfly-assistent. Stel me gerust vragen — prijzen, uren, boeken, kinderen, locatie en meer!", 'bot');
+      }, 300);
+    }
+    if (isTouch) {
+      lockBodyScroll(); // no input.focus() — prevents Safari zoom
+    } else {
+      input.focus();
+    }
+  }
+
+  function closeChat() {
+    isOpen = false;
+    win.classList.remove('open');
+    btn.innerHTML = `<span id="lf-chat-badge" style="display:none">1</span>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2C6.48 2 2 6.06 2 11c0 2.64 1.18 5.02 3.07 6.72L4 22l4.54-2.04A10.7 10.7 0 0012 20c5.52 0 10-4.06 10-9S17.52 2 12 2z" fill="white"/>
+      </svg>`;
+    if (isTouch) unlockBodyScroll();
+  }
+
+  // ─── Events ──────────────────────────────────────────────────────────────────
+  btn.addEventListener('click', () => isOpen ? closeChat() : openChat());
+  closeBtn.addEventListener('click', closeChat);
+  form.addEventListener('submit', (e) => { e.preventDefault(); sendMessage(input.value); });
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(input.value); }
+  });
+  input.addEventListener('input', () => {
+    input.style.height = 'auto';
+    input.style.height = Math.min(input.scrollHeight, 80) + 'px';
+  });
+  quickBtns.forEach(b => { b.addEventListener('click', () => sendMessage(b.dataset.q)); });
+
+  // ── Attention bubble ───────────────────────────────────────────────────────
+  function dismissBubble() {
+    const b = document.getElementById('lf-chat-bubble');
+    if (!b) return;
+    b.classList.add('lf-bubble-out');
+    setTimeout(() => b && b.parentNode && b.parentNode.removeChild(b), 260);
+  }
+
+  const bubble = document.createElement('div');
+  bubble.id = 'lf-chat-bubble';
+  bubble.textContent = 'Heeft u een vraag? Stel hem hier!';
+  bubble.setAttribute('role', 'button');
+  bubble.setAttribute('aria-label', 'Open chat assistant');
+  document.body.appendChild(bubble);
+  bubble.addEventListener('click', () => { dismissBubble(); openChat(); });
+
+  // Auto-dismiss after 9 seconds
+  const bubbleTimeout = setTimeout(() => dismissBubble(), 9000);
+  bubble.addEventListener('click', () => clearTimeout(bubbleTimeout));
+
 })();

@@ -739,6 +739,7 @@
       flex-shrink: 0; align-self: flex-end; transition: opacity 0.2s, transform 0.15s;
     }
     #lf-chat-send:hover { opacity: 0.85; transform: scale(1.05); }
+    /* Touch devices: no-scale animation prevents Safari zoom */
     @media (hover: none) and (pointer: coarse) {
       #lf-chat-window {
         transform: translateY(24px);
@@ -751,6 +752,8 @@
       #lf-chat-window { right: 12px; bottom: 90px; width: calc(100vw - 24px); }
       #lf-chat-btn { bottom: 20px; right: 16px; }
     }
+
+    /* ── Attention bubble ──────────────────────────────────────────── */
     #lf-chat-bubble {
       position: fixed; bottom: 96px; right: 16px; z-index: 9998;
       background: #f02cb8; color: #fff;
@@ -785,6 +788,7 @@
   styleEl.textContent = css;
   document.head.appendChild(styleEl);
 
+  // ─── Build DOM ───────────────────────────────────────────────────────────────
   document.body.insertAdjacentHTML('beforeend', `
     <button id="lf-chat-btn" aria-label="Chat mat Luxfly">
       <span id="lf-chat-badge" style="display:none">1</span>
@@ -825,6 +829,7 @@
     </div>
   `);
 
+  // ─── Elements ────────────────────────────────────────────────────────────────
   const btn       = document.getElementById('lf-chat-btn');
   const win       = document.getElementById('lf-chat-window');
   const closeBtn  = document.getElementById('lf-chat-close');
@@ -834,6 +839,7 @@
   const quickBtns = document.querySelectorAll('.lf-quick-btn');
   let isOpen = false, greeted = false;
 
+  // ─── Helpers ─────────────────────────────────────────────────────────────────
   function addMsg(html, role) {
     const el = document.createElement('div');
     el.className = 'lf-msg ' + (role === 'user' ? 'lf-msg-user' : 'lf-msg-bot');
@@ -864,6 +870,7 @@
     document.getElementById('lf-chat-quick').style.display = show ? 'flex' : 'none';
   }
 
+  // ─── Send ────────────────────────────────────────────────────────────────────
   function sendMessage(text) {
     text = text.trim();
     if (!text) return;
@@ -879,6 +886,8 @@
     }, 400 + Math.random() * 500);
   }
 
+  // ─── Open / Close ────────────────────────────────────────────────────────────
+  // Touch detection + scroll lock helpers
   const isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
   let _lockedScrollY = 0;
   function lockBodyScroll() {
@@ -909,7 +918,7 @@
       }, 300);
     }
     if (isTouch) {
-      lockBodyScroll();
+      lockBodyScroll(); // no input.focus() — prevents Safari zoom
     } else {
       input.focus();
     }
@@ -925,29 +934,37 @@
     if (isTouch) unlockBodyScroll();
   }
 
+  // ─── Events ──────────────────────────────────────────────────────────────────
+  btn.addEventListener('click', () => isOpen ? closeChat() : openChat());
+  closeBtn.addEventListener('click', closeChat);
+  form.addEventListener('submit', (e) => { e.preventDefault(); sendMessage(input.value); });
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(input.value); }
+  });
+  input.addEventListener('input', () => {
+    input.style.height = 'auto';
+    input.style.height = Math.min(input.scrollHeight, 80) + 'px';
+  });
+  quickBtns.forEach(b => { b.addEventListener('click', () => sendMessage(b.dataset.q)); });
+
+  // ── Attention bubble ───────────────────────────────────────────────────────
   function dismissBubble() {
-    const bubble = document.getElementById('lf-chat-bubble');
-    if (bubble) {
-      bubble.classList.add('lf-bubble-out');
-      setTimeout(() => bubble.remove(), 250);
-    }
+    const b = document.getElementById('lf-chat-bubble');
+    if (!b) return;
+    b.classList.add('lf-bubble-out');
+    setTimeout(() => b && b.parentNode && b.parentNode.removeChild(b), 260);
   }
 
-  btn.addEventListener('click', () => {
-    isOpen ? closeChat() : openChat();
-  });
-  closeBtn.addEventListener('click', closeChat);
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    sendMessage(input.value);
-  });
-  quickBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      sendMessage(btn.getAttribute('data-q'));
-    });
-  });
-  input.addEventListener('input', function() {
-    this.style.height = 'auto';
-    this.style.height = Math.min(this.scrollHeight, 80) + 'px';
-  });
+  const bubble = document.createElement('div');
+  bubble.id = 'lf-chat-bubble';
+  bubble.textContent = 'Eng Fro? Froen ech hei!';
+  bubble.setAttribute('role', 'button');
+  bubble.setAttribute('aria-label', 'Open chat assistant');
+  document.body.appendChild(bubble);
+  bubble.addEventListener('click', () => { dismissBubble(); openChat(); });
+
+  // Auto-dismiss after 9 seconds
+  const bubbleTimeout = setTimeout(() => dismissBubble(), 9000);
+  bubble.addEventListener('click', () => clearTimeout(bubbleTimeout));
+
 })();
