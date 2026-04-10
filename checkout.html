@@ -617,7 +617,7 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
   </div>
 </footer>
 
-<div id="bk-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9000;overflow-y:auto;padding:40px 16px;" onclick="if(event.target===this)closeBooking()">
+<div id="bk-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9000;overflow-y:auto;padding:40px 16px;" onclick="if(event.target===this)closeBooking()">
   <div id="bk-panel" style="background:#151519;border-radius:6px;max-width:520px;margin:0 auto;overflow:hidden;position:relative;">
     <div style="background:#0c0c10;padding:22px 28px 0;border-bottom:1px solid rgba(255,255,255,.07);">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;">
@@ -631,10 +631,11 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
         <div id="dot1" style="flex:1;height:3px;border-radius:2px 2px 0 0;background:#f02cb8;transition:background .3s;"></div>
         <div id="dot2" style="flex:1;height:3px;border-radius:2px 2px 0 0;background:rgba(255,255,255,.12);transition:background .3s;"></div>
         <div id="dot3" style="flex:1;height:3px;border-radius:2px 2px 0 0;background:rgba(255,255,255,.12);transition:background .3s;"></div>
+        <div id="dot4" style="flex:1;height:3px;border-radius:2px 2px 0 0;background:rgba(255,255,255,.12);transition:background .3s;"></div>
       </div>
     </div>
     <div id="bk-step1" style="padding:26px 28px;">
-      <div style="font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:18px;">Step 1 of 3 &mdash; Package Confirmed</div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:18px;">Step 1 of 4 &mdash; Package Confirmed</div>
       <div style="background:#1c1c22;border-radius:4px;padding:18px;margin-bottom:18px;">
         <div id="bk-pkg-detail" style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:12px;"></div>
         <div style="display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid rgba(255,255,255,.06);">
@@ -648,7 +649,7 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
       <button onclick="bkNext(2)" style="display:block;width:100%;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:#f02cb8;color:#fff;padding:15px;border:none;border-radius:3px;cursor:pointer;">Continue &rarr; Your Details</button>
     </div>
     <div id="bk-step2" style="padding:26px 28px;display:none;">
-      <div style="font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:18px;">Step 2 of 3 &mdash; Your Details</div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:18px;">Step 2 of 4 &mdash; Your Details</div>
       <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:20px;">
         <div><label style="display:block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:6px;">Full Name</label>
         <input id="bk-name" type="text" placeholder="Your full name" style="width:100%;background:#0c0c10;border:1px solid rgba(255,255,255,.12);border-radius:3px;padding:12px 14px;color:#fff;font-size:13px;outline:none;font-family:'Inter',sans-serif;" onfocus="this.style.borderColor='#f02cb8'" onblur="this.style.borderColor='rgba(255,255,255,.12)'"></div>
@@ -660,54 +661,107 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
       </div>
       <div style="display:flex;gap:10px;">
         <button onclick="bkNext(1)" style="flex:0 0 auto;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:transparent;color:rgba(255,255,255,.4);padding:13px 18px;border:1px solid rgba(255,255,255,.12);border-radius:3px;cursor:pointer;">&larr; Back</button>
-        <button onclick="bkNext(3)" style="flex:1;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:#f02cb8;color:#fff;padding:13px;border:none;border-radius:3px;cursor:pointer;">Continue &rarr; Confirm &amp; Book</button>
+        <button onclick="bkNext(3)" style="flex:1;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:#f02cb8;color:#fff;padding:13px;border:none;border-radius:3px;cursor:pointer;">Continue &rarr; Choose Date</button>
       </div>
     </div>
+    <!-- STEP 3: Date & Time -->
     <div id="bk-step3" style="padding:26px 28px;display:none;">
-      <div style="font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:18px;">Step 3 of 3 &mdash; Confirm &amp; Pick Your Date</div>
-      <div style="background:#1c1c22;border-radius:4px;padding:18px;margin-bottom:16px;">
-        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:10px;">Booking Summary</div>
-        <div id="bk-confirm-name" style="font-family:'Montserrat',sans-serif;font-size:17px;font-weight:900;"></div>
-        <div id="bk-confirm-detail" style="font-size:12px;color:rgba(255,255,255,.4);margin-top:4px;"></div>
-        <div id="bk-confirm-price" style="font-family:'Montserrat',sans-serif;font-size:22px;font-weight:900;color:#f02cb8;margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.06);"></div>
-      </div>
-      <div style="font-size:12px;color:rgba(255,255,255,.38);line-height:1.7;margin-bottom:20px;padding:14px;background:rgba(255,255,255,.03);border-radius:4px;border-left:3px solid rgba(240,44,184,.35);">
-        You&rsquo;ll be taken to our secure booking calendar to pick your date &amp; complete payment. Your session details are confirmed above.
+      <div style="font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:18px;">Step 3 of 4 &mdash; Choose Date &amp; Time</div>
+      <div id="bk-calendar" style="margin-bottom:18px;"></div>
+      <div id="bk-times" style="display:none;margin-bottom:18px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:10px;">Available times</div>
+        <div id="bk-time-slots" style="display:flex;flex-wrap:wrap;gap:8px;"></div>
       </div>
       <div style="display:flex;gap:10px;">
         <button onclick="bkNext(2)" style="flex:0 0 auto;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:transparent;color:rgba(255,255,255,.4);padding:13px 18px;border:1px solid rgba(255,255,255,.12);border-radius:3px;cursor:pointer;">&larr; Back</button>
-        <button onclick="goToBooking()" style="flex:1;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:#f02cb8;color:#fff;padding:13px;border:none;border-radius:3px;cursor:pointer;">Choose Date &amp; Pay &#8599;</button>
+        <button id="bk-date-continue" onclick="bkNext(4)" disabled style="flex:1;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:rgba(240,44,184,.3);color:rgba(255,255,255,.4);padding:13px;border:none;border-radius:3px;cursor:not-allowed;">Select a date &amp; time</button>
       </div>
+    </div>
+
+    <!-- STEP 4: Payment -->
+    <div id="bk-step4" style="padding:26px 28px;display:none;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:18px;">Step 4 of 4 &mdash; Payment</div>
+      <div style="background:#1c1c22;border-radius:4px;padding:14px 18px;margin-bottom:18px;display:flex;justify-content:space-between;align-items:center;">
+        <div>
+          <div id="bk-pay-name" style="font-family:'Montserrat',sans-serif;font-size:14px;font-weight:900;"></div>
+          <div id="bk-pay-date" style="font-size:11px;color:rgba(255,255,255,.4);margin-top:3px;"></div>
+        </div>
+        <div id="bk-pay-price" style="font-family:'Montserrat',sans-serif;font-size:22px;font-weight:900;color:#f02cb8;"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:20px;">
+        <div><label style="display:block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:6px;">Cardholder Name</label>
+        <input id="bk-card-name" type="text" placeholder="Name on card" style="width:100%;background:#0c0c10;border:1px solid rgba(255,255,255,.12);border-radius:3px;padding:12px 14px;color:#fff;font-size:13px;outline:none;font-family:'Inter',sans-serif;" onfocus="this.style.borderColor='#f02cb8'" onblur="this.style.borderColor='rgba(255,255,255,.12)'"></div>
+        <div><label style="display:block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:6px;">Card Number</label>
+        <input id="bk-card-num" type="text" placeholder="1234 5678 9012 3456" maxlength="19" oninput="fmtCard(this)" style="width:100%;background:#0c0c10;border:1px solid rgba(255,255,255,.12);border-radius:3px;padding:12px 14px;color:#fff;font-size:13px;outline:none;font-family:'Inter',sans-serif;letter-spacing:.08em;" onfocus="this.style.borderColor='#f02cb8'" onblur="this.style.borderColor='rgba(255,255,255,.12)'"></div>
+        <div style="display:flex;gap:12px;">
+          <div style="flex:1;"><label style="display:block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:6px;">Expiry</label>
+          <input id="bk-card-exp" type="text" placeholder="MM / YY" maxlength="7" oninput="fmtExpiry(this)" style="width:100%;background:#0c0c10;border:1px solid rgba(255,255,255,.12);border-radius:3px;padding:12px 14px;color:#fff;font-size:13px;outline:none;font-family:'Inter',sans-serif;" onfocus="this.style.borderColor='#f02cb8'" onblur="this.style.borderColor='rgba(255,255,255,.12)'"></div>
+          <div style="flex:1;"><label style="display:block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:6px;">CVV</label>
+          <input id="bk-card-cvv" type="text" placeholder="123" maxlength="4" oninput="this.value=this.value.replace(/\D/g,'')" style="width:100%;background:#0c0c10;border:1px solid rgba(255,255,255,.12);border-radius:3px;padding:12px 14px;color:#fff;font-size:13px;outline:none;font-family:'Inter',sans-serif;" onfocus="this.style.borderColor='#f02cb8'" onblur="this.style.borderColor='rgba(255,255,255,.12)'"></div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:18px;font-size:11px;color:rgba(255,255,255,.28);">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Secure payment &mdash; 256-bit SSL encryption
+      </div>
+      <div style="display:flex;gap:10px;">
+        <button onclick="bkNext(3)" style="flex:0 0 auto;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:transparent;color:rgba(255,255,255,.4);padding:13px 18px;border:1px solid rgba(255,255,255,.12);border-radius:3px;cursor:pointer;">&larr; Back</button>
+        <button onclick="submitPayment()" id="bk-pay-btn" style="flex:1;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:#f02cb8;color:#fff;padding:13px;border:none;border-radius:3px;cursor:pointer;">Pay Now &mdash; <span id="bk-pay-total"></span></button>
+      </div>
+    </div>
+
+    <!-- STEP 5: Confirmation -->
+    <div id="bk-step5" style="padding:36px 28px;display:none;text-align:center;">
+      <div style="width:64px;height:64px;background:rgba(240,44,184,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f02cb8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <div style="font-family:'Montserrat',sans-serif;font-size:22px;font-weight:900;margin-bottom:8px;">Booking Confirmed!</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:24px;">Your flight is booked. A confirmation has been sent to <strong id="bk-conf-email" style="color:rgba(255,255,255,.7);"></strong></div>
+      <div style="background:#1c1c22;border-radius:4px;padding:18px;margin-bottom:24px;text-align:left;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:14px;">Booking Reference</div>
+        <div style="font-family:'Montserrat',sans-serif;font-size:20px;font-weight:900;color:#f02cb8;letter-spacing:.08em;margin-bottom:14px;" id="bk-ref-num"></div>
+        <div style="font-size:12px;color:rgba(255,255,255,.55);line-height:1.9;" id="bk-conf-summary"></div>
+      </div>
+      <div style="font-size:12px;color:rgba(255,255,255,.35);margin-bottom:20px;">Please arrive <strong style="color:rgba(255,255,255,.6);">20 minutes early</strong> with your booking reference.</div>
+      <button onclick="closeBooking()" style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:transparent;color:rgba(255,255,255,.5);padding:12px 28px;border:1px solid rgba(255,255,255,.15);border-radius:3px;cursor:pointer;">Close</button>
     </div>
   </div>
 </div>
 
 <script>
-var bkSlug='',bkPkgName='',bkPrice='',bkDetail='';
+var bkSlug='',bkPkgName='',bkPrice='',bkDetail='',bkSelectedDate='',bkSelectedTime='';
+
 function openBooking(name,price,slug,detail){
   bkSlug=slug;bkPkgName=name;bkPrice=price;bkDetail=detail;
+  bkSelectedDate='';bkSelectedTime='';
   document.getElementById('bk-pkg-name').textContent=name;
   document.getElementById('bk-pkg-detail').textContent=detail;
   document.getElementById('bk-price-display').innerHTML=price;
-  document.getElementById('bk-confirm-name').textContent=name;
-  document.getElementById('bk-confirm-detail').textContent=detail;
-  document.getElementById('bk-confirm-price').innerHTML=price;
+  document.getElementById('bk-pay-name').textContent=name;
+  document.getElementById('bk-pay-price').innerHTML=price;
+  document.getElementById('bk-pay-total').innerHTML=price;
+  buildCalendar();
   bkShowStep(1);
   document.getElementById('bk-overlay').style.display='block';
   document.body.style.overflow='hidden';
 }
+
 function closeBooking(){
   document.getElementById('bk-overlay').style.display='none';
   document.body.style.overflow='';
 }
+
 function bkShowStep(n){
-  ['bk-step1','bk-step2','bk-step3'].forEach(function(id,i){
+  ['bk-step1','bk-step2','bk-step3','bk-step4','bk-step5'].forEach(function(id,i){
     document.getElementById(id).style.display=(i+1===n)?'block':'none';
   });
-  ['dot1','dot2','dot3'].forEach(function(id,i){
-    document.getElementById(id).style.background=(i<n)?'#f02cb8':'rgba(255,255,255,.12)';
+  ['dot1','dot2','dot3','dot4'].forEach(function(id,i){
+    document.getElementById(id).style.background=(i<Math.min(n,4))?'#f02cb8':'rgba(255,255,255,.12)';
   });
+  var panel=document.getElementById('bk-panel');
+  if(panel) panel.scrollIntoView({block:'start'});
 }
+
 function bkNext(step){
   if(step===3){
     var name=document.getElementById('bk-name').value.trim();
@@ -715,11 +769,150 @@ function bkNext(step){
     if(!name||!email){alert('Please enter your name and email to continue.');return;}
   }
   bkShowStep(step);
-  document.getElementById('bk-panel').scrollTop=0;
 }
-function goToBooking(){
-  window.open('https://shop.indoorskydive.lu/store_10/product/'+bkSlug,'_blank');
+
+// Calendar builder
+function buildCalendar(){
+  var today=new Date();
+  var cal=document.getElementById('bk-calendar');
+  var html='<div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:10px;">Select a date</div>';
+  html+='<div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:4px;">';
+  ['Mo','Tu','We','Th','Fr','Sa','Su'].forEach(function(d){
+    html+='<div style="text-align:center;font-size:9px;font-weight:700;color:rgba(255,255,255,.25);padding:4px 0;">'+d+'</div>';
+  });
+  html+='</div><div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;">';
+  // Get first day offset
+  var firstDay=new Date(today.getFullYear(),today.getMonth(),1);
+  var offset=(firstDay.getDay()+6)%7; // Mo=0
+  for(var i=0;i<offset;i++) html+='<div></div>';
+  var daysInMonth=new Date(today.getFullYear(),today.getMonth()+1,0).getDate();
+  for(var d=1;d<=daysInMonth;d++){
+    var date=new Date(today.getFullYear(),today.getMonth(),d);
+    var isPast=date<new Date(today.getFullYear(),today.getMonth(),today.getDate());
+    var isSun=date.getDay()===0;
+    var dateStr=date.toISOString().slice(0,10);
+    if(isPast||isSun){
+      html+='<div style="text-align:center;font-size:12px;color:rgba(255,255,255,.15);padding:8px 4px;border-radius:3px;">'+d+'</div>';
+    } else {
+      html+='<div onclick="selectDate(\''+dateStr+'\','+d+')" data-date="'+dateStr+'" style="text-align:center;font-size:12px;color:rgba(255,255,255,.7);padding:8px 4px;border-radius:3px;cursor:pointer;border:1px solid rgba(255,255,255,.08);transition:all .15s;" onmouseover="this.style.borderColor=\'#f02cb8\'" onmouseout="if(!this.classList.contains(\'sel\'))this.style.borderColor=\'rgba(255,255,255,.08)\'">'+d+'</div>';
+    }
+  }
+  html+='</div>';
+  cal.innerHTML=html;
 }
+
+function selectDate(dateStr,day){
+  // Deselect all
+  document.querySelectorAll('[data-date]').forEach(function(el){
+    el.style.background='transparent';
+    el.style.borderColor='rgba(255,255,255,.08)';
+    el.style.color='rgba(255,255,255,.7)';
+    el.classList.remove('sel');
+  });
+  // Select this
+  var el=document.querySelector('[data-date="'+dateStr+'"]');
+  el.style.background='#f02cb8';
+  el.style.borderColor='#f02cb8';
+  el.style.color='#fff';
+  el.classList.add('sel');
+  bkSelectedDate=dateStr;
+  bkSelectedTime='';
+  showTimeSlots(dateStr);
+}
+
+var allTimes=['09:00','10:00','11:00','12:00','14:00','15:00','16:00','17:00'];
+var unavail={'09:00':true,'12:00':true,'15:00':true};
+
+function showTimeSlots(dateStr){
+  var container=document.getElementById('bk-time-slots');
+  var html='';
+  allTimes.forEach(function(t){
+    if(unavail[t]){
+      html+='<div style="font-size:12px;color:rgba(255,255,255,.2);padding:8px 14px;border:1px solid rgba(255,255,255,.06);border-radius:3px;text-decoration:line-through;">'+t+'</div>';
+    } else {
+      html+='<div onclick="selectTime(\''+t+'\')" data-time="'+t+'" style="font-size:12px;color:rgba(255,255,255,.7);padding:8px 14px;border:1px solid rgba(255,255,255,.12);border-radius:3px;cursor:pointer;transition:all .15s;" onmouseover="this.style.borderColor=\'#f02cb8\'" onmouseout="if(!this.classList.contains(\'tsel\'))this.style.borderColor=\'rgba(255,255,255,.12)\'">'+t+'</div>';
+    }
+  });
+  container.innerHTML=html;
+  document.getElementById('bk-times').style.display='block';
+  updateDateBtn();
+}
+
+function selectTime(t){
+  document.querySelectorAll('[data-time]').forEach(function(el){
+    el.style.background='transparent';
+    el.style.borderColor='rgba(255,255,255,.12)';
+    el.style.color='rgba(255,255,255,.7)';
+    el.classList.remove('tsel');
+  });
+  var el=document.querySelector('[data-time="'+t+'"]');
+  el.style.background='#f02cb8';
+  el.style.borderColor='#f02cb8';
+  el.style.color='#fff';
+  el.classList.add('tsel');
+  bkSelectedTime=t;
+  updateDateBtn();
+}
+
+function updateDateBtn(){
+  var btn=document.getElementById('bk-date-continue');
+  if(bkSelectedDate&&bkSelectedTime){
+    btn.disabled=false;
+    btn.style.background='#f02cb8';
+    btn.style.color='#fff';
+    btn.style.cursor='pointer';
+    btn.textContent='Continue \u2192 Payment';
+    var d=new Date(bkSelectedDate+'T12:00:00');
+    var label=d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'long'})+' at '+bkSelectedTime;
+    document.getElementById('bk-pay-date').textContent=label;
+    document.getElementById('bk-conf-summary');
+  } else {
+    btn.disabled=true;
+    btn.style.background='rgba(240,44,184,.3)';
+    btn.style.color='rgba(255,255,255,.4)';
+    btn.style.cursor='not-allowed';
+    btn.textContent='Select a date & time';
+  }
+}
+
+// Card formatting
+function fmtCard(el){
+  var v=el.value.replace(/\D/g,'').slice(0,16);
+  el.value=v.match(/.{1,4}/g)?v.match(/.{1,4}/g).join(' '):'';
+}
+function fmtExpiry(el){
+  var v=el.value.replace(/\D/g,'');
+  if(v.length>=3) el.value=v.slice(0,2)+' / '+v.slice(2,4);
+  else el.value=v;
+}
+
+function submitPayment(){
+  var cn=document.getElementById('bk-card-name').value.trim();
+  var num=document.getElementById('bk-card-num').value.replace(/\s/g,'');
+  var exp=document.getElementById('bk-card-exp').value.trim();
+  var cvv=document.getElementById('bk-card-cvv').value.trim();
+  if(!cn||num.length<16||exp.length<4||cvv.length<3){
+    alert('Please fill in all payment details.');return;
+  }
+  var btn=document.getElementById('bk-pay-btn');
+  btn.textContent='Processing...';
+  btn.disabled=true;
+  btn.style.opacity='0.7';
+  setTimeout(function(){
+    var ref='LXF-'+Math.random().toString(36).slice(2,6).toUpperCase()+'-'+Math.floor(Math.random()*9000+1000);
+    document.getElementById('bk-ref-num').textContent=ref;
+    document.getElementById('bk-conf-email').textContent=document.getElementById('bk-email').value;
+    var d=new Date(bkSelectedDate+'T12:00:00');
+    var dateLabel=d.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+    document.getElementById('bk-conf-summary').innerHTML=
+      '<strong style="color:rgba(255,255,255,.8);">'+bkPkgName+'</strong><br>'+
+      bkDetail+'<br>'+
+      dateLabel+' at '+bkSelectedTime+'<br>'+
+      '<span style="color:#f02cb8;font-family:Montserrat,sans-serif;font-weight:900;">'+bkPrice+'</span>';
+    bkShowStep(5);
+  },1800);
+}
+
 var nav=document.getElementById('nav');
 window.addEventListener('scroll',function(){nav.classList.toggle('dark',window.scrollY>60);},{passive:true});
 var sections=document.querySelectorAll('.pkg-section[id]');
