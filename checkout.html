@@ -732,18 +732,8 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
 var bkSlug='',bkPkgName='',bkPrice='',bkDetail='',bkSelectedDate='',bkSelectedTime='';
 
 function openBooking(name,price,slug,detail){
-  bkSlug=slug;bkPkgName=name;bkPrice=price;bkDetail=detail;
-  bkSelectedDate='';bkSelectedTime='';
-  document.getElementById('bk-pkg-name').textContent=name;
-  document.getElementById('bk-pkg-detail').textContent=detail;
-  document.getElementById('bk-price-display').innerHTML=price;
-  document.getElementById('bk-pay-name').textContent=name;
-  document.getElementById('bk-pay-price').innerHTML=price;
-  document.getElementById('bk-pay-total').innerHTML=price;
-  buildCalendar();
-  bkShowStep(1);
-  document.getElementById('bk-overlay').style.display='block';
-  document.body.style.overflow='hidden';
+  var url='book.html?name='+encodeURIComponent(name)+'&price='+encodeURIComponent(price)+'&detail='+encodeURIComponent(detail);
+  window.location.href=url;
 }
 
 function closeBooking(){
