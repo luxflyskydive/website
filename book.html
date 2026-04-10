@@ -309,20 +309,18 @@ img{display:block;max-width:100%}
   </div><!-- /book-form-col -->
 </div><!-- /book-wrap -->
 
+
 <script>
-// Read URL params
 var params=new URLSearchParams(window.location.search);
 var bkName=params.get('name')||'Your Package';
 var bkPrice=params.get('price')||'';
 var bkDetail=params.get('detail')||'';
 
-// Populate left summary
 document.getElementById('sum-name').textContent=bkName;
 document.getElementById('sum-detail').textContent=bkDetail;
 document.getElementById('sum-price').textContent=bkPrice;
 document.getElementById('pay-price').textContent=bkPrice;
 
-// STEP NAVIGATION
 var currentStep=1;
 var bkSelectedDate='',bkSelectedTime='';
 
@@ -344,8 +342,7 @@ function goStep(n){
   }
   window.scrollTo({top:0,behavior:'smooth'});
 }
-</script>
-<script>
+
 function updateStepBar(n){
   [1,2,3].forEach(function(i){
     var dot=document.getElementById('dot'+i);
@@ -358,7 +355,6 @@ function updateStepBar(n){
   });
 }
 
-// CALENDAR
 var calYear,calMonth;
 function initCal(){
   var t=new Date();calYear=t.getFullYear();calMonth=t.getMonth();
@@ -373,25 +369,30 @@ function changeMonth(dir){
 function buildCalendar(){
   var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
   document.getElementById('cal-month-label').textContent=months[calMonth]+' '+calYear;
-  var grid=document.getElementById('cal-days');grid.innerHTML='';
+  var grid=document.getElementById('cal-days');
+  grid.innerHTML='';
   var today=new Date();today.setHours(0,0,0,0);
   var first=new Date(calYear,calMonth,1);
   var startDay=(first.getDay()+6)%7;
-  for(var i=0;i<startDay;i++){var e=document.createElement('button');e.className='cal-day empty';e.disabled=true;grid.appendChild(e);}
+  for(var i=0;i<startDay;i++){
+    var e=document.createElement('button');
+    e.className='cal-day empty';e.disabled=true;grid.appendChild(e);
+  }
   var days=new Date(calYear,calMonth+1,0).getDate();
-</script>
-<script>
   for(var d=1;d<=days;d++){
     var btn=document.createElement('button');
     var thisDate=new Date(calYear,calMonth,d);
-    var mm=calMonth+1<10?'0'+(calMonth+1):''+(calMonth+1);
-    var dd=d<10?'0'+d:''+d;
+    var mm=(calMonth+1<10?'0':'')+(calMonth+1);
+    var dd=(d<10?'0':'')+d;
     var ds=calYear+'-'+mm+'-'+dd;
-    btn.className='cal-day';btn.textContent=d;
+    btn.className='cal-day';
+    btn.textContent=d;
     if(thisDate<today||thisDate.getDay()===0){
       btn.className='cal-day disabled';btn.disabled=true;
     } else {
-      (function(dateStr,dayEl){dayEl.onclick=function(){selectDate(dateStr,dayEl);};})(ds,btn);
+      (function(dateStr,dayEl){
+        dayEl.onclick=function(){selectDate(dateStr,dayEl);};
+      })(ds,btn);
     }
     if(ds===bkSelectedDate)btn.classList.add('selected');
     grid.appendChild(btn);
@@ -412,7 +413,8 @@ function formatDate(ds){
 function showTimeSlots(ds){
   document.getElementById('time-date-label').textContent=formatDate(ds);
   document.getElementById('time-wrap').style.display='block';
-  var grid=document.getElementById('time-grid');grid.innerHTML='';
+  var grid=document.getElementById('time-grid');
+  grid.innerHTML='';
   var slots=['09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00'];
   var unavail=['11:00','14:00'];
   slots.forEach(function(t){
@@ -429,8 +431,7 @@ function selectTime(t,el){
   el.classList.add('selected');
   document.getElementById('btn-step1').disabled=false;
 }
-</script>
-<script>
+
 function fmtCard(el){
   var v=el.value.replace(/\D/g,'').slice(0,16);
   el.value=v.match(/.{1,4}/g)?v.match(/.{1,4}/g).join(' '):'';
@@ -454,13 +455,11 @@ function submitPayment(){
     for(var i=0;i<4;i++)ref+=chars[Math.floor(Math.random()*chars.length)];
     ref+='-'+(1000+Math.floor(Math.random()*9000));
     document.getElementById('conf-ref').textContent='Ref: '+ref;
-    var email=document.getElementById('d-email').value;
-    document.getElementById('conf-email').textContent=email;
+    document.getElementById('conf-email').textContent=document.getElementById('d-email').value;
     document.getElementById('conf-pkg').textContent=bkName;
     document.getElementById('conf-dt').textContent=formatDate(bkSelectedDate)+' at '+bkSelectedTime;
     document.getElementById('conf-name').textContent=document.getElementById('d-fname').value+' '+document.getElementById('d-lname').value;
     document.getElementById('conf-price').textContent=bkPrice;
-    // Show step 4 directly
     document.querySelectorAll('.book-step').forEach(function(el){el.classList.remove('active');});
     document.getElementById('step4').classList.add('active');
     window.scrollTo({top:0,behavior:'smooth'});
