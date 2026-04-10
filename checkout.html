@@ -663,12 +663,6 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
       <button class="qm-qty-btn" onclick="changeQty(1)">&#43;</button>
       <span class="qm-unit-price" id="qm-unit-price"></span>
     </div>
-    <div class="qm-label">Promo Code</div>
-    <div class="qm-promo-row">
-      <input class="qm-input" id="qm-promo-input" type="text" placeholder="Enter your code" maxlength="20" onkeydown="if(event.key==='Enter')applyPromo()"/>
-      <button class="qm-apply-btn" onclick="applyPromo()">Apply</button>
-    </div>
-    <div class="qm-msg" id="qm-msg"></div>
     <div class="qm-footer">
       <div>
         <div class="qm-total-label">Total</div>
@@ -794,8 +788,7 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
 var bkSlug='',bkPkgName='',bkPrice='',bkDetail='',bkSelectedDate='',bkSelectedTime='';
 
 // QUANTITY + PROMO MODAL
-var qmName='',qmRawPrice=0,qmQty=1,qmDiscount=0,qmPromoApplied='';
-var PROMO_CODES={'ZOOM':15,'LUXFLY10':10,'WELCOME':10,'VIP':20};
+var qmName='',qmRawPrice=0,qmQty=1;
 
 function parsePrice(priceStr){
   var n=parseFloat(priceStr.replace(/[^0-9.]/g,''));
@@ -805,13 +798,10 @@ function formatPrice(n){
   return '€'+n.toFixed(2).replace('.',',');
 }
 function openBooking(name,price,slug,detail){
-  qmName=name;qmRawPrice=parsePrice(price);qmQty=1;qmDiscount=0;qmPromoApplied='';
+  qmName=name;qmRawPrice=parsePrice(price);qmQty=1;
   document.getElementById('qm-name').textContent=name;
   document.getElementById('qm-detail').textContent=detail;
   document.getElementById('qm-unit-price').textContent=price+' per person';
-  document.getElementById('qm-promo-input').value='';
-  document.getElementById('qm-msg').textContent='';
-  document.getElementById('qm-msg').className='qm-msg';
   updateQMTotal();
   document.getElementById('qm-overlay').classList.add('open');
   document.body.style.overflow='hidden';
@@ -827,37 +817,16 @@ function changeQty(d){
   document.getElementById('qm-qty-num').textContent=qmQty;
   updateQMTotal();
 }
-function applyPromo(){
-  var code=document.getElementById('qm-promo-input').value.trim().toUpperCase();
-  var msg=document.getElementById('qm-msg');
-  if(!code){msg.textContent='Please enter a code.';msg.className='qm-msg err';return;}
-  if(PROMO_CODES[code]!==undefined){
-    qmDiscount=PROMO_CODES[code];qmPromoApplied=code;
-    msg.textContent='✓ Code "'+code+'" applied — '+qmDiscount+'% off!';
-    msg.className='qm-msg ok';
-    updateQMTotal();
-  } else {
-    qmDiscount=0;qmPromoApplied='';
-    msg.textContent='✗ Code not recognised. Try ZOOM for 15% off.';
-    msg.className='qm-msg err';
-    updateQMTotal();
-  }
-}
 function updateQMTotal(){
-  var subtotal=qmRawPrice*qmQty;
-  var total=subtotal*(1-qmDiscount/100);
-  document.getElementById('qm-total').textContent=formatPrice(total);
+  document.getElementById('qm-total').textContent=formatPrice(qmRawPrice*qmQty);
 }
 function proceedToBook(){
-  var subtotal=qmRawPrice*qmQty;
-  var total=subtotal*(1-qmDiscount/100);
   var url='book.html'
     +'?name='+encodeURIComponent(qmName)
-    +'&price='+encodeURIComponent(formatPrice(total))
+    +'&price='+encodeURIComponent(formatPrice(qmRawPrice*qmQty))
     +'&detail='+encodeURIComponent(bkDetail)
     +'&qty='+qmQty
-    +'&unitprice='+encodeURIComponent(formatPrice(qmRawPrice))
-    +(qmPromoApplied?'&promo='+encodeURIComponent(qmPromoApplied)+'&discount='+qmDiscount:'');
+    +'&unitprice='+encodeURIComponent(formatPrice(qmRawPrice));
   window.location.href=url;
 }
 

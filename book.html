@@ -271,61 +271,7 @@ img{display:block;max-width:100%}
     <!-- STEP 2: Your Details -->
     <div class="book-step" id="step2">
       <div class="step-title">Your Details &amp; Options</div>
-      <div class="step-sub">Customise your experience and enter your details.</div>
-
-      <!-- Included items (non-clickable) -->
-      <div class="inc-section">
-        <div class="inc-section-label">What&apos;s included <span>always included</span></div>
-        <div class="inc-item">
-          <div class="inc-check">✓</div>
-          <div class="inc-content"><strong>HighFly <span class="inc-badge">Included</span></strong><p>On your final flight, your instructor will take you to the top at full speed — the highlight of the experience.</p></div>
-        </div>
-        <div class="inc-item">
-          <div class="inc-check">✓</div>
-          <div class="inc-content"><strong>Photos <span class="inc-badge">Included</span></strong><p>Download your souvenir photos after the experience — available for up to 30 days after your flight.</p></div>
-        </div>
-        <div class="inc-item">
-          <div class="inc-check">✓</div>
-          <div class="inc-content"><strong>Permanent Expo <span class="inc-badge">Included</span></strong><p>Discover &ldquo;The Art of Skydiving&rdquo; — a unique experience complementing your flight session.</p></div>
-        </div>
-      </div>
-
-      <!-- Optional add-ons (clickable) -->
-      <div class="addon-section">
-        <div class="inc-section-label">Options <span>multiple selection allowed</span></div>
-        <label class="addon-item" id="addon-label-flex" onclick="toggleAddon('flex',this)">
-          <input type="checkbox" id="addon-flex" onclick="event.stopPropagation()"/>
-          <div class="addon-info">
-            <div class="addon-name">Flexibility Insurance</div>
-            <div class="addon-desc">Reschedule your flight free of charge up to 24h before. Without insurance: &lt;48h = €15/p, &lt;48h = €30/p. With insurance: &lt;24h = free, &lt;24h = €35/p.</div>
-          </div>
-          <div class="addon-price">+€5,50</div>
-        </label>
-        <label class="addon-item" id="addon-label-expo" onclick="toggleAddon('expo',this)">
-          <input type="checkbox" id="addon-expo" onclick="event.stopPropagation()"/>
-          <div class="addon-info">
-            <div class="addon-name">Permanent Expo — Extra person</div>
-            <div class="addon-desc">Add an extra person to the Art of Skydiving exhibition for someone not in your flying group.</div>
-          </div>
-          <div class="addon-price">+€15,00</div>
-        </label>
-        <label class="addon-item" id="addon-label-video" onclick="toggleAddon('video',this)">
-          <input type="checkbox" id="addon-video" onclick="event.stopPropagation()"/>
-          <div class="addon-info">
-            <div class="addon-name">Video Recording</div>
-            <div class="addon-desc">Download high-resolution video footage of your flights — available for up to 30 days after.</div>
-          </div>
-          <div class="addon-price">+€15,00</div>
-        </label>
-        <label class="addon-item" id="addon-label-neck" onclick="toggleAddon('neck',this)">
-          <input type="checkbox" id="addon-neck" onclick="event.stopPropagation()"/>
-          <div class="addon-info">
-            <div class="addon-name">Cache-cou LXF (neck warmer)</div>
-            <div class="addon-desc">Personalised neck warmer for extra comfort during your flight — less wind and a great souvenir.</div>
-          </div>
-          <div class="addon-price">+€6,50</div>
-        </label>
-      </div>
+      <div class="step-sub">Tell us who&apos;s flying, then choose any extras you&apos;d like to add.</div>
 
       <div class="form-row">
         <div class="form-group">
@@ -345,6 +291,61 @@ img{display:block;max-width:100%}
         <label class="form-label" for="d-phone">Phone Number</label>
         <input class="form-input" id="d-phone" type="tel" placeholder="+352 000 000"/>
       </div>
+
+      <!-- Included items (non-clickable) -->
+      <div class="inc-section" style="margin-top:28px">
+        <div class="inc-section-label">What&apos;s included <span>always included</span></div>
+        <div class="inc-item">
+          <div class="inc-check">✓</div>
+          <div class="inc-content"><strong>HighFly <span class="inc-badge">Included</span></strong><p>On your final flight, your instructor will take you to the top at full speed — the highlight of the experience.</p></div>
+        </div>
+        <div class="inc-item">
+          <div class="inc-check">✓</div>
+          <div class="inc-content"><strong>Photos <span class="inc-badge">Included</span></strong><p>Download your souvenir photos after the experience — available for up to 30 days after your flight.</p></div>
+        </div>
+        <div class="inc-item">
+          <div class="inc-check">✓</div>
+          <div class="inc-content"><strong>Permanent Expo <span class="inc-badge">Included</span></strong><p>Discover &ldquo;The Art of Skydiving&rdquo; — a unique experience complementing your flight session.</p></div>
+        </div>
+      </div>
+
+      <!-- Optional add-ons (clickable) -->
+      <div class="addon-section">
+        <div class="inc-section-label">Options <span>multiple selection allowed</span></div>
+        <label class="addon-item" id="addon-label-flex">
+          <input type="checkbox" id="addon-flex" onchange="toggleAddon('flex',this)"/>
+          <div class="addon-info">
+            <div class="addon-name">Flexibility Insurance</div>
+            <div class="addon-desc">Reschedule your flight free of charge up to 24h before. Without insurance: &lt;48h = €15/p, &lt;48h = €30/p. With insurance: &lt;24h = free, &lt;24h = €35/p.</div>
+          </div>
+          <div class="addon-price">+€5,50</div>
+        </label>
+        <label class="addon-item" id="addon-label-expo">
+          <input type="checkbox" id="addon-expo" onchange="toggleAddon('expo',this)"/>
+          <div class="addon-info">
+            <div class="addon-name">Permanent Expo — Extra person</div>
+            <div class="addon-desc">Add an extra person to the Art of Skydiving exhibition for someone not in your flying group.</div>
+          </div>
+          <div class="addon-price">+€15,00</div>
+        </label>
+        <label class="addon-item" id="addon-label-video">
+          <input type="checkbox" id="addon-video" onchange="toggleAddon('video',this)"/>
+          <div class="addon-info">
+            <div class="addon-name">Video Recording</div>
+            <div class="addon-desc">Download high-resolution video footage of your flights — available for up to 30 days after.</div>
+          </div>
+          <div class="addon-price">+€15,00</div>
+        </label>
+        <label class="addon-item" id="addon-label-neck">
+          <input type="checkbox" id="addon-neck" onchange="toggleAddon('neck',this)"/>
+          <div class="addon-info">
+            <div class="addon-name">Cache-cou LXF (neck warmer)</div>
+            <div class="addon-desc">Personalised neck warmer for extra comfort during your flight — less wind and a great souvenir.</div>
+          </div>
+          <div class="addon-price">+€6,50</div>
+        </label>
+      </div>
+
       <button class="btn-primary" onclick="goStep(3)">Continue to Payment</button>
       <button class="btn-back" onclick="goStep(1)">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
@@ -363,6 +364,15 @@ img{display:block;max-width:100%}
         <div class="order-row promo-row" id="ord-promo-row" style="display:none"><span class="order-label">Promo Code</span><span class="order-val" id="ord-promo">—</span></div>
         <div class="order-row"><span class="order-label">Total</span><span class="order-val" id="ord-total">—</span></div>
       </div>
+      <!-- Promo code -->
+      <div style="max-width:480px;margin-bottom:20px">
+        <div style="display:flex;gap:8px">
+          <input class="form-input" id="promo-input" type="text" placeholder="Promo code" style="flex:1;max-width:none;text-transform:uppercase;letter-spacing:.06em" oninput="this.value=this.value.toUpperCase()"/>
+          <button onclick="applyPromo()" style="background:transparent;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.55);font-family:'Inter',sans-serif;font-size:12px;font-weight:600;padding:0 18px;border-radius:4px;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:border-color .18s,color .18s" onmouseover="this.style.borderColor='var(--pink)';this.style.color='var(--pink)'" onmouseout="this.style.borderColor='rgba(255,255,255,.18)';this.style.color='rgba(255,255,255,.55)'">Apply</button>
+        </div>
+        <div id="promo-msg" style="font-size:11px;margin-top:6px;min-height:16px"></div>
+      </div>
+
       <!-- Legal notes -->
       <details class="legal-notes">
         <summary>Important information before your visit</summary>
@@ -482,19 +492,48 @@ var bkVoucherMode=false;
 var bkAddons={flex:{price:5.50,on:false},expo:{price:15.00,on:false},video:{price:15.00,on:false},neck:{price:6.50,on:false}};
 var bkBaseTotal=parseFloat((bkPrice||'0').replace(/[^0-9.]/g,function(c){return c===','?'.':'';})) || 0;
 
-function toggleAddon(id,labelEl){
-  var cb=document.getElementById('addon-'+id);
-  cb.checked=!cb.checked;
+// Promo code state
+var PROMO_CODES={'ZOOM':10,'LUXFLY20':20,'FIRSTFLY':15};
+var bkPromoApplied='';
+var bkPromoDiscount=0;
+
+function toggleAddon(id,cb){
   bkAddons[id].on=cb.checked;
-  labelEl.classList.toggle('checked',cb.checked);
+  cb.closest('.addon-item').classList.toggle('checked',cb.checked);
   refreshPayTotal();
 }
 function refreshPayTotal(){
   var extra=0;
   for(var k in bkAddons) if(bkAddons[k].on) extra+=bkAddons[k].price;
-  var total=bkBaseTotal+extra;
-  var fmt='€'+total.toFixed(2).replace('.',',');
+  var subtotal=bkBaseTotal+extra;
+  var disc=bkPromoDiscount?subtotal*(bkPromoDiscount/100):0;
+  var fmt='€'+(subtotal-disc).toFixed(2).replace('.',',');
   document.getElementById('pay-price').textContent=fmt;
+}
+function applyPromo(){
+  var code=document.getElementById('promo-input').value.trim().toUpperCase();
+  var msg=document.getElementById('promo-msg');
+  if(!code){msg.textContent='';return;}
+  if(PROMO_CODES[code]!==undefined){
+    bkPromoApplied=code;bkPromoDiscount=PROMO_CODES[code];
+    msg.style.color='#4ecb71';
+    msg.textContent='\u2713 Code "'+code+'" applied \u2014 '+bkPromoDiscount+'% off!';
+    document.getElementById('ord-promo').textContent=code+' (\u2212'+bkPromoDiscount+'%)';
+    document.getElementById('ord-promo-row').style.display='flex';
+  } else {
+    bkPromoApplied='';bkPromoDiscount=0;
+    msg.style.color='rgba(255,100,100,.8)';
+    msg.textContent='\u2717 Invalid promo code.';
+    document.getElementById('ord-promo-row').style.display='none';
+  }
+  refreshPayTotal();
+  updateOrdTotal();
+}
+function updateOrdTotal(){
+  var extra=0;for(var k in bkAddons)if(bkAddons[k].on)extra+=bkAddons[k].price;
+  var subtotal=bkBaseTotal+extra;
+  var disc=bkPromoDiscount?subtotal*(bkPromoDiscount/100):0;
+  document.getElementById('ord-total').textContent='€'+(subtotal-disc).toFixed(2).replace('.',',');
 }
 function activateVoucherMode(){
   bkVoucherMode=true;
@@ -520,19 +559,12 @@ function goStep(n){
   if(n===3){
     document.getElementById('ord-pkg').textContent=bkName;
     document.getElementById('ord-dt').textContent=bkSelectedDate?formatDate(bkSelectedDate)+' at '+bkSelectedTime:'—';
-    var extra=0;for(var k in bkAddons)if(bkAddons[k].on)extra+=bkAddons[k].price;
-    var finalTotal=bkBaseTotal+extra;
-    document.getElementById('ord-total').textContent='€'+finalTotal.toFixed(2).replace('.',',');
     // Quantity row
     if(bkQty>1){
       document.getElementById('ord-qty').textContent=bkQty+' people';
       document.getElementById('ord-qty-row').style.display='flex';
     }
-    // Promo row
-    if(bkPromo&&bkDiscount>0){
-      document.getElementById('ord-promo').textContent=bkPromo+' (−'+bkDiscount+'%)';
-      document.getElementById('ord-promo-row').style.display='flex';
-    }
+    updateOrdTotal();
   }
   window.scrollTo({top:0,behavior:'smooth'});
 }
@@ -655,7 +687,8 @@ function submitPayment(){
     document.getElementById('conf-dt').textContent=formatDate(bkSelectedDate)+' at '+bkSelectedTime;
     document.getElementById('conf-name').textContent=document.getElementById('d-fname').value+' '+document.getElementById('d-lname').value;
     var extra2=0;for(var k in bkAddons)if(bkAddons[k].on)extra2+=bkAddons[k].price;
-    document.getElementById('conf-price').textContent='€'+(bkBaseTotal+extra2).toFixed(2).replace('.',',');
+    var sub2=bkBaseTotal+extra2;var disc2=bkPromoDiscount?sub2*(bkPromoDiscount/100):0;
+    document.getElementById('conf-price').textContent='€'+(sub2-disc2).toFixed(2).replace('.',',');
     document.querySelectorAll('.book-step').forEach(function(el){el.classList.remove('active');});
     document.getElementById('step4').classList.add('active');
     window.scrollTo({top:0,behavior:'smooth'});
