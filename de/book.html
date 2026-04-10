@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<link href="../img/favicon.png" rel="icon" type="image/png"/>
+<link href="../img/favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Schließen Sie Ihre Buchung ab – Luxfly Indoor Skydiving</title>
+<meta content="Secure your indoor skydiving experience. Select your date, time and complete payment." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="../css/style.css" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--pink:#f02cb8;--black:#0c0c10;--surface:#151519;--surface2:#1c1c22;--white:#fff;--border:rgba(255,255,255,0.07)}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:'Inter',sans-serif;overflow-x:hidden;min-height:100vh}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:900;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;background:rgba(12,12,16,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-logo{display:flex;align-items:center}
+.nav-back{font-size:12px;font-weight:500;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:6px;transition:color .18s}
+.nav-back:hover{color:#fff}
+.nav-back svg{transition:transform .18s}
+.nav-back:hover svg{transform:translateX(-3px)}
+</style>
+<style>
+/* LAYOUT */
+.book-wrap{display:grid;grid-template-columns:360px 1fr;min-height:100vh;padding-top:64px}
+@media(max-width:900px){.book-wrap{grid-template-columns:1fr}}
+/* LEFT — package summary */
+.book-summary{background:var(--surface);border-right:1px solid var(--border);padding:48px 36px;display:flex;flex-direction:column;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto}
+@media(max-width:900px){.book-summary{position:static;height:auto;padding:28px 20px;border-right:none;border-bottom:1px solid var(--border)}}
+.book-summary-eyebrow{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);margin-bottom:18px}
+.book-summary-name{font-family:'Montserrat',sans-serif;font-size:clamp(26px,3vw,38px);font-weight:900;letter-spacing:-.03em;line-height:1.05;margin-bottom:10px}
+.book-summary-detail{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:24px;line-height:1.65}
+.book-summary-price{font-family:'Montserrat',sans-serif;font-size:48px;font-weight:900;letter-spacing:-.04em;color:var(--pink);line-height:1}
+.book-summary-price-label{font-size:11px;color:rgba(255,255,255,.28);margin-top:5px;letter-spacing:.04em}
+.book-summary-divider{width:36px;height:2px;background:var(--pink);margin:24px 0;border-radius:2px}
+.book-summary-includes{flex:1}
+.book-summary-includes h4{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:14px}
+.book-summary-item{font-size:13px;color:rgba(255,255,255,.48);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+.book-summary-item::before{content:'✓';color:var(--pink);font-size:10px;flex-shrink:0;margin-top:2px}
+.book-summary-secure{margin-top:24px;padding:12px 14px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:4px;display:flex;align-items:center;gap:10px;font-size:11px;color:rgba(255,255,255,.28);line-height:1.5}
+/* RIGHT — form column */
+.book-form-col{padding:48px 52px;display:flex;flex-direction:column}
+@media(max-width:1100px){.book-form-col{padding:40px 36px}}
+@media(max-width:900px){.book-form-col{padding:28px 20px}}
+@media(max-width:560px){.book-form-col{padding:24px 16px}}
+</style>
+<style>
+/* STEP BAR */
+.step-bar{display:flex;align-items:center;margin-bottom:40px}
+.step-item{display:flex;align-items:center;gap:8px}
+.step-item:not(:last-child){flex:1}
+.step-dot{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;flex-shrink:0;transition:all .3s;border:2px solid rgba(255,255,255,.15);color:rgba(255,255,255,.3);background:transparent}
+.step-dot.active{background:var(--pink);border-color:var(--pink);color:#fff}
+.step-dot.done{background:transparent;border-color:var(--pink);color:var(--pink)}
+.step-label{font-size:11px;font-weight:500;color:rgba(255,255,255,.3);white-space:nowrap;transition:color .3s}
+.step-label.active{color:#fff}
+.step-label.done{color:rgba(255,255,255,.48)}
+.step-line{flex:1;height:1px;background:rgba(255,255,255,.1);margin:0 12px;transition:background .3s}
+.step-line.done{background:var(--pink)}
+@media(max-width:560px){.step-label{display:none}}
+/* STEP PANELS */
+.book-step{display:none}
+.book-step.active{display:block}
+.step-title{font-family:'Montserrat',sans-serif;font-size:24px;font-weight:900;letter-spacing:-.02em;margin-bottom:6px}
+.step-sub{font-size:13px;color:rgba(255,255,255,.4);margin-bottom:28px;line-height:1.65}
+/* CALENDAR */
+.cal-wrap{background:var(--surface2);border-radius:6px;overflow:hidden;max-width:440px;border:1px solid var(--border)}
+.cal-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border)}
+.cal-month{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;letter-spacing:-.01em}
+.cal-nav{background:none;border:none;cursor:pointer;color:rgba(255,255,255,.45);padding:6px 10px;border-radius:3px;transition:color .18s;font-size:18px;line-height:1}
+.cal-nav:hover{color:#fff}
+.cal-days-head{display:grid;grid-template-columns:repeat(7,1fr);padding:10px 12px 4px;gap:2px}
+.cal-days-head span{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.2);text-align:center;padding:4px 0}
+.cal-days{display:grid;grid-template-columns:repeat(7,1fr);padding:4px 10px 12px;gap:3px}
+</style>
+<style>
+.cal-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:400;border-radius:4px;cursor:pointer;transition:all .18s;color:rgba(255,255,255,.7);background:transparent;border:none;font-family:'Inter',sans-serif}
+.cal-day:hover:not(.disabled):not(.empty){background:rgba(240,44,184,.18);color:#fff}
+.cal-day.selected{background:var(--pink);color:#fff;font-weight:700}
+.cal-day.today{outline:1px solid rgba(255,255,255,.22)}
+.cal-day.disabled{color:rgba(255,255,255,.14);cursor:not-allowed;pointer-events:none}
+.cal-day.empty{pointer-events:none}
+/* TIME SLOTS */
+.time-wrap{margin-top:22px;max-width:440px}
+.time-wrap-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:10px}
+.time-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+@media(max-width:480px){.time-grid{grid-template-columns:repeat(3,1fr)}}
+.time-slot{padding:11px 6px;border-radius:4px;border:1px solid rgba(255,255,255,.1);font-size:12px;font-weight:500;text-align:center;cursor:pointer;transition:all .18s;background:transparent;color:rgba(255,255,255,.6);font-family:'Inter',sans-serif}
+.time-slot:hover:not(.unavailable){border-color:var(--pink);color:#fff;background:rgba(240,44,184,.08)}
+.time-slot.selected{background:var(--pink);border-color:var(--pink);color:#fff;font-weight:700}
+.time-slot.unavailable{color:rgba(255,255,255,.16);border-color:rgba(255,255,255,.06);cursor:not-allowed;text-decoration:line-through;pointer-events:none}
+/* FORM */
+.form-group{margin-bottom:16px}
+.form-label{display:block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:7px}
+.form-input{width:100%;max-width:480px;background:var(--surface2);border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:13px 16px;font-family:'Inter',sans-serif;font-size:14px;font-weight:400;color:#fff;outline:none;transition:border-color .18s}
+.form-input:focus{border-color:var(--pink)}
+.form-input::placeholder{color:rgba(255,255,255,.18)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:480px}
+@media(max-width:480px){.form-row{grid-template-columns:1fr}}
+/* ORDER SUMMARY */
+.order-summary{background:var(--surface2);border-radius:6px;padding:18px 20px;margin-bottom:22px;max-width:480px;border:1px solid var(--border)}
+.order-row{display:flex;justify-content:space-between;align-items:flex-start;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:13px;gap:16px}
+.order-row:last-child{border-bottom:none;font-weight:700;padding-top:12px;margin-top:4px}
+.order-label{color:rgba(255,255,255,.35);flex-shrink:0}
+.order-val{font-weight:500;text-align:right;color:rgba(255,255,255,.85)}
+.order-row:last-child .order-val{color:var(--pink);font-family:'Montserrat',sans-serif;font-size:16px;font-weight:900}
+</style>
+<style>
+/* CARD ICONS */
+.card-icons{display:flex;gap:8px;margin-bottom:16px}
+.card-icon{background:var(--surface2);border:1px solid var(--border);border-radius:3px;padding:4px 12px;font-size:10px;font-weight:700;letter-spacing:.05em;color:rgba(255,255,255,.35);text-transform:uppercase}
+.secure-note{display:flex;align-items:center;gap:8px;font-size:11px;color:rgba(255,255,255,.28);margin-top:14px;padding:10px 14px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:3px;max-width:480px}
+/* BUTTONS */
+.btn-primary{display:block;width:100%;max-width:440px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--pink);color:#fff;padding:16px 20px;border-radius:3px;border:none;cursor:pointer;transition:opacity .18s;margin-top:24px}
+.btn-primary:hover{opacity:.85}
+.btn-primary:disabled{opacity:.38;cursor:not-allowed}
+.btn-back{background:none;border:none;color:rgba(255,255,255,.38);font-size:12px;font-weight:500;cursor:pointer;padding:0;margin-top:14px;display:flex;align-items:center;gap:6px;transition:color .18s;font-family:'Inter',sans-serif}
+.btn-back:hover{color:#fff}
+/* CONFIRMATION */
+.conf-icon{width:68px;height:68px;background:rgba(240,44,184,.1);border:2px solid var(--pink);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+.conf-ref{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--pink);margin-bottom:8px;text-transform:uppercase}
+.conf-title{font-family:'Montserrat',sans-serif;font-size:30px;font-weight:900;letter-spacing:-.02em;margin-bottom:10px;line-height:1.1}
+.conf-sub{font-size:14px;color:rgba(255,255,255,.42);line-height:1.65;margin-bottom:28px;max-width:440px}
+.conf-card{background:var(--surface2);border-radius:6px;padding:18px 22px;margin-bottom:20px;max-width:480px;border:1px solid var(--border)}
+.conf-card-row{display:flex;justify-content:space-between;align-items:flex-start;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:13px;gap:16px}
+.conf-card-row:last-child{border-bottom:none}
+.conf-card-lbl{color:rgba(255,255,255,.32);flex-shrink:0}
+.conf-card-val{font-weight:500;text-align:right}
+.conf-note{font-size:12px;color:rgba(255,255,255,.35);line-height:1.65;padding:12px 16px;background:rgba(255,200,60,.04);border-left:2px solid rgba(255,180,0,.28);border-radius:0 3px 3px 0;max-width:480px;margin-bottom:24px}
+.conf-btn{display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:transparent;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.5);padding:13px 24px;border-radius:3px;cursor:pointer;transition:all .18s;text-decoration:none}
+.conf-btn:hover{border-color:#fff;color:#fff}
+/* INCLUDED & ADD-ONS */
+.inc-section{margin-bottom:24px;max-width:480px}
+.addon-section{margin-bottom:20px;max-width:480px}
+.inc-section-label{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:10px;display:flex;align-items:center;justify-content:space-between}
+.inc-section-label span{font-weight:400;text-transform:none;letter-spacing:.02em;color:rgba(255,255,255,.18)}
+.inc-item{display:flex;align-items:flex-start;gap:12px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.inc-item:last-child{border-bottom:none}
+.inc-check{width:22px;height:22px;border-radius:50%;background:rgba(240,44,184,.1);border:1.5px solid var(--pink);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--pink);font-size:9px;margin-top:1px}
+.inc-content strong{font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:2px}
+.inc-badge{font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:rgba(240,44,184,.1);color:var(--pink);padding:2px 7px;border-radius:2px}
+.inc-content p{font-size:11px;color:rgba(255,255,255,.32);line-height:1.5;margin:0}
+.addon-item{display:flex;align-items:flex-start;gap:12px;padding:11px 14px;background:var(--surface2);border-radius:4px;border:1.5px solid rgba(255,255,255,.07);cursor:pointer;transition:border-color .18s,background .18s;margin-bottom:8px;width:100%}
+.addon-item:hover{border-color:rgba(240,44,184,.35)}
+.addon-item.checked{border-color:var(--pink);background:rgba(240,44,184,.05)}
+.addon-item input[type=checkbox]{width:17px;height:17px;accent-color:var(--pink);flex-shrink:0;margin-top:2px;cursor:pointer}
+.addon-info{flex:1}
+.addon-name{font-size:13px;font-weight:500;margin-bottom:2px;line-height:1.3}
+.addon-desc{font-size:11px;color:rgba(255,255,255,.32);line-height:1.5}
+.addon-price{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:900;color:var(--pink);flex-shrink:0;white-space:nowrap;margin-top:1px}
+/* Legal notes */
+.legal-notes{background:rgba(255,200,60,.03);border:1px solid rgba(255,180,0,.15);border-radius:4px;padding:12px 16px;max-width:480px;margin-bottom:16px;cursor:pointer}
+.legal-notes summary{font-size:12px;font-weight:600;color:rgba(255,200,60,.7);list-style:none;display:flex;align-items:center;gap:7px;outline:none}
+.legal-notes summary::-webkit-details-marker{display:none}
+.legal-notes summary::before{content:'⚠';font-size:13px}
+.legal-notes ul{margin-top:10px;padding-left:0;list-style:none}
+.legal-notes li{font-size:12px;color:rgba(255,255,255,.42);padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;align-items:flex-start;gap:8px;line-height:1.55}
+.legal-notes li:last-child{border-bottom:none}
+.legal-notes li::before{content:'–';color:rgba(255,180,0,.4);flex-shrink:0}
+/* T&C */
+.terms-row{display:flex;align-items:flex-start;gap:10px;max-width:480px;padding:10px 0 6px;cursor:pointer;font-size:12px;color:rgba(255,255,255,.45);line-height:1.6;margin-bottom:0}
+.terms-row input[type=checkbox]{width:16px;height:16px;accent-color:var(--pink);flex-shrink:0;margin-top:2px;cursor:pointer}
+.terms-row a{color:var(--pink);text-decoration:underline;text-underline-offset:2px;pointer-events:all}
+.terms-row a:hover{opacity:.8}
+/* Voucher note */
+.voucher-note{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:4px;padding:14px 16px;max-width:440px;margin-top:18px;display:flex;align-items:flex-start;gap:12px}
+.voucher-note-text{font-size:12px;color:rgba(255,255,255,.38);line-height:1.6}
+.voucher-note-text strong{display:block;color:rgba(255,255,255,.62);margin-bottom:3px;font-size:13px;font-weight:600}
+.voucher-btn{background:none;border:none;color:var(--pink);font-size:11px;font-weight:700;cursor:pointer;padding:0;margin-top:6px;display:block;letter-spacing:.02em;transition:opacity .18s;text-decoration:underline;text-underline-offset:2px}
+.voucher-btn:hover{opacity:.7}
+.book-summary-qty{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:4px;line-height:1.5}
+.book-summary-qty strong{color:#fff;font-weight:600}
+.book-summary-promo{display:none;font-size:12px;color:#4ecb71;margin-bottom:16px;padding:7px 10px;background:rgba(78,203,113,.08);border-radius:3px}
+.order-row.promo-row .order-val{color:#4ecb71}
+/* Cart summary items in left panel */
+.sum-cart-item{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.sum-cart-item:last-child{border-bottom:none}
+.sum-cart-item-name{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:900;letter-spacing:-.01em;margin-bottom:2px}
+.sum-cart-item-meta{font-size:11px;color:rgba(255,255,255,.3);line-height:1.4;margin-bottom:4px}
+.sum-cart-item-foot{display:flex;justify-content:space-between;align-items:center}
+.sum-cart-item-qty{font-size:11px;color:rgba(255,255,255,.3)}
+.sum-cart-item-price{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:900;color:rgba(255,255,255,.7)}
+</style>
+</head>
+<body>
+<nav id="nav">
+<a class="nav-logo" href="index.html">
+<svg height="28" viewbox="0 0 82 28" width="82" xmlns="http://www.w3.org/2000/svg"><defs><lineargradient gradientunits="userSpaceOnUse" id="lsg" x1="52" x2="34" y1="1" y2="27"><stop offset="0%" stop-color="#fff"></stop><stop offset="100%" stop-color="#f02cb8"></stop></lineargradient><clippath clippathunits="userSpaceOnUse" id="lcl"><polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"></polygon></clippath><clippath clippathunits="userSpaceOnUse" id="lcf"><polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"></polygon></clippath></defs><text clip-path="url(#lcl)" fill="#fff" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="0" y="20">LUX</text><text clip-path="url(#lcf)" fill="#f02cb8" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="40" y="24">FLIEGEN</text><line stroke="url(#lsg)" stroke-linecap="round" stroke-width="2" x1="52" x2="34" y1="1" y2="27"></line></svg>
+</a>
+<a class="nav-back" href="checkout.html">
+<svg fill="none" height="15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="15"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    Zurück zu den Paketen
+  </a>
+</nav>
+<div class="book-wrap">
+<!-- LEFT: Package Summary -->
+<div class="book-summary">
+<div class="book-summary-eyebrow">Ihre Auswahl</div>
+<!-- Cart items rendered by JS -->
+<div id="sum-cart-items" style="margin-bottom:16px"></div>
+<div class="book-summary-divider" style="margin-top:0"></div>
+<!-- Package total (base, no add-ons) -->
+<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:2px">
+<span style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25)">Pakete</span>
+<span class="book-summary-price" id="sum-price" style="font-size:32px">—</span>
+</div>
+<!-- Add-on extras: +€X,XX shown below package price when anything is checked -->
+<div id="sum-addon-extra" style="display:none;font-family:'Montserrat',sans-serif;font-size:16px;font-weight:900;color:var(--pink);text-align:right;margin-top:4px"></div>
+<div class="book-summary-price-label" id="sum-price-label" style="text-align:right">inkl. MwSt.</div>
+<div class="book-summary-divider"></div>
+<div class="book-summary-includes">
+<h4>Was ist enthalten</h4>
+<div class="book-summary-item">Professioneller Fluganzug und Helm</div>
+<div class="book-summary-item">Umfassende Sicherheitseinweisung und Anleitung des Ausbilders</div>
+<div class="book-summary-item">Bescheinigung über Ihren ersten Flug</div>
+<div class="book-summary-item">Videomaterial auf Anfrage verfügbar</div>
+</div>
+<div class="book-summary-secure">
+<svg fill="none" height="13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="13"><rect height="11" rx="2" width="18" x="3" y="11"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+      Sichere Buchung · 256-Bit-SSL · Keine versteckten Gebühren
+    </div>
+</div>
+<!-- RIGHT: Booking Form -->
+<div class="book-form-col">
+<!-- Step Bar -->
+<div class="step-bar">
+<div class="step-item">
+<div class="step-dot active" id="dot1">1</div>
+<span class="step-label active" id="lbl1">Datum und Uhrzeit</span>
+<div class="step-line" id="line1"></div>
+</div>
+<div class="step-item">
+<div class="step-dot" id="dot2">2</div>
+<span class="step-label" id="lbl2">Ihre Daten</span>
+<div class="step-line" id="line2"></div>
+</div>
+<div class="step-item">
+<div class="step-dot" id="dot3">3</div>
+<span class="step-label" id="lbl3">Zahlung</span>
+</div>
+</div>
+<!-- STEP 1: Date & Time -->
+<div class="book-step active" id="step1">
+<div class="step-title">Wählen Sie Ihr Datum und Ihre Uhrzeit</div>
+<div class="step-sub">Wählen Sie ein verfügbares Datum und Zeitfenster für Ihr Erlebnis aus.</div>
+<div class="cal-wrap">
+<div class="cal-header">
+<button class="cal-nav" onclick="changeMonth(-1)">‹</button>
+<div class="cal-month" id="cal-month-label"></div>
+<button class="cal-nav" onclick="changeMonth(1)">›</button>
+</div>
+<div class="cal-days-head">
+<span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span>
+</div>
+<div class="cal-days" id="cal-days"></div>
+</div>
+<div class="time-wrap" id="time-wrap" style="display:none">
+<div class="time-wrap-label">Verfügbare Zeiten — <span id="time-date-label"></span></div>
+<div class="time-grid" id="time-grid"></div>
+</div>
+<button class="btn-primary" disabled="" id="btn-step1" onclick="goStep(2)">Weiter zu Ihren Daten</button>
+<div class="voucher-note">
+<svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" style="flex-shrink:0;color:rgba(255,255,255,.3);margin-top:1px" viewbox="0 0 24 24" width="16"><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h6"></path><path d="M12 12l9-9"></path><path d="M15 3h6v6"></path></svg>
+<div class="voucher-note-text">
+<strong>Bevorzugen Sie einen Geschenkgutschein?</strong>
+          Überspringen Sie die Datumsauswahl, um stattdessen einen ausdruckbaren Gutschein per E-Mail zu erhalten. Hinweis: Gutscheine können nicht weiterverschenkt werden.
+          <button class="voucher-btn" onclick="activateVoucherMode()">Erhalten Sie stattdessen einen Gutschein →</button>
+</div>
+</div>
+</div>
+<!-- STEP 2: Your Details -->
+<div class="book-step" id="step2">
+<div class="step-title">Ihre Angaben und Optionen</div>
+<div class="step-sub">Sagen Sie uns, wer fliegt, und wählen Sie dann die Extras aus, die Sie hinzufügen möchten.</div>
+<div class="form-row">
+<div class="form-group">
+<label class="form-label" for="d-fname">Vorname</label>
+<input class="form-input" id="d-fname" placeholder="Jean" type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label" for="d-lname">Nachname</label>
+<input class="form-input" id="d-lname" placeholder="Dupont" type="text"/>
+</div>
+</div>
+<div class="form-group">
+<label class="form-label" for="d-email">E-Mail-Adresse</label>
+<input class="form-input" id="d-email" placeholder="you@example.com" type="email"/>
+</div>
+<div class="form-group">
+<label class="form-label" for="d-phone">Telefonnummer</label>
+<input class="form-input" id="d-phone" placeholder="+352 000 000" type="tel"/>
+</div>
+<!-- Included items (non-clickable) -->
+<div class="inc-section" style="margin-top:28px">
+<div class="inc-section-label">Was ist enthalten <span>immer enthalten</span></div>
+<div class="inc-item">
+<div class="inc-check">✓</div>
+<div class="inc-content"><strong>HighFly <span class="inc-badge">Im Lieferumfang enthalten</span></strong><p>Auf Ihrem letzten Flug bringt Sie Ihr Fluglehrer mit voller Geschwindigkeit an die Spitze – der Höhepunkt des Erlebnisses.</p></div>
+</div>
+<div class="inc-item">
+<div class="inc-check">✓</div>
+<div class="inc-content"><strong>Fotos <span class="inc-badge">Im Lieferumfang enthalten</span></strong><p>Laden Sie Ihre Erinnerungsfotos nach dem Erlebnis herunter – verfügbar bis zu 30 Tage nach Ihrem Flug.</p></div>
+</div>
+<div class="inc-item">
+<div class="inc-check">✓</div>
+<div class="inc-content"><strong>Dauerausstellung <span class="inc-badge">Im Lieferumfang enthalten</span></strong><p>Entdecken Sie „Die Kunst des Fallschirmspringens“ – ein einzigartiges Erlebnis, das Ihre Flugsitzung ergänzt.</p></div>
+</div>
+</div>
+<!-- Optional add-ons (clickable) -->
+<div class="addon-section">
+<div class="inc-section-label">Optionen <span>Mehrfachauswahl erlaubt</span></div>
+<label class="addon-item" id="addon-label-flex">
+<input id="addon-flex" onchange="toggleAddon('flex',this)" type="checkbox"/>
+<div class="addon-info">
+<div class="addon-name">Flexibilitätsversicherung</div>
+<div class="addon-desc">Buchen Sie Ihren Flug bis zu 24 Stunden vorher kostenlos um. Ohne Versicherung: &lt;48h = 15 €/Person, &lt;48h = 30 €/Person. Mit Versicherung: &lt;24h = kostenlos, &lt;24h = 35€/Person.</div>
+</div>
+<div class="addon-price">+€5,50</div>
+</label>
+<label class="addon-item" id="addon-label-expo">
+<input id="addon-expo" onchange="toggleAddon('expo',this)" type="checkbox"/>
+<div class="addon-info">
+<div class="addon-name">Dauerausstellung – Zusätzliche Person</div>
+<div class="addon-desc">Fügen Sie der Ausstellung „Art of Skydiving“ eine zusätzliche Person für jemanden hinzu, der nicht zu Ihrer Fluggruppe gehört.</div>
+</div>
+<div class="addon-price">+€15,00</div>
+</label>
+<label class="addon-item" id="addon-label-video">
+<input id="addon-video" onchange="toggleAddon('video',this)" type="checkbox"/>
+<div class="addon-info">
+<div class="addon-name">Videoaufzeichnung</div>
+<div class="addon-desc">Laden Sie hochauflösendes Videomaterial Ihrer Flüge herunter – verfügbar bis zu 30 Tage danach.</div>
+</div>
+<div class="addon-price">+€15,00</div>
+</label>
+<label class="addon-item" id="addon-label-neck">
+<input id="addon-neck" onchange="toggleAddon('neck',this)" type="checkbox"/>
+<div class="addon-info">
+<div class="addon-name">Cache-cou LXF (Halswärmer)</div>
+<div class="addon-desc">Personalisierter Nackenwärmer für zusätzlichen Komfort während Ihres Fluges – weniger Wind und ein tolles Souvenir.</div>
+</div>
+<div class="addon-price">+€6,50</div>
+</label>
+</div>
+<button class="btn-primary" onclick="goStep(3)">Weiter zur Zahlung</button>
+<button class="btn-back" onclick="goStep(1)">
+<svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="14"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        Zurück
+      </button>
+</div>
+<!-- STEP 3: Payment -->
+<div class="book-step" id="step3">
+<div class="step-title">Zahlung</div>
+<div class="step-sub">Ihre Daten sind verschlüsselt und sicher.</div>
+<div class="order-summary">
+<div id="ord-items-list"><!-- cart items injected by JS --></div>
+<div class="order-row"><span class="order-label">Datum und Uhrzeit</span><span class="order-val" id="ord-dt">—</span></div>
+<div class="order-row promo-row" id="ord-promo-row" style="display:none"><span class="order-label">Aktionscode</span><span class="order-val" id="ord-promo">—</span></div>
+<div class="order-row"><span class="order-label">Gesamt</span><span class="order-val" id="ord-total">—</span></div>
+</div>
+<!-- Promo code -->
+<div style="max-width:480px;margin-bottom:20px">
+<div style="display:flex;gap:8px">
+<input class="form-input" id="promo-input" oninput="this.value=this.value.toUpperCase()" placeholder="Aktionscode" style="flex:1;max-width:none;text-transform:uppercase;letter-spacing:.06em" type="text"/>
+<button onclick="applyPromo()" onmouseout="this.style.borderColor='rgba(255,255,255,.18)';this.style.color='rgba(255,255,255,.55)'" onmouseover="this.style.borderColor='var(--pink)';this.style.color='var(--pink)'" style="background:transparent;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.55);font-family:'Inter',sans-serif;font-size:12px;font-weight:600;padding:0 18px;border-radius:4px;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:border-color .18s,color .18s">Anwenden</button>
+</div>
+<div id="promo-msg" style="font-size:11px;margin-top:6px;min-height:16px"></div>
+</div>
+<!-- T&C acceptance -->
+<label class="terms-row">
+<input id="terms-check" type="checkbox"/>
+<span>Ich habe die <a href="conditions.html" rel="noopener" target="_blank">Allgemeine Geschäftsbedingungen</a> und <a href="privacy-policy.html" rel="noopener" target="_blank">Datenschutzrichtlinie</a> *</span>
+</label>
+<div class="card-icons">
+<span class="card-icon">Visum</span><span class="card-icon">MC</span><span class="card-icon">Amex</span><span class="card-icon">Paypal</span>
+</div>
+<div class="form-group">
+<label class="form-label" for="cc-name">Name des Karteninhabers</label>
+<input class="form-input" id="cc-name" placeholder="Jean Dupont" type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label" for="cc-num">Kartennummer</label>
+<input class="form-input" id="cc-num" maxlength="19" oninput="fmtCard(this)" placeholder="1234 5678 9012 3456" type="text"/>
+</div>
+<div class="form-row">
+<div class="form-group">
+<label class="form-label" for="cc-exp">Ablauf</label>
+<input class="form-input" id="cc-exp" maxlength="7" oninput="fmtExpiry(this)" placeholder="MM / JJ" type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label" for="cc-cvv">CVV</label>
+<input class="form-input" id="cc-cvv" maxlength="4" oninput="this.value=this.value.replace(/\D/g,'')" placeholder="•••" type="text"/>
+</div>
+</div>
+<div class="secure-note">
+<svg fill="none" height="13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="13"><rect height="11" rx="2" width="18" x="3" y="11"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        256-Bit-SSL-Verschlüsselung · PCI DSS-kompatibel
+      </div>
+<button class="btn-primary" id="btn-pay" onclick="submitPayment()">Jetzt bezahlen — <span id="pay-price">—</span></button>
+<button class="btn-back" onclick="goStep(2)">
+<svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="14"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        Zurück
+      </button>
+</div>
+<!-- STEP 4: Confirmation -->
+<div class="book-step" id="step4">
+<div class="conf-icon">
+<svg fill="none" height="30" stroke="#f02cb8" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="30"><polyline points="20 6 9 17 4 12"></polyline></svg>
+</div>
+<div class="conf-ref" id="conf-ref">Buchung bestätigt</div>
+<div class="conf-title">Sie sind bereit!</div>
+<div class="conf-sub">Eine Bestätigung wurde an <strong id="conf-email">Ihre E-Mail</strong>. Machen Sie sich bereit für Ihr Flugerlebnis.</div>
+<div class="conf-card">
+<div class="conf-card-row"><span class="conf-card-lbl">Paket</span><span class="conf-card-val" id="conf-pkg">—</span></div>
+<div class="conf-card-row"><span class="conf-card-lbl">Datum und Uhrzeit</span><span class="conf-card-val" id="conf-dt">—</span></div>
+<div class="conf-card-row"><span class="conf-card-lbl">Name</span><span class="conf-card-val" id="conf-name">—</span></div>
+<div class="conf-card-row"><span class="conf-card-lbl">Gezahlter Betrag</span><span class="conf-card-val" id="conf-price" style="color:var(--pink);font-family:'Montserrat',sans-serif;font-weight:900">—</span></div>
+</div>
+<div class="conf-note">🕐 Bitte kommen Sie mindestens 20 Minuten vor Ihrer geplanten Zeit an. Tragen Sie bequeme Kleidung – die gesamte Ausrüstung einschließlich Fluganzug und Helm ist vorhanden.</div>
+<a class="conf-btn" href="index.html">
+<svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        Zurück zur Startseite
+      </a>
+</div>
+</div><!-- /book-form-col -->
+</div><!-- /book-wrap -->
+<script>
+// ── CART ──────────────────────────────────────────────────────────────
+var CART_KEY='lxf_cart';
+function getCart(){try{return JSON.parse(localStorage.getItem(CART_KEY)||'[]');}catch(e){return [];}}
+function fmtEuro(n){return '\u20ac'+n.toFixed(2).replace('.',',');}
+
+// Safe defaults — calendar will work even if cart setup fails
+var bkCart=[];
+var bkBaseTotal=0;
+var bkName='Your Package';
+
+// ── CART SETUP (wrapped so any error here can never kill the calendar) ──
+try {
+  bkCart=getCart();
+  if(!bkCart||bkCart.length===0){window.location.href='checkout.html';}
+  bkBaseTotal=bkCart.reduce(function(s,item){return s+(item.lineTotal||0);},0);
+  bkName=bkCart.length===1?bkCart[0].name:'Multiple packages ('+bkCart.length+')';
+  (function renderSummary(){
+    var container=document.getElementById('sum-cart-items');
+    var html='';
+    bkCart.forEach(function(item){
+      html+='<div class="sum-cart-item">';
+      html+='<div class="sum-cart-item-name">'+item.name+'</div>';
+      html+='<div class="sum-cart-item-meta">'+item.detail+'</div>';
+      html+='<div class="sum-cart-item-foot">';
+      html+='<span class="sum-cart-item-qty">'+item.qty+' \u00d7 '+fmtEuro(item.unitPrice)+'</span>';
+      html+='<span class="sum-cart-item-price">'+fmtEuro(item.lineTotal)+'</span>';
+      html+='</div></div>';
+    });
+    container.innerHTML=html;
+    document.getElementById('sum-price').textContent=fmtEuro(bkBaseTotal);
+    document.getElementById('pay-price').textContent=fmtEuro(bkBaseTotal);
+  })();
+} catch(e){console.error('[book.html] Cart setup error:',e);}
+// ── END CART SETUP ──────────────────────────────────────────────────────
+
+var currentStep=1;
+var bkSelectedDate='',bkSelectedTime='';
+var bkVoucherMode=false;
+
+// Add-on state
+var bkAddons={flex:{price:5.50,on:false},expo:{price:15.00,on:false},video:{price:15.00,on:false},neck:{price:6.50,on:false}};
+// bkBaseTotal is set from cart above
+
+// Promo code state
+var PROMO_CODES={'ZOOM':10,'LUXFLY20':20,'FIRSTFLY':15};
+var bkPromoApplied='';
+var bkPromoDiscount=0;
+
+function toggleAddon(id,cb){
+  bkAddons[id].on=cb.checked;
+  cb.closest('.addon-item').classList.toggle('checked',cb.checked);
+  refreshPayTotal();
+}
+function refreshPayTotal(){
+  var extra=0;
+  for(var k in bkAddons) if(bkAddons[k].on) extra+=bkAddons[k].price;
+  var subtotal=bkBaseTotal+extra;
+  var disc=bkPromoDiscount?subtotal*(bkPromoDiscount/100):0;
+  var final=subtotal-disc;
+  document.getElementById('pay-price').textContent=fmtEuro(final);
+  // Drive the left-panel addon line
+  var extraEl=document.getElementById('sum-addon-extra');
+  if(extra>0){
+    extraEl.textContent='+'+fmtEuro(extra);
+    extraEl.style.display='block';
+  } else {
+    extraEl.style.display='none';
+  }
+}
+function applyPromo(){
+  var code=document.getElementById('promo-input').value.trim().toUpperCase();
+  var msg=document.getElementById('promo-msg');
+  if(!code){msg.textContent='';return;}
+  if(PROMO_CODES[code]!==undefined){
+    bkPromoApplied=code;bkPromoDiscount=PROMO_CODES[code];
+    msg.style.color='#4ecb71';
+    msg.textContent='\u2713 Code "'+code+'" applied \u2014 '+bkPromoDiscount+'% off!';
+    document.getElementById('ord-promo').textContent=code+' (\u2212'+bkPromoDiscount+'%)';
+    document.getElementById('ord-promo-row').style.display='flex';
+  } else {
+    bkPromoApplied='';bkPromoDiscount=0;
+    msg.style.color='rgba(255,100,100,.8)';
+    msg.textContent='\u2717 Invalid promo code.';
+    document.getElementById('ord-promo-row').style.display='none';
+  }
+  refreshPayTotal();
+  updateOrdTotal();
+}
+function updateOrdTotal(){
+  var extra=0;for(var k in bkAddons)if(bkAddons[k].on)extra+=bkAddons[k].price;
+  var subtotal=bkBaseTotal+extra;
+  var disc=bkPromoDiscount?subtotal*(bkPromoDiscount/100):0;
+  document.getElementById('ord-total').textContent='€'+(subtotal-disc).toFixed(2).replace('.',',');
+}
+function activateVoucherMode(){
+  bkVoucherMode=true;
+  document.getElementById('btn-step1').disabled=false;
+  document.getElementById('btn-step1').textContent='Continue — Voucher by email';
+  document.getElementById('time-wrap').style.display='none';
+  // Visually acknowledge voucher mode
+  var vn=document.querySelector('.voucher-note');
+  if(vn){vn.style.borderColor='var(--pink)';vn.querySelector('.voucher-btn').textContent='✓ Voucher mode active';}
+}
+
+function goStep(n){
+  if(n===3){
+    var fn=document.getElementById('d-fname').value.trim();
+    var ln=document.getElementById('d-lname').value.trim();
+    var em=document.getElementById('d-email').value.trim();
+    if(!fn||!ln||!em){alert('Please fill in your first name, last name and email.');return;}
+  }
+  document.querySelectorAll('.book-step').forEach(function(el){el.classList.remove('active');});
+  document.getElementById('step'+n).classList.add('active');
+  currentStep=n;
+  updateStepBar(n);
+  if(n===3){
+    // Render cart items in order summary
+    var itemsHtml='';
+    bkCart.forEach(function(item){
+      var label=item.qty>1?item.name+' &times;'+item.qty:item.name;
+      itemsHtml+='<div class="order-row"><span class="order-label">'+label+'</span><span class="order-val">'+fmtEuro(item.lineTotal)+'</span></div>';
+    });
+    document.getElementById('ord-items-list').innerHTML=itemsHtml;
+    document.getElementById('ord-dt').textContent=bkSelectedDate?formatDate(bkSelectedDate)+' at '+bkSelectedTime:'—';
+    updateOrdTotal();
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function updateStepBar(n){
+  [1,2,3].forEach(function(i){
+    var dot=document.getElementById('dot'+i);
+    var lbl=document.getElementById('lbl'+i);
+    var line=document.getElementById('line'+i);
+    if(i<n){dot.className='step-dot done';lbl.className='step-label done';}
+    else if(i===n){dot.className='step-dot active';lbl.className='step-label active';}
+    else{dot.className='step-dot';lbl.className='step-label';}
+    if(line){line.className=i<n?'step-line done':'step-line';}
+  });
+}
+
+var calYear,calMonth;
+function initCal(){
+  var t=new Date();calYear=t.getFullYear();calMonth=t.getMonth();
+  buildCalendar();
+}
+function changeMonth(dir){
+  calMonth+=dir;
+  if(calMonth<0){calMonth=11;calYear--;}
+  if(calMonth>11){calMonth=0;calYear++;}
+  buildCalendar();
+}
+function buildCalendar(){
+  var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('cal-month-label').textContent=months[calMonth]+' '+calYear;
+  var grid=document.getElementById('cal-days');
+  grid.innerHTML='';
+  var today=new Date();today.setHours(0,0,0,0);
+  var first=new Date(calYear,calMonth,1);
+  var startDay=(first.getDay()+6)%7;
+  for(var i=0;i<startDay;i++){
+    var e=document.createElement('button');
+    e.className='cal-day empty';e.disabled=true;grid.appendChild(e);
+  }
+  var days=new Date(calYear,calMonth+1,0).getDate();
+  for(var d=1;d<=days;d++){
+    var btn=document.createElement('button');
+    var thisDate=new Date(calYear,calMonth,d);
+    var mm=(calMonth+1<10?'0':'')+(calMonth+1);
+    var dd=(d<10?'0':'')+d;
+    var ds=calYear+'-'+mm+'-'+dd;
+    btn.className='cal-day';
+    btn.textContent=d;
+    if(thisDate<today||thisDate.getDay()===0){
+      btn.className='cal-day disabled';btn.disabled=true;
+    } else {
+      (function(dateStr,dayEl){
+        dayEl.onclick=function(){selectDate(dateStr,dayEl);};
+      })(ds,btn);
+    }
+    if(ds===bkSelectedDate)btn.classList.add('selected');
+    grid.appendChild(btn);
+  }
+}
+
+function selectDate(ds,el){
+  bkSelectedDate=ds;bkSelectedTime='';
+  document.querySelectorAll('.cal-day.selected').forEach(function(b){b.classList.remove('selected');});
+  el.classList.add('selected');
+  document.getElementById('btn-step1').disabled=true;
+  showTimeSlots(ds);
+}
+function formatDate(ds){
+  var d=new Date(ds+'T12:00:00');
+  return d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'long',year:'numeric'});
+}
+function showTimeSlots(ds){
+  document.getElementById('time-date-label').textContent=formatDate(ds);
+  document.getElementById('time-wrap').style.display='block';
+  var grid=document.getElementById('time-grid');
+  grid.innerHTML='';
+  var slots=['09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00'];
+  var unavail=['11:00','14:00'];
+  slots.forEach(function(t){
+    var btn=document.createElement('button');
+    btn.className='time-slot'+(unavail.indexOf(t)>=0?' unavailable':'');
+    btn.textContent=t;
+    if(unavail.indexOf(t)<0){btn.onclick=function(){selectTime(t,btn);};}
+    grid.appendChild(btn);
+  });
+}
+function selectTime(t,el){
+  bkSelectedTime=t;
+  document.querySelectorAll('.time-slot.selected').forEach(function(b){b.classList.remove('selected');});
+  el.classList.add('selected');
+  document.getElementById('btn-step1').disabled=false;
+}
+
+function fmtCard(el){
+  var v=el.value.replace(/\D/g,'').slice(0,16);
+  el.value=v.match(/.{1,4}/g)?v.match(/.{1,4}/g).join(' '):'';
+}
+function fmtExpiry(el){
+  var v=el.value.replace(/\D/g,'');
+  if(v.length>=3)el.value=v.slice(0,2)+' / '+v.slice(2,4);else el.value=v;
+}
+
+function submitPayment(){
+  if(!document.getElementById('terms-check').checked){alert('Please accept the Terms & Conditions and Privacy Policy to continue.');return;}
+  var name=document.getElementById('cc-name').value.trim();
+  var num=document.getElementById('cc-num').value.replace(/\s/g,'');
+  var exp=document.getElementById('cc-exp').value.trim();
+  var cvv=document.getElementById('cc-cvv').value.trim();
+  if(!name||num.length<16||!exp||cvv.length<3){alert('Please fill in all payment details.');return;}
+  var btn=document.getElementById('btn-pay');
+  btn.disabled=true;btn.textContent='Processing…';
+  setTimeout(function(){
+    var chars='ABCDEFGHJKLMNPQRSTUVWXYZ';
+    var ref='LXF-';
+    for(var i=0;i<4;i++)ref+=chars[Math.floor(Math.random()*chars.length)];
+    ref+='-'+(1000+Math.floor(Math.random()*9000));
+    document.getElementById('conf-ref').textContent='Ref: '+ref;
+    document.getElementById('conf-email').textContent=document.getElementById('d-email').value;
+    var pkgSummary=bkCart.map(function(item){return item.name+(item.qty>1?' ×'+item.qty:'');}).join(', ');
+    document.getElementById('conf-pkg').textContent=pkgSummary;
+    document.getElementById('conf-dt').textContent=formatDate(bkSelectedDate)+' at '+bkSelectedTime;
+    document.getElementById('conf-name').textContent=document.getElementById('d-fname').value+' '+document.getElementById('d-lname').value;
+    var extra2=0;for(var k in bkAddons)if(bkAddons[k].on)extra2+=bkAddons[k].price;
+    var sub2=bkBaseTotal+extra2;var disc2=bkPromoDiscount?sub2*(bkPromoDiscount/100):0;
+    document.getElementById('conf-price').textContent='€'+(sub2-disc2).toFixed(2).replace('.',',');
+    document.querySelectorAll('.book-step').forEach(function(el){el.classList.remove('active');});
+    document.getElementById('step4').classList.add('active');
+    localStorage.removeItem('lxf_cart');
+    window.scrollTo({top:0,behavior:'smooth'});
+  },1800);
+}
+
+initCal();
+</script>
+</body>
+</html>
