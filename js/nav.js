@@ -106,6 +106,13 @@
   const mobileMenu = document.createElement('div');
   mobileMenu.id = 'mobile-menu';
 
+  // ── CLOSE BUTTON inside overlay ──
+  const closeBtn = document.createElement('button');
+  closeBtn.className = 'mobile-menu-close-btn';
+  closeBtn.setAttribute('aria-label', 'Close menu');
+  closeBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+  mobileMenu.appendChild(closeBtn);
+
   const chevron = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
 
   nav.querySelectorAll('.nav-menu .nav-item').forEach(item => {
@@ -141,13 +148,36 @@
     mobileMenu.appendChild(mItem);
   });
 
-  // Footer: Book Now only — My Account and Language are in the nav bar
+  // Footer: Book Now — always local checkout.html (works in root and language subdirs)
   const mFooter = document.createElement('div');
   mFooter.className = 'mobile-menu-footer';
-  mFooter.innerHTML = '<a href="https://shop.indoorskydive.lu/store_10" class="mobile-nav-book">Book Now</a>';
+  mFooter.innerHTML = '<a href="checkout.html" class="mobile-nav-book">Book Now</a>';
   mobileMenu.appendChild(mFooter);
 
   document.body.appendChild(mobileMenu);
+
+  // ── CHATBOT HIDE / SHOW helpers ──
+  function hideChatbot() {
+    ['lf-chat-btn', 'lf-chat-window', 'lf-chat-bubble'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) { el.dataset.navHidden = el.style.display || ''; el.style.display = 'none'; }
+    });
+  }
+  function restoreChatbot() {
+    ['lf-chat-btn', 'lf-chat-bubble'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el && el.dataset.navHidden !== undefined) {
+        el.style.display = el.dataset.navHidden;
+        delete el.dataset.navHidden;
+      }
+    });
+    // Restore chat window only if it was previously visible (open)
+    const win = document.getElementById('lf-chat-window');
+    if (win && win.dataset.navHidden !== undefined) {
+      win.style.display = win.dataset.navHidden;
+      delete win.dataset.navHidden;
+    }
+  }
 
   function openMenu() {
     hamburger.classList.add('open');
@@ -155,17 +185,20 @@
     document.body.style.overflow = 'hidden';
     hamburger.setAttribute('aria-label', 'Close menu');
     if (navLang) navLang.classList.remove('mobile-open');
+    hideChatbot();
   }
   function closeMenu() {
     hamburger.classList.remove('open');
     mobileMenu.classList.remove('open');
     document.body.style.overflow = '';
     hamburger.setAttribute('aria-label', 'Open menu');
+    restoreChatbot();
   }
 
   hamburger.addEventListener('click', () => {
     mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
   });
+  closeBtn.addEventListener('click', closeMenu);
   mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
   window.addEventListener('resize', () => { if (window.innerWidth > 1024) closeMenu(); });
 
