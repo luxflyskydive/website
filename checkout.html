@@ -100,6 +100,37 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
 .footer-bottom p{font-size:11px;color:rgba(255,255,255,.25)}
 .footer-bottom a{font-size:11px;color:rgba(255,255,255,.3)}
 .footer-bottom a:hover{color:var(--pink)}
+
+/* QUANTITY + PROMO MODAL */
+.qm-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:8500;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+.qm-overlay.open{display:flex}
+.qm-card{background:#151519;border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:32px;max-width:460px;width:100%;position:relative}
+.qm-close{position:absolute;top:16px;right:16px;background:none;border:none;color:rgba(255,255,255,.35);font-size:22px;cursor:pointer;line-height:1;transition:color .18s}
+.qm-close:hover{color:#fff}
+.qm-eyebrow{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);margin-bottom:12px}
+.qm-name{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:900;letter-spacing:-.02em;line-height:1.1;margin-bottom:4px}
+.qm-detail{font-size:12px;color:rgba(255,255,255,.38);margin-bottom:24px}
+.qm-divider{height:1px;background:var(--border);margin-bottom:24px}
+.qm-label{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:10px}
+.qm-qty-row{display:flex;align-items:center;gap:14px;margin-bottom:24px}
+.qm-qty-btn{width:38px;height:38px;border-radius:4px;border:1px solid rgba(255,255,255,.18);background:transparent;color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .18s;line-height:1}
+.qm-qty-btn:hover{border-color:var(--pink);color:var(--pink)}
+.qm-qty-num{font-family:'Montserrat',sans-serif;font-size:26px;font-weight:900;min-width:32px;text-align:center}
+.qm-unit-price{font-size:12px;color:rgba(255,255,255,.35);margin-left:4px}
+.qm-promo-row{display:flex;gap:8px;margin-bottom:8px}
+.qm-input{flex:1;background:#1c1c22;border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:11px 14px;font-family:'Inter',sans-serif;font-size:13px;color:#fff;outline:none;transition:border-color .18s;text-transform:uppercase;letter-spacing:.05em}
+.qm-input:focus{border-color:var(--pink)}
+.qm-input::placeholder{text-transform:none;letter-spacing:0;color:rgba(255,255,255,.18)}
+.qm-apply-btn{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.55);padding:11px 18px;border-radius:4px;cursor:pointer;transition:all .18s;white-space:nowrap}
+.qm-apply-btn:hover{border-color:#fff;color:#fff}
+.qm-msg{font-size:12px;min-height:18px;margin-bottom:20px}
+.qm-msg.ok{color:#4ecb71}
+.qm-msg.err{color:#ff6b6b}
+.qm-footer{border-top:1px solid var(--border);padding-top:20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.qm-total-label{font-size:10px;color:rgba(255,255,255,.3);margin-bottom:3px;text-transform:uppercase;letter-spacing:.1em}
+.qm-total{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:900;letter-spacing:-.03em;color:var(--pink)}
+.qm-proceed{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--pink);color:#fff;padding:14px 24px;border-radius:3px;border:none;cursor:pointer;transition:opacity .18s;white-space:nowrap}
+.qm-proceed:hover{opacity:.85}
 </style>
 </head>
 <body>
@@ -617,6 +648,37 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
   </div>
 </footer>
 
+<!-- QUANTITY + PROMO MODAL -->
+<div class="qm-overlay" id="qm-overlay" onclick="if(event.target===this)closeQM()">
+  <div class="qm-card">
+    <button class="qm-close" onclick="closeQM()">&times;</button>
+    <div class="qm-eyebrow">Book Your Experience</div>
+    <div class="qm-name" id="qm-name"></div>
+    <div class="qm-detail" id="qm-detail"></div>
+    <div class="qm-divider"></div>
+    <div class="qm-label">How many people?</div>
+    <div class="qm-qty-row">
+      <button class="qm-qty-btn" onclick="changeQty(-1)">&#8722;</button>
+      <div class="qm-qty-num" id="qm-qty-num">1</div>
+      <button class="qm-qty-btn" onclick="changeQty(1)">&#43;</button>
+      <span class="qm-unit-price" id="qm-unit-price"></span>
+    </div>
+    <div class="qm-label">Promo Code</div>
+    <div class="qm-promo-row">
+      <input class="qm-input" id="qm-promo-input" type="text" placeholder="Enter your code" maxlength="20" onkeydown="if(event.key==='Enter')applyPromo()"/>
+      <button class="qm-apply-btn" onclick="applyPromo()">Apply</button>
+    </div>
+    <div class="qm-msg" id="qm-msg"></div>
+    <div class="qm-footer">
+      <div>
+        <div class="qm-total-label">Total</div>
+        <div class="qm-total" id="qm-total"></div>
+      </div>
+      <button class="qm-proceed" onclick="proceedToBook()">Continue to Booking &rarr;</button>
+    </div>
+  </div>
+</div>
+
 <div id="bk-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9000;overflow-y:auto;padding:40px 16px;" onclick="if(event.target===this)closeBooking()">
   <div id="bk-panel" style="background:#151519;border-radius:6px;max-width:520px;margin:0 auto;overflow:hidden;position:relative;">
     <div style="background:#0c0c10;padding:22px 28px 0;border-bottom:1px solid rgba(255,255,255,.07);">
@@ -731,8 +793,71 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
 <script>
 var bkSlug='',bkPkgName='',bkPrice='',bkDetail='',bkSelectedDate='',bkSelectedTime='';
 
+// QUANTITY + PROMO MODAL
+var qmName='',qmRawPrice=0,qmQty=1,qmDiscount=0,qmPromoApplied='';
+var PROMO_CODES={'ZOOM':15,'LUXFLY10':10,'WELCOME':10,'VIP':20};
+
+function parsePrice(priceStr){
+  var n=parseFloat(priceStr.replace(/[^0-9.]/g,''));
+  return isNaN(n)?0:n;
+}
+function formatPrice(n){
+  return '€'+n.toFixed(2).replace('.',',');
+}
 function openBooking(name,price,slug,detail){
-  var url='book.html?name='+encodeURIComponent(name)+'&price='+encodeURIComponent(price)+'&detail='+encodeURIComponent(detail);
+  qmName=name;qmRawPrice=parsePrice(price);qmQty=1;qmDiscount=0;qmPromoApplied='';
+  document.getElementById('qm-name').textContent=name;
+  document.getElementById('qm-detail').textContent=detail;
+  document.getElementById('qm-unit-price').textContent=price+' per person';
+  document.getElementById('qm-promo-input').value='';
+  document.getElementById('qm-msg').textContent='';
+  document.getElementById('qm-msg').className='qm-msg';
+  updateQMTotal();
+  document.getElementById('qm-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  // Store original values for book.html
+  bkPkgName=name;bkPrice=price;bkDetail=detail;bkSlug=slug;
+}
+function closeQM(){
+  document.getElementById('qm-overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+function changeQty(d){
+  qmQty=Math.max(1,Math.min(20,qmQty+d));
+  document.getElementById('qm-qty-num').textContent=qmQty;
+  updateQMTotal();
+}
+function applyPromo(){
+  var code=document.getElementById('qm-promo-input').value.trim().toUpperCase();
+  var msg=document.getElementById('qm-msg');
+  if(!code){msg.textContent='Please enter a code.';msg.className='qm-msg err';return;}
+  if(PROMO_CODES[code]!==undefined){
+    qmDiscount=PROMO_CODES[code];qmPromoApplied=code;
+    msg.textContent='✓ Code "'+code+'" applied — '+qmDiscount+'% off!';
+    msg.className='qm-msg ok';
+    updateQMTotal();
+  } else {
+    qmDiscount=0;qmPromoApplied='';
+    msg.textContent='✗ Code not recognised. Try ZOOM for 15% off.';
+    msg.className='qm-msg err';
+    updateQMTotal();
+  }
+}
+function updateQMTotal(){
+  var subtotal=qmRawPrice*qmQty;
+  var total=subtotal*(1-qmDiscount/100);
+  document.getElementById('qm-total').textContent=formatPrice(total);
+}
+function proceedToBook(){
+  var subtotal=qmRawPrice*qmQty;
+  var total=subtotal*(1-qmDiscount/100);
+  var url='book.html'
+    +'?name='+encodeURIComponent(qmName)
+    +'&price='+encodeURIComponent(formatPrice(total))
+    +'&detail='+encodeURIComponent(bkDetail)
+    +'&qty='+qmQty
+    +'&unitprice='+encodeURIComponent(formatPrice(qmRawPrice))
+    +(qmPromoApplied?'&promo='+encodeURIComponent(qmPromoApplied)+'&discount='+qmDiscount:'');
   window.location.href=url;
 }
 
