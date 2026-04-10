@@ -217,14 +217,8 @@ img{display:block;max-width:100%}
       <span class="book-summary-price" id="sum-price" style="font-size:32px">—</span>
     </div>
 
-    <!-- Add-on extras (shown when any add-on is checked) -->
-    <div id="sum-addon-extra" style="display:none;text-align:right;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:900;color:var(--pink);margin-bottom:2px"></div>
-
-    <!-- Grand total line (shown when add-ons active) -->
-    <div id="sum-grand-row" style="display:none;display:flex;justify-content:space-between;align-items:baseline;padding-top:8px;border-top:1px solid rgba(255,255,255,.06);margin-top:6px">
-      <span style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25)">Total</span>
-      <span class="book-summary-price" id="sum-grand-total" style="font-size:38px">—</span>
-    </div>
+    <!-- Add-on extras: +€X,XX shown below package price when anything is checked -->
+    <div id="sum-addon-extra" style="display:none;font-family:'Montserrat',sans-serif;font-size:16px;font-weight:900;color:var(--pink);text-align:right;margin-top:4px"></div>
 
     <div class="book-summary-price-label" id="sum-price-label" style="text-align:right">incl. VAT</div>
     <div class="book-summary-divider"></div>
@@ -538,16 +532,11 @@ function refreshPayTotal(){
   document.getElementById('pay-price').textContent=fmtEuro(final);
   // Drive the left-panel addon line
   var extraEl=document.getElementById('sum-addon-extra');
-  var grandRow=document.getElementById('sum-grand-row');
-  var grandEl=document.getElementById('sum-grand-total');
   if(extra>0){
-    extraEl.textContent='+'+fmtEuro(extra)+' extras';
+    extraEl.textContent='+'+fmtEuro(extra);
     extraEl.style.display='block';
-    grandRow.style.display='flex';
-    grandEl.textContent=fmtEuro(final);
   } else {
     extraEl.style.display='none';
-    grandRow.style.display='none';
   }
 }
 function applyPromo(){
