@@ -165,6 +165,22 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
 .cart-nav-btn:hover{border-color:var(--pink);color:var(--pink)}
 .cart-badge{background:var(--pink);color:#fff;font-size:9px;font-weight:800;min-width:16px;height:16px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;padding:0 4px;font-family:'Montserrat',sans-serif;line-height:1;transition:transform .2s}
 .cart-badge.zero{display:none}
+/* GOOD TO KNOW MODAL */
+.gtk-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:8600;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(5px)}
+.gtk-overlay.open{display:flex}
+.gtk-card{background:#151519;border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:32px;max-width:500px;width:100%;position:relative;max-height:90vh;overflow-y:auto}
+.gtk-eyebrow{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,200,60,.7);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.gtk-eyebrow::before{content:'⚠';font-size:13px}
+.gtk-title{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:900;letter-spacing:-.02em;margin-bottom:20px;line-height:1.1}
+.gtk-list{list-style:none;padding:0;margin:0 0 28px}
+.gtk-list li{font-size:13px;color:rgba(255,255,255,.62);padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:flex-start;gap:10px;line-height:1.6}
+.gtk-list li:last-child{border-bottom:none}
+.gtk-list li::before{content:'—';color:rgba(255,180,0,.5);flex-shrink:0;margin-top:1px}
+.gtk-foot{display:flex;gap:12px;align-items:center}
+.gtk-confirm{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--pink);color:#fff;padding:14px 28px;border-radius:3px;border:none;cursor:pointer;transition:opacity .18s;flex:1}
+.gtk-confirm:hover{opacity:.85}
+.gtk-cancel{background:none;border:none;color:rgba(255,255,255,.3);font-size:12px;font-weight:500;cursor:pointer;transition:color .18s;padding:0;font-family:'Inter',sans-serif}
+.gtk-cancel:hover{color:#fff}
 </style>
 </head>
 <body>
@@ -686,6 +702,27 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
 </footer>
 
 <!-- QUANTITY + PROMO MODAL -->
+<!-- GOOD TO KNOW GATE -->
+<div class="gtk-overlay" id="gtk-overlay" onclick="if(event.target===this)closeGTK()">
+  <div class="gtk-card">
+    <div class="gtk-eyebrow">Good to know</div>
+    <div class="gtk-title">Before you book, please read:</div>
+    <ul class="gtk-list">
+      <li>Ready to fly? Ages 4 and up are welcome! We recommend an adult accompany children for the adventure — add an adult formula to your reservation.</li>
+      <li>If you have a history of shoulder dislocation, unfortunately this experience is not for you.</li>
+      <li>The maximum weight for flying is 120 kg.</li>
+      <li>No alcohol or illicit substances before flying.</li>
+      <li>Please arrive 1 hour before your flight time for preparation and training.</li>
+      <li>Recommended attire: comfortable and casual, like jeans and sneakers. All equipment is provided.</li>
+      <li>Please note, your booking is subject to strict cancellation rules. If you&apos;re unsure about your date, consider opting for our Flexibility Insurance.</li>
+    </ul>
+    <div class="gtk-foot">
+      <button class="gtk-confirm" onclick="confirmGTK()">I understand — Continue</button>
+      <button class="gtk-cancel" onclick="closeGTK()">Cancel</button>
+    </div>
+  </div>
+</div>
+
 <div class="qm-overlay" id="qm-overlay" onclick="if(event.target===this)closeQM()">
   <div class="qm-card">
     <button class="qm-close" onclick="closeQM()">&times;</button>
@@ -834,16 +871,30 @@ function parsePrice(priceStr){
 function formatPrice(n){
   return '€'+n.toFixed(2).replace('.',',');
 }
+// Pending booking args — held until GTK is confirmed
+var _pendingBooking=null;
+
 function openBooking(name,price,slug,detail){
-  qmName=name;qmRawPrice=parsePrice(price);qmQty=1;
-  document.getElementById('qm-name').textContent=name;
-  document.getElementById('qm-detail').textContent=detail;
-  document.getElementById('qm-unit-price').textContent=price+' per person';
+  _pendingBooking={name:name,price:price,slug:slug,detail:detail};
+  document.getElementById('gtk-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function confirmGTK(){
+  document.getElementById('gtk-overlay').classList.remove('open');
+  var b=_pendingBooking;
+  if(!b) return;
+  qmName=b.name;qmRawPrice=parsePrice(b.price);qmQty=1;
+  document.getElementById('qm-name').textContent=b.name;
+  document.getElementById('qm-detail').textContent=b.detail;
+  document.getElementById('qm-unit-price').textContent=b.price+' per person';
   updateQMTotal();
   document.getElementById('qm-overlay').classList.add('open');
-  document.body.style.overflow='hidden';
-  // Store original values for book.html
-  bkPkgName=name;bkPrice=price;bkDetail=detail;bkSlug=slug;
+  bkPkgName=b.name;bkPrice=b.price;bkDetail=b.detail;bkSlug=b.slug;
+}
+function closeGTK(){
+  document.getElementById('gtk-overlay').classList.remove('open');
+  document.body.style.overflow='';
+  _pendingBooking=null;
 }
 function closeQM(){
   document.getElementById('qm-overlay').classList.remove('open');
