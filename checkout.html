@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link href="img/favicon.png" rel="icon" type="image/png"/>
+<link href="img/favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Book Your Flight — Luxfly Indoor Skydiving</title>
+<meta content="Choose your indoor skydiving package and book online. All prices include VAT. No hidden fees." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --pink: #f02cb8;
+  --pink-dk: #c8229a;
+  --black: #000;
+  --off-black: #0a0a0a;
+  --surface: #111;
+  --surface2: #161616;
+  --white: #fff;
+  --grey: #888;
+  --border: rgba(255,255,255,0.08);
+}
+html { scroll-behavior: smooth; }
+body { background: var(--black); color: var(--white); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ── HERO ── */
+.checkout-hero {
+  position: relative;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.92) 100%),
+              url('https://indoorskydive.lu/storage/images/banners/01KJ2BSVYNYATPHZWJ8JXXS51C.jpg') center/cover no-repeat;
+  padding: 160px 48px 80px;
+  text-align: center;
+}
+.checkout-hero .eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--pink); margin-bottom: 20px;
+}
+.checkout-hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(40px, 7vw, 88px);
+  font-weight: 900; line-height: 0.95; letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+.checkout-hero h1 em { font-style: italic; color: var(--pink); }
+.checkout-hero p {
+  font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.6);
+  max-width: 560px; margin: 0 auto 40px; line-height: 1.7;
+}
+.hero-tabs {
+  display: flex; justify-content: center; gap: 4px;
+  flex-wrap: wrap;
+}
+.hero-tab {
+  font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 10px 24px; border-radius: 2px; cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.5);
+  background: transparent; transition: all 0.2s;
+}
+.hero-tab:hover, .hero-tab.active {
+  background: var(--pink); border-color: var(--pink); color: #fff;
+}
+
+/* ── HOW IT WORKS ── */
+.how-strip {
+  background: var(--surface);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  padding: 40px 48px;
+}
+.how-strip-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 32px; align-items: start;
+}
+.how-step { text-align: center; }
+.how-step-num {
+  font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 800;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink);
+  margin-bottom: 10px; display: block;
+}
+.how-step h4 {
+  font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 800;
+  letter-spacing: -0.01em; margin-bottom: 6px;
+}
+.how-step p { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.6; }
+
+/* ── SECTION ── */
+.packages-section {
+  padding: 72px 48px;
+  border-bottom: 1px solid var(--border);
+}
+.packages-section.dark { background: var(--surface); }
+.section-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--pink); display: flex; align-items: center; gap: 12px; margin-bottom: 12px;
+}
+.section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.section-header { max-width: 1200px; margin: 0 auto 48px; }
+.section-header h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(28px, 4vw, 44px); font-weight: 900;
+  letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 10px;
+}
+.section-header p { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.7; max-width: 600px; }
+
+/* ── PACKAGE GRID ── */
+.pkg-grid {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+}
+.pkg-grid.two-col { grid-template-columns: repeat(2, 1fr); }
+.pkg-grid.four-col { grid-template-columns: repeat(4, 1fr); }
+.pkg-card {
+  background: var(--surface2); padding: 36px 32px;
+  display: flex; flex-direction: column;
+  position: relative; transition: background 0.2s;
+}
+.pkg-card:hover { background: #1a1a1a; }
+.pkg-card.featured { border-top: 2px solid var(--pink); }
+.pkg-badge {
+  position: absolute; top: 16px; right: 16px;
+  font-family: 'Montserrat', sans-serif; font-size: 9px; font-weight: 800;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  background: var(--pink); color: #fff; padding: 4px 10px; border-radius: 2px;
+}
+.pkg-badge.sale { background: #1a7a1a; }
+.pkg-name {
+  font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 900;
+  letter-spacing: -0.02em; margin-bottom: 6px;
+}
+.pkg-tagline { font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.5; margin-bottom: 24px; }
+.pkg-stats {
+  display: flex; gap: 24px; margin-bottom: 24px;
+  padding-bottom: 24px; border-bottom: 1px solid var(--border);
+}
+.pkg-stat { display: flex; flex-direction: column; gap: 2px; }
+.pkg-stat-val {
+  font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 900;
+  color: var(--pink); letter-spacing: -0.03em;
+}
+.pkg-stat-lbl { font-size: 10px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.08em; }
+.pkg-includes { margin-bottom: 24px; flex: 1; }
+.pkg-includes-title {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.25); margin-bottom: 12px;
+}
+.pkg-include-item {
+  font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.5;
+  padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+  display: flex; align-items: flex-start; gap: 8px;
+}
+.pkg-include-item::before { content: '✓'; color: var(--pink); font-size: 10px; margin-top: 2px; flex-shrink: 0; }
+.pkg-note {
+  font-size: 11px; color: rgba(255,255,255,0.3); line-height: 1.6;
+  margin-bottom: 20px; padding: 10px 12px;
+  background: rgba(255,255,255,0.03); border-left: 2px solid rgba(255,255,255,0.1);
+}
+.pkg-note.warning { border-left-color: #e8a020; color: rgba(255,200,80,0.65); }
+.pkg-price-row {
+  display: flex; align-items: flex-end; gap: 10px; margin-bottom: 16px;
+}
+.pkg-price {
+  font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 900;
+  letter-spacing: -0.03em;
+}
+.pkg-price-was {
+  font-size: 13px; color: rgba(255,255,255,0.3);
+  text-decoration: line-through; margin-bottom: 4px;
+}
+.pkg-price-note { font-size: 11px; color: rgba(255,255,255,0.3); margin-bottom: 4px; }
+.pkg-book-btn {
+  display: block; text-align: center; width: 100%;
+  font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 800;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  background: var(--pink); color: #fff; padding: 14px 20px; border-radius: 2px;
+  transition: opacity 0.2s;
+}
+.pkg-book-btn:hover { opacity: 0.85; }
+.pkg-book-btn.ghost {
+  background: transparent; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.6);
+}
+.pkg-book-btn.ghost:hover { border-color: var(--pink); color: var(--pink); background: transparent; }
+
+/* ── ADD-ONS SECTION ── */
+.addons-section {
+  padding: 64px 48px;
+  background: var(--off-black);
+  border-bottom: 1px solid var(--border);
+}
+.addons-grid {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 2px;
+}
+.addon-card {
+  background: var(--surface2); padding: 28px 24px;
+}
+.addon-name {
+  font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 800;
+  margin-bottom: 8px;
+}
+.addon-price {
+  font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 900;
+  color: var(--pink); margin-bottom: 12px;
+}
+.addon-desc { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.6; }
+
+/* ── CONDITIONS SECTION ── */
+.conditions-section {
+  padding: 72px 48px;
+  background: var(--black);
+  border-bottom: 1px solid var(--border);
+}
+.conditions-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px;
+}
+.cond-block {
+  background: var(--surface2); padding: 36px 32px;
+}
+.cond-block-title {
+  font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 800;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink);
+  margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border);
+}
+.cond-item {
+  font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.6;
+  padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+  display: flex; gap: 10px; align-items: flex-start;
+}
+.cond-item-icon { color: var(--pink); flex-shrink: 0; font-size: 11px; margin-top: 3px; }
+
+/* ── CANCELLATION SECTION ── */
+.cancel-section {
+  padding: 64px 48px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.cancel-inner { max-width: 1200px; margin: 0 auto; }
+.cancel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 32px; }
+.cancel-card { background: var(--surface2); padding: 36px 32px; }
+.cancel-card-title {
+  font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 800;
+  margin-bottom: 6px;
+}
+.cancel-card-price {
+  font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 900;
+  color: var(--pink); margin-bottom: 20px;
+}
+.cancel-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 0; border-bottom: 1px solid var(--border);
+  font-size: 13px; color: rgba(255,255,255,0.55); gap: 16px;
+}
+.cancel-row-amount { font-family: 'Montserrat', sans-serif; font-weight: 700; color: #fff; white-space: nowrap; }
+.cancel-row-amount.free { color: #4caf50; }
+
+/* ── FAQ IMPORTANT NOTES ── */
+.important-section {
+  padding: 72px 48px;
+  background: var(--off-black);
+}
+.important-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+}
+.important-notes-list { list-style: none; }
+.important-notes-list li {
+  font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6;
+  padding: 14px 0; border-bottom: 1px solid var(--border);
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.important-notes-list li::before {
+  content: '!'; display: flex; align-items: center; justify-content: center;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: rgba(240,44,184,0.15); border: 1px solid rgba(240,44,184,0.3);
+  color: var(--pink); font-size: 11px; font-weight: 800; flex-shrink: 0; margin-top: 1px;
+}
+.booking-steps { display: flex; flex-direction: column; gap: 24px; }
+.booking-step { display: flex; gap: 20px; align-items: flex-start; }
+.booking-step-num {
+  font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 900;
+  color: var(--pink); opacity: 0.4; line-height: 1; flex-shrink: 0; width: 36px;
+}
+.booking-step-body h4 {
+  font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 800;
+  margin-bottom: 4px;
+}
+.booking-step-body p { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.6; }
+
+/* ── PRICE NOTE BANNER ── */
+.price-note-banner {
+  background: rgba(240,44,184,0.06);
+  border: 1px solid rgba(240,44,184,0.15);
+  padding: 16px 32px;
+  max-width: 1200px; margin: 0 auto 48px;
+  display: flex; align-items: center; gap: 16px;
+}
+.price-note-banner .icon { color: var(--pink); font-size: 18px; flex-shrink: 0; }
+.price-note-banner p { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.5; }
+.price-note-banner strong { color: #fff; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .pkg-grid { grid-template-columns: repeat(2,1fr); }
+  .pkg-grid.four-col { grid-template-columns: repeat(2,1fr); }
+  .addons-grid { grid-template-columns: repeat(2,1fr); }
+  .conditions-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .checkout-hero { padding: 120px 24px 60px; }
+  .packages-section, .addons-section, .conditions-section, .cancel-section, .important-section { padding: 48px 24px; }
+  .pkg-grid, .pkg-grid.two-col, .pkg-grid.four-col { grid-template-columns: 1fr; }
+  .addons-grid { grid-template-columns: 1fr 1fr; }
+  .conditions-inner, .cancel-grid, .important-inner { grid-template-columns: 1fr; }
+  .how-strip { padding: 32px 24px; }
+  .how-strip-inner { grid-template-columns: repeat(2,1fr); gap: 20px; }
+}
+@media (max-width: 520px) {
+  .how-strip-inner { grid-template-columns: 1fr; }
+  .addons-grid { grid-template-columns: 1fr; }
+  .hero-tabs { gap: 6px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav"><a class="nav-logo" href="index.html"><svg height="28" viewbox="0 0 82 28" width="82" xmlns="http://www.w3.org/2000/svg"><defs><lineargradient gradientunits="userSpaceOnUse" id="lsg" x1="52" x2="34" y1="1" y2="27"><stop class="lux-stop" offset="0%"></stop><stop offset="100%" stop-color="#f02cb8"></stop></lineargradient><clippath clippathunits="userSpaceOnUse" id="lcl"><polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"></polygon></clippath><clippath clippathunits="userSpaceOnUse" id="lcf"><polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"></polygon></clippath></defs><text class="lux-text" clip-path="url(#lcl)" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="0" y="20">LUX</text><text clip-path="url(#lcf)" fill="#f02cb8" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="40" y="24">FLY</text><line stroke="url(#lsg)" stroke-linecap="round" stroke-width="2" x1="52" x2="34" y1="1" y2="27"></line></svg></a><div class="nav-right"><div class="nav-menu"><div class="nav-item"><a class="nav-link" href="index.html">Home</a><div class="nav-dropdown"><a href="bachelor.html">Bachelor &amp; Bachelorette</a><a href="promotions.html">Events &amp; Promotions</a><a href="how-it-works.html">Activity Flow</a><a href="checkout.html">Book Now</a><a href="gift-voucher.html">Buy a Gift Voucher</a><a href="photos.html">Photos &amp; Vidéos</a><a href="hot-air-balloon.html">Hot Air Balloon</a></div></div><div class="nav-item"><a class="nav-link" href="prices.html">Indoor Skydiving</a><div class="nav-dropdown"><a href="loyalty.html">Loyalty Program</a><a href="birthdays.html">Birthdays</a><a href="prices.html">Prices</a><a href="use-voucher.html">Use a Gift Voucher</a><a href="conditions.html">Conditions</a><a href="activity.html">The Activity</a></div></div><div class="nav-item"><a class="nav-link" href="events.html">Corporate</a><div class="nav-dropdown"><a href="events.html">Organize an Event</a><a href="team-building.html">Team Building</a><a href="events-pricing.html">Pricing</a><a href="quote.html">Request for Quote</a><a href="references.html">References</a></div></div><div class="nav-item"><a class="nav-link" href="pro.html">Pro Flyers</a><div class="nav-dropdown"><a href="pro-prices.html">Prices</a><a href="coaches.html">Coaches</a><a href="shared-sessions.html">Shared Session</a><a href="infrastructure.html">Infrastructure</a><a href="become-proflyer.html">Becoming Proflyer</a><a href="pro-events.html">Events and Camps</a></div></div><div class="nav-item"><a class="nav-link" href="about.html">About</a><div class="nav-dropdown"><a href="pilates.html">Pilates</a><a href="indoor-activities.html">Indoor Activities</a><a href="blog.html">Blog</a><a href="museum.html">Museum</a><a href="flyology.html">FLYOLOGY</a><a href="faq.html">F.A.Q.</a><a href="partners.html">Our Partners</a><a href="jobs.html">Job Vacancies</a><a href="region.html">The Région</a><a href="photos.html">Your Photos and Videos</a><a href="opening-hours.html">Opening Hours</a><a href="bar.html">Bar</a><a href="about.html">Who We Are</a></div></div><div class="nav-item"><a class="nav-link" href="contact.html">Contact</a></div></div><div class="nav-item nav-lang"><span class="lang-btn">EN <svg fill="none" height="6" style="opacity:0.55" viewbox="0 0 10 6" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></span><div class="nav-dropdown"><a href="fr/checkout.html">FR</a><a href="de/checkout.html">DE</a><a href="lb/checkout.html">LB</a><a href="nl/checkout.html">NL</a></div></div><a href="account.html" onmouseout="this.style.color='rgba(255,255,255,0.6)'" onmouseover="this.style.color='#fff'" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;"><svg fill="none" height="16" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="16"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="7" r="4"></circle></svg>My Account</a><a class="nav-book" href="checkout.html">Book Now</a></div></nav>
+
+<main>
+
+<!-- HERO -->
+<section class="checkout-hero">
+  <p class="eyebrow">Indoor Skydiving · Luxembourg Border</p>
+  <h1>Choose your<br/><em>flight.</em></h1>
+  <p>All prices include VAT (TTC). Additional fees may apply at checkout. Select your package below and complete your booking securely on the Luxfly shop.</p>
+  <div class="hero-tabs">
+    <button class="hero-tab active" onclick="scrollTo('adults')">Adults</button>
+    <button class="hero-tab" onclick="scrollTo('kids')">Kids (4–12)</button>
+    <button class="hero-tab" onclick="scrollTo('duo')">Duo &amp; Family</button>
+    <button class="hero-tab" onclick="scrollTo('special')">Special Packages</button>
+    <button class="hero-tab" onclick="scrollTo('addons')">Add-Ons</button>
+  </div>
+</section>
+
+<!-- HOW IT WORKS STRIP -->
+<div class="how-strip">
+  <div class="how-strip-inner">
+    <div class="how-step">
+      <span class="how-step-num">Step 01</span>
+      <h4>Choose &amp; Book</h4>
+      <p>Select your package below and click Book Now to go to our secure checkout.</p>
+    </div>
+    <div class="how-step">
+      <span class="how-step-num">Step 02</span>
+      <h4>Pick a Date</h4>
+      <p>Select your preferred flight date from the live availability calendar, or choose a gift voucher valid 12 months.</p>
+    </div>
+    <div class="how-step">
+      <span class="how-step-num">Step 03</span>
+      <h4>Arrive Ready</h4>
+      <p>Present yourself 1 hour before your flight time. Dress code: jeans, T-shirt, trainers.</p>
+    </div>
+    <div class="how-step">
+      <span class="how-step-num">Step 04</span>
+      <h4>Fly.</h4>
+      <p>Briefing, equipment, flight, HighFly, diploma — the full Luxfly experience awaits.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ADULTS -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="packages-section" id="adults">
+  <div class="section-header">
+    <div class="section-label">Adults</div>
+    <h2>Solo Flight Packages</h2>
+    <p>For first-timers and experienced flyers. All include HighFly, photos, and museum access.</p>
+  </div>
+
+  <div class="price-note-banner">
+    <span class="icon">✓</span>
+    <p><strong>All prices are TTC (all taxes included). No booking fee. No processing fee.</strong> The displayed price is exactly what you pay — plus any optional add-ons you choose at checkout.</p>
+  </div>
+
+  <div class="pkg-grid" style="max-width:1200px;margin:0 auto;">
+
+    <!-- LUXCOVERY -->
+    <div class="pkg-card">
+      <div class="pkg-name">LUXCOVERY</div>
+      <div class="pkg-tagline">L'Essentiel pour S'envoler — 2 flights</div>
+      <div class="pkg-stats">
+        <div class="pkg-stat"><span class="pkg-stat-val">2'</span><span class="pkg-stat-lbl">Flight time</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">2</span><span class="pkg-stat-lbl">Flights</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">1</span><span class="pkg-stat-lbl">Person</span></div>
+      </div>
+      <div class="pkg-includes">
+        <div class="pkg-includes-title">Included</div>
+        <div class="pkg-include-item">HighFly — fly higher with your instructor on your last jump</div>
+        <div class="pkg-include-item">Photos — download your flight photos within 30 days</div>
+        <div class="pkg-include-item">Expo Permanente — The Art of Skydiving museum access</div>
+        <div class="pkg-include-item">Expert briefing &amp; certified instructor</div>
+        <div class="pkg-include-item">Premium flight suit &amp; equipment</div>
+        <div class="pkg-include-item">Flight diploma</div>
+      </div>
+      <div class="pkg-price-row"><span class="pkg-price">€104.70</span></div>
+      <a class="pkg-book-btn" href="https://shop.indoorskydive.lu/chutelibre-decouverte" target="_blank">Book Now →</a>
+    </div>
+
+    <!-- LUXENSATION -->
+    <div class="pkg-card featured">
+      <div class="pkg-badge">Most Popular</div>
+      <div class="pkg-name">LUXENSATION</div>
+      <div class="pkg-tagline">Plus de Temps de Vol, Plus de Sensations — 4 flights</div>
+      <div class="pkg-stats">
+        <div class="pkg-stat"><span class="pkg-stat-val">4'</span><span class="pkg-stat-lbl">Flight time</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">4</span><span class="pkg-stat-lbl">Flights</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">1</span><span class="pkg-stat-lbl">Person</span></div>
+      </div>
+      <div class="pkg-includes">
+        <div class="pkg-includes-title">Included</div>
+        <div class="pkg-include-item">HighFly — fly higher with your instructor on your last jump</div>
+        <div class="pkg-include-item">Photos — download your flight photos within 30 days</div>
+        <div class="pkg-include-item">Expo Permanente — The Art of Skydiving museum access</div>
+        <div class="pkg-include-item">Expert briefing &amp; certified instructor</div>
+        <div class="pkg-include-item">Premium flight suit &amp; equipment</div>
+        <div class="pkg-include-item">Flight diploma</div>
+      </div>
+      <div class="pkg-price-row"><span class="pkg-price">€174.70</span></div>
+      <a class="pkg-book-btn" href="https://shop.indoorskydive.lu/sensation" target="_blank">Book Now →</a>
+    </div>
+
+    <!-- LUXEMOTION -->
+    <div class="pkg-card">
+      <div class="pkg-name">LUXEMOTION</div>
+      <div class="pkg-tagline">Le Meilleur du Meilleur — 6 flights</div>
+      <div class="pkg-stats">
+        <div class="pkg-stat"><span class="pkg-stat-val">6'</span><span class="pkg-stat-lbl">Flight time</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">6</span><span class="pkg-stat-lbl">Flights</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">1</span><span class="pkg-stat-lbl">Person</span></div>
+      </div>
+      <div class="pkg-includes">
+        <div class="pkg-includes-title">Included</div>
+        <div class="pkg-include-item">HighFly — fly higher with your instructor on your last jump</div>
+        <div class="pkg-include-item">Photos — download your flight photos within 30 days</div>
+        <div class="pkg-include-item">Expo Permanente — The Art of Skydiving museum access</div>
+        <div class="pkg-include-item">Expert briefing &amp; certified instructor</div>
+        <div class="pkg-include-item">Premium flight suit &amp; equipment</div>
+        <div class="pkg-include-item">Flight diploma</div>
+      </div>
+      <div class="pkg-price-row"><span class="pkg-price">€236.70</span></div>
+      <a class="pkg-book-btn" href="https://shop.indoorskydive.lu/emotion" target="_blank">Book Now →</a>
+    </div>
+
+  </div>
+
+  <!-- LUX-ESSENTIAL & FREEDOM — secondary row -->
+  <div class="pkg-grid two-col" style="max-width:1200px;margin:2px auto 0;">
+
+    <!-- LUX-ESSENTIAL -->
+    <div class="pkg-card">
+      <div class="pkg-name">LUX-ESSENTIAL</div>
+      <div class="pkg-tagline">Basic formula — no add-ons included. Entry-level price.</div>
+      <div class="pkg-stats">
+        <div class="pkg-stat"><span class="pkg-stat-val">2'</span><span class="pkg-stat-lbl">Flight time</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">2</span><span class="pkg-stat-lbl">Flights</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">1</span><span class="pkg-stat-lbl">Person</span></div>
+      </div>
+      <div class="pkg-includes">
+        <div class="pkg-includes-title">Included</div>
+        <div class="pkg-include-item">Expert briefing &amp; certified instructor</div>
+        <div class="pkg-include-item">Premium flight suit &amp; equipment</div>
+        <div class="pkg-include-item">Flight diploma</div>
+      </div>
+      <div class="pkg-note warning">⚠ Not available on weekends. Not available as a gift voucher. Must be booked within 60 days of purchase.</div>
+      <div class="pkg-price-row"><span class="pkg-price">€64.90</span></div>
+      <a class="pkg-book-btn ghost" href="https://shop.indoorskydive.lu/luxbasic-fr" target="_blank">Book Now →</a>
+    </div>
+
+    <!-- FREEDOM (PMR) -->
+    <div class="pkg-card">
+      <div class="pkg-name">FREEDOM</div>
+      <div class="pkg-tagline">FORMULE PMR — Le Vol Accessible à Tous. Fully adapted for reduced-mobility guests.</div>
+      <div class="pkg-stats">
+        <div class="pkg-stat"><span class="pkg-stat-val">4'</span><span class="pkg-stat-lbl">Flight time</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">4</span><span class="pkg-stat-lbl">Flights</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">1</span><span class="pkg-stat-lbl">Person</span></div>
+      </div>
+      <div class="pkg-includes">
+        <div class="pkg-includes-title">Included</div>
+        <div class="pkg-include-item">HighFly — fly higher with your instructor on your last jump</div>
+        <div class="pkg-include-item">Photos — download your flight photos within 30 days</div>
+        <div class="pkg-include-item">Specialist PMR instructor &amp; adapted equipment</div>
+        <div class="pkg-include-item">Flight diploma</div>
+      </div>
+      <div class="pkg-price-row"><span class="pkg-price">€155.40</span></div>
+      <a class="pkg-book-btn ghost" href="https://shop.indoorskydive.lu/personne-a-mobilite-reduite" target="_blank">Book Now →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- KIDS -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="packages-section dark" id="kids">
+  <div class="section-header">
+    <div class="section-label">Kids — Ages 4 to 12</div>
+    <h2>Children's Flight Packages</h2>
+    <p>Specially designed for kids aged 4 to 12. We strongly recommend an adult join — add an adult package to fly together.</p>
+  </div>
+
+  <div class="pkg-grid" style="max-width:1200px;margin:0 auto;">
+
+    <!-- LUX-INITIATION -->
+    <div class="pkg-card">
+      <div class="pkg-name">LUX-INITIATION</div>
+      <div class="pkg-tagline">Offrez la Magie du Vol à Votre Enfant — 2 flights</div>
+      <div class="pkg-stats">
+        <div class="pkg-stat"><span class="pkg-stat-val">2'</span><span class="pkg-stat-lbl">Flight time</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">2</span><span class="pkg-stat-lbl">Flights</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">Ages 4–12</span><span class="pkg-stat-lbl">Children only</span></div>
+      </div>
+      <div class="pkg-includes">
+        <div class="pkg-includes-title">Included</div>
+        <div class="pkg-include-item">Photos — download your flight photos within 30 days</div>
+        <div class="pkg-include-item">HighFly — fly higher with your instructor on your last jump</div>
+        <div class="pkg-include-item">Expo Permanente — The Art of Skydiving museum access</div>
+        <div class="pkg-include-item">Child-adapted briefing by a qualified instructor</div>
+        <div class="pkg-include-item">Premium flight suit &amp; equipment</div>
+        <div class="pkg-include-item">Flight diploma</div>
+      </div>
+      <div class="pkg-price-row"><span class="pkg-price">€89.70</span></div>
+      <a class="pkg-book-btn" href="https://shop.indoorskydive.lu/enfant-2-vols" target="_blank">Book Now →</a>
+    </div>
+
+    <!-- LUX-ADVENTURE -->
+    <div class="pkg-card featured">
+      <div class="pkg-badge">Most Popular</div>
+      <div class="pkg-name">LUX-ADVENTURE</div>
+      <div class="pkg-tagline">Offrez Encore Plus de Magie du Vol à Votre Enfant — 4 flights</div>
+      <div class="pkg-stats">
+        <div class="pkg-stat"><span class="pkg-stat-val">4'</span><span class="pkg-stat-lbl">Flight time</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">4</span><span class="pkg-stat-lbl">Flights</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">Ages 4–12</span><span class="pkg-stat-lbl">Children only</span></div>
+      </div>
+      <div class="pkg-includes">
+        <div class="pkg-includes-title">Included</div>
+        <div class="pkg-include-item">Photos — download your flight photos within 30 days</div>
+        <div class="pkg-include-item">HighFly — fly higher with your instructor on your last jump</div>
+        <div class="pkg-include-item">Expo Permanente — The Art of Skydiving museum access</div>
+        <div class="pkg-include-item">Child-adapted briefing by a qualified instructor</div>
+        <div class="pkg-include-item">Premium flight suit &amp; equipment</div>
+        <div class="pkg-include-item">Flight diploma</div>
+      </div>
+      <div class="pkg-price-row"><span class="pkg-price">€139.80</span></div>
+      <a class="pkg-book-btn" href="https://shop.indoorskydive.lu/enfant-4-vols" target="_blank">Book Now →</a>
+    </div>
+
+    <!-- LUX-ESSENTIAL KIDS -->
+    <div class="pkg-card">
+      <div class="pkg-name">LUX-ESSENTIAL KIDS</div>
+      <div class="pkg-tagline">La formule de base sans options — limited availability</div>
+      <div class="pkg-stats">
+        <div class="pkg-stat"><span class="pkg-stat-val">2'</span><span class="pkg-stat-lbl">Flight time</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">2</span><span class="pkg-stat-lbl">Flights</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">Ages 4–12</span><span class="pkg-stat-lbl">Children only</span></div>
+      </div>
+      <div class="pkg-includes">
+        <div class="pkg-includes-title">Included</div>
+        <div class="pkg-include-item">Expert briefing &amp; certified instructor</div>
+        <div class="pkg-include-item">Premium flight suit &amp; equipment</div>
+        <div class="pkg-include-item">Flight diploma</div>
+      </div>
+      <div class="pkg-note warning">⚠ Not available as a gift voucher. Limited slots — must be booked within 4 weeks (60 days) of purchase. We strongly recommend adding HighFly.</div>
+      <div class="pkg-price-row"><span class="pkg-price">€45.20</span></div>
+      <a class="pkg-book-btn ghost" href="https://shop.indoorskydive.lu/luxbasic-kids" target="_blank">Book Now →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- DUO & FAMILY -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="packages-section" id="duo">
+  <div class="section-header">
+    <div class="section-label">Duo &amp; Family</div>
+    <h2>Fly Together</h2>
+    <p>Shared packages for couples, parent &amp; child, or groups of up to 14.</p>
+  </div>
+
+  <div class="pkg-grid two-col" style="max-width:1200px;margin:0 auto;">
+
+    <!-- LUX-DUO -->
+    <div class="pkg-card featured">
+      <div class="pkg-badge sale">Save €24</div>
+      <div class="pkg-name">LUX-DUO</div>
+      <div class="pkg-tagline">Le Bestseller à Prix Réduit pour 2 — 4 flights per person</div>
+      <div class="pkg-stats">
+        <div class="pkg-stat"><span class="pkg-stat-val">8'</span><span class="pkg-stat-lbl">Total time</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">4</span><span class="pkg-stat-lbl">Flights/person</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">2</span><span class="pkg-stat-lbl">People</span></div>
+      </div>
+      <div class="pkg-includes">
+        <div class="pkg-includes-title">Included — per person</div>
+        <div class="pkg-include-item">HighFly — fly higher with your instructor on your last jump</div>
+        <div class="pkg-include-item">Photos — download your flight photos within 30 days</div>
+        <div class="pkg-include-item">Expo Permanente — The Art of Skydiving museum access</div>
+        <div class="pkg-include-item">Expert briefing &amp; certified instructor</div>
+        <div class="pkg-include-item">Flight diploma</div>
+      </div>
+      <div class="pkg-price-row">
+        <span class="pkg-price">€325.90</span>
+        <div><div class="pkg-price-was">Was €349.80</div><div class="pkg-price-note">for 2 people</div></div>
+      </div>
+      <a class="pkg-book-btn" href="https://shop.indoorskydive.lu/formule-chute-libre-pour-2" target="_blank">Book Now →</a>
+    </div>
+
+    <!-- LUXSHARING -->
+    <div class="pkg-card featured">
+      <div class="pkg-badge sale">Save €29</div>
+      <div class="pkg-name">LUXSHARING</div>
+      <div class="pkg-tagline">L'Aventure à Vivre en Duo avec Votre Enfant — 1 adult + 1 child (≤12)</div>
+      <div class="pkg-stats">
+        <div class="pkg-stat"><span class="pkg-stat-val">8'</span><span class="pkg-stat-lbl">Total time</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">4</span><span class="pkg-stat-lbl">Flights/person</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">2</span><span class="pkg-stat-lbl">People</span></div>
+      </div>
+      <div class="pkg-includes">
+        <div class="pkg-includes-title">Included — per person</div>
+        <div class="pkg-include-item">HighFly — fly higher with your instructor on your last jump</div>
+        <div class="pkg-include-item">Photos — download your flight photos within 30 days</div>
+        <div class="pkg-include-item">Expo Permanente — The Art of Skydiving museum access</div>
+        <div class="pkg-include-item">Expert briefing &amp; certified instructor</div>
+        <div class="pkg-include-item">Flight diploma</div>
+      </div>
+      <div class="pkg-price-row">
+        <span class="pkg-price">€285.80</span>
+        <div><div class="pkg-price-was">Was €314.80</div><div class="pkg-price-note">1 adult + 1 child ≤12</div></div>
+      </div>
+      <a class="pkg-book-btn" href="https://shop.indoorskydive.lu/vol-parent-enfant" target="_blank">Book Now →</a>
+    </div>
+
+  </div>
+
+  <div class="pkg-grid two-col" style="max-width:1200px;margin:2px auto 0;">
+
+    <!-- LUXFAMILY -->
+    <div class="pkg-card featured">
+      <div class="pkg-badge">Most Popular</div>
+      <div class="pkg-name">LUXFAMILY</div>
+      <div class="pkg-tagline">L'Aventure à Partager jusqu'à 5 personnes — 10 flights to share</div>
+      <div class="pkg-stats">
+        <div class="pkg-stat"><span class="pkg-stat-val">10'</span><span class="pkg-stat-lbl">Total time</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">10</span><span class="pkg-stat-lbl">Flights shared</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">2–5</span><span class="pkg-stat-lbl">People</span></div>
+      </div>
+      <div class="pkg-includes">
+        <div class="pkg-includes-title">Included</div>
+        <div class="pkg-include-item">HighFly — fly higher with your instructor on your last jump</div>
+        <div class="pkg-include-item">Photos — download your flight photos within 30 days</div>
+        <div class="pkg-include-item">Expo Permanente — The Art of Skydiving museum access</div>
+        <div class="pkg-include-item">Expert briefing &amp; certified instructor</div>
+        <div class="pkg-include-item">Flight diploma for each participant</div>
+      </div>
+      <div class="pkg-note">Fewer participants = more flight time per person. With 5 participants, each gets the equivalent of 2 flights from 4,000m.</div>
+      <div class="pkg-price-row"><span class="pkg-price">€454.50</span><div class="pkg-price-note" style="margin-bottom:4px">for 2–5 people</div></div>
+      <a class="pkg-book-btn" href="https://shop.indoorskydive.lu/famille" target="_blank">Book Now →</a>
+    </div>
+
+    <!-- LUX-TEAM -->
+    <div class="pkg-card">
+      <div class="pkg-name">LUX-TEAM</div>
+      <div class="pkg-tagline">L'Expérience Parfaite pour les Groupes — exclusive tunnel access for up to 14</div>
+      <div class="pkg-stats">
+        <div class="pkg-stat"><span class="pkg-stat-val">28'</span><span class="pkg-stat-lbl">Total time</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">2</span><span class="pkg-stat-lbl">Flights/person</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">5–14</span><span class="pkg-stat-lbl">People</span></div>
+      </div>
+      <div class="pkg-includes">
+        <div class="pkg-includes-title">Included</div>
+        <div class="pkg-include-item">HighFly — fly higher with your instructor on your last jump</div>
+        <div class="pkg-include-item">Photos — download your flight photos within 30 days</div>
+        <div class="pkg-include-item">Exclusive tunnel — your group is the only one flying</div>
+        <div class="pkg-include-item">Expert briefing &amp; certified instructor</div>
+        <div class="pkg-include-item">Flight diploma for each participant</div>
+      </div>
+      <div class="pkg-price-row"><span class="pkg-price">€1,115.50</span><div class="pkg-price-note">for up to 14 people</div></div>
+      <a class="pkg-book-btn ghost" href="https://shop.indoorskydive.lu/event" target="_blank">Book Now →</a>
+    </div>
+
+  </div>
+
+  <!-- LUXMARIAGE row -->
+  <div class="pkg-grid" style="max-width:1200px;margin:2px auto 0;grid-template-columns:1fr;">
+    <div class="pkg-card" style="display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;">
+      <div>
+        <div class="pkg-name">LUXMARIAGE — EVG / EVJF</div>
+        <div class="pkg-tagline" style="margin-bottom:16px">Préparez-vous pour une aventure inoubliable avant le grand jour. Includes HighFly + Bofferding Pils. 3 to 14 participants.</div>
+        <div style="display:flex;gap:24px;flex-wrap:wrap;">
+          <div class="pkg-stat"><span class="pkg-stat-val">2'</span><span class="pkg-stat-lbl">Flight time</span></div>
+          <div class="pkg-stat"><span class="pkg-stat-val">2</span><span class="pkg-stat-lbl">Flights</span></div>
+          <div class="pkg-stat"><span class="pkg-stat-val">3–14</span><span class="pkg-stat-lbl">People</span></div>
+        </div>
+      </div>
+      <div style="text-align:right;min-width:180px;">
+        <div class="pkg-price" style="margin-bottom:8px;">€84.40<span style="font-size:14px;font-weight:400;color:rgba(255,255,255,0.3)"> /person</span></div>
+        <a class="pkg-book-btn" href="https://shop.indoorskydive.lu/evjf-evg" target="_blank" style="white-space:nowrap;display:inline-block;width:auto;padding:12px 24px;">Book Now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SPECIAL PACKAGES -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="packages-section dark" id="special">
+  <div class="section-header">
+    <div class="section-label">Special Packages</div>
+    <h2>Unique Experiences</h2>
+    <p>Combine indoor skydiving with real outdoor adventures. Gift vouchers valid 12 months.</p>
+  </div>
+
+  <div class="pkg-grid" style="max-width:1200px;margin:0 auto;">
+
+    <!-- HATCH PACK -->
+    <div class="pkg-card featured">
+      <div class="pkg-badge">Sport Flyer</div>
+      <div class="pkg-name">HATCH PACK</div>
+      <div class="pkg-tagline">PACK SPORTFLYER — Full training programme in one day. Become a ProFlyer.</div>
+      <div class="pkg-stats">
+        <div class="pkg-stat"><span class="pkg-stat-val">10'</span><span class="pkg-stat-lbl">Flight time</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">5</span><span class="pkg-stat-lbl">Sessions</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">1</span><span class="pkg-stat-lbl">Person</span></div>
+      </div>
+      <div class="pkg-includes">
+        <div class="pkg-includes-title">Included</div>
+        <div class="pkg-include-item">HighFly — fly higher with your instructor on your last jump</div>
+        <div class="pkg-include-item">Photos — download your flight photos within 30 days</div>
+        <div class="pkg-include-item">Videos HD — download your flight videos within 30 days</div>
+        <div class="pkg-include-item">Expo Permanente — The Art of Skydiving museum access</div>
+        <div class="pkg-include-item">Complete ProFlyer training programme</div>
+      </div>
+      <div class="pkg-price-row"><span class="pkg-price">€364.50</span></div>
+      <a class="pkg-book-btn" href="https://shop.indoorskydive.lu/fly-again" target="_blank">Book Now →</a>
+    </div>
+
+    <!-- FLYIN & OUT -->
+    <div class="pkg-card">
+      <div class="pkg-badge">Gift Voucher</div>
+      <div class="pkg-name">FLYIN &amp; OUT</div>
+      <div class="pkg-tagline">Découvrez le vol indoor avant de faire le grand saut — indoor + real tandem skydive jump</div>
+      <div class="pkg-stats">
+        <div class="pkg-stat"><span class="pkg-stat-val">4'</span><span class="pkg-stat-lbl">Indoor time</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">+</span><span class="pkg-stat-lbl">Tandem jump</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">1</span><span class="pkg-stat-lbl">Person</span></div>
+      </div>
+      <div class="pkg-includes">
+        <div class="pkg-includes-title">Included</div>
+        <div class="pkg-include-item">HighFly — fly higher with your instructor on your last jump</div>
+        <div class="pkg-include-item">Photos — download your flight photos within 30 days</div>
+        <div class="pkg-include-item">Tandem skydive jump — Luxembourg, France or Germany dropzone</div>
+        <div class="pkg-include-item">Expert briefing &amp; certified instructor</div>
+      </div>
+      <div class="pkg-note">Gift voucher valid 12 months. Tandem jump scheduled separately by dropzone based on weather.</div>
+      <div class="pkg-price-row"><span class="pkg-price">€445.90</span></div>
+      <a class="pkg-book-btn" href="https://shop.indoorskydive.lu/parachute" target="_blank">Book Now →</a>
+    </div>
+
+    <!-- SKY HIGH ADVENTURE -->
+    <div class="pkg-card">
+      <div class="pkg-badge">Gift Voucher</div>
+      <div class="pkg-name">SKY HIGH ADVENTURE</div>
+      <div class="pkg-tagline">Vol Indoor et Tour en Montgolfière — the ultimate sky experience</div>
+      <div class="pkg-stats">
+        <div class="pkg-stat"><span class="pkg-stat-val">4'</span><span class="pkg-stat-lbl">Indoor time</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">+</span><span class="pkg-stat-lbl">Balloon ride</span></div>
+        <div class="pkg-stat"><span class="pkg-stat-val">1</span><span class="pkg-stat-lbl">Person</span></div>
+      </div>
+      <div class="pkg-includes">
+        <div class="pkg-includes-title">Included</div>
+        <div class="pkg-include-item">HighFly — fly higher with your instructor on your last jump</div>
+        <div class="pkg-include-item">Photos — download your flight photos within 30 days</div>
+        <div class="pkg-include-item">Hot air balloon flight — scheduled subject to weather</div>
+        <div class="pkg-include-item">Expert briefing &amp; certified instructor</div>
+      </div>
+      <div class="pkg-note">Gift voucher valid 12 months. Balloon flight scheduled separately based on weather conditions.</div>
+      <div class="pkg-price-row"><span class="pkg-price">€399.90</span></div>
+      <a class="pkg-book-btn" href="https://shop.indoorskydive.lu/montgolfire-luxembourg" target="_blank">Book Now →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- ADD-ONS -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="addons-section" id="addons">
+  <div class="section-header" style="max-width:1200px;margin:0 auto 32px;">
+    <div class="section-label">Optional Extras</div>
+    <h2>Add-Ons at Checkout</h2>
+    <p>These optional items can be added to any package during checkout. All prices are per person unless noted.</p>
+  </div>
+
+  <div class="addons-grid">
+    <div class="addon-card">
+      <div class="addon-name">Flexibility Insurance</div>
+      <div class="addon-price">+€5.50</div>
+      <div class="addon-desc">
+        <strong style="color:#fff;display:block;margin-bottom:8px">Per person — fixed fee, not a percentage.</strong>
+        Reschedule your flight free of charge up to 24h before the original time.<br/><br/>
+        <strong style="color:rgba(255,255,255,0.6)">Without insurance:</strong><br/>
+        Cancellation up to 48h before: €15/person<br/>
+        Within 48h: €30/person<br/><br/>
+        <strong style="color:rgba(255,255,255,0.6)">With insurance:</strong><br/>
+        Up to 24h before: FREE<br/>
+        Within 24h: €35/person
+      </div>
+    </div>
+    <div class="addon-card">
+      <div class="addon-name">Videos HD</div>
+      <div class="addon-price">+€15.00</div>
+      <div class="addon-desc">
+        <strong style="color:#fff;display:block;margin-bottom:8px">Fixed fee — not a percentage.</strong>
+        Download high-resolution videos of your flights. Available for download up to 30 days after your flight.
+      </div>
+    </div>
+    <div class="addon-card">
+      <div class="addon-name">Expo Permanente — Extra Person</div>
+      <div class="addon-price">+€15.00</div>
+      <div class="addon-desc">
+        <strong style="color:#fff;display:block;margin-bottom:8px">Fixed fee per extra visitor.</strong>
+        Add museum access for a spectator. Discover "The Art of Skydiving" — a unique experience complementing your flight.
+      </div>
+    </div>
+    <div class="addon-card">
+      <div class="addon-name">Cache-cou LXF</div>
+      <div class="addon-price">+€6.50</div>
+      <div class="addon-desc">
+        <strong style="color:#fff;display:block;margin-bottom:8px">Fixed fee — not a percentage.</strong>
+        LUXFLY personalised neck gaiter. Less wind on the face during flight + a great souvenir to take home.
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:1200px;margin:24px auto 0;padding:20px 28px;background:rgba(240,44,184,0.06);border:1px solid rgba(240,44,184,0.15);display:flex;align-items:flex-start;gap:16px;">
+    <span style="color:var(--pink);font-size:18px;flex-shrink:0;margin-top:2px">✓</span>
+    <p style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.6">
+      <strong style="color:#fff">Add-on prices are fixed amounts.</strong> All listed package and add-on prices include VAT (TTC). Additional fees may apply at checkout — complete your booking on the Luxfly shop to see the final total before payment.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- CONDITIONS -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="conditions-section" id="conditions">
+  <div class="section-header">
+    <div class="section-label">Before You Fly</div>
+    <h2>Conditions &amp; Requirements</h2>
+  </div>
+
+  <div class="conditions-inner">
+
+    <div class="cond-block">
+      <div class="cond-block-title">Medical &amp; Physical Requirements</div>
+      <div class="cond-item"><span class="cond-item-icon">—</span>Maximum weight for all participants: <strong style="color:#fff">&nbsp;120 kg</strong></div>
+      <div class="cond-item"><span class="cond-item-icon">—</span>You cannot fly if you are pregnant</div>
+      <div class="cond-item"><span class="cond-item-icon">—</span>No history of shoulder dislocation or trauma. If you have had a shoulder injury, this activity is unfortunately not for you.</div>
+      <div class="cond-item"><span class="cond-item-icon">—</span>You must not be under the influence of alcohol or drugs</div>
+      <div class="cond-item"><span class="cond-item-icon">—</span>If you have questions about these conditions, please contact us before booking: hello@luxfly.eu</div>
+    </div>
+
+    <div class="cond-block">
+      <div class="cond-block-title">On the Day</div>
+      <div class="cond-item"><span class="cond-item-icon">—</span>Arrive <strong style="color:#fff">&nbsp;1 hour before&nbsp;</strong> your flight time for check-in, briefing, and equipment fitting</div>
+      <div class="cond-item"><span class="cond-item-icon">—</span>Dress code: jeans, T-shirt, trainers. We provide the rest (suit, helmet, goggles)</div>
+      <div class="cond-item"><span class="cond-item-icon">—</span>All minors must be accompanied by an adult</div>
+      <div class="cond-item"><span class="cond-item-icon">—</span>Spectators welcome — Bar &amp; Lounge available for non-flyers</div>
+      <div class="cond-item"><span class="cond-item-icon">—</span>Minimum age: 4 years old (adult accompaniment strongly recommended for children)</div>
+    </div>
+
+    <div class="cond-block">
+      <div class="cond-block-title">Important Notes at Booking</div>
+      <div class="cond-item"><span class="cond-item-icon">—</span>Children aged 4+ can fly. We strongly recommend an adult accompany them — add an adult package to your order.</div>
+      <div class="cond-item"><span class="cond-item-icon">—</span>Your booking is subject to strict cancellation rules. If you are unsure of your date, select the Flexibility Insurance add-on.</div>
+      <div class="cond-item"><span class="cond-item-icon">—</span>Promo codes and gift vouchers can be entered at checkout (not for flight codes — use "Use a Gift Voucher"; not for GL codes — write to hello@luxfly.eu)</div>
+      <div class="cond-item"><span class="cond-item-icon">—</span>Do not use an @pt.lu email address when creating your booking account.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- CANCELLATION POLICY -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="cancel-section">
+  <div class="cancel-inner">
+    <div class="section-header" style="margin-bottom:0;">
+      <div class="section-label">Cancellation &amp; Rescheduling</div>
+      <h2>Cancellation Policy</h2>
+      <p style="margin-top:10px">All reservations are subject to these rules. We strongly recommend adding Flexibility Insurance if your date is uncertain.</p>
+    </div>
+    <div class="cancel-grid">
+      <div class="cancel-card">
+        <div class="cancel-card-title">Without Flexibility Insurance</div>
+        <div class="cancel-card-price">Standard</div>
+        <div class="cancel-row">
+          <span>Cancellation more than 48h before flight</span>
+          <span class="cancel-row-amount">€15 /person</span>
+        </div>
+        <div class="cancel-row">
+          <span>Cancellation within 48h of flight</span>
+          <span class="cancel-row-amount">€30 /person</span>
+        </div>
+        <div class="cancel-row">
+          <span>No-show</span>
+          <span class="cancel-row-amount">Full price lost</span>
+        </div>
+      </div>
+      <div class="cancel-card" style="border-top:2px solid var(--pink);">
+        <div class="cancel-card-title">With Flexibility Insurance</div>
+        <div class="cancel-card-price">+€5.50 <span style="font-size:13px;font-weight:400;color:rgba(255,255,255,0.3)">per person — fixed fee</span></div>
+        <div class="cancel-row">
+          <span>Rescheduling more than 24h before flight</span>
+          <span class="cancel-row-amount free">FREE</span>
+        </div>
+        <div class="cancel-row">
+          <span>Cancellation or rescheduling within 24h</span>
+          <span class="cancel-row-amount">€35 /person</span>
+        </div>
+        <div class="cancel-row">
+          <span>No-show</span>
+          <span class="cancel-row-amount">Full price lost</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- IMPORTANT NOTES + HOW TO BOOK -->
+<!-- ═══════════════════════════════════════════════ -->
+<section class="important-section">
+  <div class="important-inner">
+    <div>
+      <div class="section-label" style="margin-bottom:24px;">Before You Confirm</div>
+      <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(24px,3vw,36px);font-weight:900;letter-spacing:-0.03em;margin-bottom:24px;">Read before booking</h2>
+      <ul class="important-notes-list">
+        <li>Minimum age to fly: 4 years. We strongly recommend an adult join children — add an adult package to the reservation.</li>
+        <li>If you have a history of shoulder dislocation, this activity is unfortunately not suitable for you.</li>
+        <li>Maximum weight: 120 kg.</li>
+        <li>No alcohol or illegal substances before flying.</li>
+        <li>Arrive 1 hour before your flight time to complete check-in, briefing, and equipment fitting.</li>
+        <li>Recommended clothing: comfortable and casual — jeans and trainers.</li>
+        <li>Your reservation is subject to strict cancellation rules. If unsure of your date, choose the Flexibility Insurance add-on.</li>
+        <li>All prices are TTC (all taxes included). No booking fee. No percentage-based charges. Add-ons are fixed amounts.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="section-label" style="margin-bottom:24px;">How It Works</div>
+      <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(24px,3vw,36px);font-weight:900;letter-spacing:-0.03em;margin-bottom:32px;">Booking in 4 steps</h2>
+      <div class="booking-steps">
+        <div class="booking-step">
+          <div class="booking-step-num">1</div>
+          <div class="booking-step-body">
+            <h4>Choose your package &amp; click Book Now</h4>
+            <p>Select the package above that suits you. Click Book Now to go to our secure booking system.</p>
+          </div>
+        </div>
+        <div class="booking-step">
+          <div class="booking-step-num">2</div>
+          <div class="booking-step-body">
+            <h4>Select a date or get a gift voucher</h4>
+            <p>Pick your preferred date from the live availability calendar — or choose to receive a gift voucher by email (valid 12 months for most packages).</p>
+          </div>
+        </div>
+        <div class="booking-step">
+          <div class="booking-step-num">3</div>
+          <div class="booking-step-body">
+            <h4>Create your account &amp; pay</h4>
+            <p>Enter your details (first name, last name, address, phone), choose any add-ons, and complete secure payment. You'll receive a confirmation email immediately.</p>
+          </div>
+        </div>
+        <div class="booking-step">
+          <div class="booking-step-num">4</div>
+          <div class="booking-step-body">
+            <h4>Arrive 1 hour early &amp; fly</h4>
+            <p>Present yourself at Luxfly 1 hour before your flight. Jeans + trainers is the dress code. We handle the rest.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT STRIP -->
+<div style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:40px 48px;">
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
+    <div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--pink);margin-bottom:8px;">Questions?</div>
+      <h3 style="font-family:'Montserrat',sans-serif;font-size:20px;font-weight:900;letter-spacing:-0.02em;">We're here to help</h3>
+    </div>
+    <div style="display:flex;gap:40px;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,0.5);">
+      <div>
+        <div style="color:rgba(255,255,255,0.25);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px">Email</div>
+        <a href="mailto:hello@luxfly.eu" style="color:#fff;font-weight:500;">hello@luxfly.eu</a>
+      </div>
+      <div>
+        <div style="color:rgba(255,255,255,0.25);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px">Phone</div>
+        <span style="color:#fff;font-weight:500;">+32 63 39 11 63</span>
+      </div>
+      <div>
+        <div style="color:rgba(255,255,255,0.25);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px">Opening Hours</div>
+        <span>Wed–Fri 12:00–19:00 · Sat–Sun 10:00–19:00</span>
+      </div>
+      <div>
+        <div style="color:rgba(255,255,255,0.25);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:4px">Address</div>
+        <span>Rue de Grass 103 · BE-6700 Sterpenich</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer><div class="footer-brand"><img alt="Luxfly" src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg"/><p>Europe's tallest indoor skydiving wind tunnel. Safe, open to all ages, and genuinely unlike anything else.</p></div><div class="footer-col"><h5>Fly</h5><ul><li><a href="prices.html">Adults</a></li><li><a href="kids.html">Kids</a></li><li><a href="pro.html">Pro Flyers</a></li><li><a href="team-building.html">Team Building</a></li><li><a href="birthdays.html">Birthdays</a></li></ul></div><div class="footer-col"><h5>Info</h5><ul><li><a href="about.html">About us</a></li><li><a href="faq.html">FAQ</a></li><li><a href="opening-hours.html">Opening hours</a></li><li><a href="jobs.html">Jobs</a></li><li><a href="contact.html">Contact</a></li></ul></div></footer>
+<div class="footer-bottom"><span>© 2026 Luxfly Indoor Skydiving</span><div style="display:flex;gap:24px"><a href="conditions.html">Terms</a><a href="https://indoorskydive.lu/en">Privacy</a></div></div>
+
+<script>
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('dark', window.scrollY > 80);
+}, { passive: true });
+
+// Tab scroll
+function scrollTo(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// Active tab on scroll
+const sections = ['adults','kids','duo','special','addons'];
+const tabs = document.querySelectorAll('.hero-tab');
+window.addEventListener('scroll', () => {
+  let current = 'adults';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 200) current = id;
+  });
+  tabs.forEach((t, i) => {
+    t.classList.toggle('active', sections[i] === current);
+  });
+}, { passive: true });
+
+// iOS video fix
+document.addEventListener('visibilitychange', function() {
+  if (!document.hidden) {
+    document.querySelectorAll('video[autoplay]').forEach(v => v.play().catch(()=>{}));
+  }
+});
+</script>
+<script src="js/nav.js?v=2"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>
