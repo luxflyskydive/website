@@ -474,36 +474,35 @@ var CART_KEY='lxf_cart';
 function getCart(){try{return JSON.parse(localStorage.getItem(CART_KEY)||'[]');}catch(e){return [];}}
 function fmtEuro(n){return '\u20ac'+n.toFixed(2).replace('.',',');}
 
-var bkCart=getCart();
+// Safe defaults — calendar will work even if cart setup fails
+var bkCart=[];
+var bkBaseTotal=0;
+var bkName='Your Package';
 
-// If cart is empty redirect back
-if(!bkCart||bkCart.length===0){
-  window.location.href='checkout.html';
-}
-
-// Compute base total from cart
-var bkBaseTotal=bkCart.reduce(function(s,item){return s+(item.lineTotal||0);},0);
-
-// Derive a display name for Step 3 order summary
-var bkName=bkCart.length===1?bkCart[0].name:'Multiple packages ('+bkCart.length+')';
-
-// Render left panel cart items
-(function renderSummary(){
-  var container=document.getElementById('sum-cart-items');
-  var html='';
-  bkCart.forEach(function(item){
-    html+='<div class="sum-cart-item">';
-    html+='<div class="sum-cart-item-name">'+item.name+'</div>';
-    html+='<div class="sum-cart-item-meta">'+item.detail+'</div>';
-    html+='<div class="sum-cart-item-foot">';
-    html+='<span class="sum-cart-item-qty">'+item.qty+' &times; '+fmtEuro(item.unitPrice)+'</span>';
-    html+='<span class="sum-cart-item-price">'+fmtEuro(item.lineTotal)+'</span>';
-    html+='</div></div>';
-  });
-  container.innerHTML=html;
-  document.getElementById('sum-price').textContent=fmtEuro(bkBaseTotal);
-  document.getElementById('pay-price').textContent=fmtEuro(bkBaseTotal);
-})();
+// ── CART SETUP (wrapped so any error here can never kill the calendar) ──
+try {
+  bkCart=getCart();
+  if(!bkCart||bkCart.length===0){window.location.href='checkout.html';}
+  bkBaseTotal=bkCart.reduce(function(s,item){return s+(item.lineTotal||0);},0);
+  bkName=bkCart.length===1?bkCart[0].name:'Multiple packages ('+bkCart.length+')';
+  (function renderSummary(){
+    var container=document.getElementById('sum-cart-items');
+    var html='';
+    bkCart.forEach(function(item){
+      html+='<div class="sum-cart-item">';
+      html+='<div class="sum-cart-item-name">'+item.name+'</div>';
+      html+='<div class="sum-cart-item-meta">'+item.detail+'</div>';
+      html+='<div class="sum-cart-item-foot">';
+      html+='<span class="sum-cart-item-qty">'+item.qty+' \u00d7 '+fmtEuro(item.unitPrice)+'</span>';
+      html+='<span class="sum-cart-item-price">'+fmtEuro(item.lineTotal)+'</span>';
+      html+='</div></div>';
+    });
+    container.innerHTML=html;
+    document.getElementById('sum-price').textContent=fmtEuro(bkBaseTotal);
+    document.getElementById('pay-price').textContent=fmtEuro(bkBaseTotal);
+  })();
+} catch(e){console.error('[book.html] Cart setup error:',e);}
+// ── END CART SETUP ──────────────────────────────────────────────────────
 
 var currentStep=1;
 var bkSelectedDate='',bkSelectedTime='';
