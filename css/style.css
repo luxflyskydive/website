@@ -575,6 +575,15 @@ body.light .pull-quote { color: #111; }
 }
 .mobile-lang-links a:hover { color: #fff; }
 
+/* ── NAV SQUEEZE PREVENTION (1025px–1280px) ──
+   Tighter gaps at intermediate widths so translated nav labels
+   (French, German, Dutch) never overflow or compress the layout */
+@media (max-width: 1280px) and (min-width: 1025px) {
+  .nav-right { gap: 20px; }
+  .nav-menu  { gap: 20px; }
+  .nav-book  { padding: 10px 16px; letter-spacing: 0.08em; }
+}
+
 /* ── NAV HAMBURGER (≤1024px) ── */
 @media (max-width: 1024px) {
   nav { padding: 18px 16px; z-index: 260; }
