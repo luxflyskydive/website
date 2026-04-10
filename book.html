@@ -517,7 +517,7 @@ var bkVoucherMode=false;
 
 // Add-on state
 var bkAddons={flex:{price:5.50,on:false},expo:{price:15.00,on:false},video:{price:15.00,on:false},neck:{price:6.50,on:false}};
-var bkBaseTotal=parseFloat((bkPrice||'0').replace(/[^0-9.]/g,function(c){return c===','?'.':'';})) || 0;
+// bkBaseTotal is set from cart above
 
 // Promo code state
 var PROMO_CODES={'ZOOM':10,'LUXFLY20':20,'FIRSTFLY':15};
