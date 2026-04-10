@@ -124,6 +124,26 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
 .footer-bottom p{font-size:11px;color:rgba(255,255,255,0.25)}
 .footer-bottom a{font-size:11px;color:rgba(255,255,255,0.3)}
 .footer-bottom a:hover{color:var(--pink)}
+
+/* ── BOOKING MODAL ── */
+.bk-overlay{position:fixed;inset:0;z-index:9000;display:none;flex-direction:column;background:#0c0c10}
+.bk-overlay.open{display:flex}
+.bk-topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:#0c0c10;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0}
+.bk-topbar-left{display:flex;align-items:center;gap:16px}
+.bk-pkg-label{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#fff}
+.bk-pkg-price{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;color:var(--pink)}
+.bk-close{font-size:22px;color:rgba(255,255,255,0.5);background:none;border:none;cursor:pointer;padding:4px 8px;line-height:1;transition:color .15s}
+.bk-close:hover{color:#fff}
+.bk-frame-wrap{flex:1;position:relative;overflow:hidden}
+.bk-frame-wrap iframe{width:100%;height:100%;border:none;display:block}
+.bk-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:#0c0c10}
+.bk-loading-spinner{width:36px;height:36px;border:3px solid rgba(240,44,184,0.2);border-top-color:var(--pink);border-radius:50%;animation:spin .7s linear infinite}
+.bk-loading p{font-size:13px;color:rgba(255,255,255,0.4)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bk-blocked{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:20px;background:#0c0c10;padding:32px;text-align:center}
+.bk-blocked h3{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:900}
+.bk-blocked p{font-size:14px;color:rgba(255,255,255,0.45);max-width:440px;line-height:1.7}
+.bk-blocked a{display:inline-block;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--pink);color:#fff;padding:14px 32px;border-radius:3px;text-decoration:none}
 </style>
 </head>
 <body>
@@ -173,7 +193,7 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
           <div class="pkg-inc-item">Briefing, certified instructor, flight suit, diploma</div>
         </div>
         <div class="pkg-price">€104.70</div>
-        <a class="pkg-btn" href="https://shop.indoorskydive.lu/chutelibre-decouverte" target="_blank">Book Now →</a>
+        <button class="pkg-btn" data-url="https://shop.indoorskydive.lu/chutelibre-decouverte">Book Now →</button>
       </div>
     </div>
 
@@ -197,7 +217,7 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
           <div class="pkg-inc-item">Briefing, certified instructor, flight suit, diploma</div>
         </div>
         <div class="pkg-price">€174.70</div>
-        <a class="pkg-btn" href="https://shop.indoorskydive.lu/sensation" target="_blank">Book Now →</a>
+        <button class="pkg-btn" data-url="https://shop.indoorskydive.lu/sensation">Book Now →</button>
       </div>
     </div>
 
@@ -220,7 +240,7 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
           <div class="pkg-inc-item">Briefing, certified instructor, flight suit, diploma</div>
         </div>
         <div class="pkg-price">€236.70</div>
-        <a class="pkg-btn" href="https://shop.indoorskydive.lu/emotion" target="_blank">Book Now →</a>
+        <button class="pkg-btn" data-url="https://shop.indoorskydive.lu/emotion">Book Now →</button>
       </div>
     </div>
 
@@ -242,7 +262,7 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
         </div>
         <div class="pkg-note">⚠ Not available on weekends. Not available as a gift voucher — for vouchers choose a price amount <a href="gift-voucher.html" style="color:inherit;text-decoration:underline">here</a>.</div>
         <div class="pkg-price">€64.90</div>
-        <a class="pkg-btn" href="https://shop.indoorskydive.lu/luxbasic-fr" target="_blank">Book Now →</a>
+        <button class="pkg-btn" data-url="https://shop.indoorskydive.lu/luxbasic-fr">Book Now →</button>
       </div>
     </div>
 
@@ -264,7 +284,7 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
           <div class="pkg-inc-item">Adapted for people with reduced mobility</div>
         </div>
         <div class="pkg-price">€155.40</div>
-        <a class="pkg-btn" href="https://shop.indoorskydive.lu/personne-a-mobilite-reduite" target="_blank">Book Now →</a>
+        <button class="pkg-btn" data-url="https://shop.indoorskydive.lu/personne-a-mobilite-reduite">Book Now →</button>
       </div>
     </div>
 
@@ -298,7 +318,7 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
           <div class="pkg-inc-item">Certified instructor, adapted flight suit</div>
         </div>
         <div class="pkg-price">€89.70</div>
-        <a class="pkg-btn" href="https://shop.indoorskydive.lu/enfant-2-vols" target="_blank">Book Now →</a>
+        <button class="pkg-btn" data-url="https://shop.indoorskydive.lu/enfant-2-vols">Book Now →</button>
       </div>
     </div>
 
@@ -321,7 +341,7 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
           <div class="pkg-inc-item">Certified instructor, adapted flight suit</div>
         </div>
         <div class="pkg-price">€139.80</div>
-        <a class="pkg-btn" href="https://shop.indoorskydive.lu/enfant-4-vols" target="_blank">Book Now →</a>
+        <button class="pkg-btn" data-url="https://shop.indoorskydive.lu/enfant-4-vols">Book Now →</button>
       </div>
     </div>
 
@@ -342,7 +362,7 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
           <div class="pkg-inc-item">Flight diploma</div>
         </div>
         <div class="pkg-price">€45.20</div>
-        <a class="pkg-btn" href="https://shop.indoorskydive.lu/luxbasic-kids" target="_blank">Book Now →</a>
+        <button class="pkg-btn" data-url="https://shop.indoorskydive.lu/luxbasic-kids">Book Now →</button>
       </div>
     </div>
 
@@ -375,7 +395,7 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
           <div class="pkg-inc-item">Briefing, instructor, flight suit, diploma</div>
         </div>
         <div class="pkg-price">€325.90 <small>for 2</small></div>
-        <a class="pkg-btn" href="https://shop.indoorskydive.lu/formule-chute-libre-pour-2" target="_blank">Book Now →</a>
+        <button class="pkg-btn" data-url="https://shop.indoorskydive.lu/formule-chute-libre-pour-2">Book Now →</button>
       </div>
     </div>
 
@@ -396,7 +416,7 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
           <div class="pkg-inc-item">HighFly, Photos, Expo Permanente for each</div>
         </div>
         <div class="pkg-price">€285.80 <small>for 2</small></div>
-        <a class="pkg-btn" href="https://shop.indoorskydive.lu/vol-parent-enfant" target="_blank">Book Now →</a>
+        <button class="pkg-btn" data-url="https://shop.indoorskydive.lu/vol-parent-enfant">Book Now →</button>
       </div>
     </div>
 
@@ -418,7 +438,7 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
           <div class="pkg-inc-item">Briefing, instructor, flight suits, diplomas</div>
         </div>
         <div class="pkg-price">€454.50 <small>for 5</small></div>
-        <a class="pkg-btn" href="https://shop.indoorskydive.lu/famille" target="_blank">Book Now →</a>
+        <button class="pkg-btn" data-url="https://shop.indoorskydive.lu/famille">Book Now →</button>
       </div>
     </div>
 
@@ -452,7 +472,7 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
           <div class="pkg-inc-item">Briefing, instructor, flight suit, diploma</div>
         </div>
         <div class="pkg-price">€84.40 <small>/person</small></div>
-        <a class="pkg-btn" href="https://shop.indoorskydive.lu/evjf-evg" target="_blank">Book Now →</a>
+        <button class="pkg-btn" data-url="https://shop.indoorskydive.lu/evjf-evg">Book Now →</button>
       </div>
     </div>
   </div>
@@ -475,7 +495,7 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
           <div class="pkg-inc-item">Full group briefing, instructor team, flight suits</div>
         </div>
         <div class="pkg-price">€1,115.50 <small>for 14</small></div>
-        <a class="pkg-btn" href="https://shop.indoorskydive.lu/event" target="_blank">Book Now →</a>
+        <button class="pkg-btn" data-url="https://shop.indoorskydive.lu/event">Book Now →</button>
       </div>
     </div>
   </div>
@@ -500,7 +520,7 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
           <div class="pkg-inc-item">Briefing, instructor, flight suit, diploma</div>
         </div>
         <div class="pkg-price">€364.50</div>
-        <a class="pkg-btn" href="https://shop.indoorskydive.lu/fly-again" target="_blank">Book Now →</a>
+        <button class="pkg-btn" data-url="https://shop.indoorskydive.lu/fly-again">Book Now →</button>
       </div>
     </div>
 
@@ -521,7 +541,7 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
           <div class="pkg-inc-item">Photos, HighFly, briefing, instructor</div>
         </div>
         <div class="pkg-price">€445.90</div>
-        <a class="pkg-btn" href="https://shop.indoorskydive.lu/parachute" target="_blank">Book Now →</a>
+        <button class="pkg-btn" data-url="https://shop.indoorskydive.lu/parachute">Book Now →</button>
       </div>
     </div>
 
@@ -542,7 +562,7 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
           <div class="pkg-inc-item">Photos, HighFly, briefing, instructor</div>
         </div>
         <div class="pkg-price">€399.90</div>
-        <a class="pkg-btn" href="https://shop.indoorskydive.lu/montgolfire-luxembourg" target="_blank">Book Now →</a>
+        <button class="pkg-btn" data-url="https://shop.indoorskydive.lu/montgolfire-luxembourg">Book Now →</button>
       </div>
     </div>
 
@@ -656,17 +676,97 @@ footer{background:var(--surface);padding:40px 32px 28px;border-top:1px solid var
   </div>
 </footer>
 
+<!-- BOOKING MODAL -->
+<div class="bk-overlay" id="bk-overlay">
+  <div class="bk-topbar">
+    <div class="bk-topbar-left">
+      <svg height="22" viewBox="0 0 82 28" width="70" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient gradientUnits="userSpaceOnUse" id="lsg2" x1="52" x2="34" y1="1" y2="27"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="#f02cb8"/></linearGradient><clipPath id="lcl2"><polygon points="0,0 43.9,0 43.9,12.7 34,27 0,27"/></clipPath><clipPath id="lcf2"><polygon points="40,0 80.7,0 80.7,28 40,28 40,18.3 52,1 40,1 40,0"/></clipPath></defs><text clip-path="url(#lcl2)" fill="#fff" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="0" y="20">LUX</text><text clip-path="url(#lcf2)" fill="#f02cb8" font-family="Montserrat,sans-serif" font-size="21" font-weight="900" letter-spacing="-0.42" x="40" y="24">FLY</text></svg>
+      <div>
+        <div class="bk-pkg-label" id="bk-pkg-name">Book Your Flight</div>
+        <div class="bk-pkg-price" id="bk-pkg-price"></div>
+      </div>
+    </div>
+    <button class="bk-close" id="bk-close" aria-label="Close booking">✕</button>
+  </div>
+  <div class="bk-frame-wrap">
+    <div class="bk-loading" id="bk-loading">
+      <div class="bk-loading-spinner"></div>
+      <p>Loading secure booking…</p>
+    </div>
+    <div class="bk-blocked" id="bk-blocked">
+      <h3>Complete Your Booking</h3>
+      <p>Click below to open the secure booking page for <strong id="bk-blocked-name"></strong>. You'll be able to pick a date, select add-ons and pay — all on the Luxfly shop.</p>
+      <a id="bk-blocked-link" href="#" target="_blank">Open Booking Page →</a>
+    </div>
+    <iframe id="bk-iframe" src="" title="Luxfly Booking" allow="payment" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation"></iframe>
+  </div>
+</div>
+
 <script>
-// Smooth scroll for tab links
+// ── Tab nav smooth scroll ──
 document.querySelectorAll('.tab-nav a').forEach(function(a) {
   a.addEventListener('click', function(e) {
     var target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-    document.querySelectorAll('.tab-nav a').forEach(function(x) { x.classList.remove('active'); });
+    if (target) { e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'}); }
+    document.querySelectorAll('.tab-nav a').forEach(function(x){x.classList.remove('active');});
     this.classList.add('active');
+  });
+});
+
+// ── Booking modal ──
+var overlay = document.getElementById('bk-overlay');
+var iframe  = document.getElementById('bk-iframe');
+var loading = document.getElementById('bk-loading');
+var blocked = document.getElementById('bk-blocked');
+var pkgName = document.getElementById('bk-pkg-name');
+var pkgPrice = document.getElementById('bk-pkg-price');
+var closeBtn = document.getElementById('bk-close');
+
+function openBooking(url, name, price) {
+  pkgName.textContent = name;
+  pkgPrice.textContent = price ? price : '';
+  document.getElementById('bk-blocked-name').textContent = name;
+  document.getElementById('bk-blocked-link').href = url;
+  loading.style.display = 'flex';
+  blocked.style.display = 'none';
+  iframe.src = '';
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // Short delay then load iframe
+  setTimeout(function() { iframe.src = url; }, 100);
+}
+
+function closeBooking() {
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+  iframe.src = '';
+  loading.style.display = 'flex';
+  blocked.style.display = 'none';
+}
+
+iframe.addEventListener('load', function() {
+  loading.style.display = 'none';
+  // Try to detect if content loaded or was blocked
+  try {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    if (!doc || doc.body.innerHTML === '') throw new Error('blocked');
+  } catch(e) {
+    // X-Frame-Options blocked — show fallback
+    loading.style.display = 'none';
+    blocked.style.display = 'flex';
+  }
+});
+
+closeBtn.addEventListener('click', closeBooking);
+overlay.addEventListener('keydown', function(e){ if(e.key==='Escape') closeBooking(); });
+
+// Wire up all Book Now buttons
+document.querySelectorAll('.pkg-btn[data-url]').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var card = this.closest('.pkg-card');
+    var name  = card ? (card.querySelector('.pkg-name')  || {}).textContent || 'Your Package' : 'Your Package';
+    var price = card ? (card.querySelector('.pkg-price') || {}).textContent || '' : '';
+    openBooking(this.dataset.url, name.trim(), price.trim());
   });
 });
 </script>
