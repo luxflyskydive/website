@@ -178,6 +178,14 @@ img{display:block;max-width:100%}
 .book-summary-qty strong{color:#fff;font-weight:600}
 .book-summary-promo{display:none;font-size:12px;color:#4ecb71;margin-bottom:16px;padding:7px 10px;background:rgba(78,203,113,.08);border-radius:3px}
 .order-row.promo-row .order-val{color:#4ecb71}
+/* Cart summary items in left panel */
+.sum-cart-item{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.sum-cart-item:last-child{border-bottom:none}
+.sum-cart-item-name{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:900;letter-spacing:-.01em;margin-bottom:2px}
+.sum-cart-item-meta{font-size:11px;color:rgba(255,255,255,.3);line-height:1.4;margin-bottom:4px}
+.sum-cart-item-foot{display:flex;justify-content:space-between;align-items:center}
+.sum-cart-item-qty{font-size:11px;color:rgba(255,255,255,.3)}
+.sum-cart-item-price{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:900;color:rgba(255,255,255,.7)}
 </style>
 </head>
 <body>
@@ -197,13 +205,30 @@ img{display:block;max-width:100%}
   <!-- LEFT: Package Summary -->
   <div class="book-summary">
     <div class="book-summary-eyebrow">Your Selection</div>
-    <div class="book-summary-name" id="sum-name">—</div>
-    <div class="book-summary-detail" id="sum-detail">—</div>
-    <div class="book-summary-qty" id="sum-qty"></div>
-    <div class="book-summary-promo" id="sum-promo"></div>
-    <div class="book-summary-price" id="sum-price">—</div>
-    <div class="book-summary-price-label" id="sum-price-label">Total incl. VAT</div>
+
+    <!-- Cart items rendered by JS -->
+    <div id="sum-cart-items" style="margin-bottom:16px"></div>
+
+    <div class="book-summary-divider" style="margin-top:0"></div>
+
+    <!-- Package total (base, no add-ons) -->
+    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:2px">
+      <span style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25)">Packages</span>
+      <span class="book-summary-price" id="sum-price" style="font-size:32px">—</span>
+    </div>
+
+    <!-- Add-on extras (shown when any add-on is checked) -->
+    <div id="sum-addon-extra" style="display:none;text-align:right;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:900;color:var(--pink);margin-bottom:2px"></div>
+
+    <!-- Grand total line (shown when add-ons active) -->
+    <div id="sum-grand-row" style="display:none;display:flex;justify-content:space-between;align-items:baseline;padding-top:8px;border-top:1px solid rgba(255,255,255,.06);margin-top:6px">
+      <span style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25)">Total</span>
+      <span class="book-summary-price" id="sum-grand-total" style="font-size:38px">—</span>
+    </div>
+
+    <div class="book-summary-price-label" id="sum-price-label" style="text-align:right">incl. VAT</div>
     <div class="book-summary-divider"></div>
+
     <div class="book-summary-includes">
       <h4>What's included</h4>
       <div class="book-summary-item">Professional flight suit &amp; helmet</div>
@@ -358,8 +383,7 @@ img{display:block;max-width:100%}
       <div class="step-title">Payment</div>
       <div class="step-sub">Your details are encrypted and secure.</div>
       <div class="order-summary">
-        <div class="order-row"><span class="order-label">Package</span><span class="order-val" id="ord-pkg">—</span></div>
-        <div class="order-row" id="ord-qty-row" style="display:none"><span class="order-label">Quantity</span><span class="order-val" id="ord-qty">—</span></div>
+        <div id="ord-items-list"><!-- cart items injected by JS --></div>
         <div class="order-row"><span class="order-label">Date &amp; Time</span><span class="order-val" id="ord-dt">—</span></div>
         <div class="order-row promo-row" id="ord-promo-row" style="display:none"><span class="order-label">Promo Code</span><span class="order-val" id="ord-promo">—</span></div>
         <div class="order-row"><span class="order-label">Total</span><span class="order-val" id="ord-total">—</span></div>
@@ -451,38 +475,41 @@ img{display:block;max-width:100%}
 
 
 <script>
-var params=new URLSearchParams(window.location.search);
-var bkName=params.get('name')||'Your Package';
-var bkPrice=params.get('price')||'';
-var bkDetail=params.get('detail')||'';
-var bkQty=parseInt(params.get('qty')||'1',10);
-var bkUnitPrice=params.get('unitprice')||'';
-var bkPromo=params.get('promo')||'';
-var bkDiscount=parseInt(params.get('discount')||'0',10);
+// ── CART ──────────────────────────────────────────────────────────────
+var CART_KEY='lxf_cart';
+function getCart(){try{return JSON.parse(localStorage.getItem(CART_KEY)||'[]');}catch(e){return [];}}
+function fmtEuro(n){return '\u20ac'+n.toFixed(2).replace('.',',');}
 
-// Populate left summary
-document.getElementById('sum-name').textContent=bkName;
-document.getElementById('sum-detail').textContent=bkDetail;
-document.getElementById('sum-price').textContent=bkPrice;
-document.getElementById('pay-price').textContent=bkPrice;
+var bkCart=getCart();
 
-// Quantity row
-if(bkQty>1&&bkUnitPrice){
-  var qEl=document.getElementById('sum-qty');
-  qEl.innerHTML='<strong>'+bkQty+'&times;</strong> '+bkUnitPrice+' per person';
+// If cart is empty redirect back
+if(!bkCart||bkCart.length===0){
+  window.location.href='checkout.html';
 }
 
-// Promo badge
-if(bkPromo&&bkDiscount>0){
-  var pEl=document.getElementById('sum-promo');
-  pEl.textContent='✓ Promo "'+bkPromo+'" — '+bkDiscount+'% off applied';
-  pEl.style.display='block';
-}
+// Compute base total from cart
+var bkBaseTotal=bkCart.reduce(function(s,item){return s+(item.lineTotal||0);},0);
 
-// Price label
-if(bkQty>1){
-  document.getElementById('sum-price-label').textContent='Total for '+bkQty+' people · incl. VAT';
-}
+// Derive a display name for Step 3 order summary
+var bkName=bkCart.length===1?bkCart[0].name:'Multiple packages ('+bkCart.length+')';
+
+// Render left panel cart items
+(function renderSummary(){
+  var container=document.getElementById('sum-cart-items');
+  var html='';
+  bkCart.forEach(function(item){
+    html+='<div class="sum-cart-item">';
+    html+='<div class="sum-cart-item-name">'+item.name+'</div>';
+    html+='<div class="sum-cart-item-meta">'+item.detail+'</div>';
+    html+='<div class="sum-cart-item-foot">';
+    html+='<span class="sum-cart-item-qty">'+item.qty+' &times; '+fmtEuro(item.unitPrice)+'</span>';
+    html+='<span class="sum-cart-item-price">'+fmtEuro(item.lineTotal)+'</span>';
+    html+='</div></div>';
+  });
+  container.innerHTML=html;
+  document.getElementById('sum-price').textContent=fmtEuro(bkBaseTotal);
+  document.getElementById('pay-price').textContent=fmtEuro(bkBaseTotal);
+})();
 
 var currentStep=1;
 var bkSelectedDate='',bkSelectedTime='';
@@ -507,8 +534,21 @@ function refreshPayTotal(){
   for(var k in bkAddons) if(bkAddons[k].on) extra+=bkAddons[k].price;
   var subtotal=bkBaseTotal+extra;
   var disc=bkPromoDiscount?subtotal*(bkPromoDiscount/100):0;
-  var fmt='€'+(subtotal-disc).toFixed(2).replace('.',',');
-  document.getElementById('pay-price').textContent=fmt;
+  var final=subtotal-disc;
+  document.getElementById('pay-price').textContent=fmtEuro(final);
+  // Drive the left-panel addon line
+  var extraEl=document.getElementById('sum-addon-extra');
+  var grandRow=document.getElementById('sum-grand-row');
+  var grandEl=document.getElementById('sum-grand-total');
+  if(extra>0){
+    extraEl.textContent='+'+fmtEuro(extra)+' extras';
+    extraEl.style.display='block';
+    grandRow.style.display='flex';
+    grandEl.textContent=fmtEuro(final);
+  } else {
+    extraEl.style.display='none';
+    grandRow.style.display='none';
+  }
 }
 function applyPromo(){
   var code=document.getElementById('promo-input').value.trim().toUpperCase();
@@ -557,13 +597,14 @@ function goStep(n){
   currentStep=n;
   updateStepBar(n);
   if(n===3){
-    document.getElementById('ord-pkg').textContent=bkName;
+    // Render cart items in order summary
+    var itemsHtml='';
+    bkCart.forEach(function(item){
+      var label=item.qty>1?item.name+' &times;'+item.qty:item.name;
+      itemsHtml+='<div class="order-row"><span class="order-label">'+label+'</span><span class="order-val">'+fmtEuro(item.lineTotal)+'</span></div>';
+    });
+    document.getElementById('ord-items-list').innerHTML=itemsHtml;
     document.getElementById('ord-dt').textContent=bkSelectedDate?formatDate(bkSelectedDate)+' at '+bkSelectedTime:'—';
-    // Quantity row
-    if(bkQty>1){
-      document.getElementById('ord-qty').textContent=bkQty+' people';
-      document.getElementById('ord-qty-row').style.display='flex';
-    }
     updateOrdTotal();
   }
   window.scrollTo({top:0,behavior:'smooth'});
@@ -683,7 +724,8 @@ function submitPayment(){
     ref+='-'+(1000+Math.floor(Math.random()*9000));
     document.getElementById('conf-ref').textContent='Ref: '+ref;
     document.getElementById('conf-email').textContent=document.getElementById('d-email').value;
-    document.getElementById('conf-pkg').textContent=bkName+(bkQty>1?' ×'+bkQty:'');
+    var pkgSummary=bkCart.map(function(item){return item.name+(item.qty>1?' ×'+item.qty:'');}).join(', ');
+    document.getElementById('conf-pkg').textContent=pkgSummary;
     document.getElementById('conf-dt').textContent=formatDate(bkSelectedDate)+' at '+bkSelectedTime;
     document.getElementById('conf-name').textContent=document.getElementById('d-fname').value+' '+document.getElementById('d-lname').value;
     var extra2=0;for(var k in bkAddons)if(bkAddons[k].on)extra2+=bkAddons[k].price;
@@ -691,6 +733,7 @@ function submitPayment(){
     document.getElementById('conf-price').textContent='€'+(sub2-disc2).toFixed(2).replace('.',',');
     document.querySelectorAll('.book-step').forEach(function(el){el.classList.remove('active');});
     document.getElementById('step4').classList.add('active');
+    localStorage.removeItem('lxf_cart');
     window.scrollTo({top:0,behavior:'smooth'});
   },1800);
 }
