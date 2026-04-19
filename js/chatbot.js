@@ -974,16 +974,20 @@
     setTimeout(() => b && b.parentNode && b.parentNode.removeChild(b), 260);
   }
 
-  const bubble = document.createElement('div');
-  bubble.id = 'lf-chat-bubble';
-  bubble.textContent = 'Have a question? Ask here!';
-  bubble.setAttribute('role', 'button');
-  bubble.setAttribute('aria-label', 'Open chat assistant');
-  document.body.appendChild(bubble);
-  bubble.addEventListener('click', () => { dismissBubble(); openChat(); });
+  // Attention bubble — shown once ever via localStorage
+  if (!localStorage.getItem('lf_popup_seen')) {
+    localStorage.setItem('lf_popup_seen', '1');
+    const bubble = document.createElement('div');
+    bubble.id = 'lf-chat-bubble';
+    bubble.textContent = 'Have a question? Ask here!';
+    bubble.setAttribute('role', 'button');
+    bubble.setAttribute('aria-label', 'Open chat assistant');
+    document.body.appendChild(bubble);
+    bubble.addEventListener('click', () => { dismissBubble(); openChat(); });
 
-  // Auto-dismiss after 9 seconds
-  const bubbleTimeout = setTimeout(() => dismissBubble(), 9000);
-  bubble.addEventListener('click', () => clearTimeout(bubbleTimeout));
+    // Auto-dismiss after 9 seconds
+    const bubbleTimeout = setTimeout(() => dismissBubble(), 9000);
+    bubble.addEventListener('click', () => clearTimeout(bubbleTimeout));
+  }
 
 })();
