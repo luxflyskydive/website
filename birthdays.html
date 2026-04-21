@@ -1,29 +1,22 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
-<!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<link href="img/favicon.png" rel="icon" type="image/png"/><link href="img/favicon.svg" rel="icon" type="image/svg+xml"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Birthday Parties — Luxfly Indoor Skydiving</title>
-<meta content="Birthday parties at Luxfly. From kids to adults. The birthday they'll never forget." name="description"/>
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta charset="utf-8"/>
+<link href="img/favicon.png" rel="icon" type="image/png"/><link href="img/favicon.svg" rel="icon" type="image/svg+xml"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Birthday Parties for Kids &amp; Teens — Luxfly Indoor Skydiving</title>
+<meta content="Birthday parties at Luxfly for children aged 4–13 and teens 14–17. Private sessions with instructor, 2 flights per child, diploma &amp; birthday room. From €32/child." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,800&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet"/>
 <link href="css/style.css" rel="stylesheet"/>
 <style>
+/* ── HERO ── */
 .hero {
-  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(240,44,184,0.08) 100%), url('https://indoorskydive.lu/img/kids.jpg') center/cover;
+  background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(240,44,184,0.08) 100%), url('https://indoorskydive.lu/img/kids.jpg') center/cover;
   height: 70vh;
   display: flex;
   align-items: center;
@@ -32,7 +25,6 @@
   color: white;
   padding: 80px 48px;
 }
-
 .hero h1 {
   font-family: Montserrat;
   font-size: 72px;
@@ -42,30 +34,51 @@
   max-width: 800px;
   font-style: italic;
 }
-
 .hero-sub {
   font-size: 22px;
   font-weight: 300;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 32px;
+}
+.hero-anchors {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.hero-anchor {
+  color: rgba(255,255,255,0.85);
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 8px 20px;
+  transition: all 0.2s;
+}
+.hero-anchor:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.6);
 }
 
-.intro-section {
-  background: #ffffff;
-  padding: 100px 48px;
-}
-
-.intro-section.reveal {
+/* ── REVEAL ── */
+.reveal {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease-out;
 }
-
-.intro-section.reveal.in {
+.reveal.in {
   opacity: 1;
   transform: translateY(0);
 }
 
+/* ── INTRO ── */
+.intro-section {
+  background: #ffffff;
+  padding: 100px 48px;
+}
 .intro-section h2 {
   font-family: Montserrat;
   font-size: 44px;
@@ -74,19 +87,16 @@
   margin-bottom: 40px;
   text-align: center;
 }
-
 .intro-text {
   max-width: 900px;
   margin: 0 auto;
 }
-
 .intro-text p {
   color: #555;
   font-size: 16px;
   line-height: 1.8;
   margin-bottom: 20px;
 }
-
 .intro-text .note {
   color: #666;
   font-size: 14px;
@@ -95,123 +105,277 @@
   border-top: 1px solid #f0f0f0;
 }
 
-.pull-quote {
-  background: #f7f7f7;
-  padding: 60px 48px;
-  text-align: center;
+/* ── PRICING (KIDS) ── */
+.pricing-section {
+  background: #fff5fb;
+  padding: 90px 48px;
+}
+.pricing-section h2 {
   font-family: Montserrat;
-  font-size: 32px;
+  font-size: 44px;
   font-weight: 800;
   color: #111;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.pricing-sub {
+  text-align: center;
+  color: #f02cb8;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 52px;
+}
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  max-width: 820px;
+  margin: 0 auto 24px;
+}
+.pricing-card {
+  background: #fff;
+  border: 1px solid #fbe5f0;
+  border-radius: 4px;
+  padding: 40px 36px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.pricing-card--featured {
+  border-color: #f02cb8;
+  border-width: 2px;
+}
+.pricing-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f02cb8;
+  color: white;
+  font-family: Montserrat;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 18px;
+  white-space: nowrap;
+}
+.pricing-period {
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 2px;
+}
+.pricing-period-sub {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 20px;
+}
+.pricing-amount {
+  font-family: Montserrat;
+  font-size: 56px;
+  font-weight: 900;
+  color: #f02cb8;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.pricing-amount span {
+  font-size: 20px;
+  font-weight: 600;
+}
+.pricing-discount {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 24px;
   font-style: italic;
-  line-height: 1.4;
-  margin: 80px auto;
-  max-width: 900px;
+}
+.pricing-includes {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  border-top: 1px solid #f5f5f5;
+  padding-top: 20px;
+  flex: 1;
+}
+.pricing-includes li {
+  color: #555;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 9px;
+  padding-left: 20px;
+  position: relative;
+}
+.pricing-includes li:before {
+  content: "✓";
+  color: #f02cb8;
+  font-weight: 700;
+  position: absolute;
+  left: 0;
+}
+.pricing-card .btn {
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+.pricing-minimum {
+  text-align: center;
+  font-size: 13px;
+  color: #999;
+  max-width: 820px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
-.pull-quote.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
+/* ── TEEN SECTION ── */
+.teen-section {
+  background: #111;
+  padding: 100px 48px;
+  color: white;
+}
+.teen-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+.teen-label {
+  display: inline-block;
+  background: #f02cb8;
+  color: white;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 20px;
+  margin-bottom: 24px;
+}
+.teen-section h2 {
+  font-family: Montserrat;
+  font-size: 56px;
+  font-weight: 900;
+  font-style: italic;
+  color: white;
+  margin-bottom: 20px;
+  line-height: 1.05;
+}
+.teen-section > .teen-inner > p {
+  color: rgba(255,255,255,0.65);
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 640px;
+  margin: 0 auto 48px;
+}
+.teen-pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 560px;
+  margin: 0 auto 36px;
+}
+.teen-price-box {
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 30px 24px;
+  text-align: center;
+}
+.teen-price-label {
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 12px;
+}
+.teen-price {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 900;
+  color: #f02cb8;
+  line-height: 1;
+}
+.teen-price span {
+  font-size: 18px;
+}
+.teen-discount {
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  margin-top: 6px;
+  font-style: italic;
+}
+.teen-includes {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px;
+  display: inline-block;
+  text-align: left;
+}
+.teen-includes li {
+  color: rgba(255,255,255,0.65);
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding-left: 22px;
+  position: relative;
+}
+.teen-includes li:before {
+  content: "✓";
+  color: #f02cb8;
+  font-weight: 700;
+  position: absolute;
+  left: 0;
+}
+.teen-section .btn {
+  background: white;
+  color: #111;
+}
+.teen-section .btn:hover {
+  background: #f0f0f0;
 }
 
-.pull-quote.reveal.in {
-  opacity: 1;
-  transform: translateY(0);
+/* ── HIGHFLY ── */
+.highfly-section {
+  background: #fffcf0;
+  padding: 90px 48px;
+  text-align: center;
+  border-top: 1px solid #fbe5a0;
 }
-
-.packages-section {
-  background: #fff5fb;
-  padding: 80px 48px;
+.highfly-badge {
+  display: inline-block;
+  background: #fff3cc;
+  border: 1px solid #f5c842;
+  color: #7a5c00;
+  font-family: Montserrat;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 20px;
+  margin-bottom: 24px;
 }
-
-.packages-section.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
-}
-
-.packages-section.reveal.in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.packages-section h2 {
+.highfly-section h2 {
   font-family: Montserrat;
   font-size: 44px;
   font-weight: 800;
   color: #111;
   margin-bottom: 10px;
-  text-align: center;
 }
-
-.packages-section h3 {
-  font-size: 16px;
-  color: #666;
-  font-weight: 400;
-  letter-spacing: 0;
-  text-transform: none;
-  margin-bottom: 50px;
-  text-align: center;
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
-}
-
-.packages-list {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.package-item {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 40px;
-  align-items: center;
-  padding: 32px 0;
-  border-bottom: 1px solid #fbe5f0;
-  transition: all 0.3s ease;
-}
-
-.package-item:hover {
-  padding-left: 8px;
-}
-
-.package-item:last-child {
-  border-bottom: none;
-}
-
-.package-name {
+.highfly-price {
   font-family: Montserrat;
-  font-size: 24px;
-  font-weight: 800;
-  color: #111;
-  margin-bottom: 5px;
-}
-
-.package-meta {
-  color: #f02cb8;
-  font-size: 13px;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.package-desc {
-  color: #999;
-  font-size: 14px;
-  margin-top: 0;
-}
-
-.package-price {
-  font-family: Montserrat;
-  font-size: 44px;
+  font-size: 30px;
   font-weight: 900;
   color: #f02cb8;
-  text-align: right;
-  white-space: nowrap;
+  margin-bottom: 24px;
+}
+.highfly-section p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 660px;
+  margin: 0 auto 16px;
 }
 
+/* ── INCLUDED + ADD-ONS ── */
 .included-section {
   background: #f7f7f7;
   padding: 80px 48px;
@@ -219,18 +383,6 @@
   grid-template-columns: 1fr 1fr;
   gap: 60px;
 }
-
-.included-section.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
-}
-
-.included-section.reveal.in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .included-col h2 {
   font-family: Montserrat;
   font-size: 32px;
@@ -238,83 +390,78 @@
   color: #111;
   margin-bottom: 25px;
 }
-
 .included-col ul {
   list-style: none;
   padding: 0;
 }
-
 .included-col li {
   color: #555;
   font-size: 15px;
   line-height: 1.8;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
-
 .included-col li:before {
   content: "✓ ";
   color: #f02cb8;
   font-weight: 700;
-  margin-right: 8px;
+  margin-right: 6px;
 }
-
-.ages-section {
-  background: #ffffff;
-  padding: 100px 48px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
+.addon-item {
+  padding: 16px 0;
+  border-bottom: 1px solid #e8e8e8;
 }
-
-.ages-section.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
-}
-
-.ages-section.reveal.in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.ages-section img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  order: -1;
-}
-
-.ages-text .label {
-  color: #f02cb8;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-  display: block;
-}
-
-.ages-text h2 {
+.addon-item:last-child { border-bottom: none; }
+.addon-name {
   font-family: Montserrat;
-  font-size: 44px;
-  font-weight: 800;
-  color: #111;
-  margin-bottom: 30px;
-}
-
-.ages-text p {
-  color: #555;
   font-size: 15px;
-  line-height: 1.8;
-  margin-bottom: 20px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 3px;
+}
+.addon-desc {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+.addon-price {
+  font-family: Montserrat;
+  font-size: 17px;
+  font-weight: 800;
+  color: #f02cb8;
 }
 
+/* ── GIFT VOUCHER ── */
+.voucher-section {
+  background: #111;
+  padding: 80px 48px;
+  text-align: center;
+  color: white;
+}
+.voucher-section h2 {
+  font-family: Montserrat;
+  font-size: 40px;
+  font-weight: 800;
+  font-style: italic;
+  color: white;
+  margin-bottom: 16px;
+}
+.voucher-section p {
+  color: rgba(255,255,255,0.6);
+  font-size: 16px;
+  max-width: 520px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
+}
+.voucher-section .btn {
+  background: #f02cb8;
+}
+
+/* ── BOOKING STEPS ── */
 .booking-section {
   background: #fff5fb;
   padding: 80px 48px;
 }
-
 .booking-section h2 {
   font-family: Montserrat;
   font-size: 44px;
@@ -323,7 +470,6 @@
   margin-bottom: 60px;
   text-align: center;
 }
-
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -331,22 +477,7 @@
   max-width: 1100px;
   margin: 0 auto;
 }
-
-.step {
-  text-align: center;
-}
-
-.step.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
-}
-
-.step.reveal.in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+.step { text-align: center; }
 .step-num {
   font-family: Montserrat;
   font-size: 80px;
@@ -355,7 +486,6 @@
   margin-bottom: 15px;
   line-height: 0.9;
 }
-
 .step h3 {
   font-family: Montserrat;
   font-size: 18px;
@@ -363,33 +493,72 @@
   color: #111;
   margin-bottom: 12px;
 }
-
 .step p {
   color: #666;
   font-size: 13px;
   line-height: 1.6;
 }
 
+/* ── FAQ ── */
+.faq-section {
+  background: #fff;
+  padding: 90px 48px;
+}
+.faq-section h2 {
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 52px;
+  text-align: center;
+}
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.faq-item h3 {
+  font-family: Montserrat;
+  font-size: 17px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 10px;
+}
+.faq-item p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ── CTA FINAL ── */
 .cta-final {
   background: #ffffff;
   padding: 80px 48px;
   text-align: center;
 }
-
 .cta-final h2 {
   font-family: Montserrat;
   font-size: 44px;
   font-weight: 800;
   color: #111;
+  margin-bottom: 16px;
+}
+.cta-final p {
+  color: #888;
+  font-size: 15px;
   margin-bottom: 40px;
+  line-height: 1.6;
 }
 
+/* ── BUTTONS ── */
 .button-group {
   display: flex;
   gap: 20px;
   justify-content: center;
+  flex-wrap: wrap;
 }
-
 .btn {
   background: #f02cb8;
   color: white;
@@ -402,50 +571,39 @@
   text-decoration: none;
   display: inline-block;
   transition: background 0.3s;
+  letter-spacing: 0.04em;
 }
-
-.btn:hover {
-  background: #d9219f;
-}
-
+.btn:hover { background: #d9219f; }
 .btn-secondary {
   background: transparent;
   border: 2px solid #f02cb8;
   color: #f02cb8;
 }
-
 .btn-secondary:hover {
-  background: rgba(240, 44, 184, 0.1);
+  background: rgba(240,44,184,0.08);
 }
 
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 44px;
-  }
-  
-  .included-section, .ages-section, .steps-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .ages-section img {
-    order: 0;
-  }
-  
-  .package-price {
-    text-align: left;
-  }
-  
-  .button-group {
-    flex-direction: column;
-  }
-
-  .step-num {
-    font-size: 48px;
-  }
-
-  .pull-quote {
-    font-size: 24px;
-  }
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero h1 { font-size: 52px; }
+  .included-section { grid-template-columns: 1fr; }
+  .faq-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .hero h1 { font-size: 38px; }
+  .hero-sub { font-size: 18px; }
+  .intro-section, .pricing-section, .highfly-section,
+  .booking-section, .faq-section, .cta-final { padding: 60px 24px; }
+  .teen-section { padding: 70px 24px; }
+  .included-section { padding: 60px 24px; gap: 40px; }
+  .voucher-section { padding: 70px 24px; }
+  .pricing-grid, .teen-pricing-grid { grid-template-columns: 1fr; }
+  .pricing-amount { font-size: 44px; }
+  .teen-section h2 { font-size: 38px; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .step-num { font-size: 56px; }
+  .button-group { flex-direction: column; align-items: center; }
 }
 </style>
 </head>
@@ -533,123 +691,246 @@
 <span class="lang-btn">EN <svg fill="none" height="6" style="opacity:0.55" viewbox="0 0 10 6" width="10" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></span>
 <div class="nav-dropdown"><a href="fr/birthdays.html">FR</a><a href="de/birthdays.html">DE</a><a href="lb/birthdays.html">LB</a><a href="nl/birthdays.html">NL</a></div>
 </div>
-<a href="account.html" onmouseout="this.style.color='rgba(255,255,255,0.6)'" onmouseover="this.style.color='#fff'" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;"><svg fill="none" height="16" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="16"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="7" r="4"></circle></svg>My Account</a><a class="nav-book" href="checkout.html">Book now</a>
+<a href="https://indoorskydive.lu/en/gift-voucher" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#f02cb8;transition:color 0.2s;text-decoration:none;">🎁 Gift Voucher</a>
+<a href="account.html" onmouseout="this.style.color='rgba(255,255,255,0.6)'" onmouseover="this.style.color='#fff'" style="display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.6);transition:color 0.2s;"><svg fill="none" height="16" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="16"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="7" r="4"></circle></svg>My Account</a>
+<a class="nav-book" href="checkout.html">Book now</a>
 </div>
 </nav>
+
+<!-- ═══ HERO ═══ -->
 <section class="hero">
 <div>
 <h1>The birthday they won't stop talking about.</h1>
 <p class="hero-sub">We handle the excitement. You handle the cake.</p>
+<div class="hero-anchors">
+<a class="hero-anchor" href="#kids">Children 4–13</a>
+<a class="hero-anchor" href="#teens">Teens 14–17</a>
+<a class="hero-anchor" href="#highfly">HighFly upgrade</a>
+</div>
 </div>
 </section>
+
+<!-- ═══ INTRO ═══ -->
 <section class="intro-section reveal">
-<h2>Ditch the party room.</h2>
+<h2>Not your average birthday party.</h2>
 <div class="intro-text">
-<p>There's cake, there's a party room, and then there's flying. Luxfly hosts private birthday sessions built around kids — a birthday upgrade from every party room in the region. Your child's group gets a dedicated instructor, a private briefing room, and flight time set to their pace. Adults and parents are warmly welcome to fly too.</p>
-<p>Every birthday package includes full use of our briefing room, a qualified birthday instructor, and flight time tailored to your group's age and experience level. Non-flying guests are welcome to watch from our viewing area. We can handle everything from intimate celebrations to large group parties.</p>
-<p class="note">Minimum group: 6 people. Available Wednesday through Sunday, subject to availability. Contact us at least one week in advance to book your celebration.</p>
+<p>Forget the ball pit. Forget the pizza parlour. Luxfly hosts private birthday sessions where kids actually fly — supported by a dedicated instructor in a private session designed entirely around your group. Every child gets briefed, geared up, and takes to the air in Europe's most advanced indoor skydiving facility.</p>
+<p>Birthday packages are available for children aged 4 to 13 and teens aged 14 to 17. Every participant receives full instructor attention, 2 flights each, a diploma, and full use of our private birthday room complete with tableware, unlimited water, and music. Non-flying guests are welcome in the viewing gallery.</p>
+<p class="note">Minimum group: 6 people. Available Wednesday through Sunday, subject to availability. Contact us at least one week in advance to secure your date. Address: Rue de Grass 103, 6700 Sterpenich, Belgium.</p>
 </div>
 </section>
-<section class="packages-section reveal">
-<h2>Every birthday is different.</h2>
-<h3>Tell us about yours and we'll put together the right package.</h3>
-<div class="packages-list">
-<div class="package-item" style="cursor:default;">
-<div>
-<div class="package-name">Group size</div>
-<div class="package-desc">From 6 guests up to large parties — we tailor the session to your numbers</div>
+
+<!-- ═══ CHILDREN BIRTHDAY PRICING ═══ -->
+<section class="pricing-section reveal" id="kids">
+<h2>Birthday Party — Children</h2>
+<p class="pricing-sub">Ages 4 to 13 &nbsp;·&nbsp; Minimum 6 children &nbsp;·&nbsp; 2 flights + diploma + birthday room included</p>
+<div class="pricing-grid">
+<div class="pricing-card">
+<div class="pricing-period">Weekday</div>
+<div class="pricing-period-sub">Monday – Friday</div>
+<div class="pricing-amount">€32<span>/child</span></div>
+<ul class="pricing-includes">
+<li>Full safety briefing &amp; instruction</li>
+<li>Complete flight equipment</li>
+<li>2 flights per child</li>
+<li>Instructor demonstration</li>
+<li>Personalised diploma</li>
+<li>Private birthday room</li>
+<li>Glasses, plates, cutlery &amp; napkins</li>
+<li>Unlimited water &amp; flavoured water</li>
+<li>Music during the party</li>
+</ul>
+<a class="btn" href="contact.html">Book a weekday party</a>
+</div>
+<div class="pricing-card pricing-card--featured">
+<div class="pricing-badge">Most popular</div>
+<div class="pricing-period">Weekend</div>
+<div class="pricing-period-sub">Saturday &amp; Sunday</div>
+<div class="pricing-amount">€69.16<span>/child</span></div>
+<div class="pricing-discount">then €59/child from the 7th participant</div>
+<ul class="pricing-includes">
+<li>Full safety briefing &amp; instruction</li>
+<li>Complete flight equipment</li>
+<li>2 flights per child</li>
+<li>Instructor demonstration</li>
+<li>Personalised diploma</li>
+<li>Private birthday room</li>
+<li>Glasses, plates, cutlery &amp; napkins</li>
+<li>Unlimited water &amp; flavoured water</li>
+<li>Music during the party</li>
+</ul>
+<a class="btn" href="contact.html">Book a weekend party</a>
 </div>
 </div>
-<div class="package-item" style="cursor:default;">
-<div>
-<div class="package-name">Flight time</div>
-<div class="package-desc">Short and fun for first-timers, longer sessions for those who want more air time</div>
+<p class="pricing-minimum">Minimum 6 children per booking. Discounted group rate (€59/child) applies automatically from the 7th participant on weekends.</p>
+</section>
+
+<!-- ═══ TEEN BIRTHDAY ═══ -->
+<section class="teen-section reveal" id="teens">
+<div class="teen-inner">
+<div class="teen-label">Ages 14–17 — Priority Experience</div>
+<h2>Teen Birthday Party.</h2>
+<p>Not kids anymore — and we get that. The teen birthday at Luxfly is built for the 14–17 crowd: faster, higher, more adrenaline. Same private setup and dedicated instructor, but with an energy and tone that fits the group. Most teens add HighFly — and every one who does asks to come back.</p>
+<div class="teen-pricing-grid">
+<div class="teen-price-box">
+<div class="teen-price-label">Weekday (Mon–Fri)</div>
+<div class="teen-price">€45<span>/teen</span></div>
+</div>
+<div class="teen-price-box">
+<div class="teen-price-label">Weekend (Sat–Sun)</div>
+<div class="teen-price">€79<span>/teen</span></div>
+<div class="teen-discount">then €59/teen from the 7th</div>
 </div>
 </div>
-<div class="package-item" style="cursor:default;">
-<div>
-<div class="package-name">Add-ons</div>
-<div class="package-desc">Photos, video highlights, catering, birthday setup — mix and match what you need</div>
-</div>
-</div>
-<div class="package-item" style="cursor:default;">
-<div>
-<div class="package-name">Age range</div>
-<div class="package-desc">Ages 4 to 12 for children's packages — parents and adults fly too</div>
-</div>
-</div>
-</div>
-<div style="text-align:center; margin-top: 56px;">
-<a class="btn" href="contact.html" style="display:inline-block; font-size:13px; letter-spacing:0.08em; text-transform:uppercase;">Get a personalised quote →</a>
+<ul class="teen-includes">
+<li>Full briefing &amp; safety instruction</li>
+<li>Complete flight equipment</li>
+<li>2 flights per teen</li>
+<li>Instructor demonstration</li>
+<li>Personalised diploma</li>
+<li>Private birthday room with tableware</li>
+<li>Unlimited water &amp; flavoured water &amp; music</li>
+</ul>
+<a class="btn" href="contact.html">Book a teen birthday →</a>
 </div>
 </section>
+
+<!-- ═══ HIGHFLY UPGRADE ═══ -->
+<section class="highfly-section reveal" id="highfly">
+<div class="highfly-badge">⭐ Strongly Recommended</div>
+<h2>Add HighFly to your booking</h2>
+<div class="highfly-price">+€15 per child or teen</div>
+<p>HighFly is the premium upgrade every kid wants but not every parent thinks to ask for. It takes the flight experience to the next level — your child flies significantly higher in the tunnel with the instructor right alongside them throughout the entire session.</p>
+<p>Added individually per participant at checkout. The large majority of birthday groups include HighFly — and every child who tries it asks to come back. Strongly recommended by our instructors for all age groups.</p>
+<a class="btn" href="contact.html">Include HighFly in my booking</a>
+</section>
+
+<!-- ═══ INCLUDED + ADD-ONS ═══ -->
 <section class="included-section reveal">
 <div class="included-col">
-<h2>Included in all packages</h2>
+<h2>Included in every package</h2>
 <ul>
 <li>Private use of the briefing room</li>
 <li>Dedicated birthday instructor</li>
-<li>Full flight gear for every guest</li>
-<li>Viewing balcony for non-flying guests</li>
+<li>Full flight equipment for every participant</li>
+<li>2 flights per child or teen</li>
+<li>Instructor demonstration during flight</li>
+<li>Personalised diploma for every participant</li>
+<li>Birthday room: glasses, plates, cutlery &amp; napkins</li>
+<li>Unlimited water &amp; flavoured water</li>
+<li>Music during the party</li>
+<li>Viewing gallery for non-flying guests</li>
 <li>Locker access for valuables</li>
-<li>Safety briefing and equipment fitting</li>
-<li>Post-flight debriefing</li>
 </ul>
 </div>
 <div class="included-col">
-<h2>Available add-ons</h2>
-<ul>
-<li>Catering: snacks &amp; soft drinks</li>
-<li>Birthday cake service (ask at reception)</li>
-<li>Professional photos</li>
-<li>Video highlight reel</li>
-<li>Private room for pre/post party</li>
-<li>Themed briefing room setup</li>
-<li>Custom certificates of completion</li>
-</ul>
+<h2>Optional add-ons</h2>
+<div class="addon-item">
+<div class="addon-name">⭐ HighFly upgrade</div>
+<div class="addon-desc">Premium flight experience — flying higher with the instructor. Strongly recommended for all ages.</div>
+<div class="addon-price">+€15 / child or teen</div>
+</div>
+<div class="addon-item">
+<div class="addon-name">Souvenir photo</div>
+<div class="addon-desc">Individual photo taken during the flight, sent by email after the session.</div>
+<div class="addon-price">€15 / booking</div>
+</div>
+<div class="addon-item">
+<div class="addon-name">LUXFLY souvenir magnet</div>
+<div class="addon-desc">Personalised LUXFLY magnet in a gift pouch — given to each child at the end of the party.</div>
+<div class="addon-price">€3.50 / child</div>
+</div>
+<div class="addon-item">
+<div class="addon-name">Soft drinks kit</div>
+<div class="addon-desc">Choice of soft drinks for the children throughout the party.</div>
+<div class="addon-price">€3 / child</div>
+</div>
 </div>
 </section>
-<section class="ages-section reveal">
-<img alt="Child flying at Luxfly birthday party" src="https://indoorskydive.lu/img/kids.jpg"/>
-<div class="ages-text">
-<span class="label">Made for kids. Everyone welcome.</span>
-<h2>Built around children. Open to all ages.</h2>
-<p>Our birthday sessions are designed first and foremost for kids from age 4. Wind speed, session pacing, and instructor style are all adapted to the age of your group. We've hosted parties for four-year-olds and teenagers alike — the excitement is always the same.</p>
-<p>A parent or guardian is always welcome in the room. Adults who want to fly alongside the kids absolutely can — just book a flight for yourself too. And if grown-ups are celebrating a milestone birthday of their own, we can build a session around that as well. Every birthday is welcome here.</p>
-</div>
+
+<!-- ═══ GIFT VOUCHER ═══ -->
+<section class="voucher-section reveal">
+<h2>Give the gift of flight.</h2>
+<p>Not organising a birthday but want to give a LUXFLY experience? Gift vouchers are available online and make unforgettable presents for children and teens — redeemable any time.</p>
+<a class="btn" href="https://indoorskydive.lu/en/gift-voucher" target="_blank" rel="noopener">Gift a LUXFLY experience — Buy a voucher →</a>
 </section>
+
+<!-- ═══ HOW TO BOOK ═══ -->
 <section class="booking-section">
 <h2>How to book a birthday</h2>
 <div class="steps-grid">
 <div class="step reveal">
 <div class="step-num">01</div>
 <h3>Get in touch</h3>
-<p>Call us or fill in the quote form at least 7 days in advance. Tell us the birthday person's age and group size.</p>
+<p>Email or WhatsApp us at least 7 days in advance. Tell us the birthday person's age, group size, and preferred date.</p>
 </div>
-<div class="step reveal reveal-delay-1">
+<div class="step reveal">
 <div class="step-num">02</div>
 <h3>Choose your package</h3>
-<p>Select your flight package and any add-ons you'd like. Confirm your preferred date and time.</p>
+<p>Select weekday or weekend, children or teens, and any add-ons such as HighFly, photos, or soft drinks.</p>
 </div>
-<div class="step reveal reveal-delay-2">
+<div class="step reveal">
 <div class="step-num">03</div>
 <h3>Pay the deposit</h3>
-<p>Secure your date with a 50% deposit. Balance is due 7 days before the party.</p>
+<p>Secure your date with a 50% deposit. Balance is due 7 days before the party date.</p>
 </div>
-<div class="step reveal reveal-delay-3">
+<div class="step reveal">
 <div class="step-num">04</div>
 <h3>Show up and fly</h3>
-<p>Arrive 15 minutes early, gear up, brief, and celebrate in the air. Unforgettable memories guaranteed.</p>
+<p>Arrive 15 minutes early. We handle everything else — gear up, brief, fly, and celebrate.</p>
 </div>
 </div>
 </section>
+
+<!-- ═══ FAQ FOR PARENTS ═══ -->
+<section class="faq-section reveal">
+<h2>Parents often ask…</h2>
+<div class="faq-grid">
+<div class="faq-item">
+<h3>What is the minimum age?</h3>
+<p>4 years old. Children fly in specially adapted conditions — wind speed is set according to their size and weight. Our instructors are experienced with young flyers of all ages.</p>
+</div>
+<div class="faq-item">
+<h3>How long is the session?</h3>
+<p>A typical birthday party lasts around 2 hours from arrival to departure — including the safety briefing, equipment fitting, flight time, and use of the birthday room.</p>
+</div>
+<div class="faq-item">
+<h3>Is it safe?</h3>
+<p>Yes. Every participant is fully geared, briefed, and supervised by a qualified instructor throughout the flight. Luxfly operates at the highest safety standards and welcomes children from age 4.</p>
+</div>
+<div class="faq-item">
+<h3>Can parents fly too?</h3>
+<p>Absolutely. Parents and adults who want to fly alongside the kids are very welcome — simply add adult flights to the booking. Non-flying guests can watch from the viewing gallery.</p>
+</div>
+<div class="faq-item">
+<h3>How many children do we need?</h3>
+<p>A minimum of 6 participants per booking. There is no maximum — for larger groups we schedule accordingly. A discount applies automatically from the 7th participant on weekends.</p>
+</div>
+<div class="faq-item">
+<h3>Where are you located?</h3>
+<p>Rue de Grass 103, 6700 Sterpenich, Belgium — easily accessible from Luxembourg city, Arlon, and the Greater Region. Free parking available on site.</p>
+</div>
+<div class="faq-item">
+<h3>What should children wear?</h3>
+<p>Comfortable clothing and lace-up shoes that cannot come off. We provide all flight equipment including a suit, helmet, and goggles. No jewellery during the flight.</p>
+</div>
+<div class="faq-item">
+<h3>What is HighFly?</h3>
+<p>HighFly is a premium upgrade (+€15/child) where your child flies higher in the tunnel with the instructor alongside them the entire time. Strongly recommended — most groups add it once they hear about it.</p>
+</div>
+</div>
+</section>
+
+<!-- ═══ CTA FINAL ═══ -->
 <section class="cta-final">
 <h2>Reserve the date.</h2>
+<p>Get in touch to check availability, discuss your group, and lock in your booking.<br/>We reply within 24 hours — usually much faster.</p>
 <div class="button-group">
-<a class="btn" href="events.html">Request a quote</a>
-<a class="btn btn-secondary" href="tel:+35227777777">Call us</a>
+<a class="btn" href="mailto:sales@luxfly.eu">Email us</a>
+<a class="btn btn-secondary" href="https://wa.me/3223205509" target="_blank" rel="noopener">WhatsApp us</a>
 </div>
 </section>
+
 <footer>
 <div class="footer-brand">
 <img alt="Luxfly" src="https://indoorskydive.lu/img/logo/luxfly_logo_light.svg"/>
@@ -662,7 +943,16 @@
 <li><a href="kids.html">Kids &amp; Families</a></li>
 <li><a href="pro.html">Pro Flyers</a></li>
 <li><a href="birthdays.html">Birthdays</a></li>
-<li><a href="gift-voucher.html">Gift Vouchers</a></li>
+<li><a href="https://indoorskydive.lu/en/gift-voucher" target="_blank" rel="noopener">Gift Vouchers</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5>Birthday Parties</h5>
+<ul>
+<li><a href="#kids">Children (4–13)</a></li>
+<li><a href="#teens">Teens (14–17)</a></li>
+<li><a href="#highfly">HighFly Upgrade</a></li>
+<li><a href="contact.html">Book a party</a></li>
 </ul>
 </div>
 <div class="footer-col">
@@ -675,6 +965,14 @@
 <li><a href="conditions.html">Conditions</a></li>
 </ul>
 </div>
+<div class="footer-col">
+<h5>Contact</h5>
+<ul>
+<li><a href="mailto:hello@luxfly.eu">hello@luxfly.eu</a></li>
+<li><a href="https://wa.me/3223205509" target="_blank" rel="noopener">WhatsApp +32 2 320 55 09</a></li>
+<li style="color:rgba(255,255,255,0.4);font-size:13px;">Rue de Grass 103<br/>6700 Sterpenich, Belgium</li>
+</ul>
+</div>
 </footer>
 <div class="footer-bottom">
 <span>© 2026 Luxfly Indoor Skydiving</span>
@@ -683,11 +981,17 @@
 <a href="#">Privacy Policy</a>
 </div>
 </div>
+
 <script>
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('dark',window.scrollY>60)},{passive:true});
-const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.12});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('dark', window.scrollY > 60);
+}, {passive: true});
+
+const obs = new IntersectionObserver(entries => entries.forEach(e => {
+  if (e.isIntersecting) e.target.classList.add('in');
+}), {threshold: 0.1});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
 <script src="js/nav.js?v=3"></script>
 <script src="js/chatbot.js"></script>
